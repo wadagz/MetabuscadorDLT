@@ -1,11 +1,57 @@
+# Metabuscador de Destinos y Lugares Turísticos
+
+### Powered by Laravel
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Bienvenida
+
+¡Hola! Este es el repositorio del proyecto Metabuscador de Destinos y Tugares
+turísticos (MetabuscadorDLT).
+
+Este proyecto tiene como objetivo brindar una plataforma sencilla y fácil de
+usar, la cual permita organizar planes de viaje a diferentes destinos,
+ofreciendo ofertas, recomendaciones y sugerencias de hospedajes, lugares
+turísticos para visitar, etc. Además de proveer indicaciones de transporte
+mediante mapas interactivos.
+
+## Inicialización del proyecto en entorno local
+
+### Requisitos
+
+Requisitos según la guía de instalación oficial de [Laravel](https://laravel.com/docs/11.x/installation).
+
+- Instalar [php](https://www.php.net/).
+- Instalar [composer](https://getcomposer.org/)
+- Instalar [Node y NPM](https://nodejs.org/)
+
+**Nota**: Es necesario habilitar las extensiones siguientes de php.
+- **iconv**
+- **pdo\_mysql**
+- **zip**
+
+### Configurar entorno local
+
+Habiendo clonado el repositorio y cambiado al directorio donde se encuentra, es
+necesario instalar los paquetes requeridos por el proyecto. Para ello se usan
+los comandos:
+
+```sh
+composer install
+npm install && npm run build
+```
+
+Es necesario establecer la estructura de la DB mediante el uso de migraciones de
+Laravel. Solo se requiere ejecutar este comando al clonar el proyecto, o al crear nuevas migraciones.
+
+```sh
+php artisan migrate
+```
+
+Finalmente queda levantar el servidor.
+
+```sh
+composer run dev
+```
 
 ## About Laravel
 
@@ -28,39 +74,3 @@ Laravel has the most extensive and thorough [documentation](https://laravel.com/
 You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
 If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
