@@ -29,6 +29,12 @@ Requisitos según la guía de instalación oficial de [Laravel](https://laravel.
 - **pdo\_mysql**
 - **zip**
 
+---
+
+Tener instalado **mariadb** con una base de datos vacia y un usuario con permisos sobre dicha base de datos.
+
+**Nota**: Esto último solo será mientras conseguimos hosting para tener una base de datos remota para desarrollo.
+
 ### Configurar entorno local
 
 Habiendo clonado el repositorio y cambiado al directorio donde se encuentra, es
