@@ -37,6 +37,8 @@ Tener instalado **mariadb** con una base de datos vacia y un usuario con permiso
 
 ### Configurar entorno local
 
+#### Instalar dependencias
+
 Habiendo clonado el repositorio y cambiado al directorio donde se encuentra, es
 necesario instalar los paquetes requeridos por el proyecto. Para ello se usan
 los comandos:
@@ -46,6 +48,22 @@ composer install
 npm install && npm run build
 ```
 
+#### Data Base
+
+Para la conexión a la base de datos se deben modificar los parámetros del
+archivo `.env`. Para ello primero copiar `.env.example` y renombrarlo a `.env`.
+Luego colocar en los parámetros de db el nombre de la base de datos local
+creada, nombre de usuario y contraseña.
+
+```
+DB_CONNECTION=mariadb
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=db_local
+DB_USERNAME=usuario
+DB_PASSWORD=password
+```
+
 Es necesario establecer la estructura de la DB mediante el uso de migraciones de
 Laravel. Solo se requiere ejecutar este comando al clonar el proyecto, o al crear nuevas migraciones.
 
@@ -53,10 +71,23 @@ Laravel. Solo se requiere ejecutar este comando al clonar el proyecto, o al crea
 php artisan migrate
 ```
 
+Habiendo creadas las tablas se pueden poblar con registros base o de prueba
+mediante los seeders, los cuales se ejecutan con este comando. De momento solo
+se crean registros base para `Estado`, `Municipio`, `Codigo postal`,
+`Asentamiento`, `Tipo de asentamiento`, y `Tipo de vialidad`.
+
+```sh
+php artisan db:seed
+```
+
+#### Levantar el servidor
+
 Finalmente queda levantar el servidor.
 
 ```sh
 composer run dev
+o
+php artisan serve
 ```
 
 ## About Laravel
