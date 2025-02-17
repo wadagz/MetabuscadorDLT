@@ -13,7 +13,7 @@ class AsentamientoSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFile = storage_path('app/private/asentamientos.csv');  // Adjust the path as needed
+        $csvFile = base_path('database/seeds/data/asentamientos.csv');  // Adjust the path as needed
         $handle = fopen($csvFile, 'r');
 
         $batchSize = 1000; // Process 1000 records at a time to avoid memory issues

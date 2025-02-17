@@ -13,7 +13,7 @@ class CodigoPostalSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFile = storage_path('app/private/codigos_postales.csv');  // Adjust the path as needed
+        $csvFile = base_path('database/seeds/data/codigos_postales.csv');  // Adjust the path as needed
         $handle = fopen($csvFile, 'r');
 
         $batchSize = 10000; // Process 1000 records at a time to avoid memory issues
