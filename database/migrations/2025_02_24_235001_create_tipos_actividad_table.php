@@ -11,16 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('horarios_eventuales', function (Blueprint $table) {
+        Schema::create('tipos_actividad', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_evento')
-                ->constrained('eventos')
-                ->onDelete('cascade');
-            $table->date('fecha');
-            $table->time('hora_inicio');
-            $table->time('hora_fin');
+            $table->string('nombre', length: 100);
             $table->timestamps();
-
         });
     }
 
@@ -29,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('horarios_eventuales');
+        Schema::dropIfExists('tipos_actividad');
     }
 };

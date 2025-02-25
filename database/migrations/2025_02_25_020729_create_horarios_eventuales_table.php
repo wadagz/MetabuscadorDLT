@@ -11,15 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('horarios_semanales', function (Blueprint $table) {
+        Schema::create('horarios_eventuales', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_lugar_interes')
-                ->constrained('lugares_interes')
+            $table->foreignId('actividad_id')
+                ->constrained('actividades')
                 ->onDelete('cascade');
-            $table->unsignedTinyInteger('dia_semana');
-            $table->time('hora_apertura');
-            $table->time('hora_cierre');
+            $table->date('fecha');
+            $table->time('hora_inicio');
+            $table->time('hora_fin');
             $table->timestamps();
+
         });
     }
 
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('horarios_semanales');
+        Schema::dropIfExists('horarios_eventuales');
     }
 };
