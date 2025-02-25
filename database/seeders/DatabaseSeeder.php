@@ -23,7 +23,6 @@ class DatabaseSeeder extends Seeder
         $this->call([
             EstadoSeeder::class,
             MunicipioSeeder::class,
-            CodigoPostalSeeder::class,
             TipoAsentamientoSeeder::class,
             AsentamientoSeeder::class,
             TipoVialidadSeeder::class,
