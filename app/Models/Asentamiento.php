@@ -19,11 +19,6 @@ class Asentamiento extends Model
         return $this->belongsTo(TipoAsentamiento::class);
     }
 
-    public function codigoPostal(): BelongsTo
-    {
-        return $this->belongsTo(CodigoPostal::class);
-    }
-
     public function municipio(): BelongsTo
     {
         return $this->belongsTo(Municipio::class);
@@ -31,7 +26,7 @@ class Asentamiento extends Model
 
     public function direcciones(): HasMany
     {
-        return $this->belongsTo(Direccion::class);
+        return $this->hasMany(Direccion::class);
     }
 
 }
