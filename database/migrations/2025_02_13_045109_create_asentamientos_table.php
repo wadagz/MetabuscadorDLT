@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('nombre', length: 100);
             $table->unsignedInteger('id_tipo_asentamiento');
-            $table->unsignedInteger('id_codigo_postal');
             $table->unsignedInteger('id_municipio');
             $table->unsignedTinyInteger('id_estado');
             $table->unsignedInteger('codigo_postal');

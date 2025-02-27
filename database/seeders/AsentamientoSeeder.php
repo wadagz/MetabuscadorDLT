@@ -16,11 +16,11 @@ class AsentamientoSeeder extends Seeder
         $csvFile = base_path('database/seeds/data/asentamientos.csv');  // Adjust the path as needed
         $handle = fopen($csvFile, 'r');
 
-        $batchSize = 1000; // Process 1000 records at a time to avoid memory issues
+        $batchSize = 10000; // Process 10,000 records at a time to avoid memory issues
         $data = [];
         $rowCount = 0;
 
-        while (($row = fgetcsv($handle, 1000, ',')) !== FALSE) {
+        while (($row = fgetcsv($handle, 1000, ',', escape: "")) !== FALSE) {
             if ($rowCount === 0) {
                 // Skip the first row if it's the header row
                 $rowCount++;
@@ -29,7 +29,7 @@ class AsentamientoSeeder extends Seeder
 
             // Process each row as needed (mapping CSV data to database columns)
             $data[] = [
-                'id_codigo_postal' => $row[0],
+                'codigo_postal' => $row[0],
                 'nombre' => $row[1],
                 'id_tipo_asentamiento' => $row[2],
                 'id_estado' => $row[3],
