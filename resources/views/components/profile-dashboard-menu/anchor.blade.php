@@ -2,8 +2,8 @@
 
 @php
 $classes = ($active ?? false)
-            ? 'nav-link active'
-            : 'nav-link';
+            ? 'btn btn-primary'
+            : 'btn btn-light';
 @endphp
 
 <a {{ $attributes->merge(['class' => $classes]) }}>
