@@ -76,7 +76,10 @@ class User extends Authenticatable
 
     public function preferencias(): BelongsToMany
     {
-        return $this->belongsToMany(Preferencia::class);
+        return $this->belongsToMany(
+            Preferencia::class,
+            table: 'preferencias_usuarios'
+        );
     }
 
 }
