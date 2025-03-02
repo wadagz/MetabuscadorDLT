@@ -19,7 +19,6 @@
                     atMethod='PUT'
                     btnText="Actualizar información"
                 >
-                    {{ $errors->any() }}
                     <x-profile-dashboard-menu.input-control
                         name="nombre"
                         id="nombre"
@@ -76,16 +75,9 @@
 
                 <hr>
 
-                <x-profile-dashboard-menu.form
+                <livewire:delete-user-account-form
                     legend="Eliminar cuenta"
-                    action="{{ route('dashboard') }}"
-                    method="GET"
-                    atMethod="GET"
-                    btnText="Eliminar mi cuenta"
-                    btnClass="btn-danger"
-                    noDisplayInputs="true"
-                >
-                </x-profile-dashboard-menu.form>
+                />
 
             </div>
         </div>

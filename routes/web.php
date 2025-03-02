@@ -1,7 +1,5 @@
 <?php
 
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -23,9 +21,4 @@ Route::middleware([
     Route::get('/customer-help', function () {
         return view('customer-help');
     })->name('customer-help');
-    Route::delete('user/delete', function () {
-            $user = Auth::user();
-            $user->delete();
-            return redirect()->route('welcome');
-    })->name('deleteUser');
 });

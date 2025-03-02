@@ -19,7 +19,7 @@
                     {{ $slot }}
                  </div>
              @endif
-             <button type="submit" class="btn {{ $btnClass }}">{{ $btnText }}</button>
+             <x-button type="submit" class="{{ $btnClass }}">{{ $btnText }}</x-button>
         </fieldset>
     </form>
 </div>
