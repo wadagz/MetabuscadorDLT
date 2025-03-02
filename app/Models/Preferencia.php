@@ -15,6 +15,9 @@ class Preferencia extends Model
 
     public function usuarios(): BelongsToMany
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(
+            User::class,
+            table: 'preferencias_usuarios'
+        );
     }
 }

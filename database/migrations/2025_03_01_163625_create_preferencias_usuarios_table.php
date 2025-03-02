@@ -1,7 +1,5 @@
 <?php
 
-use App\Models\Hospedaje;
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('favoritos_hospedaje_usuario', function (Blueprint $table) {
-            $table->foreignId('hospedaje_id')->constrained('hospedajes')->cascadeOnDelete();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+        Schema::create('preferencias_usuarios', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('usuario_id')->constrained('users', 'id')->cascadeOnDelete();
+            $table->foreignId('preferencia_id')->constrained('preferencias', 'id')->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('favoritos_hospedaje_usuario');
+        Schema::dropIfExists('preferencias_usuarios');
     }
 };
