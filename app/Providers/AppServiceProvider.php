@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Pluralizer;
+use Illuminate\Validation\Rules\Password;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,5 +22,16 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Pluralizer::useLanguage('spanish');
+        Password::defaults(function () {
+        $rule = Password::min(8)
+            ->letters()
+            ->mixedCase()
+            ->numbers()
+            ->symbols();
+
+            return $this->app->isProduction()
+                ? $rule->uncompromised()
+                : $rule;
+        });
     }
 }
