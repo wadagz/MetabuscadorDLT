@@ -13,31 +13,15 @@
             </div>
             <div class="col-8">
                 <!-- Actualizar información del perfil -->
-                <x-profile-dashboard-menu.form
+                <livewire:update-user-info-form
                     legend="Cambiar información de perfil"
                     action="{{ route('user-profile-information.update') }}"
                     method='POST'
                     atMethod='PUT'
                     btnText="Actualizar información"
-                >
-                    <x-profile-dashboard-menu.input-control
-                        name="nombre"
-                        id="nombre"
-                        type="text"
-                        placeholder="Ej. Antonio Ramírez"
-                        value="{{ Auth::user()->name }}"
-                        label="Nombre"
-                        errorBag="updateProfileInformation"
-                    />
-                    <x-profile-dashboard-menu.input-control
-                        name="correo"
-                        id="correo"
-                        type="email"
-                        value="{{ Auth::user()->email }}"
-                        label="Correo"
-                        errorBag="updateProfileInformation"
-                    />
-                </x-profile-dashboard-menu.form>
+                    nombre="{{ Auth::user()->name }}"
+                    correo="{{ Auth::user()->email }}"
+                />
 
                 <hr>
 
