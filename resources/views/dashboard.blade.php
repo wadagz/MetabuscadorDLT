@@ -12,6 +12,7 @@
                 <x-profile-dashboard-menu />
             </div>
             <div class="col-8">
+                <!-- Actualizar información del perfil -->
                 <x-profile-dashboard-menu.form
                     legend="Cambiar información de perfil"
                     action="{{ route('user-profile-information.update') }}"
@@ -40,41 +41,14 @@
 
                 <hr>
 
-                <x-profile-dashboard-menu.form
+                <!-- Actualizar contraseña -->
+                <livewire:update-password
                     legend="Cambiar contraseña"
-                    action="{{ route('user-password.update') }}"
-                    method='POST'
-                    atMethod='PUT'
-                    btnText="Actualizar contraseña"
-                >
-                    <x-profile-dashboard-menu.input-control
-                        name="contraseña_actual"
-                        id="contraseña_actual"
-                        type="password"
-                        placeholder="Contraseña actual"
-                        label="Contraseña actual"
-                        errorBag="updatePassword"
-                    />
-                    <x-profile-dashboard-menu.input-control
-                        name="contraseña"
-                        id="contraseña"
-                        type="password"
-                        placeholder="Contraseña nueva"
-                        label="Contraseña nueva"
-                        errorBag="updatePassword"
-                    />
-                    <x-profile-dashboard-menu.input-control
-                        name="contraseña_confirmation"
-                        id="contraseña_confirmation"
-                        type="password"
-                        placeholder="Confirmar contraseña"
-                        label="Confirmar contraseña"
-                        errorBag="updatePassword"
-                    />
-                </x-profile-dashboard-menu.form>
+                />
 
                 <hr>
 
+                <!-- Eliminar cuenta -->
                 <livewire:delete-user-account-form
                     legend="Eliminar cuenta"
                 />

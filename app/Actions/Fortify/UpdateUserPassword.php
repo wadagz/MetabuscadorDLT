@@ -22,7 +22,7 @@ class UpdateUserPassword implements UpdatesUserPasswords
             'contraseña_actual' => ['required', 'string', 'current_password:web'],
             'contraseña' => $this->passwordRules(),
         ], [
-            'contraseña_actual.current_password' => __('La contraseña ingresada no coincide con la contraseña registrada.'),
+            'contraseña_actual.current_password' => 'La contraseña ingresada no coincide con la contraseña registrada.',
         ])->validateWithBag('updatePassword');
 
         $user->forceFill([

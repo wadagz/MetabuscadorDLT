@@ -1,5 +1,7 @@
-@props(['errorBag' => null, 'for'])
+@props(['for'])
 
-@error($for, $errorBag ?? '')
-    <p class="invalid-feedback">{{ $message }}</p>
+@error($for)
+    @foreach ($errors->get($for) as $error)
+    <p class="invalid-feedback">{{ $error }}</p>
+    @endforeach
 @enderror
