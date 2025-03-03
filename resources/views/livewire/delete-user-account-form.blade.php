@@ -1,10 +1,10 @@
-<div class="bs-component">
+<div class="bs-component" x-data="{ modal: $wire.entangle('showModal')}">
     <legend>{{ $legend }}</legend>
     <p class="mt-4">La eliminación de cuenta es permanente sin posibilidad de recuperación.</p>
     <x-button class="btn-warning" wire:click="unhideModal" id="dangerButton">
         Eliminar cuenta
     </x-button>
-    <div id="confirmDeleteForm" wire:show="showModal" x-transition.duration.200ms>
+    <div id="confirmDeleteForm" x-show="modal" x-transition.duration.200ms>
         <p class="mt-4">Para confirmar la eliminación de su cuenta ingrese su contraseña.</p>
         <form wire:submit="deleteAccount">
             <x-input type="password" wire:model.live.debounce.500ms="contraseña"/>
