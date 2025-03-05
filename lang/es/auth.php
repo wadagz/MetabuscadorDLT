@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'Estas credenciales de acceso no se encuentran en nuestros registros.',
+    'failed' => 'El correo o contraseña son incorrectos.',
     'password' => 'La contraseña provista es incorrecta.',
     'throttle' => 'Demasiados intentos de inicio de sesión. Por favor intente denuevo en :seconds segundos.',
 
