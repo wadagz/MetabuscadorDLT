@@ -7,7 +7,7 @@
     <div id="confirmDeleteForm" x-show="modal" x-transition.duration.200ms>
         <p class="mt-4">Para confirmar la eliminación de su cuenta ingrese su contraseña.</p>
         <form wire:submit="deleteAccount">
-            <x-input type="password" wire:model.live.debounce.500ms="contraseña"/>
+            <x-input type="password" wire:model="contraseña"/>
             @error('contraseña')
                 <p class="invalid-feedback">{{ $message }}</p>
             @enderror

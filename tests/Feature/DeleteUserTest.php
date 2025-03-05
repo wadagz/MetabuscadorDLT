@@ -36,4 +36,17 @@ class DeleteUserTest extends TestCase
 
         $this->assertNotNull($user->fresh());
     }
+
+    public function test_can_see_error_message_wrong_password(): void
+    {
+        $this->actingAs($user = User::factory()->create());
+
+        Livewire::test(DeleteUserAccountForm::class)
+            ->set('contraseña', 'wrong-password')
+            ->call('deleteAccount')
+            ->assertHasErrors(['contraseña'])
+            ->assertSee('La contraseña es incorrecta.');
+
+        $this->assertNotNull($user->fresh());
+    }
 }
