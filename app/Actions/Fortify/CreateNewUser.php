@@ -5,6 +5,7 @@ namespace App\Actions\Fortify;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
 
@@ -20,16 +21,22 @@ class CreateNewUser implements CreatesNewUsers
     public function create(array $input): User
     {
         Validator::make($input, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => $this->passwordRules(),
-            'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
-        ])->validate();
+                'nombre' => ['required', 'string', 'max:255'],
+                'correo' => ['required', 'string', 'email', 'max:255', Rule::unique('users', 'email')],
+                'contraseña' => $this->passwordRules(),
+                // Activar opción en config/jestream.php cuando se implemente el sistema
+                // de términos y política de privacidad
+                'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
+            ],
+            [
+                'contraseña.confirmed' => 'La confirmación de contraseña no coincide con la contraseña provista.'
+            ]
+        )->validate();
 
         return User::create([
-            'name' => $input['name'],
-            'email' => $input['email'],
-            'password' => Hash::make($input['password']),
+            'name' => $input['nombre'],
+            'email' => $input['correo'],
+            'password' => Hash::make($input['contraseña']),
         ]);
     }
 }

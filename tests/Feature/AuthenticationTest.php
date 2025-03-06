@@ -41,4 +41,16 @@ class AuthenticationTest extends TestCase
 
         $this->assertGuest();
     }
+
+    public function test_users_can_see_wrong_credentials_error_message(): void
+    {
+        User::factory()->create();
+        $response = $this->post('/login', [
+            'email' => 'correofalso123@gmail.com',
+            'password' => 'wrong-password',
+        ]);
+        $this->assertGuest();
+        $response->assertSessionHasErrors('email');
+    }
+
 }

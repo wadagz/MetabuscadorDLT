@@ -35,19 +35,15 @@ class RegistrationTest extends TestCase
 
     public function test_new_users_can_register(): void
     {
-        if (! Features::enabled(Features::registration())) {
-            $this->markTestSkipped('Registration support is not enabled.');
-        }
-
         $response = $this->post('/register', [
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'password' => 'password',
-            'password_confirmation' => 'password',
+            'nombre' => 'Test User',
+            'correo' => 'test@example.com',
+            'contraseña' => 'Superpassword1!',
+            'contraseña_confirmation' => 'Superpassword1!',
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature(),
         ]);
 
-        $this->assertAuthenticated();
+        $this->assertAuthenticated('web');
         $response->assertRedirect(route('dashboard', absolute: false));
     }
 }
