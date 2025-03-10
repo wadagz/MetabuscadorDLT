@@ -17,6 +17,8 @@ return new class extends Migration
             $table->text('descripcion');
             $table->decimal('latitud', 10, 8);
             $table->decimal('longitud', 11, 8);
+            $table->unsignedInteger('id_municipio');
+            $table->unsignedTinyInteger('id_estado');
             $table->timestamps();
         });
     }

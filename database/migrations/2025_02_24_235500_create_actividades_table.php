@@ -16,11 +16,6 @@ return new class extends Migration
             $table->string('nombre', length: 100);
             $table->text('descripcion');
             $table->float('precio', precision: 2);
-
-            $table->foreignId('destino_id')->constrained('destinos')->onDelete('cascade');
-            $table->foreignId('direccion_id')->constrained('direcciones')->onDelete('cascade');
-            $table->foreignId('tipo_actividad_id')->constrained('tipos_actividad')->onDelete('cascade');
-
             $table->timestamps();
         });
     }

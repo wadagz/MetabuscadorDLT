@@ -13,9 +13,6 @@ return new class extends Migration
     {
         Schema::create('horarios_eventuales', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('actividad_id')
-                ->constrained('actividades')
-                ->onDelete('cascade');
             $table->date('fecha');
             $table->time('hora_inicio');
             $table->time('hora_fin');

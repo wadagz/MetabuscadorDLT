@@ -13,9 +13,6 @@ return new class extends Migration
     {
         Schema::create('horarios_semanales', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('actividad_id')
-                ->constrained('actividades')
-                ->onDelete('cascade');
             $table->unsignedTinyInteger('dia_semana');
             $table->time('hora_apertura');
             $table->time('hora_cierre');

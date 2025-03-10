@@ -18,10 +18,6 @@ return new class extends Migration
             $table->unsignedInteger('id_municipio');
             $table->unsignedTinyInteger('id_estado');
             $table->unsignedInteger('codigo_postal');
-
-            $table->foreign('id_tipo_asentamiento')->references('id')->on('tipos_asentamiento');
-            $table->foreign('id_municipio')->references('id')->on('municipios');
-            $table->foreign('id_estado')->references('id')->on('estados');
         });
     }
 

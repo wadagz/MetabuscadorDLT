@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('preferencias_usuarios', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('usuario_id')->constrained('users', 'id')->cascadeOnDelete();
-            $table->foreignId('preferencia_id')->constrained('preferencias', 'id')->cascadeOnDelete();
             $table->timestamps();
         });
     }

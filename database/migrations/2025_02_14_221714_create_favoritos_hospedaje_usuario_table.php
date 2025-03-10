@@ -14,8 +14,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('favoritos_hospedaje_usuario', function (Blueprint $table) {
-            $table->foreignId('hospedaje_id')->constrained('hospedajes')->cascadeOnDelete();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
         });
     }

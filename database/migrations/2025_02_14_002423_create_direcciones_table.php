@@ -16,8 +16,6 @@ return new class extends Migration
             $table->string('nombre', length: 100);
             $table->decimal('latitud', 10, 8);
             $table->decimal('longitud', 11, 8);
-            $table->foreignId('id_tipo_vialidad')->constrained('tipos_vialidad');
-            $table->foreignId('id_asentamiento')->constrained('asentamientos');
             $table->timestamps();
         });
     }

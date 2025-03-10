@@ -15,8 +15,6 @@ return new class extends Migration
             $table->unsignedInteger('id')->primary();
             $table->string('nombre', length: 50);
             $table->unsignedTinyInteger('id_estado');
-
-            $table->foreign('id_estado')->references('id')->on('estados');
         });
     }
 
