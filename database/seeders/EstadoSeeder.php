@@ -13,39 +13,45 @@ class EstadoSeeder extends Seeder
      */
     public function run(): void
     {
+        $csvFile = base_path('database/seeds/data/estados.csv');  // Adjust the path as needed
+        $handle = fopen($csvFile, 'r');
+
+        $batchSize = 10000; // Process 10,000 records at a time to avoid memory issues
+        $data = [];
+        $rowCount = 0;
+
+        while (($row = fgetcsv($handle, 1000, ',', escape: "")) !== FALSE) {
+            if ($rowCount === 0) {
+                // Skip the first row if it's the header row
+                $rowCount++;
+                continue;
+            }
+
+            // Process each row as needed (mapping CSV data to database columns)
+            $data[] = [
+                'id' => $row[0],
+                'nombre' => $row[1],
+                'abreviatura' => $row[2],
+            ];
+
+            // Insert in batches
+            if (count($data) >= $batchSize) {
+                DB::table('estados')->insert($data);
+                $data = [];  // Reset data array for next batch
+            }
+        }
+
+        // Insert any remaining records
+        if (count($data) > 0) {
+            DB::table('estados')->insert($data);
+        }
+
+        fclose($handle);
+
         DB::table('estados')->insert([
-            [ 'id' => 9, 'nombre' => 'Ciudad de México', 'abreviatura' => 'AGU'],
-            [ 'id' => 1, 'nombre' => 'Aguascalientes', 'abreviatura' => 'BCN'],
-            [ 'id' => 2, 'nombre' => 'Baja California', 'abreviatura' => 'BCS'],
-            [ 'id' => 3, 'nombre' => 'Baja California Sur', 'abreviatura' => 'CAM'],
-            [ 'id' => 4, 'nombre' => 'Coahuila', 'abreviatura' => 'CHP'],
-            [ 'id' => 5, 'nombre' => 'Coahuila de Zaragoza', 'abreviatura' => 'CHH'],
-            [ 'id' => 6, 'nombre' => 'Colima', 'abreviatura' => 'COA'],
-            [ 'id' => 7, 'nombre' => 'Chiapas', 'abreviatura' => 'COL'],
-            [ 'id' => 8, 'nombre' => 'Chihuahua', 'abreviatura' => 'CMX'],
-            [ 'id' => 10, 'nombre' => 'Durango', 'abreviatura' => 'DUR'],
-            [ 'id' => 11, 'nombre' => 'Guanajuato', 'abreviatura' => 'GUA'],
-            [ 'id' => 12, 'nombre' => 'Guerrero', 'abreviatura' => 'GRO'],
-            [ 'id' => 13, 'nombre' => 'Hidalgo', 'abreviatura' => 'HID'],
-            [ 'id' => 14, 'nombre' => 'Jalisco', 'abreviatura' => 'JAL'],
-            [ 'id' => 15, 'nombre' => 'México', 'abreviatura' => 'MEX'],
-            [ 'id' => 16, 'nombre' => 'Michoacán', 'abreviatura' => 'MIC'],
-            [ 'id' => 17, 'nombre' => 'Morelos', 'abreviatura' => 'MOR'],
-            [ 'id' => 18, 'nombre' => 'Nayarit', 'abreviatura' => 'NAY'],
-            [ 'id' => 19, 'nombre' => 'Nuevo León', 'abreviatura' => 'NLE'],
-            [ 'id' => 20, 'nombre' => 'Oaxaca', 'abreviatura' => 'OAX'],
-            [ 'id' => 21, 'nombre' => 'Puebla', 'abreviatura' => 'PUE'],
-            [ 'id' => 22, 'nombre' => 'Querétaro', 'abreviatura' => 'QUE'],
-            [ 'id' => 23, 'nombre' => 'Quintana Roo', 'abreviatura' => 'ROO'],
-            [ 'id' => 24, 'nombre' => 'San Luis Potosí', 'abreviatura' => 'SLP'],
-            [ 'id' => 25, 'nombre' => 'Sinaloa', 'abreviatura' => 'SIN'],
-            [ 'id' => 26, 'nombre' => 'Sonora', 'abreviatura' => 'SON'],
-            [ 'id' => 27, 'nombre' => 'Tabasco', 'abreviatura' => 'TAB'],
-            [ 'id' => 28, 'nombre' => 'Tamaulipas', 'abreviatura' => 'TAM'],
-            [ 'id' => 29, 'nombre' => 'Tlaxcala', 'abreviatura' => 'TLA'],
-            [ 'id' => 30, 'nombre' => 'Veracruz', 'abreviatura' => 'VER'],
-            [ 'id' => 31, 'nombre' => 'Yucatán', 'abreviatura' => 'YUC'],
-            [ 'id' => 32, 'nombre' => 'Zacatecas', 'abreviatura' => 'ZAC'],
+            'id' => 0,
+            'nombre' => 'Desconocido',
+            'abreviatura' => 'DES'
         ]);
     }
 }

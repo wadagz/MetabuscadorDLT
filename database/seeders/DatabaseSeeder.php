@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             TipoAsentamientoSeeder::class,
             AsentamientoSeeder::class,
             TipoVialidadSeeder::class,
+            DestinoSeeder::class
         ]);
     }
 }
