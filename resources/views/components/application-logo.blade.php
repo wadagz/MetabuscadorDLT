@@ -1,4 +1,4 @@
 <a href="/">
-    <img src="{{ asset('storage/Metabuscador_DLT.png') }}" {{ $attributes }}
+    <img src="{{ asset('images/logotipo.png') }}" {{ $attributes }}
     >
 </a>
