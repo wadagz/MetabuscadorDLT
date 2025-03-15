@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Inertia\{ Inertia, Response };
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+    return Inertia::render('Landing');
+})->name('landing');
 
 
 Route::middleware([
@@ -22,8 +22,4 @@ Route::middleware([
     Route::get('/customer-help', function () {
         return view('customer-help');
     })->name('customer-help');
-
-    Route::get('prueba', function () {
-        return Inertia::render('Prueba', ['message' => 'Esta es una prueba.']);
-    });
 });
