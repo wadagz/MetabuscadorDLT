@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-<div class="bg-light">
+<div class="bg-light rounded shadow mx-4">
 
     <!-- Carousel component -->
     <Splide :options="splideOptions" :aria-label="ariaLabel" :has-track="false">
@@ -16,10 +16,18 @@ defineProps({
         <div class="splide__track splide__track--slide splide__track--ltr splide__track--draggable">
             <div class="splide__list">
                 <SplideSlide v-for="image in images" :key="image.alt">
-                <a href="https://google.com">
-                    <img :src="image.src" class="carousel-image" :alt="image.alt">
-                </a>
-                <p>{{  image.alt }}</p>
+                    <div class="carousel-hospedaje-card card">
+                        <div class="card-body">
+                            <a href="https://google.com">
+                                <img :src="image.src" class="carousel-image" :alt="image.alt">
+                            </a>
+                        </div>
+                        <div class="card-header">
+                            <p class="nombre-destino"><b>{{  image.alt }}</b></p>
+                            <p>Precio por noche: 1000.00 mxn.</p>
+                        </div>
+                    </div>
+
             </SplideSlide>
             </div>
 
@@ -47,10 +55,13 @@ defineProps({
 <style scoped>
 .carousel-image {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.carousel-hospedaje-card {
+    height: 100%;
 }
 
 .arrow-color {
@@ -71,5 +82,7 @@ defineProps({
 
 .splide__list p {
     text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 </style>

@@ -14,7 +14,7 @@ defineProps({
     <CarouselHospedajes
         aria-label="Destinos Recomendados"
         :splideOptions="{
-            perPage: 3,
+            perPage: 4,
             perMove: 1,
             pagination: false,
             wheel: true,
@@ -78,7 +78,7 @@ defineProps({
     <CarouselHospedajes
         aria-label="Destinos Recomendados"
         :splideOptions="{
-            perPage: 3,
+            perPage: 4,
             perMove: 1,
             pagination: false,
             wheel: true,
