@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Inertia\{ Inertia, Response };
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+    return Inertia::render('Landing');
+})->name('landing');
 
 
 Route::middleware([
