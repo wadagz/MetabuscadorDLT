@@ -1,19 +1,22 @@
 import './bootstrap';
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
+import VueSplide from '@splidejs/vue-splide'
 import AppLayout from './Layouts/App.vue'
 
 createInertiaApp({
     resolve: name => {
-      const pages = import.meta.glob('./Pages/**/*.vue', { eager: true })
-      let page =  pages[`./Pages/${name}.vue`]
-      page.default.layout = page.default.layout || AppLayout
+        const pages = import.meta.glob('./Pages/**/*.vue', { eager: true })
+        let page =  pages[`./Pages/${name}.vue`]
+        page.default.layout = page.default.layout || AppLayout
 
-      return page
+        return page
     },
     setup({ el, App, props, plugin }) {
-      createApp({ render: () => h(App, props) })
-        .use(plugin)
-        .mount(el)
+        const app = createApp({ render: () => h(App, props) })
+        app.use(plugin)
+        app.use(VueSplide)
+        app.mount(el)
+        return app
     },
 })
