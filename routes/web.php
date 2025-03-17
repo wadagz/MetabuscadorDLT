@@ -1,12 +1,9 @@
 <?php
 
+use App\Http\Controllers\DestinoController;
 use Illuminate\Support\Facades\Route;
-use Inertia\{ Inertia, Response };
 
-Route::get('/', function () {
-    return Inertia::render('Landing');
-})->name('landing');
-
+Route::get('/', [DestinoController::class, 'index'])->name('landing');
 
 Route::middleware([
     'auth:sanctum',
