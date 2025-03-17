@@ -13,12 +13,15 @@ return new class extends Migration
     {
         Schema::create('destinos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', length: 100);
+            $table->string('nombre');
+            $table->string('municipio')->nullable();
+            $table->string('estado');
             $table->text('descripcion')->nullable();
+            $table->decimal('precio_promedio', 8, 2);
             $table->decimal('latitud', 10, 8);
             $table->decimal('longitud', 11, 8);
-            $table->unsignedInteger('id_municipio');
-            $table->unsignedTinyInteger('id_estado');
+            $table->string('img_path')->nullable();
+
             $table->timestamps();
         });
     }

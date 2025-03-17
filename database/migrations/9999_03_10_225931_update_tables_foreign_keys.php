@@ -24,11 +24,6 @@ return new class extends Migration
             $table->foreign('id_estado')->references('id')->on('estados');
         });
 
-        Schema::table('destinos', function (Blueprint $table) {
-            $table->foreign('id_municipio')->references('id')->on('municipios')->cascadeOnDelete();
-            $table->foreign('id_estado')->references('id')->on('estados')->cascadeOnDelete();
-        });
-
         Schema::table('municipios', function (Blueprint $table) {
             $table->foreign('id_estado')->references('id')->on('estados');
         });
