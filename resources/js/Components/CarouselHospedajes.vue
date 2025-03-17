@@ -3,7 +3,7 @@
 defineProps({
     ariaLabel: String,
     splideOptions: {},
-    images: [],
+    destinos: Array,
 })
 </script>
 
@@ -15,16 +15,16 @@ defineProps({
         <!-- Carousel container -->
         <div class="splide__track splide__track--slide splide__track--ltr splide__track--draggable">
             <div class="splide__list">
-                <SplideSlide v-for="image in images" :key="image.alt">
+                <SplideSlide v-for="destino in destinos" :key="destino.id">
                     <div class="carousel-hospedaje-card card">
                         <div class="card-body">
                             <a href="https://google.com">
-                                <img :src="image.src" class="carousel-image" :alt="image.alt">
+                                <img :src="destino.img_path" class="carousel-image" :alt="destino.nombre">
                             </a>
                         </div>
                         <div class="card-header">
-                            <p class="nombre-destino"><b>{{  image.alt }}</b></p>
-                            <p>Precio por noche: 1000.00 mxn.</p>
+                            <p class="nombre-destino"><b>{{  destino.nombre }}</b></p>
+                            <p>Precio por noche: {{ destino.precio_promedio }} mxn.</p>
                         </div>
                     </div>
 
