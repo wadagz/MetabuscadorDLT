@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('propietarios', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', length: 100);
+            $table->string('nombre');
             $table->string('email');
-            $table->string('teléfono', length: 17);
+            $table->string('telefono', length: 17);
             $table->timestamps();
         });
     }
