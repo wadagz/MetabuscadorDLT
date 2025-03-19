@@ -1,8 +1,12 @@
 <?php
 
 use App\Http\Controllers\DestinoController;
+use App\Http\Controllers\LandingPageController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/landing', [LandingPageController::class, 'index']);
+
+/*
 Route::get('/', [DestinoController::class, 'index'])->name('landing');
 
 Route::middleware([
@@ -20,3 +24,4 @@ Route::middleware([
         return view('customer-help');
     })->name('customer-help');
 });
+*/
