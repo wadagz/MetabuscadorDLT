@@ -51,8 +51,8 @@
                 </div>
             @else
                 <div class="sesion">
-                    <li> <a href="{{ route('login') }}" class="btn btn-info"> Iniciar Sesión </a> </li>
-                    <li> <a href="{{ route('register') }}" class="btn btn-info"> Registrarse </a> </li>
+                    <a href="{{ route('login') }}" class="btn btn-info"> Iniciar Sesión </a>
+                    <a href="{{ route('register') }}" class="btn btn-info"> Registrarse </a>
                 </div>
             @endauth
         </div>
