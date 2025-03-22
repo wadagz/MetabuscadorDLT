@@ -11,11 +11,11 @@
         @csrf
         @method($atMethod)
         <fieldset>
-             <legend>{{ $legend }}</legend>
-             <div class="row mb-5">
+             <legend class="text-2xl mb-4">{{ $legend }}</legend>
+             <div class="mb-5">
                 {{ $slot }}
              </div>
-             <x-button type="submit" class="btn-primary">{{ $btnText }}</x-button>
+             <x-button type="submit" class="bg-primary-300 text-white px-2 py-1 mb-4">{{ $btnText }}</x-button>
         </fieldset>
     </form>
 </div>

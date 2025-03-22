@@ -8,23 +8,25 @@ defineProps({
 </script>
 
 <template>
-<div class="bg-light rounded shadow mx-4">
+<div class="bg-light rounded-lg shadow mx-auto w-3/4">
 
     <!-- Carousel component -->
-    <Splide :options="splideOptions" :aria-label="ariaLabel" :has-track="false">
+    <Splide :options="splideOptions" :aria-label="ariaLabel" :has-track="false" class="!py-4 !px-10">
         <!-- Carousel container -->
         <div class="splide__track splide__track--slide splide__track--ltr splide__track--draggable">
             <div class="splide__list">
-                <SplideSlide v-for="destino in destinos" :key="destino.id">
-                    <div class="carousel-hospedaje-card card">
-                        <div class="card-body">
-                            <a href="https://google.com">
-                                <img :src="destino.img_path" class="carousel-image" :alt="destino.nombre">
+                <SplideSlide v-for="destino in destinos" :key="destino.id" class="splide__slide is-active is-visible">
+                    <div class="rounded bg-white border border-gray-200 h-full shadow-md grid grid-rows-3">
+                        <div class="row-span-2">
+                            <a href="https://google.com" class="">
+                                <img :src="destino.img_path" class="rounded-md h-full" :alt="destino.nombre">
                             </a>
                         </div>
-                        <div class="card-header">
-                            <p class="nombre-destino"><b>{{  destino.nombre }}</b></p>
-                            <p>Precio por noche: {{ destino.precio_promedio }} mxn.</p>
+                        <div class="row-start-3">
+                            <div class="mx-4">
+                                <p><b>{{  destino.nombre }}</b></p>
+                                <p>Precio por noche: {{ destino.precio_promedio }} mxn.</p>
+                            </div>
                         </div>
                     </div>
 
@@ -56,8 +58,7 @@ defineProps({
 .carousel-image {
     display: block;
     width: 100%;
-    height: 100%;
-    border-radius: 5px;
+    height: 30%;
 }
 
 .carousel-hospedaje-card {
@@ -80,9 +81,9 @@ defineProps({
     fill: rgb(50, 93, 136);
 }
 
-.splide__list p {
+/* .splide__list p {
     text-align: center;
     margin-top: 0;
     margin-bottom: 0;
-}
+} */
 </style>
