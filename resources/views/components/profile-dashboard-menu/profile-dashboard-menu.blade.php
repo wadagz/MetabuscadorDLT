@@ -1,5 +1,5 @@
-<div class="card py-4 px-4">
-    <div class="d-grid gap-4">
+<div class="py-4 px-4 bg-light rounded-md border border-gray-200 shadow-sm">
+    <div class="grid grid-rows-3 gap-4">
         <x-profile-dashboard-menu.anchor href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
             Mi perfil
         </x-profile-dashboard-menu.anchor>
