@@ -2,6 +2,6 @@
 
 @error($for)
     @foreach ($errors->get($for) as $error)
-    <p class="invalid-feedback">{{ $error }}</p>
+    <p class="text-red-500">{{ $error }}</p>
     @endforeach
 @enderror

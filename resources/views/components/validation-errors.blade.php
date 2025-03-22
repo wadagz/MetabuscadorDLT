@@ -1,5 +1,5 @@
 @if ($errors->any())
-    <div {{ $attributes }}>
+    <div class="max-w-20"{{ $attributes }}>
 
         <ul class="mt-3">
             @foreach ($errors->all() as $error)
