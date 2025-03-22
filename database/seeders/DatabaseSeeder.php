@@ -22,11 +22,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            EstadoSeeder::class,
-            MunicipioSeeder::class,
-            TipoAsentamientoSeeder::class,
-            AsentamientoSeeder::class,
-            TipoVialidadSeeder::class,
             DestinoSeeder::class
         ]);
     }
