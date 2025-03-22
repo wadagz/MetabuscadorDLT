@@ -64,8 +64,8 @@
                     </div>
                 @else
                     <div>
-                        <a href="{{ route('login') }}" class="text-white bg-info rounded p-2 mx-1 hover:bg-cyan-600">Iniciar sesión</a>
-                        <a href="{{ route('register') }}" class="text-white bg-info rounded p-2 mx-1 hover:bg-cyan-600">Registrarse</a>
+                        <a href="{{ route('login') }}" class="text-black rounded-md bg-light p-2 hover:bg-neutral-200 mr-4">Iniciar sesión</a>
+                        <a href="{{ route('register') }}" class="text-black rounded-md bg-light p-2 hover:bg-neutral-200">Registrarse</a>
                     </div>
                 @endauth
             </div>

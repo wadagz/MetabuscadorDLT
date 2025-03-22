@@ -8,21 +8,25 @@ defineProps({
 </script>
 
 <template>
-<div class="bg-light rounded-lg shadow px-4 m-4">
+<div class="bg-light rounded-lg shadow mx-auto w-3/4">
 
     <!-- Carousel component -->
-    <Splide :options="splideOptions" :aria-label="ariaLabel" :has-track="false">
+    <Splide :options="splideOptions" :aria-label="ariaLabel" :has-track="false" class="!py-4 !px-10">
         <!-- Carousel container -->
         <div class="splide__track splide__track--slide splide__track--ltr splide__track--draggable">
             <div class="splide__list">
-                <SplideSlide v-for="destino in destinos" :key="destino.id">
-                    <div class="carousel-hospedaje-card rounded bg-white border-black shadow-md">
-                        <div class="flex flex-wrap justify-center justify-items-center">
-                            <a href="https://google.com" class="max-h-1/2">
-                                <img :src="destino.img_path" class="rounded-md max-h-1/2" :alt="destino.nombre">
+                <SplideSlide v-for="destino in destinos" :key="destino.id" class="splide__slide is-active is-visible">
+                    <div class="rounded bg-white border border-gray-200 h-full shadow-md grid grid-rows-3">
+                        <div class="row-span-2">
+                            <a href="https://google.com" class="">
+                                <img :src="destino.img_path" class="rounded-md h-full" :alt="destino.nombre">
                             </a>
-                            <p><b>{{  destino.nombre }}</b></p>
-                            <p>Precio por noche: {{ destino.precio_promedio }} mxn.</p>
+                        </div>
+                        <div class="row-start-3">
+                            <div class="mx-4">
+                                <p><b>{{  destino.nombre }}</b></p>
+                                <p>Precio por noche: {{ destino.precio_promedio }} mxn.</p>
+                            </div>
                         </div>
                     </div>
 

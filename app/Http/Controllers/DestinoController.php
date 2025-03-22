@@ -10,8 +10,8 @@ class DestinoController extends Controller
 {
     public function index(): Response
     {
-        $destinosPopulares = Destino::all();
-        $destinosRecomendados = Destino::all();
+        $destinosPopulares = Destino::inRandomOrder()->limit(10)->get();
+        $destinosRecomendados = Destino::inRandomOrder()->limit(10)->get();
         return Inertia::render('Landing', [
             'destinosPopulares' => $destinosPopulares,
             'destinosRecomendados' => $destinosRecomendados,
