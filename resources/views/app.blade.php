@@ -18,8 +18,8 @@
     </head>
     <body class="font-sans antialiased">
         <x-banner />
-        {{-- @livewire('navigation-menu') --}}
-        <x-navBar />
+        @livewire('navigation-menu')
+        {{-- <x-navBar /> --}}
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
 
             <!-- Page Content -->
