@@ -1,28 +1,22 @@
-<nav x-data="{ open: false }" class="navbar navbar-expand-lg bg-primary">
+<nav x-data="{ open: false }" class="navbar navbar-expand-lg bg-primary-500">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto" />
+                <div class="flex items-center">
+                    <a href="{{ route('landing') }}" class="bg-light hover:bg-zinc-200 rounded py-2">
+                        <span class="mx-2"><b>Metabuscador</b></span>
+                        <img src="{{ asset('images/logotipo.png') }}" class="inline h-9 w-auto mr-2" />
                     </a>
-                </div>
-
-                <!-- Aquí van los links a otras páginas -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        Dashboard
-                    </x-nav-link>
                 </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 @auth
                     <div>
-                        <a href="{{ route('login') }}" class="btn btn-info">Recientes</a>
-                        <a href="{{ route('register') }}" class="btn btn-info">Favoritos</a>
+                        <a href="{{ route('login') }}" class="text-black rounded bg-light p-2 hover:bg-neutral-200">Recientes</a>
+                        <a href="{{ route('register') }}" class="text-black rounded bg-light p-2 hover:bg-neutral-200">Favoritos</a>
                     </div>
                     <!-- Menú desplegable -->
                     <div class="ms-3 relative">
@@ -64,8 +58,8 @@
                     </div>
                 @else
                     <div>
-                        <a href="{{ route('login') }}" class="btn btn-info">Iniciar sesión</a>
-                        <a href="{{ route('register') }}" class="btn btn-info">Registrarse</a>
+                        <a href="{{ route('login') }}" class="text-white bg-info rounded p-2 mx-1 hover:bg-cyan-600">Iniciar sesión</a>
+                        <a href="{{ route('register') }}" class="text-white bg-info rounded p-2 mx-1 hover:bg-cyan-600">Registrarse</a>
                     </div>
                 @endauth
             </div>
