@@ -61,7 +61,7 @@ return new class extends Migration
         });
 
         Schema::table('preferencias_usuarios', function (Blueprint $table) {
-            $table->foreignId('usuario_id')->constrained('users', 'id')->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained('users', 'id')->cascadeOnDelete();
             $table->foreignId('preferencia_id')->constrained('preferencias', 'id')->cascadeOnDelete();
         });
     }
