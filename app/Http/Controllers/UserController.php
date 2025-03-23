@@ -14,6 +14,6 @@ class UserController extends Controller
         // no se encuentre listado en el arreglo devuelto por $request->except.
         $user = $request->user();
         $user->preferencias()->sync($request->except(['_token']));
-        return redirect()->route('user-preferences')->with(['message' => 'Preferencias actualizadas.']);
+        return redirect()->route('user-preferences')->with('success', 'Preferencias actualizadas correctamente.');
     }
 }
