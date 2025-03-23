@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\DestinoController;
-use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\{ HospedajeController, LandingPageController };
 use Illuminate\Support\Facades\Route;
 
 Route::get('/landing', [LandingPageController::class, 'index']);
 
 Route::get('/', [DestinoController::class, 'index'])->name('landing');
+
+Route::get('/hospedajes', [HospedajeController::class, 'searchHospedaje'])->name('searchHospedaje');
 
 Route::middleware([
     'auth:sanctum',
