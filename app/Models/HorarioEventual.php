@@ -13,8 +13,8 @@ class HorarioEventual extends Model
 
     protected $table = 'horarios_eventuales';
 
-    public function evento(): BelongsTo
+    public function actividad(): BelongsTo
     {
-        return $this->belongsTo(Evento::class);
+        return $this->belongsTo(Actividad::class);
     }
 }

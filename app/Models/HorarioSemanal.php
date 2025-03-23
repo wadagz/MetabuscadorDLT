@@ -13,8 +13,8 @@ class HorarioSemanal extends Model
 
     protected $table = 'horarios_semanales';
 
-    public function lugarInteres(): BelongsTo
+    public function actividad(): BelongsTo
     {
-        return $this->belongsTo(LugarInteres::class);
+        return $this->belongsTo(Actividad::class);
     }
 }
