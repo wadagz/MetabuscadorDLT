@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Enums\PreferenciaEnum;
+use Illuminate\Support\Facades\Auth;
 
 class UserPreferenceForm extends Component
 {
@@ -13,33 +14,23 @@ class UserPreferenceForm extends Component
     public array $pregunta4;
     public array $pregunta5;
 
-    protected $listeners = ['submitFormData'];
-
-    // Probando como procesar los datos del form
-    // sin necesidad de hacer binding.
-    public function submitFormData($formData)
-    {
-        // Loop through the FormData and process the values
-        foreach ($formData as $key => $value) {
-            // You can now process the $key (e.g., 'name', 'email', 'address')
-            // and $value (the corresponding form value).
-            dd($key, $value);
-        }
-    }
+    public $currentPreferences;
 
     public function mount()
     {
+        // Obtiene los datos de las preferencias divididos por pregunta.
         $this->pregunta1 = PreferenciaEnum::numPregunta(1);
         $this->pregunta2 = PreferenciaEnum::numPregunta(2);
         $this->pregunta3 = PreferenciaEnum::numPregunta(3);
         $this->pregunta4 = PreferenciaEnum::numPregunta(4);
         $this->pregunta5 = PreferenciaEnum::numPregunta(5);
-    }
 
-    public function save()
-    {
-        dd(request());
-        return;
+        // Obtiene las preferencias actuales del usuario.
+        $user = Auth::user();
+        $this->currentPreferences = $user->preferencias;
+        $this->currentPreferences = $this->currentPreferences->map(function ($preferencia) {
+            return $preferencia->id;
+        });
     }
 
     public function render()

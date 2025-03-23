@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\DestinoController;
-use App\Http\Controllers\{ HospedajeController, LandingPageController };
+use App\Http\Controllers\{ HospedajeController, LandingPageController, UserController};
 use Illuminate\Support\Facades\Route;
 
 Route::get('/landing', [LandingPageController::class, 'index']);
@@ -24,4 +24,6 @@ Route::middleware([
     Route::get('/customer-help', function () {
         return view('customer-help');
     })->name('customer-help');
+
+    Route::post('/preferences', [UserController::class, 'storePreferences'])->name('user-preferences.store');
 });
