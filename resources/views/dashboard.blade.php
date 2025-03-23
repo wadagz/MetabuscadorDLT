@@ -6,11 +6,11 @@
     </x-slot>
 
     <!-- Posicionamiento no responsivo en dimensiones pequeñas de navegador -->
-    <div class="container mx-auto grid grid-cols-4 gap-16">
-        <div class="col-start-1">
+    <div class="container mx-auto md:grid md:grid-cols-4 md:gap-16">
+        <div class="md:col-start-1">
             <x-profile-dashboard-menu />
         </div>
-        <div class="col-start-2 col-span-3">
+        <div class="md:col-start-2 md:col-span-3">
             <!-- Actualizar información del perfil -->
             <livewire:update-user-info-form
                 legend="Cambiar información de perfil"
