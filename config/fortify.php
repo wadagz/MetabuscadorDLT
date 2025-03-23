@@ -72,8 +72,10 @@ return [
     | and the user is authenticated. You are free to change this value.
     |
     */
-
-    'home' => '/dashboard',
+    // Cambiado a preferences para que los nuevos usuarios puedan establecer
+    // sus preferencias.
+    // El redireccionamiento tras login fue modificado en FortifyServiceProvide.php.
+    'home' => '/preferences',
 
     /*
     |--------------------------------------------------------------------------
