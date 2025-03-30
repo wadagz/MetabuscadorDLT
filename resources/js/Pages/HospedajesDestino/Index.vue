@@ -1,4 +1,5 @@
 <script setup>
+import { provide } from 'vue';
 import SearchBar from '../../Components/SearchBar.vue';
 import CardHospedaje from './Partials/CardHospedaje.vue';
 import FilterBar from './Partials/FilterBar.vue';
@@ -10,7 +11,11 @@ const props = defineProps({
     puntoPartida: String,
     hospedajes: Array,
     nombresDestinos: Array,
+    isLoggedIn: Boolean,
 });
+
+// Pass the isLoggedIn to child components, like the CardHospedaje component.
+provide('isLoggedIn', props.isLoggedIn);
 
 </script>
 
