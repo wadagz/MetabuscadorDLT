@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\DestinoController;
-use App\Http\Controllers\{ HospedajeController, LandingPageController, UserController};
+use App\Http\Controllers\{FavoritosHospedajeUsuarioController, HospedajeController, LandingPageController, UserController};
 use Illuminate\Support\Facades\Route;
 
 Route::get('/landing', [LandingPageController::class, 'index']);
@@ -26,4 +26,6 @@ Route::middleware([
     })->name('customer-help');
 
     Route::post('/preferences', [UserController::class, 'storePreferences'])->name('user-preferences.store');
+    Route::post('/favoritos/{hospedaje_id}', [FavoritosHospedajeUsuarioController::class, 'addToFavorites'])->name('add-hospedaje-to-favorites');
+    Route::delete('/favoritos/{hospedaje_id}', [FavoritosHospedajeUsuarioController::class, 'removeFromFavorites'])->name('remove-hospedaje-from-favorites');
 });
