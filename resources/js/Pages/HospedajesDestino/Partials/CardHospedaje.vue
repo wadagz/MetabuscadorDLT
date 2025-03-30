@@ -1,4 +1,6 @@
 <script setup>
+import { formatPrice } from '../../../Utils/priceFormatter';
+
 const props = defineProps({
     hospedaje: Object,
 })
@@ -8,7 +10,7 @@ const props = defineProps({
     <div class="m-2 bg-light rounded-md border border-gray-400 shadow">
         <div class="grid grid-cols-2 ml-5 mt-2 mb-2 gap-4">
             <h2 class="text-lg">{{ props.hospedaje.nombre }}</h2>
-            <p class="text-lg">Precio por noche: ${{ props.hospedaje.precio }} mxn</p>
+            <p class="text-lg">Precio por noche: {{ formatPrice(props.hospedaje.precio) }}</p>
         </div>
         <hr class="mx-4 border border-primary-500">
         <div class="grid grid-cols-2">

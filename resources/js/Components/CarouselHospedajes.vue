@@ -1,4 +1,5 @@
 <script setup>
+import { formatPrice } from '../Utils/priceFormatter';
 
 defineProps({
     ariaLabel: String,
@@ -25,7 +26,7 @@ defineProps({
                         <div class="row-start-3">
                             <div class="mx-4">
                                 <p><b>{{  destino.nombre }}</b></p>
-                                <p>Precio por noche: {{ destino.precio_promedio }} mxn.</p>
+                                <p>Precio por noche: {{ formatPrice(destino.precio_promedio) }}</p>
                             </div>
                         </div>
                     </div>
