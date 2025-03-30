@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\TipoHospedaje;
-use App\Models\Propietario;
+use App\Enums\TipoHospedajeEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,6 +17,7 @@ return new class extends Migration
             $table->string('nombre', length: 100);
             $table->float('precio', precision: 2);
             $table->string('url', length: 500);
+            $table->enum('tipo_hospedaje', TipoHospedajeEnum::values());
             $table->timestamps();
         });
     }

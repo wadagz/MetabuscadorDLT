@@ -36,7 +36,6 @@ return new class extends Migration
         Schema::table('hospedajes', function (Blueprint $table) {
             // Agregar atributos para almacenar llaves foráneas
             // $table->foreignId('direccion_id')->constrained('direcciones');
-            $table->foreignId('tipo_hospedaje_id')->constrained('tipo_hospedajes');
             $table->foreignId('propietario_id')->constrained('propietarios');
             $table->foreignId('destino_id')->constrained('destinos')->onDelete('cascade');
         });
