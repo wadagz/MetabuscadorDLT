@@ -12,9 +12,11 @@ class DestinoController extends Controller
     {
         $destinosPopulares = Destino::inRandomOrder()->limit(10)->get();
         $destinosRecomendados = Destino::inRandomOrder()->limit(10)->get();
+        $nombresDestinos = Destino::all()->pluck('nombre')->toArray();
         return Inertia::render('Landing', [
             'destinosPopulares' => $destinosPopulares,
             'destinosRecomendados' => $destinosRecomendados,
+            'nombresDestinos' => $nombresDestinos,
         ]);
     }
 }

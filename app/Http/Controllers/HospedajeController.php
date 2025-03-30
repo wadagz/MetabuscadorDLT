@@ -13,6 +13,7 @@ class HospedajeController extends Controller
 
     public function searchHospedaje(Request $request): Response
     {
+        $nombresDestinos = Destino::all()->pluck('nombre')->toArray();
         $destino = Destino::whereLike('nombre', $request->input('destino'))->first();
         $hospedajes = Hospedaje::where('destino_id', $destino->id)->get();
 
@@ -22,6 +23,7 @@ class HospedajeController extends Controller
             'fechaRegreso' => $request->input('fechaRegreso'),
             'puntoPartida' => $request->input('puntoPartida'),
             'hospedajes' => $hospedajes,
+            'nombresDestinos' => $nombresDestinos,
         ]);
     }
 }

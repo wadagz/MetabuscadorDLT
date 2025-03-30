@@ -9,6 +9,7 @@ const props = defineProps({
     fechaRegreso: String,
     puntoPartida: String,
     hospedajes: Array,
+    nombresDestinos: Array,
 });
 
 </script>
@@ -19,6 +20,7 @@ const props = defineProps({
     :fechaPartida="fechaPartida"
     :fechaRegreso="fechaRegreso"
     :puntoPartida="puntoPartida"
+    :nombresDestinos="nombresDestinos"
 />
 
 <div class="container mx-auto mt-4 mb-4">

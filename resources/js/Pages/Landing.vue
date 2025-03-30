@@ -6,11 +6,14 @@ import SearchBar from '../Components/SearchBar.vue';
 defineProps({
     destinosPopulares: Array,
     destinosRecomendados: Array,
+    nombresDestinos: Array,
 })
 </script>
 
 <template>
-<SearchBar />
+<SearchBar
+    :nombresDestinos="nombresDestinos"
+/>
 <div class="container mx-auto px-4 py-4">
     <!-- Carousel para mastrar lista de hospedajes -->
     <h3 class="text-3xl py-4">Destinos Populares entre usuarios</h3>

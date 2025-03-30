@@ -8,6 +8,7 @@ const props = defineProps({
     fechaPartida: String | null,
     fechaRegreso: String | null,
     puntoPartida: String | null,
+    nombresDestinos: Array,
 });
 
 const form = useForm({
@@ -24,13 +25,18 @@ const submit = () => {
 </script>
 
 <template>
-<div class="mt-4 bg-light max-w-xl xl:max-w-7xl mx-auto rounded-md border border-gray-200">
+<div class="mt-4 bg-light max-w-xl xl:max-w-7xl mx-auto rounded-md border border-gray-400">
     <form @submit.prevent="submit">
         <div class="flex flex-nowrap items-center justify-evenly">
             <div class="flex-grow text-center grid grid-col-4 items-center">
                 <label class="col-start-1 col-span-4 mt-1">Destino o lugar turístico</label>
                 <Icon icon="material-symbols:search" />
-                <input name="destino" type="text" class="w-11/12 rounded-md mb-2 mt-1 py-2 col-start-2 col-span-3" placeholder="E.j. Puerto Vallarta" v-model="form.destino">
+                <input name="destino" type="text" class="w-11/12 rounded-md mb-2 mt-1 py-2 col-start-2 col-span-3" list="nomsDestinos" placeholder="E.j. Puerto Vallarta" v-model="form.destino">
+                <datalist id="nomsDestinos">
+                    <option v-for="destino in nombresDestinos" :value="destino">
+                        {{ destino }}
+                    </option>
+                </datalist>
             </div>
             <div class="flex-grow text-center grid grid-col-4 items-center">
                 <label class="col-start-1 col-span-4 mt-1">Fecha de partida</label>
