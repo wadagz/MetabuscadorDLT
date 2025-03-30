@@ -1,6 +1,7 @@
 <script setup>
 import SearchBar from '../../Components/SearchBar.vue';
 import CardHospedaje from './Partials/CardHospedaje.vue';
+import FilterBar from './Partials/FilterBar.vue';
 
 const props = defineProps({
     destino: String,
@@ -20,7 +21,9 @@ const props = defineProps({
     :puntoPartida="puntoPartida"
 />
 
-<div>Aquí van los filtros para buscar hospedajes.</div>
+<div class="container mx-auto mt-4 mb-4">
+    <FilterBar />
+</div>
 
 <div class="container mx-auto mb-2">
     <h2 class="text-xl">
