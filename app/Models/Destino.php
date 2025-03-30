@@ -18,14 +18,9 @@ class Destino extends Model
         return $this->hasMany(Hospedaje::class);
     }
 
-    public function lugaresInteres(): HasMany
+    public function actividades(): HasMany
     {
-        return $this->hasMany(LugarInteres::class);
-    }
-
-    public function eventos(): HasMany
-    {
-        return $this->hasMany(Evento::class);
+        return $this->hasMany(Actividad::class);
     }
 
 }

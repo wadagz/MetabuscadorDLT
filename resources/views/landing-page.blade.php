@@ -4,20 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> MetaBuscador </title>
-    <link rel="stylesheet" href="stylesLandingPage.css">
-    <script src="scriptsLandingPage.js"> </script>
+    <link rel="stylesheet" href="css/stylesLandingPage.css">
+    <script src="js/scriptsLandingPage.js"> </script>
 </head>
 <body>
     <header>
-        <div class="barra-navegador">
-            <div class="objetos-navegador">
-                <div class="logo">
-                    <a href="#" class="letras-logo"> MetaBuscador </a>
-                    <img src="images\logotipo.png" class="imagen-logo">
-                </div>
-                <li class="sesion"> <a href="#"> Iniciar Sesion </a> </li>
-            </div>
-        </div>
+        <x-navBar/>
     </header>
 
     <div class="buscador">
