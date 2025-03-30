@@ -13,7 +13,12 @@ const props = defineProps({
 </script>
 
 <template>
-<SearchBar/>
+<SearchBar
+    :destino="destino"
+    :fechaPartida="fechaPartida"
+    :fechaRegreso="fechaRegreso"
+    :puntoPartida="puntoPartida"
+/>
 <div>Aquí van los filtros para buscar hospedajes.</div>
 
 <div class="container mx-auto grid grid-cols-2 gap-4 h-1/2">
