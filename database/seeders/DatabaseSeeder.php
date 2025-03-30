@@ -13,15 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        // Use 'password' as default password for the user
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
-
         $this->call([
+            UserSeeder::class,
             DestinoSeeder::class,
             PropietarioSeeder::class,
             AmenidadSeeder::class,
