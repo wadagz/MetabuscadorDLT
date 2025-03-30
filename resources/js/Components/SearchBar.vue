@@ -1,6 +1,7 @@
 <script setup>
 import { Icon } from '@iconify/vue/dist/iconify.js';
 import { useForm } from '@inertiajs/vue3';
+import { toast } from 'vue3-toastify';
 
 // Será necesario cambiar los props para cuando tengamos definidos los hospedajes y la forma de buscarlos.
 const props = defineProps({
@@ -19,7 +20,20 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.get(route('searchHospedaje'));
+    form.get(route('searchHospedaje'), {
+        onError: (errors) => {
+            console.log(errors);
+            if (errors.destino == 'Ingrese un destino.') {
+                toast(errors.destino, { type: 'info'});
+            }
+            if (errors.destino == 'No se encontró el destino indicado.') {
+                toast(errors.destino, { type: 'error'})
+            }
+            // toast('Hubo un error', {
+            //     type: 'error',
+            // });
+        }
+    });
 };
 
 </script>
