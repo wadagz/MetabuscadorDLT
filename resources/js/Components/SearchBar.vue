@@ -22,16 +22,15 @@ const form = useForm({
 const submit = () => {
     form.get(route('searchHospedaje'), {
         onError: (errors) => {
-            console.log(errors);
             if (errors.destino == 'Ingrese un destino.') {
-                toast(errors.destino, { type: 'info'});
+                toast(errors.destino, { type: 'info' });
             }
             if (errors.destino == 'No se encontró el destino indicado.') {
-                toast(errors.destino, { type: 'error'})
+                toast(errors.destino, { type: 'error' })
             }
-            // toast('Hubo un error', {
-            //     type: 'error',
-            // });
+            else {
+                toast('Hubo un error', { type: 'error' });
+            }
         }
     });
 };

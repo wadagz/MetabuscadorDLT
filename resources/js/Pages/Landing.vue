@@ -1,6 +1,6 @@
 <script setup>
 import '@splidejs/splide/css/sea-green';
-import CarouselHospedajes from '../Components/CarouselHospedajes.vue';
+import CarouselDestinos from '../Components/CarouselDestinos.vue';
 import SearchBar from '../Components/SearchBar.vue';
 
 defineProps({
@@ -14,10 +14,10 @@ defineProps({
 <SearchBar
     :nombresDestinos="nombresDestinos"
 />
-<div class="container mx-auto px-4 py-4">
+<div class="container mx-auto px-4 pt-4">
     <!-- Carousel para mastrar lista de hospedajes -->
     <h3 class="text-3xl py-4">Destinos Populares entre usuarios</h3>
-    <CarouselHospedajes
+    <CarouselDestinos
         aria-label="Destinos Recomendados"
         :splideOptions="{
             perPage: 4,
@@ -31,7 +31,7 @@ defineProps({
     />
 
     <h3 class="text-3xl py-4">Destinos recomendados para ti</h3>
-    <CarouselHospedajes
+    <CarouselDestinos
         aria-label="Destinos Recomendados"
         :splideOptions="{
             perPage: 4,
