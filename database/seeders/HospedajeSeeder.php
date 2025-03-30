@@ -35,6 +35,7 @@ class HospedajeSeeder extends Seeder
                 'propietario_id' => $row[9],
                 'destino_id' => $row[10],
                 'tipo_hospedaje' => 1,
+                'descripcion' => fake()->paragraph(),
             ];
 
             // Insert in batches
