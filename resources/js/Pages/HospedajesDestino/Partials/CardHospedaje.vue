@@ -3,11 +3,17 @@ import { formatPrice } from '../../../Utils/priceFormatter';
 
 const props = defineProps({
     hospedaje: Object,
-})
+});
+
+const emit = defineEmits(['selectHospedaje']);
+
+const selectHospedaje = () => {
+    emit('selectHospedaje', props.hospedaje.id);
+};
 </script>
 
 <template>
-    <div class="m-2 bg-light rounded-md border border-gray-400 shadow">
+    <div @click="selectHospedaje" class="m-2 bg-light rounded-md border border-gray-400 shadow cursor-pointer hover:bg-gray-100 transition-colors duration-200">
         <div class="grid grid-cols-2 ml-5 mt-2 mb-2 gap-4">
             <h2 class="text-lg">{{ props.hospedaje.nombre }}</h2>
             <p class="text-lg">Precio por noche: {{ formatPrice(props.hospedaje.precio) }}</p>
@@ -22,7 +28,7 @@ const props = defineProps({
                     {{ props.hospedaje.descripcion }}
                 </div>
                 <div class="flex justify-center items-center align-middle">
-                    <a :href="props.hospedaje.url" class="bg-primary-500 rounded-md text-white p-2 transition duration-300 hover:bg-primary-400">
+                    <a :href="props.hospedaje.url" class="bg-primary-500 rounded-md text-white p-2 transition duration-300 hover:bg-primary-400" @click.stop>
                         Visitar sitio web
                     </a>
                 </div>

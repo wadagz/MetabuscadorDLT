@@ -29,7 +29,18 @@ class HospedajeController extends Controller
 
         $nombresDestinos = Destino::all()->pluck('nombre')->toArray();
         $destino = Destino::whereLike('nombre', $request->input('destino'))->first();
-        $hospedajes = Hospedaje::where('destino_id', $destino->id)->get();
+        
+        // Change this line to include the direccion relationship
+        $hospedajes = Hospedaje::with('direccion')
+            ->where('destino_id', $destino->id)
+            ->get();
+            
+        // Add logging to debug
+        \Log::info('Hospedajes count in searchHospedaje: ' . $hospedajes->count());
+        \Log::info('Hospedajes with direccion count: ' . 
+            $hospedajes->filter(function($h) { 
+                return $h->direccion !== null; 
+            })->count());
 
         return Inertia::render('HospedajesDestino/Index', [
             'destino' => $request->input('destino'),
@@ -39,5 +50,20 @@ class HospedajeController extends Controller
             'hospedajes' => $hospedajes,
             'nombresDestinos' => $nombresDestinos,
         ]);
+    }
+
+    public function getHospedajesByDestino($destinoId)
+    {
+        $hospedajes = Hospedaje::with('direccion')
+            ->where('destino_id', $destinoId)
+            ->get();
+        
+        // Log for debugging
+        \Log::info('Hospedajes with direccion count: ' . 
+                $hospedajes->filter(function($h) { 
+                    return $h->direccion !== null; 
+                })->count());
+        
+        return response()->json($hospedajes);
     }
 }
