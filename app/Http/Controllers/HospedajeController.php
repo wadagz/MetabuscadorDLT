@@ -34,13 +34,6 @@ class HospedajeController extends Controller
         $hospedajes = Hospedaje::with('direccion')
             ->where('destino_id', $destino->id)
             ->get();
-            
-        // Add logging to debug
-        \Log::info('Hospedajes count in searchHospedaje: ' . $hospedajes->count());
-        \Log::info('Hospedajes with direccion count: ' . 
-            $hospedajes->filter(function($h) { 
-                return $h->direccion !== null; 
-            })->count());
 
         return Inertia::render('HospedajesDestino/Index', [
             'destino' => $request->input('destino'),
