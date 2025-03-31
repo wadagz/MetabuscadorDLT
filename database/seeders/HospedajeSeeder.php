@@ -39,7 +39,7 @@ class HospedajeSeeder extends Seeder
             // First, create a direccion
             $now = Carbon::now();
             $direccionId = DB::table('direcciones')->insertGetId([
-                'nombre' => fake()->paragraph(2),
+                'nombre' => Str::limit(fake()->paragraph(1), 60),
                 'latitud' => $this->randomLatitude(),
                 'longitud' => $this->randomLongitude(),
                 'id_tipo_vialidad' => $tipoVialidadRandom->value,
