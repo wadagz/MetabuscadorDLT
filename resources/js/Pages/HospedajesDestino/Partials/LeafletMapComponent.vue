@@ -221,7 +221,7 @@ function highlightMarker(marker) {
 function formatPrice(price) {
   try {
     // Simple price formatter implementation
-    return new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(price);
+    return new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(price);
   } catch (error) {
     console.error('Error formatting price:', error);
     return price; // Return original price if formatting fails
