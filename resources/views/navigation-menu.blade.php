@@ -18,7 +18,7 @@
                         <a href="{{ route('login') }}" class="text-black rounded-md bg-light p-2 hover:bg-neutral-200">Recientes</a>
                     </div>
                     <div class="mr-4">
-                        <a href="{{ route('register') }}" class="text-black rounded-md bg-light p-2 hover:bg-neutral-200">Favoritos</a>
+                        <a href="{{ route('user-favorites.index') }}" class="text-black rounded-md bg-light p-2 hover:bg-neutral-200">Favoritos</a>
                     </div>
                     <!-- Menú desplegable -->
                     <div class="relative">
