@@ -1,15 +1,21 @@
 <script setup>
-import { provide } from 'vue';
+import { provide, ref } from 'vue';
 import SearchBar from '../../Components/SearchBar.vue';
 import CardHospedaje from './Partials/CardHospedaje.vue';
 import FilterBar from './Partials/FilterBar.vue';
+import MapComponent from './Partials/LeafletMapComponent.vue';
 
 const props = defineProps({
     destino: String,
     fechaPartida: String,
     fechaRegreso: String,
     puntoPartida: String,
-    hospedajes: Array,
+    hospedajes: {
+        type: Array,
+        // We assume that the hospedajes array has direccion objects loaded
+        // If not, see the note below about loading direccion data
+        default: () => []
+    },
     nombresDestinos: Array,
     isLoggedIn: Boolean,
 });
@@ -17,6 +23,11 @@ const props = defineProps({
 // Pass the isLoggedIn to child components, like the CardHospedaje component.
 provide('isLoggedIn', props.isLoggedIn);
 
+const selectedHospedajeId = ref(null);
+
+const handleSelectHospedaje = (hospedajeId) => {
+    selectedHospedajeId.value = hospedajeId;
+};
 </script>
 
 <template>
@@ -42,11 +53,18 @@ provide('isLoggedIn', props.isLoggedIn);
     <!-- Lista de hospedajes -->
     <div class="bg-gray-200 rounded-lg border border-gray-400 shadow-md overflow-y-scroll h-[44rem]">
         <div v-for="hospedaje in hospedajes" :key="hospedaje.id">
-            <CardHospedaje :hospedaje="hospedaje" />
+            <CardHospedaje
+                :hospedaje="hospedaje"
+                @select-hospedaje="handleSelectHospedaje"
+            />
         </div>
     </div>
-    <div class="bg-gray-200 rounded-lg border border-gray-400 shadow-md h-[44rem]">A la derecha un mapa donde se muestren las ubicaciones de los hospedajes.</div>
+    <!-- Mapa con ubicaciones de hospedajes -->
+    <div class="bg-gray-200 rounded-lg border border-gray-400 shadow-md h-[44rem]">
+        <MapComponent
+            :hospedajes="hospedajes"
+            :selectedHospedajeId="selectedHospedajeId"
+        />
+    </div>
 </div>
-
-
 </template>

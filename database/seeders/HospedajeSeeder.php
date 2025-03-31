@@ -5,6 +5,10 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+use Illuminate\Support\Str;
+use App\Enums\TipoVialidadEnum;
+use App\Enums\TipoAsentamientoEnum;
 
 class HospedajeSeeder extends Seeder
 {
@@ -13,11 +17,9 @@ class HospedajeSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFile = base_path('database/seeds/data/hospedajes_hoteles.csv');  // Adjust the path as needed
+        $csvFile = base_path('database/seeds/data/hospedajes_hoteles.csv');
         $handle = fopen($csvFile, 'r');
 
-        $batchSize = 1000; // Process 1,000 records at a time to avoid memory issues
-        $data = [];
         $rowCount = 0;
 
         while (($row = fgetcsv($handle, 1000, ',', escape: "")) !== FALSE) {
@@ -27,29 +29,57 @@ class HospedajeSeeder extends Seeder
                 continue;
             }
 
-            // Process each row as needed (mapping CSV data to database columns)
-            $data[] = [
+            // Get random enum values
+            $tipoVialidadCases = TipoVialidadEnum::cases();
+            $tipoAsentamientoCases = TipoAsentamientoEnum::cases();
+            
+            $tipoVialidadRandom = $tipoVialidadCases[array_rand($tipoVialidadCases)];
+            $tipoAsentamientoRandom = $tipoAsentamientoCases[array_rand($tipoAsentamientoCases)];
+
+            // First, create a direccion
+            $now = Carbon::now();
+            $direccionId = DB::table('direcciones')->insertGetId([
+                'nombre' => Str::limit(fake()->paragraph(1), 60),
+                'latitud' => $this->randomLatitude(),
+                'longitud' => $this->randomLongitude(),
+                'id_tipo_vialidad' => $tipoVialidadRandom->value,
+                'id_asentamiento' => $tipoAsentamientoRandom->value,
+                'created_at' => $now,
+                'updated_at' => $now,
+            ]);
+
+            // Then create the hospedaje with the direccion_id
+            DB::table('hospedajes')->insert([
                 'nombre' => $row[0],
                 'precio' => fake()->numberBetween(1000, 20000),
                 'url' => 'https://google.com',
                 'propietario_id' => $row[9],
                 'destino_id' => $row[10],
                 'tipo_hospedaje' => 1,
-                'descripcion' => fake()->paragraph(),
-            ];
+                'direccion_id' => $direccionId,
+                'created_at' => $now,
+                'updated_at' => $now,
+            ]);
 
-            // Insert in batches
-            if (count($data) >= $batchSize) {
-                DB::table('hospedajes')->insert($data);
-                $data = [];  // Reset data array for next batch
-            }
-        }
-
-        // Insert any remaining records
-        if (count($data) > 0) {
-            DB::table('hospedajes')->insert($data);
+            $rowCount++;
         }
 
         fclose($handle);
+    }
+
+    /**
+     * Generate a random latitude between -90 and 90 with 8 decimal places
+     */
+    private function randomLatitude(): float
+    {
+        return round(mt_rand(-899999999, 899999999) / 10000000, 8);
+    }
+
+    /**
+     * Generate a random longitude between -180 and 180 with 8 decimal places
+     */
+    private function randomLongitude(): float
+    {
+        return round(mt_rand(-1799999999, 1799999999) / 10000000, 8);
     }
 }

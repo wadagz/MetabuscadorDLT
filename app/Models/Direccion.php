@@ -15,6 +15,14 @@ class Direccion extends Model
     use HasFactory;
 
     protected $table = 'direcciones';
+    
+    protected $fillable = [
+        'nombre',
+        'latitud',
+        'longitud',
+        'id_tipo_vialidad',
+        'id_asentamiento',
+    ];
 
     public function tipoVialidad(): BelongsTo
     {
@@ -28,7 +36,7 @@ class Direccion extends Model
 
     public function hospedaje(): HasOne
     {
-        return $this->hasOne(Hospedaje::class);
+        return $this->hasOne(Hospedaje::class, 'direccion_id');
     }
 
     public function eventos(): HasMany
@@ -45,5 +53,4 @@ class Direccion extends Model
     {
         return $this->hasOneThrough(Municipio::class, Asentamiento::class);
     }
-
 }

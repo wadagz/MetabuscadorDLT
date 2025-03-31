@@ -19,7 +19,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('asentamientos', function (Blueprint $table) {
-            $table->foreign('id_tipo_asentamiento')->references('id')->on('tipos_asentamiento');
+            // Remove this line since you're using enums
+            // $table->foreign('id_tipo_asentamiento')->references('id')->on('tipos_asentamiento');
+            
             $table->foreign('id_municipio')->references('id')->on('municipios');
             $table->foreign('id_estado')->references('id')->on('estados');
         });
@@ -28,14 +30,19 @@ return new class extends Migration
             $table->foreign('id_estado')->references('id')->on('estados');
         });
 
-        Schema::table('direcciones', function (Blueprint $table) {
-            $table->foreignId('id_tipo_vialidad')->constrained('tipos_vialidad');
-            $table->foreignId('id_asentamiento')->constrained('asentamientos');
-        });
+        // Remove this entire block since you're using enums for these columns
+        // Schema::table('direcciones', function (Blueprint $table) {
+        //     $table->foreign('id_tipo_vialidad')->references('id')->on('tipos_vialidad');
+        //     $table->foreign('id_asentamiento')->references('id')->on('asentamientos');
+        // });
 
         Schema::table('hospedajes', function (Blueprint $table) {
-            // Agregar atributos para almacenar llaves foráneas
-            // $table->foreignId('direccion_id')->constrained('direcciones');
+            // You'll need to add the direccion_id column if it doesn't exist
+            if (!Schema::hasColumn('hospedajes', 'direccion_id')) {
+                $table->unsignedBigInteger('direccion_id')->nullable()->after('destino_id');
+                $table->foreign('direccion_id')->references('id')->on('direcciones');
+            }
+            
             $table->foreignId('propietario_id')->constrained('propietarios');
             $table->foreignId('destino_id')->constrained('destinos')->onDelete('cascade');
         });
@@ -70,6 +77,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        // Since you're planning to use this with existing tables, 
+        // I've kept the down method empty as dropping constraints 
+        // might cause issues if they don't exist
     }
 };
