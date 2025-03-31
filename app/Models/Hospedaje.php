@@ -14,6 +14,16 @@ class Hospedaje extends Model
     use HasFactory;
 
     protected $table = "hospedajes";
+    
+    protected $fillable = [
+        'nombre',
+        'precio',
+        'url',
+        'tipo_hospedaje_id',
+        'propietario_id',
+        'destino_id',
+        'direccion_id',
+    ];
 
     public function tipoHospedaje(): BelongsTo
     {
@@ -48,9 +58,9 @@ class Hospedaje extends Model
         return $this->belongsTo(Destino::class);
     }
 
-    public function direccion(): HasOne
+    public function direccion(): BelongsTo
     {
-        return $this->hasOne(Direccion::class);
+        return $this->belongsTo(Direccion::class);
     }
 
     # TODO:
