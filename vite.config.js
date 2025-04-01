@@ -5,6 +5,9 @@ import vue from '@vitejs/plugin-vue';
 import path from 'path';
 
 export default defineConfig({
+    server: {
+        https: true,
+    }
     resolve: {
         alias: {
             'ziggy-js': path.resolve('vendor/tightenco/ziggy/dist/index.esm.js'),
