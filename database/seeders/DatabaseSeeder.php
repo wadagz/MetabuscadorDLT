@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             PropietarioSeeder::class,
             AmenidadSeeder::class,
             HospedajeSeeder::class,
+            PreferenciaSeeder::class,
         ]);
     }
 }
