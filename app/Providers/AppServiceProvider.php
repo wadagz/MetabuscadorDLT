@@ -34,6 +34,6 @@ class AppServiceProvider extends ServiceProvider
                 ? $rule->uncompromised()
                 : $rule;
         });
-        URL::forceScheme('https');
+        URL::forceScheme('http');
     }
 }
