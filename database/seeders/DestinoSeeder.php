@@ -19,7 +19,7 @@ class DestinoSeeder extends Seeder
         'https://www.entornoturistico.com/wp-content/uploads/2023/07/Monumento-de-la-Independencia-en-la-Ciudad-de-Mexico-desde-las-alturas.jpg',
         'https://image-tc.galaxy.tf/wijpeg-30uiabg4905tkd4fpky4ljrq1/mazatlan-1920x1080_standard.jpg?crop=240%2C0%2C1440%2C1080',
         'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/228000/228069-Guerrero.jpg',
-        'https://cdn.britannica.com/00/188200-050-1995DFEE/view-city-Guanajuato-foreground-Mexico-basilica.jpg',
+        // 'https://cdn.britannica.com/00/188200-050-1995DFEE/view-city-Guanajuato-foreground-Mexico-basilica.jpg',
         'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/228000/228664-Zocalo-Square.jpg',
     ];
 

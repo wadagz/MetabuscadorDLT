@@ -26,7 +26,7 @@ defineProps({
                         <div class="row-start-3">
                             <div class="mx-4">
                                 <p><b>{{  destino.nombre }}</b></p>
-                                <p>Precio por noche: {{ formatPrice(destino.precio_promedio) }}</p>
+                                <p>Precio por noche: {{ formatPrice(destino.precio_promedio) }}.</p>
                             </div>
                         </div>
                     </div>

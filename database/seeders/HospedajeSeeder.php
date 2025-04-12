@@ -12,6 +12,18 @@ use App\Enums\TipoAsentamientoEnum;
 
 class HospedajeSeeder extends Seeder
 {
+    protected $images = [
+      'https://i0.wp.com/foodandpleasure.com/wp-content/uploads/2020/10/65345792-h1-facb_angular_pool_view_300dpi.jpg?fit=2800%2C1867&ssl=1',
+      'https://image-tc.galaxy.tf/wijpeg-dvi5rtm812e96dah51ls0h5dp/fachada-desde-alberca_standard.jpg?crop=100%2C0%2C1600%2C1200',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaCs7wq35j-aNLg7vLa3HazL74N0fUaVTdLA&s',
+      'https://cdn.forbes.com.mx/2020/07/hoteles-Grand-Velas-Resorts-e1596047698604.jpg',
+      'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/d2/24/42/playa-los-arcos-hotel.jpg?w=1200&h=-1&s=1',
+      'https://www.interactiveaquariumcancun.com/hubfs/crown%20paradise%20club%20cancun.jpg',
+      'https://traveler.marriott.com/es/wp-content/uploads/sites/2/2024/07/The_Westin_Reserva_Conchal_-_Edgardo_Contreras-1.jpg',
+      'https://gdconsejoscancun.b-cdn.net/wp-content/uploads/2019/11/hotel-tijuana.jpeg',
+      'https://www.momondo.mx/himg/42/85/7f/expediav2-10076-c8fdf6-526133.jpg',
+    ];
+
     /**
      * Run the database seeds.
      */
@@ -32,7 +44,7 @@ class HospedajeSeeder extends Seeder
             // Get random enum values
             $tipoVialidadCases = TipoVialidadEnum::cases();
             $tipoAsentamientoCases = TipoAsentamientoEnum::cases();
-            
+
             $tipoVialidadRandom = $tipoVialidadCases[array_rand($tipoVialidadCases)];
             $tipoAsentamientoRandom = $tipoAsentamientoCases[array_rand($tipoAsentamientoCases)];
 
@@ -56,6 +68,8 @@ class HospedajeSeeder extends Seeder
                 'propietario_id' => $row[9],
                 'destino_id' => $row[10],
                 'tipo_hospedaje' => 1,
+                'descripcion' => fake()->text(200),
+                'img_path' => $this->images[array_rand($this->images)],
                 'direccion_id' => $direccionId,
                 'created_at' => $now,
                 'updated_at' => $now,

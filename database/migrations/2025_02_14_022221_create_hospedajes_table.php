@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('url', length: 500);
             $table->enum('tipo_hospedaje', TipoHospedajeEnum::values());
             $table->text('descripcion')->nullable();
+            $table->string('img_path');
             $table->timestamps();
         });
     }
