@@ -1,3 +1,3 @@
 export function formatPrice(price) {
-    return price.toLocaleString('es-MX') + ' mxn.';
+    return '$' + price.toLocaleString('es-MX') + ' MXN';
 };
