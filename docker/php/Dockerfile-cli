@@ -1,0 +1,40 @@
+FROM php:8.3-cli
+
+ARG NODE_VERSION=22.0.0
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    git zip unzip curl libpng-dev libonig-dev libxml2-dev libzip-dev vim \
+    && docker-php-ext-install pdo_mysql mbstring zip exif pcntl \
+    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# If the group already exists, use it; otherwise, create the 'www' group
+# RUN if getent group ${GID}; then \
+#       useradd -m -u ${UID} -g ${GID} -s /bin/bash www; \
+#     else \
+#       groupadd -g ${GID} www && \
+#       useradd -m -u ${UID} -g www -s /bin/bash www; \
+#     fi && \
+#     usermod -aG sudo www && \
+#     echo 'www ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+# Switch to the non-root user to install NVM and Node.js
+# USER www
+
+# Install NVM (Node Version Manager) as the www user
+RUN export NVM_DIR="$HOME/.nvm" && \
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash && \
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && \
+    nvm install ${NODE_VERSION} && \
+    nvm alias default ${NODE_VERSION} && \
+    nvm use default
+
+# Ensure NVM is available for all future shells
+# RUN echo 'export NVM_DIR="$HOME/.nvm"' >> /home/www/.bashrc && \
+#     echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> /home/www/.bashrc && \
+#     echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"' >> /home/www/.bashrc
+
+# Sets working directory to /var/www and copies the projects structure
+WORKDIR /var/www/html
+COPY . .
+

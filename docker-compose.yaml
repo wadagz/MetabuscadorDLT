@@ -1,0 +1,83 @@
+services:
+  cli:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile-cli
+      network: host
+    environment:
+      - DB_HOST=database
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - database
+    stdin_open: true
+    tty: true
+    networks:
+      - app-network
+
+  app:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile-fpm
+      network: host
+    environment:
+      - DB_HOST=database
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+    user: "${UID:-1000}:${GID:-1000}"  # Match host user or use www-data
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - database
+    networks:
+      - app-network
+
+  web:
+    image: nginx:1.27.4
+    volumes:
+      - ./:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "8000:80"
+    depends_on:
+      - app
+    networks:
+      - app-network
+
+  database:
+    image: mariadb:10.6
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: ${DB_DATABASE}
+      MARIADB_ROOT_PASSWORD: ${DB_PASSWORD}
+      MARIADB_USER: ${DB_USERNAME}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - dbdata:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+
+  npm:
+    image: node:22
+    restart: unless-stopped
+    working_dir: /app
+    volumes:
+      - ./:/app
+    stdin_open: true
+    tty: true
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local
