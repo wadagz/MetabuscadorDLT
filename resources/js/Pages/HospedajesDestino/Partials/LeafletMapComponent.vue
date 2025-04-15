@@ -212,7 +212,7 @@ function highlightMarker(marker) {
     marker.openPopup();
     
     // Center the map on this marker
-    map.value.setView(marker.getLatLng(), 8);
+    map.value.setView(marker.getLatLng(), 15);
   } catch (error) {
     console.error('Error highlighting marker:', error);
   }
