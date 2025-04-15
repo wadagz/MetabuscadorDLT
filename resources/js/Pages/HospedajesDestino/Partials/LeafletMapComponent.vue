@@ -48,8 +48,8 @@ async function initMap() {
       return;
     }
     
-    // Initialize the map with a default center for Spain
-    map.value = L.map('leaflet-map').setView([40.416775, -3.703790], 5);
+    // Initialize the map with a default center for Mexico
+    map.value = L.map('leaflet-map').setView([22.1394993, -101.0244247], 5);
     
     // Add the OpenStreetMap tile layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -137,7 +137,7 @@ async function addMarkers() {
           const centerLat = totalLat / validCount;
           const centerLng = totalLng / validCount;
           //console.log('Setting map center to:', centerLat, centerLng);
-          map.value.setView([centerLat, centerLng], 3); // Lower zoom level to see more markers
+          map.value.setView([centerLat, centerLng], 10); // Lower zoom level to see more markers
         } else {
           console.warn('No valid coordinates found for centering the map');
           map.value.setView([0, 0], 2); // Default world view
