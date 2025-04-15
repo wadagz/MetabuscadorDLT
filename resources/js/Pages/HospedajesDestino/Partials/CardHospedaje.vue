@@ -58,7 +58,7 @@ const selectHospedaje = () => {
         <hr class="mx-4 border border-primary-500">
         <div class="grid grid-cols-2">
             <div class="m-4">
-                <img class="rounded-md max-w-full h-auto" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/539157651.jpg?k=9c4e0dcc03b258ec5d24aa6224ac20cbf5668d1451d1b6e070863db52ad941b2&o=&hp=1">
+                <img class="rounded-md max-w-full h-auto" :src="props.hospedaje.img_path">
             </div>
             <div class="grid grid-rows-4">
                 <div class="m-4 row-span-3 overflow-auto max-h-36">

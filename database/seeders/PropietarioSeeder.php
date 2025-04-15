@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -13,7 +12,7 @@ class PropietarioSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFile = base_path('database/seeds/data/propietarios_hoteles.csv');  // Adjust the path as needed
+        $csvFile = base_path('database/seeds/data/propietarios.csv');  // Adjust the path as needed
         $handle = fopen($csvFile, 'r');
 
         $batchSize = 10000; // Process 10,000 records at a time to avoid memory issues
@@ -29,9 +28,9 @@ class PropietarioSeeder extends Seeder
 
             // Process each row as needed (mapping CSV data to database columns)
             $data[] = [
-                'telefono' => $row[0],
-                'email' => $row[1],
-                'nombre' => $row[2],
+                'nombre' => $row[0],
+                'telefono' => $row[1],
+                'email' => $row[2],
             ];
 
             // Insert in batches

@@ -20,7 +20,7 @@ defineProps({
                     <div class="rounded bg-white border border-gray-200 h-full shadow-md grid grid-rows-3">
                         <div class="row-span-2">
                             <a href="https://google.com" class="">
-                                <img src="https://el-tapatio-hotel-resort-guadalajara.hotel-dir.com/data/Photos/OriginalPhoto/6987/698705/698705568.JPEG" class="rounded-md h-full" :alt="hospedaje.nombre">
+                                <img :src="hospedaje.img_path" class="rounded-md h-full" :alt="hospedaje.nombre">
                             </a>
                         </div>
                         <div class="row-start-3">
