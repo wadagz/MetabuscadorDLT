@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             DestinoSeeder::class,
             PropietarioSeeder::class,
+            DireccionesHotelesSeeder::class,
             AmenidadSeeder::class,
             HospedajeSeeder::class,
             PreferenciaSeeder::class,
