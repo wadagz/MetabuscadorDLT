@@ -21,6 +21,10 @@ class DatabaseSeeder extends Seeder
             AmenidadSeeder::class,
             HospedajeSeeder::class,
             PreferenciaSeeder::class,
+            DireccionesActividadesSeeder::class,
+            ActividadSeeder::class,
+            HorarioRecurrenteSeeder::class,
+            HorarioEventualSeeder::class,
         ]);
     }
 }

@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class HorarioSemanal extends Model
+class HorarioRecurrente extends Model
 {
     /** @use HasFactory<\Database\Factories\HorarioSemanalFactory> */
     use HasFactory;
 
-    protected $table = 'horarios_semanales';
+    protected $table = 'horarios_recurrentes';
 
     public function actividad(): BelongsTo
     {

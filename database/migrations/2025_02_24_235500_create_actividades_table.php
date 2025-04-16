@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\TipoActividadEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,6 +17,7 @@ return new class extends Migration
             $table->string('nombre', length: 100);
             $table->text('descripcion');
             $table->float('precio', precision: 2);
+            $table->enum('tipo_actividad', TipoActividadEnum::toArray());
             $table->timestamps();
         });
     }
