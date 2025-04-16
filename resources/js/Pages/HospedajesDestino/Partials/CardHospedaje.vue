@@ -52,26 +52,42 @@ const selectHospedaje = () => {
 <template>
     <div @click="selectHospedaje" class="m-2 bg-light rounded-md border border-gray-400 shadow cursor-pointer hover:bg-gray-100 transition-colors duration-200">
         <div class="grid grid-cols-2 ml-5 mt-2 mb-2 gap-4">
-            <h2 class="text-lg">{{ props.hospedaje.nombre }}</h2>
+            <p class="text-lg">{{ props.hospedaje.nombre }}</p>
             <p class="text-lg">Precio por noche: {{ formatPrice(props.hospedaje.precio) }}</p>
         </div>
+
         <hr class="mx-4 border border-primary-500">
+
         <div class="grid grid-cols-2">
             <div class="m-4">
-                <img class="rounded-md max-w-full h-auto" :src="props.hospedaje.img_path">
+                <img class="rounded-md w-full h-36 object-fill" :src="props.hospedaje.img_path">
             </div>
-            <div class="grid grid-rows-4">
+
+            <div class="">
                 <div class="m-4 row-span-3 overflow-auto max-h-36">
                     {{ props.hospedaje.descripcion }}
                 </div>
-                <div class="flex justify-end items-center align-middle mr-4 gap-2">
-                    <button v-if="isLoggedIn" @click="toggleFavorite" class="bg-red-400 rounded-full p-3 transition duration-300 hover:bg-red-500">
-                        <Icon :icon="isFavorite ? 'iconoir:heart-solid' : 'mdi:heart-outline'"/>
-                    </button>
-                    <a :href="props.hospedaje.url" class="bg-primary-500 rounded-md text-white p-2 transition duration-300 hover:bg-primary-400" @click.stop>
-                        Visitar sitio web
-                    </a>
-                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-between items-center align-middle mx-4 mb-2 gap-2">
+            <div class="flex items-center">
+                <span>Calificación:</span>
+                <Icon icon="material-symbols-light:star-outline-rounded" :width="30" style="display: inline;"/>
+                <Icon icon="material-symbols-light:star-outline-rounded" :width="30" style="display: inline;"/>
+                <Icon icon="material-symbols-light:star-outline-rounded" :width="30" style="display: inline;"/>
+                <Icon icon="material-symbols-light:star-outline-rounded" :width="30" style="display: inline;"/>
+                <Icon icon="material-symbols-light:star-outline-rounded" :width="30" style="display: inline;"/>
+
+            </div>
+
+            <div class="flex justify-end items-center align-middle mr-4 gap-2">
+                <button v-if="isLoggedIn" @click="toggleFavorite" class="bg-red-400 rounded-full p-3 transition duration-300 hover:bg-red-500">
+                    <Icon :icon="isFavorite ? 'iconoir:heart-solid' : 'mdi:heart-outline'"/>
+                </button>
+                <a :href="props.hospedaje.url" class="bg-primary-500 rounded-md text-white p-2 transition duration-300 hover:bg-primary-400" @click.stop>
+                    Visitar sitio web
+                </a>
             </div>
         </div>
     </div>
