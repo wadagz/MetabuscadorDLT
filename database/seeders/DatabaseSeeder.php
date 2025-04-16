@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             ActividadSeeder::class,
             HorarioRecurrenteSeeder::class,
             HorarioEventualSeeder::class,
+            AmenidadHospedajeSeeder::class,
         ]);
     }
 }
