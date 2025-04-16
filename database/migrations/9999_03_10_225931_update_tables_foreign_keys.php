@@ -21,7 +21,7 @@ return new class extends Migration
         Schema::table('asentamientos', function (Blueprint $table) {
             // Remove this line since you're using enums
             // $table->foreign('id_tipo_asentamiento')->references('id')->on('tipos_asentamiento');
-            
+
             $table->foreign('id_municipio')->references('id')->on('municipios');
             $table->foreign('id_estado')->references('id')->on('estados');
         });
@@ -42,7 +42,7 @@ return new class extends Migration
                 $table->unsignedBigInteger('direccion_id')->nullable()->after('destino_id');
                 $table->foreign('direccion_id')->references('id')->on('direcciones');
             }
-            
+
             $table->foreignId('propietario_id')->constrained('propietarios');
             $table->foreignId('destino_id')->constrained('destinos')->onDelete('cascade');
         });
@@ -55,10 +55,9 @@ return new class extends Migration
         Schema::table('actividades', function (Blueprint $table) {
             $table->foreignId('destino_id')->constrained('destinos')->onDelete('cascade');
             $table->foreignId('direccion_id')->constrained('direcciones')->onDelete('cascade');
-            $table->foreignId('tipo_actividad_id')->constrained('tipos_actividad')->onDelete('cascade');
         });
 
-        Schema::table('horarios_semanales', function (Blueprint $table) {
+        Schema::table('horarios_recurrentes', function (Blueprint $table) {
             $table->foreignId('actividad_id')->constrained('actividades')->onDelete('cascade');
         });
 
@@ -77,8 +76,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        // Since you're planning to use this with existing tables, 
-        // I've kept the down method empty as dropping constraints 
+        // Since you're planning to use this with existing tables,
+        // I've kept the down method empty as dropping constraints
         // might cause issues if they don't exist
     }
 };
