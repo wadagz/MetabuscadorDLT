@@ -74,9 +74,14 @@ const setCalificacion = (rate) => {
             </div>
         </div>
 
-        <button type="submit" class="rounded-md mt-4 py-1 px-2 bg-primary-500 text-white">
-            <b>Finalizar</b>
-        </button>
+        <div class="flex gap-2">
+            <button type="submit" class="rounded-md mt-4 py-1 px-2 bg-primary-500 text-white transition duration-300 hover:bg-primary-400">
+                <b>Finalizar</b>
+            </button>
+            <button @click="emit('close')" type="button" class="rounded-md mt-4 py-1 px-2 bg-secondary text-white transition duration-300 hover:bg-gray-400">
+                <b>Cancelar</b>
+            </button>
+        </div>
     </form>
 </div>
 </template>

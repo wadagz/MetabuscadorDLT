@@ -28,7 +28,7 @@ class ResenaHospedajeController extends Controller
 
         $messages = [
             'comentario' => 'Es necesario un comentario.',
-            'calificacion' => 'Es necesaria una calificación entre 1 y 5.',
+            'calificacion' => 'Es necesaria una calificación entre 1 y 5 estrellas.',
         ];
 
         Validator::make($request->all(), $rules, $messages)->validate();
