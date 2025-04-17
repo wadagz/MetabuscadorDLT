@@ -1,5 +1,6 @@
 <script setup>
 import ResenaCard from './Partials/ResenaCard.vue';
+import LeafLetMap from './Partials/LeafLetMap.vue';
 
 const props = defineProps({
     hospedaje: Object,
@@ -17,7 +18,7 @@ const addReview = () => {
 
     <div class="grid grid-cols-3 gap-4 items-start">
         <div class="card bg-light rounded-md border border-gray-200 min-h-52 h-72">
-            <img :src="hospedaje.img_path" class="rounded-md w-full h-full"/>
+            <img :src="hospedaje.img_path" class="rounded-md w-full h-full p-2"/>
         </div>
 
         <div class="card bg-light border border-gray-200 rounded-md p-2 min-h-52 h-72 flex flex-col" >
@@ -54,12 +55,18 @@ const addReview = () => {
         </div>
     </div>
 
-    <div class="grid grid-cols-2 mt-4">
-        <div>
-            mapita
+    <div class="grid grid-cols-2 gap-4 mt-4">
+        <div class="max-h-96">
+            <div class="mb-2 flex items-center justify-between">
+                <p class="text-xl">
+                    Ubicación
+                </p>
+            </div>
+
+            <LeafLetMap :hospedaje />
         </div>
 
-        <div>
+        <div class="max-h-96 flex flex-col">
             <div class="mb-2 flex items-center justify-between">
                 <p class="text-xl">
                     Reseñas de usuarios
@@ -69,7 +76,7 @@ const addReview = () => {
                     Agregar reseña
                 </button>
             </div>
-            <div class="bg-gray-200 rounded-lg border border-gray-400 shadow-md overflow-y-scroll h-[44rem]">
+            <div class="bg-gray-200 rounded-lg border border-gray-400 shadow-md overflow-y-scroll flex-1">
                 <ResenaCard v-for="i in [1,2,3,4,5,6,7,8,9,10]"/>
             </div>
         </div>
