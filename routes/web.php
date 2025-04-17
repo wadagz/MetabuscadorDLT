@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\DestinoController;
-use App\Http\Controllers\{FavoritosHospedajeUsuarioController, HospedajeController, LandingPageController, ResenaHospedajeController, UserController};
+use App\Http\Controllers\{FavoritosHospedajeUsuarioController, HospedajeController, LandingPageController, ResenaHospedajeController, UserController, VistosRecienteController};
 use Illuminate\Support\Facades\Route;
 
 Route::get('/landing', [LandingPageController::class, 'index']);
@@ -32,6 +32,8 @@ Route::middleware([
     Route::post('/favoritos/{hospedaje_id}', [FavoritosHospedajeUsuarioController::class, 'addToFavorites'])->name('add-hospedaje-to-favorites');
     Route::delete('/favoritos/{hospedaje_id}', [FavoritosHospedajeUsuarioController::class, 'removeFromFavorites'])->name('remove-hospedaje-from-favorites');
     Route::get('/favoritos/{destino_id}', [UserController::class, 'showFavoritesInDestination'])->name('user-favorites-in-destination');
+
+    Route::get('/vistosReciente', [VistosRecienteController::class, 'recentlyViewed'])->name('recentlyViewed.index');
 
     Route::post('/resenaHospedaje/{hospedaje_id}', [ResenaHospedajeController::class, 'addReview'])->name('reviewHospedaje.add');
 });

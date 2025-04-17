@@ -15,7 +15,7 @@
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 @auth
                     <div class="mr-4">
-                        <a href="{{ route('login') }}" class="text-black rounded-md bg-light p-2 hover:bg-neutral-200">Recientes</a>
+                        <a href="{{ route('recentlyViewed.index') }}" class="text-black rounded-md bg-light p-2 hover:bg-neutral-200">Recientes</a>
                     </div>
                     <div class="mr-4">
                         <a href="{{ route('user-favorites.index') }}" class="text-black rounded-md bg-light p-2 hover:bg-neutral-200">Favoritos</a>

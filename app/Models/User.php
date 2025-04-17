@@ -84,4 +84,11 @@ class User extends Authenticatable
         );
     }
 
+    public function vistosReciente(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            Hospedaje::class,
+            table: 'vistos_reciente'
+        )->withTimestamps();;
+    }
 }

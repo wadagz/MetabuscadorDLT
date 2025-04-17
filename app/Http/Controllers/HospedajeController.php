@@ -88,6 +88,16 @@ class HospedajeController extends Controller
             ])
             ->first();
 
+        $isLoggedIn = Auth::check();
+
+        if ($isLoggedIn) {
+            $user = Auth::user();
+            $isAlreadyRecent = $user->vistosReciente->contains($hospedaje);
+            if (!$isAlreadyRecent) {
+                $user->vistosReciente()->attach($hospedaje);
+            }
+        }
+
         return Inertia::render('Hospedaje/Index', [
             'hospedaje' => $hospedaje,
             'isLoggedIn' => Auth::check(),

@@ -14,7 +14,7 @@ class Hospedaje extends Model
     use HasFactory;
 
     protected $table = "hospedajes";
-    
+
     protected $fillable = [
         'nombre',
         'precio',
@@ -61,6 +61,14 @@ class Hospedaje extends Model
     public function direccion(): BelongsTo
     {
         return $this->belongsTo(Direccion::class);
+    }
+
+    public function usuariosQueVieronRecientemente(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            User::class,
+            table: 'vistos_reciente'
+        );
     }
 
     # TODO:

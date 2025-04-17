@@ -1,5 +1,5 @@
 <script setup>
-import CarouselHospedajes from '../../Components/CarouselHospedajes.vue';
+import CarouselHospedajes from '@/Components/CarouselHospedajes.vue';
 
 const props = defineProps({
     favoritos: Object,
@@ -11,7 +11,7 @@ const props = defineProps({
 <div class="container mx-auto pt-4">
     <h1 class="text-3xl">Mis hospedajes favoritos</h1>
 
-    <div v-for="(hospedajes, key) in favoritos" :key="key">
+    <div v-for="(hospedajes, key) in favoritos" :key="key" class="my-4">
         <h2 class="text-2xl">{{ destinos[key] }}</h2>
         <div class="my-4">
             <a
