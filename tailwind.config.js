@@ -38,6 +38,7 @@ export default {
                 warning: '#f47c3c',
                 danger: '#d9534f',
                 light: '#f8f5f0',
+                star: '#fcd303',
             },
         },
     },

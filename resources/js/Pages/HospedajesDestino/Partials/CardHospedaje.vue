@@ -43,7 +43,6 @@ const toggleFavorite = () => {
 };
 
 const visitHospedaje = () => {
-    console.log('prueba')
     router.get(route('hospedaje.show', { hospedaje_id: props.hospedaje.id }));
 }
 

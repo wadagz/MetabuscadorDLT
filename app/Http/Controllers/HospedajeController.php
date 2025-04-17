@@ -39,13 +39,15 @@ class HospedajeController extends Controller
         // Si el usuario está logeado obtiene los hospedajes con los usuarios que dieron favorito.
         // para de esta forma mostrar en el frontend los hospedajes favoritos del usuario.
         if ($isLoggedIn) {
-            $hospedajes = Hospedaje::where('destino_id', $destino->id)->with(['direccion', 'usuariosQueDieronFavorito' => function ($query) {
+            $hospedajesQuery = Hospedaje::where('destino_id', $destino->id)->with(['direccion', 'usuariosQueDieronFavorito' => function ($query) {
                 $query->where('id', Auth::id());
-            }])->get();
+            }]);
         }
         else {
-            $hospedajes = Hospedaje::where('destino_id', $destino->id)->with('direccion')->get();
+            $hospedajesQuery = Hospedaje::where('destino_id', $destino->id)->with('direccion');
         }
+
+        $hospedajes = $hospedajesQuery->limit(10)->get();
 
         return Inertia::render('HospedajesDestino/Index', [
             'destino' => $request->input('destino'),
