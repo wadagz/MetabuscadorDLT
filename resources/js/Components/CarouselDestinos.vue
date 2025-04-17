@@ -6,6 +6,8 @@ defineProps({
     splideOptions: {},
     destinos: Array,
 })
+
+const emit = defineEmits(['verDestino']);
 </script>
 
 <template>
@@ -19,9 +21,9 @@ defineProps({
                 <SplideSlide v-for="destino in destinos" :key="destino.id" class="splide__slide is-active is-visible">
                     <div class="rounded bg-white border border-gray-200 h-full shadow-md grid grid-rows-3">
                         <div class="row-span-2">
-                            <a href="https://google.com" class="">
+                            <button @click="emit('verDestino', destino.nombre)" type="button">
                                 <img :src="destino.img_path" class="rounded-md h-full" :alt="destino.nombre">
-                            </a>
+                            </button>
                         </div>
                         <div class="row-start-3">
                             <div class="mx-4">

@@ -1,11 +1,16 @@
 <script setup>
 import { formatPrice } from '../Utils/priceFormatter';
+import { router } from '@inertiajs/vue3';
 
 defineProps({
     ariaLabel: String,
     splideOptions: {},
     hospedajes: Array,
 })
+
+const visitHospedaje = (hospedaje_id) => {
+    router.get(route('hospedaje.show', { hospedaje_id: hospedaje_id }));
+};
 </script>
 
 <template>
@@ -19,9 +24,9 @@ defineProps({
                 <SplideSlide v-for="hospedaje in hospedajes" :key="hospedaje.id" class="splide__slide is-active is-visible">
                     <div class="rounded bg-white border border-gray-200 h-full shadow-md grid grid-rows-3">
                         <div class="row-span-2">
-                            <a href="https://google.com" class="">
+                            <button type="button" @click="visitHospedaje(hospedaje.id)" class="">
                                 <img :src="hospedaje.img_path" class="rounded-md h-full" :alt="hospedaje.nombre">
-                            </a>
+                            </button>
                         </div>
                         <div class="row-start-3">
                             <div class="mx-4">
