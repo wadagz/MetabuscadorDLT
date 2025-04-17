@@ -78,10 +78,19 @@ class HospedajeController extends Controller
     public function show(int $hospedaje_id): Response
     {
         $hospedaje = Hospedaje::where('id', $hospedaje_id)
-            ->with(['amenidades', 'direccion', 'destino'])
+            ->with([
+                'amenidades',
+                'direccion',
+                'destino',
+                'usuariosQueDieronFavorito' => function ($query) {
+                    $query->where('id', Auth::id());
+                },
+            ])
             ->first();
+
         return Inertia::render('Hospedaje/Index', [
             'hospedaje' => $hospedaje,
+            'isLoggedIn' => Auth::check(),
         ]);
     }
 }

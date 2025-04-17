@@ -4,9 +4,12 @@ import ResenaCard from './Partials/ResenaCard.vue';
 import LeafLetMap from './Partials/LeafLetMap.vue';
 import Modal from '@/Components/Modal.vue'
 import ResenaForm from './Partials/ResenaForm.vue';
+import { Icon } from '@iconify/vue/dist/iconify.js';
+import FavoriteHospedajeButton from '@/Components/FavoriteHospedajeButton.vue';
 
 const props = defineProps({
     hospedaje: Object,
+    isLoggedIn: Boolean,
 });
 
 const showModal = ref(false);
@@ -21,13 +24,28 @@ const addReview = () => {
 <template>
     Agregar boton de favoritos en la esquina de la imagen
 <div class="card container mx-auto pt-4">
-    <h1 class="text-3xl mb-4">{{ hospedaje.nombre }} - {{ hospedaje.destino.nombre }}</h1>
+    <div class="flex items-center justify-between">
+        <h1 class="text-3xl mb-4">{{ hospedaje.nombre }} - {{ hospedaje.destino.nombre }}</h1>
+        <a
+            href="https://google.com" class="rounded-md px-2 py-1 bg-primary-500 text-white transition duration-300 hover:bg-primary-400"
+            >
+            <b>
+                VISITAR SITIO WEB
+            </b>
+        </a>
+    </div>
 
+    <!-- Info general del hospedaje -->
     <div class="grid grid-cols-3 gap-4 items-start">
-        <div class="card bg-light rounded-md border border-gray-200 min-h-52 h-72">
+        <!-- Imagen hospedaje -->
+        <div class="card bg-light rounded-md border border-gray-200 min-h-52 h-72 relative">
             <img :src="hospedaje.img_path" class="rounded-md w-full h-full p-2"/>
+            <div v-if="isLoggedIn" class="absolute bottom-4 right-4">
+                <FavoriteHospedajeButton :hospedaje />
+            </div>
         </div>
 
+        <!-- Descripcion -->
         <div class="card bg-light border border-gray-200 rounded-md p-2 min-h-52 h-72 flex flex-col" >
             <h2 class="text-2xl">
                 Descripción
@@ -40,6 +58,7 @@ const addReview = () => {
             </div>
         </div>
 
+        <!-- Amenidades -->
         <div class="card bg-light border border-gray-200 rounded-md p-2 min-h-52 h-72 flex flex-col" >
             <h2 class="text-2xl">
                 Amenidades incluidas
@@ -62,6 +81,7 @@ const addReview = () => {
         </div>
     </div>
 
+    <!-- Mapa y reseñas -->
     <div class="grid grid-cols-2 gap-4 mt-4">
         <div class="max-h-96">
             <div class="mb-2 flex items-center justify-between">
@@ -75,11 +95,17 @@ const addReview = () => {
 
         <div class="max-h-96 flex flex-col">
             <div class="mb-2 flex items-center justify-between">
-                <p class="text-xl">
-                    Reseñas de usuarios
-                </p>
+                <div class="text-xl flex justify-center gap-4">
+                    <div>
+                        Reseñas de usuarios
+                    </div>
 
-                <button @click="addReview" type="button" class="bg-primary-500 rounded-md text-white py-1 px-2 transition duration-300 hover:bg-primary-400">
+                    <div>
+                        Calificacion promedio:
+                    </div>
+                </div>
+
+                <button @click="addReview" type="button" class="bg-primary-300 rounded-md text-white py-1 px-2 transition duration-300 hover:bg-primary-400">
                     Agregar reseña
                 </button>
             </div>
