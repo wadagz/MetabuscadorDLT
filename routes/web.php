@@ -9,6 +9,7 @@ Route::get('/landing', [LandingPageController::class, 'index']);
 Route::get('/', [DestinoController::class, 'index'])->name('landing');
 
 Route::get('/hospedajes', [HospedajeController::class, 'searchHospedaje'])->name('searchHospedaje');
+Route::get('/hospedajes/{hospedaje_id}', [HospedajeController::class, 'show'])->name('hospedaje.show');
 
 Route::middleware([
     'auth:sanctum',

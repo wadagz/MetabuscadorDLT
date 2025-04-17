@@ -72,4 +72,14 @@ class HospedajeController extends Controller
 
         return response()->json($hospedajes);
     }
+
+    public function show(int $hospedaje_id): Response
+    {
+        $hospedaje = Hospedaje::where('id', $hospedaje_id)
+            ->with(['amenidades', 'direccion', 'destino'])
+            ->first();
+        return Inertia::render('Hospedaje/Index', [
+            'hospedaje' => $hospedaje,
+        ]);
+    }
 }

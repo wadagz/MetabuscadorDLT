@@ -1,0 +1,78 @@
+<script setup>
+import ResenaCard from './Partials/ResenaCard.vue';
+
+const props = defineProps({
+    hospedaje: Object,
+});
+
+const addReview = () => {
+    console.log('agregar reseña');
+};
+
+</script>
+
+<template>
+<div class="card container mx-auto pt-4">
+    <h1 class="text-3xl mb-4">{{ hospedaje.nombre }} - {{ hospedaje.destino.nombre }}</h1>
+
+    <div class="grid grid-cols-3 gap-4 items-start">
+        <div class="card bg-light rounded-md border border-gray-200 min-h-52 h-72">
+            <img :src="hospedaje.img_path" class="rounded-md w-full h-full"/>
+        </div>
+
+        <div class="card bg-light border border-gray-200 rounded-md p-2 min-h-52 h-72 flex flex-col" >
+            <h2 class="text-2xl">
+                Descripción
+            </h2>
+
+            <hr class="my-2">
+
+            <div class="overflow-auto flex-1">
+                {{ hospedaje.descripcion }}
+            </div>
+        </div>
+
+        <div class="card bg-light border border-gray-200 rounded-md p-2 min-h-52 h-72 flex flex-col" >
+            <h2 class="text-2xl">
+                Amenidades incluidas
+            </h2>
+
+            <hr class="my-2">
+
+            <div class="overflow-auto flex-1">
+                <ul>
+                    <li v-for="amenidad in hospedaje.amenidades" :key="amenidad.id" >
+                        <p>
+                            <b>{{ amenidad.nombre }}</b>
+                        </p>
+                        <p class="ml-4">
+                            {{ amenidad.descripcion }}
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-2 mt-4">
+        <div>
+            mapita
+        </div>
+
+        <div>
+            <div class="mb-2 flex items-center justify-between">
+                <p class="text-xl">
+                    Reseñas de usuarios
+                </p>
+
+                <button @click="addReview" type="button" class="bg-primary-500 rounded-md text-white py-1 px-2 transition duration-300 hover:bg-primary-400">
+                    Agregar reseña
+                </button>
+            </div>
+            <div class="bg-gray-200 rounded-lg border border-gray-400 shadow-md overflow-y-scroll h-[44rem]">
+                <ResenaCard v-for="i in [1,2,3,4,5,6,7,8,9,10]"/>
+            </div>
+        </div>
+    </div>
+</div>
+</template>

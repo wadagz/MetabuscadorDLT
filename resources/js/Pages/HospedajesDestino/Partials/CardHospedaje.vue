@@ -2,7 +2,7 @@
 import { computed, inject } from 'vue';
 import { formatPrice } from '../../../Utils/priceFormatter';
 import { Icon } from '@iconify/vue/dist/iconify.js';
-import { useForm } from '@inertiajs/vue3';
+import { useForm, router } from '@inertiajs/vue3';
 import { toast } from 'vue3-toastify';
 
 const props = defineProps({
@@ -42,6 +42,11 @@ const toggleFavorite = () => {
     }
 };
 
+const visitHospedaje = () => {
+    console.log('prueba')
+    router.get(route('hospedaje.show', { hospedaje_id: props.hospedaje.id }));
+}
+
 const emit = defineEmits(['selectHospedaje']);
 
 const selectHospedaje = () => {
@@ -78,16 +83,15 @@ const selectHospedaje = () => {
                 <Icon icon="material-symbols-light:star-outline-rounded" :width="30" style="display: inline;"/>
                 <Icon icon="material-symbols-light:star-outline-rounded" :width="30" style="display: inline;"/>
                 <Icon icon="material-symbols-light:star-outline-rounded" :width="30" style="display: inline;"/>
-
             </div>
 
             <div class="flex justify-end items-center align-middle mr-4 gap-2">
                 <button v-if="isLoggedIn" @click="toggleFavorite" class="bg-red-400 rounded-full p-3 transition duration-300 hover:bg-red-500">
                     <Icon :icon="isFavorite ? 'iconoir:heart-solid' : 'mdi:heart-outline'"/>
                 </button>
-                <a :href="props.hospedaje.url" class="bg-primary-500 rounded-md text-white p-2 transition duration-300 hover:bg-primary-400" @click.stop>
-                    Visitar sitio web
-                </a>
+                <button @click="visitHospedaje" type="button" class="bg-primary-500 rounded-md text-white p-2 transition duration-300 hover:bg-primary-400">
+                    Visitar
+                </button>
             </div>
         </div>
     </div>
