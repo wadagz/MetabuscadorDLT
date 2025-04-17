@@ -22,7 +22,6 @@ const addReview = () => {
 </script>
 
 <template>
-    Agregar boton de favoritos en la esquina de la imagen
 <div class="card container mx-auto pt-4">
     <div class="flex items-center justify-between">
         <h1 class="text-3xl mb-4">{{ hospedaje.nombre }} - {{ hospedaje.destino.nombre }}</h1>
