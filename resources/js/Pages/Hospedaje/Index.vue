@@ -1,18 +1,25 @@
 <script setup>
+import { ref } from 'vue';
 import ResenaCard from './Partials/ResenaCard.vue';
 import LeafLetMap from './Partials/LeafLetMap.vue';
+import Modal from '@/Components/Modal.vue'
+import ResenaForm from './Partials/ResenaForm.vue';
 
 const props = defineProps({
     hospedaje: Object,
 });
 
+const showModal = ref(false);
+
 const addReview = () => {
     console.log('agregar reseña');
+    showModal.value = true
 };
 
 </script>
 
 <template>
+    Agregar boton de favoritos en la esquina de la imagen
 <div class="card container mx-auto pt-4">
     <h1 class="text-3xl mb-4">{{ hospedaje.nombre }} - {{ hospedaje.destino.nombre }}</h1>
 
@@ -82,4 +89,14 @@ const addReview = () => {
         </div>
     </div>
 </div>
+
+<Modal v-if="showModal" @close="showModal = false">
+    <template #title>
+        <!-- Agregar un v-if para mostrar agregar o editar si el usuario ha resenado o no el hospedaje -->
+        Agregar reseña
+    </template>
+    <template #body>
+        <ResenaForm :hospedaje @close="showModal = false"/>
+    </template>
+</Modal>
 </template>
