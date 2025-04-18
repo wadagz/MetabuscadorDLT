@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Amenidad;
 use App\Models\Destino;
 use App\Models\Hospedaje;
 use Illuminate\Database\Query\Builder;
@@ -48,6 +49,7 @@ class HospedajeController extends Controller
         }
 
         $hospedajes = $hospedajesQuery->limit(10)->get();
+        $amenidades = Amenidad::all()->pluck('nombre')->toArray();
 
         return Inertia::render('HospedajesDestino/Index', [
             'destino' => $request->input('destino'),
@@ -56,7 +58,9 @@ class HospedajeController extends Controller
             'puntoPartida' => $request->input('puntoPartida'),
             'hospedajes' => $hospedajes,
             'nombresDestinos' => $nombresDestinos,
+            'amenidades' => $amenidades,
             'isLoggedIn' => $isLoggedIn,
+            'destinoId' => $destino->id,
         ]);
     }
 

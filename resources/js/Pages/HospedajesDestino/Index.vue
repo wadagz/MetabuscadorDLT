@@ -1,5 +1,5 @@
 <script setup>
-import { provide, ref } from 'vue';
+import { onMounted, provide, ref } from 'vue';
 import SearchBar from '../../Components/SearchBar.vue';
 import CardHospedaje from './Partials/CardHospedaje.vue';
 import FilterBar from './Partials/FilterBar.vue';
@@ -17,8 +17,16 @@ const props = defineProps({
         default: () => []
     },
     nombresDestinos: Array,
+    amenidades: Array,
     isLoggedIn: Boolean,
+    destinoId: Number,
 });
+
+const hosps = ref(null);
+
+onMounted(() => {
+    hosps.value = props.hospedajes;
+})
 
 // Pass the isLoggedIn to child components, like the CardHospedaje component.
 provide('isLoggedIn', props.isLoggedIn);
@@ -28,6 +36,39 @@ const selectedHospedajeId = ref(null);
 const handleSelectHospedaje = (hospedajeId) => {
     selectedHospedajeId.value = hospedajeId;
 };
+
+const handleOnFilterChange = ({ filters, sort }) => {
+    console.log(hosps.value)
+    refetchHospedajes({ filters, sort });
+};
+
+async function refetchHospedajes ({ filters, sort }) {
+    const params = {
+        filters: {
+            ...filters,
+            destino_id: {
+                $eq: props.destinoId,
+            },
+        },
+    };
+
+    if (sort) {
+        params.sort = sort.field + ':' + sort.direction;
+    }
+
+    // console.log(filters)
+    // console.log(sort)
+    // console.log(params);
+
+    try {
+        const response = await axios.get('/api/hospedajes', { params });
+        console.log(response.data);
+        hosps.value = response.data;
+    } catch(error) {
+        console.log(error)
+        console.log('Ocurrió un error.')
+    }
+}
 </script>
 
 <template>
@@ -40,7 +81,10 @@ const handleSelectHospedaje = (hospedajeId) => {
 />
 
 <div class="container mx-auto mt-4 mb-4">
-    <FilterBar />
+    <FilterBar
+        @filterChange="handleOnFilterChange"
+        :amenidades
+    />
 </div>
 
 <div class="container mx-auto mb-2">
@@ -52,7 +96,7 @@ const handleSelectHospedaje = (hospedajeId) => {
 <div class="container mx-auto grid grid-cols-2 gap-4">
     <!-- Lista de hospedajes -->
     <div class="bg-gray-200 rounded-lg border border-gray-400 shadow-md overflow-y-scroll h-[44rem]">
-        <div v-for="hospedaje in hospedajes" :key="hospedaje.id">
+        <div v-for="hospedaje in hosps" :key="hospedaje.id">
             <CardHospedaje
                 :hospedaje="hospedaje"
                 @select-hospedaje="handleSelectHospedaje"
@@ -62,7 +106,7 @@ const handleSelectHospedaje = (hospedajeId) => {
     <!-- Mapa con ubicaciones de hospedajes -->
     <div class="bg-gray-200 rounded-lg border border-gray-400 shadow-md h-[44rem]">
         <MapComponent
-            :hospedajes="hospedajes"
+            :hospedajes="hosps"
             :selectedHospedajeId="selectedHospedajeId"
         />
     </div>
