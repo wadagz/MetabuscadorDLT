@@ -103,4 +103,9 @@ class HospedajeController extends Controller
             'isLoggedIn' => Auth::check(),
         ]);
     }
+
+    public function fetchHospedajes(Request $request)
+    {
+        return Hospedaje::sort()->filter()->with(['destino', 'direccion'])->limit(100)->get();
+    }
 }

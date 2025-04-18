@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Abbasudo\Purity\Traits\Filterable;
+use Abbasudo\Purity\Traits\Sortable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -12,6 +14,8 @@ class Hospedaje extends Model
 {
     /** @use HasFactory<\Database\Factories\HospedajeFactory> */
     use HasFactory;
+    use Filterable;
+    use Sortable;
 
     protected $table = "hospedajes";
 
