@@ -2,6 +2,7 @@
 import { ref, inject, watch, onBeforeUnmount, onMounted } from 'vue';
 import { Icon } from '@iconify/vue/dist/iconify.js';
 import Fuse from 'fuse.js';
+import { NButton, NCheckbox, NInput, NSelect } from 'naive-ui';
 
 const props = defineProps({
     amenidades: Object,
@@ -91,7 +92,7 @@ const updateAmenidadesToShow = debounce((search) => {
     const matches = fuse.search(search);
     console.log(matches)
     amenidadesToShow.value = matches.map(result => result.item);
-}, 300)
+}, 100)
 
 // Watcher para actualizar el listado de amenidades
 watch(amenidadesSearchQuery, (newVal) => {
@@ -122,84 +123,222 @@ onMounted(() => {
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside)
 })
+
+const sortOptions = [
+    {
+        label: 'A a Z',
+        value: 'asc',
+    },
+    {
+        label: 'Z a A',
+        value: 'desc',
+    },
+];
+
+const precioOptions = [
+    {
+        label: 'Hasta $5,000',
+        value: '5000',
+    },
+    {
+        label: 'Hasta $10,000',
+        value: '10000',
+    },
+    {
+        label: 'Hasta $15,000',
+        value: '15000',
+    },
+    {
+        label: 'Hasta $20,000',
+        value: '20000',
+    },
+];
+
+const personasOptions = [
+    {
+        label: '1',
+        value: '1',
+    },
+    {
+        label: '2',
+        value: '2',
+    },
+    {
+        label: '3',
+        value: '3',
+    },
+    {
+        label: '4',
+        value: '4',
+    },
+];
+
+// Pruebas de uso de NSelect para amenidades
+const amenidadOptions = Object.entries(props.amenidades).map(([idx, amenidad]) => ({
+    label: amenidad.nombre,
+    value: amenidad.id,
+    description: amenidad.descripcion
+}));
+
+const fusible = new Fuse(amenidadOptions, {
+    keys: ['label', 'description'],
+    threshold: 0.4,
+})
+
+const selectedValue = ref(null)
+const searchQuery = ref('')
+const filteredOptions = ref([...amenidadOptions]) // Start with full list
+
+const handleSearch = (pattern) => {
+  searchQuery.value = pattern
+
+  if (!pattern) {
+    filteredOptions.value = [...amenidadOptions]
+  } else {
+    const results = fusible.search(pattern).map(result => result.item)
+    filteredOptions.value = results
+  }
+}
+
+const renderCustomTag = ({ option }) => {
+  return h('span', { class: 'text-red-500' }, option.label)
+}
+// Fin de pruebas de uso NSelect para amenidades
+
+
+// const rolOptions = Object.entries(RolLabels).map(([value, label]) => ({
+//     label,
+//     value
+// }));
 </script>
 
 <template>
     <div class="mt-4 bg-light max-w-xl xl:max-w-7xl mx-auto rounded-md border border-gray-400">
-        <div class="flex flex-nowrap items-center justify-evenly">
+        <div class="grid grid-cols-5 items-center justify-evenly gap-2">
+
             <!-- Selección de ordenamiento -->
-            <div class="flex-grow text-center grid grid-col-4 items-center">
-                <label class="col-start-1 col-span-4 mt-1">Ordenar</label>
-                <Icon icon="material-symbols:sort" />
-                <select v-model="sort.direction" name="destino" class="w-11/12 rounded-md mb-2 mt-1 col-start-2 col-span-3" placeholder="E.j. Puerto Vallarta">
+            <div class="grid grid-rows-2 items-center">
+                <label class="">Ordenar</label>
+                <!-- <Icon icon="material-symbols:sort" /> -->
+                <!-- <select v-model="sort.direction" name="destino" class="w-11/12 rounded-md mb-2 mt-1 col-start-2 col-span-3" placeholder="E.j. Puerto Vallarta">
                     <option value="asc">A a la Z</option>
                     <option value="desc">Z a la A</option>
-                </select>
+                </select> -->
+                <NSelect
+                    v-model:value="sort.direction"
+                    :options="sortOptions"
+                />
             </div>
 
             <!-- Selección de rango de precio -->
-            <div class="flex-grow text-center grid grid-col-4 items-center">
-                <label class="col-start-1 col-span-4 mt-1">Precio</label>
-                <Icon icon="mdi:cash" />
-                <select v-model="filters.precio.$lte"  name="destino" class="w-11/12 rounded-md mb-2 mt-1 py-2 col-start-2 col-span-3" placeholder="E.j. Puerto Vallarta">
+            <div class="grid grid-rows-2 items-center">
+                <label class="">Precio</label>
+                <!-- <Icon icon="mdi:cash" /> -->
+                <!-- <select v-model="filters.precio.$lte"  name="destino" class="w-11/12 rounded-md mb-2 mt-1 py-2 col-start-2 col-span-3" placeholder="E.j. Puerto Vallarta">
                     <option value="5000">Hasta $5,000</option>
                     <option value="10000">Hasta $10,000</option>
                     <option value="20000">Hasta  $20,000</option>
-                </select>
+                </select> -->
+                <NSelect
+                    v-model:value="filters.precio.$lte"
+                    :options="precioOptions"
+                />
             </div>
 
+            <!-- <div class="grid grid-rows-2 items-center">
+                <label class="">Precio</label>
+                <NSelect
+                    multiple
+                    filterable
+                    :filter="() => true"
+                    clearable
+                    :options="filteredOptions"
+                    :max-tag-count="1"
+                    @search="handleSearch"
+                    placeholder="Amenidades"
+                    :label-field="'label'"
+                    :value-field="'value'"
+                    :render-tag="renderCustomTag"
+                />
+            </div> -->
+
             <!-- Selección de amenidades -->
-            <div class="flex-grow text-center grid grid-col-4 items-center justify-center">
-                <label class="col-start-1 col-span-4 mt-1">Precio</label>
-                <Icon icon="mdi:cash" />
+            <div class="grid grid-rows-2 items-center justify-center">
+                <label class="">Precio</label>
+
                 <div class="relative inline-block text-left" ref="dropdownRef">
                     <div>
-                        <button
+                        <!-- <button
                             type="button"
                             @click="showAmenidades = !showAmenidades"
-                            class="rounded-md bg-cyan-700 text-white px-2 py-1"
+                            class="rounded-sm bg-cyan-700 text-white px-2 py-1"
                         >
                             Seleccionar Amenidades
-                        </button>
+                        </button> -->
+                        <NButton
+                            type="default"
+                            secondary
+                            attr-type="button"
+                            @click="showAmenidades = !showAmenidades"
+                        >
+                            Seleccionar Amenidades
+                        </NButton>
                     </div>
 
                     <!-- Dropdown menu para seleccionar amenidades -->
                     <Transition
-                        enter-active-class="transition duration-100 ease-out"
-                        enter-from-class="opacity-0"
-                        enter-to-class="opacity-100"
-                        leave-active-class="transition duration-100 ease-in"
-                        leave-from-class="opacity-100"
-                        leave-to-class="opacity-0"
+                        enter-active-class="transition duration-200 ease-out"
+                        enter-from-class="opacity-0 scale-95"
+                        enter-to-class="opacity-100 scale-100"
+                        leave-active-class="transition duration-200 ease-in"
+                        leave-from-class="opacity-100 scale-100"
+                        leave-to-class="opacity-0 scale-80"
                     >
                         <div
                             v-if="showAmenidades"
-                            class="origin-top-right mt-2 w-96 rounded-md shadow-lg bg-white ring-1
-                                ring-black ring-opacity-5 focus:outline-none z-[9999] max-h-96 overflow-scroll
-                                absolute top-10 p-4
+                            class="origin-top-right mt-2 w-96 rounded-sm shadow-lg bg-white ring-1
+                                ring-black ring-opacity-5 focus:outline-none z-[9999]
+                                absolute top-10 p-2
                             "
                         >
                             <!-- Input para buscar amenidades en concreto -->
-                            <div class="mb-2 flex items-center gap-2">
-                                <input v-model="amenidadesSearchQuery" class="max-h-6 w-full">
+                            <div>
+                                <!-- <input
+                                    v-model="amenidadesSearchQuery"
+                                    class="max-h-6 w-full"
+                                > -->
+                                <NInput
+                                    v-model:value="amenidadesSearchQuery"
+                                    type="text"
+                                    placeholder="Amenidad"
+                                    clearable
+                                />
                             </div>
 
                             <hr>
 
                             <!-- Lista de amenidades -->
-                            <div v-for="amenidad in amenidadesToShow" :key="amenidad.id" class="transition duration-75 hover:bg-gray-100">
-                                <div class="flex items-center pl-1 py-2 ">
-                                    <input
-                                    @click="handleAmenidadCheckBox(amenidad.id)"
-                                    type="checkbox"
-                                    :id="amenidad.nombre"
-                                    :checked="amenidadesSeleccionadas.indexOf(amenidad.id) !== -1"
-                                    />
-                                    <label :for="amenidad.nombre" class="ml-2 w-full">
-                                        {{ amenidad.nombre }}
-                                    </label>
+                            <div class="overflow-y-auto" style="max-height: 20rem">
+                                <div v-for="amenidad in amenidadesToShow" :key="amenidad.id" class="transition duration-75 hover:bg-gray-100">
+                                    <div class="flex items-center pl-1 py-2 ">
+                                        <NCheckbox
+                                            :checked="amenidadesSeleccionadas.indexOf(amenidad.id) !== -1"
+                                            @click="handleAmenidadCheckBox(amenidad.id)"
+                                        >
+                                            {{ amenidad.nombre }}
+                                        </NCheckbox>
+                                        <!-- <input
+                                        @click="handleAmenidadCheckBox(amenidad.id)"
+                                        type="checkbox"
+                                        :id="amenidad.nombre"
+                                        :checked="amenidadesSeleccionadas.indexOf(amenidad.id) !== -1"
+                                        /> -->
+                                        <!-- <label :for="amenidad.nombre" class="ml-2 w-full">
+                                            {{ amenidad.nombre }}
+                                        </label> -->
+                                    </div>
+                                    <hr>
                                 </div>
-                                <hr>
                             </div>
                         </div>
                     </Transition>
@@ -207,22 +346,29 @@ onBeforeUnmount(() => {
             </div>
 
 
-            <div class="flex-grow text-center grid grid-col-4 items-center">
-                <label class="col-start-1 col-span-4 mt-1">Cant. Personas</label>
-                <Icon icon="mdi:account-multiple" />
-                <select name="destino" class="w-11/12 rounded-md mb-2 mt-1 py-2 col-start-2 col-span-3" placeholder="E.j. Puerto Vallarta">
+            <div class="grid grid-rows-2 items-center">
+                <label class="">Cant. Personas</label>
+                <NSelect
+                    :options="personasOptions"
+                />
+                <!-- <select name="destino" class="w-11/12 rounded-md mb-2 mt-1 py-2 col-start-2 col-span-3" placeholder="E.j. Puerto Vallarta">
                     <option></option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                </select>
+                </select> -->
             </div>
 
-            <div class="flex-grow text-center">
-                <button @click="applyFilters" type="button" class="rounded-md bg-primary-500 w-11/12 py-1 mr-2 mt-6 text-white transition duration-300 hover:bg-primary-400">
-                    Filtrar
-                </button>
+            <div>
+                <div class="flex flex-row text-center">
+                    <button @click="applyFilters" type="button" class="rounded-sm bg-primary-500 w-11/12 py-1 mr-2 mt-6 text-white transition duration-300 hover:bg-primary-400">
+                        Filtrar
+                    </button>
+                    <button type="button" class="rounded-sm bg-secondary w-11/12 py-1 mr-2 mt-6 text-white transition duration-300 hover:bg-stone-400">
+                        Limpiar filtros
+                    </button>
+                </div>
             </div>
         </div>
     </div>
