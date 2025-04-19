@@ -4,6 +4,7 @@ import SearchBar from '../../Components/SearchBar.vue';
 import CardHospedaje from './Partials/CardHospedaje.vue';
 import FilterBar from './Partials/FilterBar.vue';
 import MapComponent from './Partials/LeafletMapComponent.vue';
+import { toast } from 'vue3-toastify';
 
 const props = defineProps({
     destino: String,
@@ -17,7 +18,7 @@ const props = defineProps({
         default: () => []
     },
     nombresDestinos: Array,
-    amenidades: Array,
+    amenidades: Object,
     isLoggedIn: Boolean,
     destinoId: Number,
 });
@@ -67,6 +68,7 @@ async function refetchHospedajes ({ filters, sort }) {
     } catch(error) {
         console.log(error)
         console.log('Ocurrió un error.')
+        toast('Ocurrión un error al aplicar los filtros.', { type: 'error' })
     }
 }
 </script>

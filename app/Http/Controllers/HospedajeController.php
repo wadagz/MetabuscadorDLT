@@ -49,7 +49,7 @@ class HospedajeController extends Controller
         }
 
         $hospedajes = $hospedajesQuery->limit(10)->get();
-        $amenidades = Amenidad::all()->pluck('nombre')->toArray();
+        $amenidades = Amenidad::all();
 
         return Inertia::render('HospedajesDestino/Index', [
             'destino' => $request->input('destino'),
@@ -110,6 +110,16 @@ class HospedajeController extends Controller
 
     public function fetchHospedajes(Request $request)
     {
-        return Hospedaje::sort()->filter()->with(['destino', 'direccion'])->limit(100)->get();
+        \Log::debug('Fetch Hospedajes Query', ['query' => $request->all()]);
+
+        return Hospedaje::sort()
+            ->filter()
+            ->with([
+                'destino',
+                'direccion',
+                'amenidades',
+            ])
+            ->limit(100)
+            ->get();
     }
 }
