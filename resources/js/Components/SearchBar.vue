@@ -103,6 +103,7 @@ const submit = () => {
             <NButton
                 type="primary"
                 attr-type="submit"
+                strong
                 @click="submit"
             >
                 <template #icon>
@@ -114,6 +115,7 @@ const submit = () => {
                 v-if="canFilter"
                 secondary
                 attr-type="button"
+                strong
                 @click="emit('toggleShowFilters')"
             >
                 <template #icon>
