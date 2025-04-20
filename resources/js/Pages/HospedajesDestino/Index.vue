@@ -99,7 +99,7 @@ async function refetchHospedajes ({ filters, sort }) {
 
 <div class="container mx-auto grid grid-cols-2 gap-4">
     <!-- Lista de hospedajes -->
-    <div class="bg-gray-200 rounded-lg border border-gray-400 shadow-md overflow-y-scroll h-[44rem]">
+    <div class="bg-gray-200 rounded-sm border border-gray-400 shadow-md overflow-y-scroll h-[44rem]">
         <div v-for="hospedaje in hosps" :key="hospedaje.id">
             <CardHospedaje
                 :hospedaje="hospedaje"
@@ -108,7 +108,7 @@ async function refetchHospedajes ({ filters, sort }) {
         </div>
     </div>
     <!-- Mapa con ubicaciones de hospedajes -->
-    <div class="bg-gray-200 rounded-lg border border-gray-400 shadow-md h-[44rem]">
+    <div class="bg-gray-200 rounded-sm border border-gray-400 shadow-md h-[44rem]">
         <MapComponent
             :hospedajes="hosps"
             :selectedHospedajeId="selectedHospedajeId"

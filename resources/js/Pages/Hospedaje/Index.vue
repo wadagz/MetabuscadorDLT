@@ -39,15 +39,15 @@ const addReview = () => {
     <!-- Info general del hospedaje -->
     <div class="grid grid-cols-3 gap-4 items-start">
         <!-- Imagen hospedaje -->
-        <div class="card bg-light rounded-md border border-gray-200 min-h-52 h-72 relative">
-            <img :src="hospedaje.img_path" class="rounded-md w-full h-full p-2"/>
+        <div class="card bg-light rounded-sm border border-gray-200 min-h-52 h-72 relative">
+            <img :src="hospedaje.img_path" class="rounded-sm w-full h-full p-2"/>
             <div v-if="isLoggedIn" class="absolute bottom-4 right-4">
                 <FavoriteHospedajeButton :hospedaje />
             </div>
         </div>
 
         <!-- Descripcion -->
-        <div class="card bg-light border border-gray-200 rounded-md p-2 min-h-52 h-72 flex flex-col" >
+        <div class="card bg-light border border-gray-200 rounded-sm p-2 min-h-52 h-72 flex flex-col" >
             <h2 class="text-2xl">
                 Descripción
             </h2>
@@ -60,7 +60,7 @@ const addReview = () => {
         </div>
 
         <!-- Amenidades -->
-        <div class="card bg-light border border-gray-200 rounded-md p-2 min-h-52 h-72 flex flex-col" >
+        <div class="card bg-light border border-gray-200 rounded-sm p-2 min-h-52 h-72 flex flex-col" >
             <h2 class="text-2xl">
                 Amenidades incluidas
             </h2>
@@ -116,7 +116,7 @@ const addReview = () => {
                     Agregar reseña
                 </NButton>
             </div>
-            <div class="bg-gray-200 rounded-lg border border-gray-400 shadow-md overflow-y-scroll flex-1">
+            <div class="bg-gray-200 rounded-sm border border-gray-400 shadow-md overflow-y-scroll flex-1">
                 <ResenaCard v-for="i in [1,2,3,4,5,6,7,8,9,10]"/>
             </div>
         </div>

@@ -55,7 +55,7 @@
         </div>
 
         <div class="col-start-3">
-            <button class="rounded-md bg-primary-500 text-white px-2 py-2" type="submit">Actualizar mis preferencias</button>
+            <button class="rounded-sm bg-primary-500 text-white px-2 py-2" type="submit">Actualizar mis preferencias</button>
         </div>
     </div>
     </form>

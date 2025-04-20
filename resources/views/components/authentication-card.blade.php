@@ -4,7 +4,7 @@
             {{ $logo }}
         </div>
 
-        <div class="bg-light min-w-full rounded-md shadow-md border border-gray-200">
+        <div class="bg-light min-w-full rounded-sm shadow-md border border-gray-200">
             {{ $slot }}
         </div>
     </div>

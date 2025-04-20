@@ -97,7 +97,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div id="leaflet-map" ref="mapContainer" class="w-full h-full rounded-lg"></div>
+    <div id="leaflet-map" ref="mapContainer" class="w-full h-full rounded-sm"></div>
 </template>
 
 <style scoped>

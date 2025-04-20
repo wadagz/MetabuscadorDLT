@@ -11,7 +11,7 @@ function closeModal() {
 <template>
 <Teleport to="body">
     <div class="modal">
-        <div class="modal-content rounded-md p-4" @click.stop>
+        <div class="modal-content rounded-sm p-4" @click.stop>
             <div class="title text-2xl flex flex-row justify-between items-center" v-if="$slots.title">
                 <slot name="title" />
                 <button type="button" @click="emit('close')">

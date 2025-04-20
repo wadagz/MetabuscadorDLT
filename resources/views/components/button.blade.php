@@ -1,3 +1,3 @@
-<button {{ $attributes->merge(['class' => 'rounded-md']) }}>
+<button {{ $attributes->merge(['class' => 'rounded-sm']) }}>
     {{ $slot }}
 </button>

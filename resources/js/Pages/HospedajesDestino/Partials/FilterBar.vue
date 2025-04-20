@@ -213,14 +213,14 @@ const renderCustomTag = ({ option }) => {
 </script>
 
 <template>
-    <div class="mt-4 bg-light max-w-xl xl:max-w-7xl mx-auto rounded-md border border-gray-400">
+    <div class="mt-4 bg-light max-w-xl xl:max-w-7xl mx-auto rounded-sm border border-gray-400">
         <div class="grid grid-cols-5 items-center justify-evenly gap-2">
 
             <!-- Selección de ordenamiento -->
             <div class="grid grid-rows-2 items-center">
                 <label class="">Ordenar</label>
                 <!-- <Icon icon="material-symbols:sort" /> -->
-                <!-- <select v-model="sort.direction" name="destino" class="w-11/12 rounded-md mb-2 mt-1 col-start-2 col-span-3" placeholder="E.j. Puerto Vallarta">
+                <!-- <select v-model="sort.direction" name="destino" class="w-11/12 rounded-sm mb-2 mt-1 col-start-2 col-span-3" placeholder="E.j. Puerto Vallarta">
                     <option value="asc">A a la Z</option>
                     <option value="desc">Z a la A</option>
                 </select> -->
@@ -234,7 +234,7 @@ const renderCustomTag = ({ option }) => {
             <div class="grid grid-rows-2 items-center">
                 <label class="">Precio</label>
                 <!-- <Icon icon="mdi:cash" /> -->
-                <!-- <select v-model="filters.precio.$lte"  name="destino" class="w-11/12 rounded-md mb-2 mt-1 py-2 col-start-2 col-span-3" placeholder="E.j. Puerto Vallarta">
+                <!-- <select v-model="filters.precio.$lte"  name="destino" class="w-11/12 rounded-sm mb-2 mt-1 py-2 col-start-2 col-span-3" placeholder="E.j. Puerto Vallarta">
                     <option value="5000">Hasta $5,000</option>
                     <option value="10000">Hasta $10,000</option>
                     <option value="20000">Hasta  $20,000</option>
@@ -351,7 +351,7 @@ const renderCustomTag = ({ option }) => {
                 <NSelect
                     :options="personasOptions"
                 />
-                <!-- <select name="destino" class="w-11/12 rounded-md mb-2 mt-1 py-2 col-start-2 col-span-3" placeholder="E.j. Puerto Vallarta">
+                <!-- <select name="destino" class="w-11/12 rounded-sm mb-2 mt-1 py-2 col-start-2 col-span-3" placeholder="E.j. Puerto Vallarta">
                     <option></option>
                     <option>1</option>
                     <option>2</option>

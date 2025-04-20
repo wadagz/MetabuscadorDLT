@@ -15,10 +15,10 @@
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 @auth
                     <div class="mr-4">
-                        <a href="{{ route('recentlyViewed.index') }}" class="text-black rounded-md bg-light p-2 hover:bg-neutral-200">Recientes</a>
+                        <a href="{{ route('recentlyViewed.index') }}" class="text-black rounded-sm bg-light p-2 hover:bg-neutral-200">Recientes</a>
                     </div>
                     <div class="mr-4">
-                        <a href="{{ route('user-favorites.index') }}" class="text-black rounded-md bg-light p-2 hover:bg-neutral-200">Favoritos</a>
+                        <a href="{{ route('user-favorites.index') }}" class="text-black rounded-sm bg-light p-2 hover:bg-neutral-200">Favoritos</a>
                     </div>
                     <!-- Menú desplegable -->
                     <div class="relative">
@@ -29,8 +29,8 @@
                                         <img class="size-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                                     </button>
                                 @else
-                                    <span class="inline-flex rounded-md">
-                                        <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 rounded-md text-black bg-light hover:bg-neutral-200 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
+                                    <span class="inline-flex rounded-sm">
+                                        <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 rounded-sm text-black bg-light hover:bg-neutral-200 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
                                             {{ Auth::user()->name }}
 
                                             <svg class="ms-2 -me-0.5 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -64,8 +64,8 @@
                     </div>
                 @else
                     <div>
-                        <a href="{{ route('login') }}" class="text-black rounded-md bg-light p-2 hover:bg-neutral-200 mr-4">Iniciar sesión</a>
-                        <a href="{{ route('register') }}" class="text-black rounded-md bg-light p-2 hover:bg-neutral-200">Registrarse</a>
+                        <a href="{{ route('login') }}" class="text-black rounded-sm bg-light p-2 hover:bg-neutral-200 mr-4">Iniciar sesión</a>
+                        <a href="{{ route('register') }}" class="text-black rounded-sm bg-light p-2 hover:bg-neutral-200">Registrarse</a>
                     </div>
                 @endauth
             </div>

@@ -3,7 +3,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js';
 </script>
 
 <template>
-<div class="card bg-light m-4 px-2 border border-gray-300 rounded-md">
+<div class="card bg-light m-4 px-2 border border-gray-300 rounded-sm">
     <div class="flex items-center justify-between">
         <div class="text-lg">
             <b>usuario</b>

@@ -25,7 +25,7 @@ const selectHospedaje = () => {
 </script>
 
 <template>
-    <div @click="selectHospedaje" class="m-2 bg-light rounded-md border border-gray-400 shadow cursor-pointer hover:bg-gray-100 transition-colors duration-200">
+    <div @click="selectHospedaje" class="m-2 bg-light rounded-sm border border-gray-400 shadow cursor-pointer hover:bg-gray-100 transition-colors duration-200">
         <div class="grid grid-cols-2 ml-5 mt-2 mb-2 gap-4">
             <p class="text-lg">{{ props.hospedaje.nombre }}</p>
             <p class="text-lg">Precio por noche: {{ formatPrice(props.hospedaje.precio) }}</p>
@@ -35,7 +35,7 @@ const selectHospedaje = () => {
 
         <div class="grid grid-cols-2">
             <div class="m-4">
-                <img class="rounded-md w-full h-36 object-fill" :src="props.hospedaje.img_path">
+                <img class="rounded-sm w-full h-36 object-fill" :src="props.hospedaje.img_path">
             </div>
 
             <div class="">

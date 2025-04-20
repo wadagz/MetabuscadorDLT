@@ -11,7 +11,7 @@ const emit = defineEmits(['verDestino']);
 </script>
 
 <template>
-<div class="bg-light rounded-lg shadow mx-auto w-3/4">
+<div class="bg-light rounded-sm shadow mx-auto w-3/4">
 
     <!-- Carousel component -->
     <Splide :options="splideOptions" :aria-label="ariaLabel" :has-track="false" class="!py-4 !px-10">
@@ -22,7 +22,7 @@ const emit = defineEmits(['verDestino']);
                     <div class="rounded bg-white border border-gray-200 h-full shadow-md grid grid-rows-3">
                         <div class="row-span-2">
                             <button @click="emit('verDestino', destino.nombre)" type="button">
-                                <img :src="destino.img_path" class="rounded-md h-full" :alt="destino.nombre">
+                                <img :src="destino.img_path" class="rounded-sm h-full" :alt="destino.nombre">
                             </button>
                         </div>
                         <div class="row-start-3">
