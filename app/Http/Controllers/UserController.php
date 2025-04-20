@@ -30,7 +30,7 @@ class UserController extends Controller
         // });
 
         return Inertia::render('Profile/Favoritos', [
-            'favoritos' => $favoritos,
+            'favoritos' => $favoritos->isEmpty() ? null : $favoritos,
             'destinos' => $destinos,
         ]);
     }
