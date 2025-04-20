@@ -1,6 +1,5 @@
 <script setup>
 import { ref, inject, watch, onBeforeUnmount, onMounted } from 'vue';
-import { Icon } from '@iconify/vue/dist/iconify.js';
 import Fuse from 'fuse.js';
 import { NButton, NCheckbox, NInput, NSelect } from 'naive-ui';
 
@@ -18,6 +17,7 @@ const amenidadesToShow = ref(props.amenidades);
 const dropdownRef = ref(null)
 
 const amenidadesSeleccionadas = ref([]);
+const sortFieldDirection = ref(null);
 
 // Config of fuse for fuzzy search.
 const fuse = new Fuse(props.amenidades, {
@@ -26,20 +26,29 @@ const fuse = new Fuse(props.amenidades, {
     threshold: 0.4, // lower = stricter
 });
 
-// Filters structure compatible with Laravel Purity
-const filters = ref({
-    precio: { $lte: 5000 },
+// Base filter and sort for cleaning the filters
+const baseFilters = {
+    precio: { $lte: null },
     amenidades: {
         id: {
             $in: amenidadesSeleccionadas,
         },
     },
+};
+
+const baseSort = {
+    field: null,
+    direction: null,
+}
+
+// Filters structure compatible with Laravel Purity
+const filters = ref({
+    ...baseFilters
 });
 
 // Ordenamiento por columna y dirección
 const sort = ref({
-    field: 'nombre',
-    direction: 'asc'
+    ...baseSort
 });
 
 // Aplica los filtros seleccionados
@@ -63,6 +72,12 @@ function applyFilters() {
       delete cleanFilters[key];
     }
   });
+
+  if (sortFieldDirection.value) {
+    const splitted = sortFieldDirection.value.split(':');
+    sort.value.field = splitted[0];
+    sort.value.direction = splitted[1];
+  }
 
   // Emite la señal para que el componente padre haga fetch con los nuevos filtros.
   emit('filterChange', {
@@ -116,6 +131,14 @@ const handleAmenidadCheckBox = (amenidadId) => {
     }
 }
 
+const cleanFilters = () => {
+    sort.value = { ...baseSort };
+    sortFieldDirection.value = null;
+    amenidadesSeleccionadas.value = [];
+    filters.value.precio.$lte = null;
+    applyFilters();
+}
+
 onMounted(() => {
   document.addEventListener('click', handleClickOutside)
 })
@@ -127,11 +150,11 @@ onBeforeUnmount(() => {
 const sortOptions = [
     {
         label: 'A a Z',
-        value: 'asc',
+        value: 'nombre:asc',
     },
     {
         label: 'Z a A',
-        value: 'desc',
+        value: 'nombre:desc',
     },
 ];
 
@@ -173,43 +196,6 @@ const personasOptions = [
     },
 ];
 
-// Pruebas de uso de NSelect para amenidades
-const amenidadOptions = Object.entries(props.amenidades).map(([idx, amenidad]) => ({
-    label: amenidad.nombre,
-    value: amenidad.id,
-    description: amenidad.descripcion
-}));
-
-const fusible = new Fuse(amenidadOptions, {
-    keys: ['label', 'description'],
-    threshold: 0.4,
-})
-
-const selectedValue = ref(null)
-const searchQuery = ref('')
-const filteredOptions = ref([...amenidadOptions]) // Start with full list
-
-const handleSearch = (pattern) => {
-  searchQuery.value = pattern
-
-  if (!pattern) {
-    filteredOptions.value = [...amenidadOptions]
-  } else {
-    const results = fusible.search(pattern).map(result => result.item)
-    filteredOptions.value = results
-  }
-}
-
-const renderCustomTag = ({ option }) => {
-  return h('span', { class: 'text-red-500' }, option.label)
-}
-// Fin de pruebas de uso NSelect para amenidades
-
-
-// const rolOptions = Object.entries(RolLabels).map(([value, label]) => ({
-//     label,
-//     value
-// }));
 </script>
 
 <template>
@@ -219,48 +205,22 @@ const renderCustomTag = ({ option }) => {
             <!-- Selección de ordenamiento -->
             <div class="grid grid-rows-2 items-center">
                 <label class="">Ordenar</label>
-                <!-- <Icon icon="material-symbols:sort" /> -->
-                <!-- <select v-model="sort.direction" name="destino" class="w-11/12 rounded-sm mb-2 mt-1 col-start-2 col-span-3" placeholder="E.j. Puerto Vallarta">
-                    <option value="asc">A a la Z</option>
-                    <option value="desc">Z a la A</option>
-                </select> -->
                 <NSelect
-                    v-model:value="sort.direction"
+                    v-model:value="sortFieldDirection"
                     :options="sortOptions"
+                    placeholder="Orden"
                 />
             </div>
 
             <!-- Selección de rango de precio -->
             <div class="grid grid-rows-2 items-center">
                 <label class="">Precio</label>
-                <!-- <Icon icon="mdi:cash" /> -->
-                <!-- <select v-model="filters.precio.$lte"  name="destino" class="w-11/12 rounded-sm mb-2 mt-1 py-2 col-start-2 col-span-3" placeholder="E.j. Puerto Vallarta">
-                    <option value="5000">Hasta $5,000</option>
-                    <option value="10000">Hasta $10,000</option>
-                    <option value="20000">Hasta  $20,000</option>
-                </select> -->
                 <NSelect
                     v-model:value="filters.precio.$lte"
                     :options="precioOptions"
+                    placeholder="Precio"
                 />
             </div>
-
-            <!-- <div class="grid grid-rows-2 items-center">
-                <label class="">Precio</label>
-                <NSelect
-                    multiple
-                    filterable
-                    :filter="() => true"
-                    clearable
-                    :options="filteredOptions"
-                    :max-tag-count="1"
-                    @search="handleSearch"
-                    placeholder="Amenidades"
-                    :label-field="'label'"
-                    :value-field="'value'"
-                    :render-tag="renderCustomTag"
-                />
-            </div> -->
 
             <!-- Selección de amenidades -->
             <div class="grid grid-rows-2 items-center justify-center">
@@ -268,13 +228,6 @@ const renderCustomTag = ({ option }) => {
 
                 <div class="relative inline-block text-left" ref="dropdownRef">
                     <div>
-                        <!-- <button
-                            type="button"
-                            @click="showAmenidades = !showAmenidades"
-                            class="rounded-sm bg-cyan-700 text-white px-2 py-1"
-                        >
-                            Seleccionar Amenidades
-                        </button> -->
                         <NButton
                             type="default"
                             secondary
@@ -303,10 +256,6 @@ const renderCustomTag = ({ option }) => {
                         >
                             <!-- Input para buscar amenidades en concreto -->
                             <div>
-                                <!-- <input
-                                    v-model="amenidadesSearchQuery"
-                                    class="max-h-6 w-full"
-                                > -->
                                 <NInput
                                     v-model:value="amenidadesSearchQuery"
                                     type="text"
@@ -327,15 +276,6 @@ const renderCustomTag = ({ option }) => {
                                         >
                                             {{ amenidad.nombre }}
                                         </NCheckbox>
-                                        <!-- <input
-                                        @click="handleAmenidadCheckBox(amenidad.id)"
-                                        type="checkbox"
-                                        :id="amenidad.nombre"
-                                        :checked="amenidadesSeleccionadas.indexOf(amenidad.id) !== -1"
-                                        /> -->
-                                        <!-- <label :for="amenidad.nombre" class="ml-2 w-full">
-                                            {{ amenidad.nombre }}
-                                        </label> -->
                                     </div>
                                     <hr>
                                 </div>
@@ -350,14 +290,8 @@ const renderCustomTag = ({ option }) => {
                 <label class="">Cant. Personas</label>
                 <NSelect
                     :options="personasOptions"
+                    placeholder="Cantidad de personas"
                 />
-                <!-- <select name="destino" class="w-11/12 rounded-sm mb-2 mt-1 py-2 col-start-2 col-span-3" placeholder="E.j. Puerto Vallarta">
-                    <option></option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                </select> -->
             </div>
 
             <div>
@@ -374,15 +308,10 @@ const renderCustomTag = ({ option }) => {
                         attr-type="button"
                         type="secondary"
                         strong
+                        @click="cleanFilters"
                     >
                         Limpiar filtros
                     </NButton>
-                    <!-- <button @click="applyFilters" type="button" class="rounded-sm bg-primary-500 w-11/12 py-1 mr-2 mt-6 text-white transition duration-300 hover:bg-primary-400">
-                        Filtrar
-                    </button> -->
-                    <!-- <button type="button" class="rounded-sm bg-secondary w-11/12 py-1 mr-2 mt-6 text-white transition duration-300 hover:bg-stone-400">
-                        Limpiar filtros
-                    </button> -->
                 </div>
             </div>
         </div>
