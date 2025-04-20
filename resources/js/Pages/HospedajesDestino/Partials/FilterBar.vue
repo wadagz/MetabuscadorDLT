@@ -199,121 +199,121 @@ const personasOptions = [
 </script>
 
 <template>
-    <div class="mt-4 bg-light max-w-xl xl:max-w-7xl mx-auto rounded-sm border border-gray-400">
-        <div class="grid grid-cols-5 items-center justify-evenly gap-2">
+<div class="max-w-xl xl:max-w-7xl mx-auto rounded-sm ">
+    <!-- <div class="grid grid-cols-5 gap-2"> -->
+    <div class="flex flex-row justify-evenly gap-2">
 
-            <!-- Selección de ordenamiento -->
-            <div class="grid grid-rows-2 items-center">
-                <label class="">Ordenar</label>
-                <NSelect
-                    v-model:value="sortFieldDirection"
-                    :options="sortOptions"
-                    placeholder="Orden"
-                />
-            </div>
+        <!-- Selección de ordenamiento -->
+        <div class="flex-grow grid grid-rows-2 items-center">
+            <label class="">Ordenar</label>
+            <NSelect
+                v-model:value="sortFieldDirection"
+                :options="sortOptions"
+                placeholder="Orden"
+            />
+        </div>
 
-            <!-- Selección de rango de precio -->
-            <div class="grid grid-rows-2 items-center">
-                <label class="">Precio</label>
-                <NSelect
-                    v-model:value="filters.precio.$lte"
-                    :options="precioOptions"
-                    placeholder="Precio"
-                />
-            </div>
+        <!-- Selección de rango de precio -->
+        <div class="flex-grow grid grid-rows-2 items-center">
+            <label class="">Precio</label>
+            <NSelect
+                v-model:value="filters.precio.$lte"
+                :options="precioOptions"
+                placeholder="Precio"
+            />
+        </div>
 
-            <!-- Selección de amenidades -->
-            <div class="grid grid-rows-2 items-center justify-center">
-                <label class="">Precio</label>
+        <!-- Selección de amenidades -->
+        <div class="flex-shrink grid grid-rows-2 items-center justify-center">
+            <label class="">Precio</label>
 
-                <div class="relative inline-block text-left" ref="dropdownRef">
-                    <div>
-                        <NButton
-                            type="default"
-                            secondary
-                            attr-type="button"
-                            @click="showAmenidades = !showAmenidades"
-                        >
-                            Seleccionar Amenidades
-                        </NButton>
-                    </div>
-
-                    <!-- Dropdown menu para seleccionar amenidades -->
-                    <Transition
-                        enter-active-class="transition duration-200 ease-out"
-                        enter-from-class="opacity-0 scale-95"
-                        enter-to-class="opacity-100 scale-100"
-                        leave-active-class="transition duration-200 ease-in"
-                        leave-from-class="opacity-100 scale-100"
-                        leave-to-class="opacity-0 scale-80"
+            <div class="relative inline-block text-left" ref="dropdownRef">
+                <div>
+                    <NButton
+                        type="default"
+                        secondary
+                        attr-type="button"
+                        @click="showAmenidades = !showAmenidades"
                     >
-                        <div
-                            v-if="showAmenidades"
-                            class="origin-top-right mt-2 w-96 rounded-sm shadow-lg bg-white ring-1
-                                ring-black ring-opacity-5 focus:outline-none z-[9999]
-                                absolute top-10 p-2
-                            "
-                        >
-                            <!-- Input para buscar amenidades en concreto -->
-                            <div>
-                                <NInput
-                                    v-model:value="amenidadesSearchQuery"
-                                    type="text"
-                                    placeholder="Amenidad"
-                                    clearable
-                                />
-                            </div>
+                        Seleccionar Amenidades
+                    </NButton>
+                </div>
 
-                            <hr>
+                <!-- Dropdown menu para seleccionar amenidades -->
+                <Transition
+                    enter-active-class="transition duration-200 ease-out"
+                    enter-from-class="opacity-0 scale-95"
+                    enter-to-class="opacity-100 scale-100"
+                    leave-active-class="transition duration-200 ease-in"
+                    leave-from-class="opacity-100 scale-100"
+                    leave-to-class="opacity-0 scale-80"
+                >
+                    <div
+                        v-if="showAmenidades"
+                        class="origin-top-right mt-2 w-96 rounded-sm shadow-lg bg-white ring-1
+                            ring-black ring-opacity-5 focus:outline-none z-[9999]
+                            absolute top-10 p-2
+                        "
+                    >
+                        <!-- Input para buscar amenidades en concreto -->
+                        <div>
+                            <NInput
+                                v-model:value="amenidadesSearchQuery"
+                                type="text"
+                                placeholder="Amenidad"
+                                clearable
+                            />
+                        </div>
 
-                            <!-- Lista de amenidades -->
-                            <div class="overflow-y-auto" style="max-height: 20rem">
-                                <div v-for="amenidad in amenidadesToShow" :key="amenidad.id" class="transition duration-75 hover:bg-gray-100">
-                                    <div class="flex items-center pl-1 py-2 ">
-                                        <NCheckbox
-                                            :checked="amenidadesSeleccionadas.indexOf(amenidad.id) !== -1"
-                                            @click="handleAmenidadCheckBox(amenidad.id)"
-                                        >
-                                            {{ amenidad.nombre }}
-                                        </NCheckbox>
-                                    </div>
-                                    <hr>
+                        <hr>
+
+                        <!-- Lista de amenidades -->
+                        <div class="overflow-y-auto" style="max-height: 20rem">
+                            <div v-for="amenidad in amenidadesToShow" :key="amenidad.id" class="transition duration-75 hover:bg-gray-100">
+                                <div class="flex items-center pl-1 py-2 ">
+                                    <NCheckbox
+                                        :checked="amenidadesSeleccionadas.indexOf(amenidad.id) !== -1"
+                                        @click="handleAmenidadCheckBox(amenidad.id)"
+                                    >
+                                        {{ amenidad.nombre }}
+                                    </NCheckbox>
                                 </div>
+                                <hr>
                             </div>
                         </div>
-                    </Transition>
-                </div>
-            </div>
-
-
-            <div class="grid grid-rows-2 items-center">
-                <label class="">Cant. Personas</label>
-                <NSelect
-                    :options="personasOptions"
-                    placeholder="Cantidad de personas"
-                />
-            </div>
-
-            <div>
-                <div class="flex flex-row text-center gap-2">
-                    <NButton
-                        attr-type="button"
-                        type="primary"
-                        strong
-                        @click="applyFilters"
-                    >
-                        Filtrar
-                    </NButton>
-                    <NButton
-                        attr-type="button"
-                        type="secondary"
-                        strong
-                        @click="cleanFilters"
-                    >
-                        Limpiar filtros
-                    </NButton>
-                </div>
+                    </div>
+                </Transition>
             </div>
         </div>
+
+        <!-- Selección cantidad de personas -->
+        <!-- <div class="grid grid-rows-2 items-center">
+            <label class="">Cant. Personas</label>
+            <NSelect
+                :options="personasOptions"
+                placeholder="Cantidad de personas"
+            />
+        </div> -->
+
+        <!-- Botones -->
+        <div class="flex flex-shrink text-center items-end justify-end gap-2">
+            <NButton
+                attr-type="button"
+                type="primary"
+                strong
+                @click="applyFilters"
+            >
+                Filtrar
+            </NButton>
+            <NButton
+                attr-type="button"
+                type="secondary"
+                strong
+                @click="cleanFilters"
+            >
+                Limpiar filtros
+            </NButton>
+        </div>
     </div>
+</div>
 </template>

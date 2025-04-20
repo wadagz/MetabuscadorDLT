@@ -33,6 +33,12 @@ onMounted(() => {
 // Pass the isLoggedIn to child components, like the CardHospedaje component.
 provide('isLoggedIn', props.isLoggedIn);
 
+const showFilters = ref(false);
+
+const toggleShowFilters = () => {
+    showFilters.value = !showFilters.value
+};
+
 const selectedHospedajeId = ref(null);
 
 const handleSelectHospedaje = (hospedajeId) => {
@@ -82,16 +88,27 @@ async function refetchHospedajes ({ filters, sort }) {
     :fechaRegreso="fechaRegreso"
     :puntoPartida="puntoPartida"
     :nombresDestinos="nombresDestinos"
+    :canFilter="true"
+    @toggleShowFilters="toggleShowFilters"
 />
 
-<div class="container mx-auto mt-4 mb-4">
-    <FilterBar
-        @filterChange="handleOnFilterChange"
-        :amenidades
-    />
-</div>
+<Transition
+    enter-active-class="transition duration-100 ease-out"
+    enter-from-class="opacity-0 scale-75"
+    enter-to-class="opacity-100 scale-100"
+    leave-active-class="transition duration-100 ease-in"
+    leave-from-class="opacity-100 scale-100"
+    leave-to-class="opacity-0 scale-75"
+>
+    <div v-if="showFilters" class="container mx-auto">
+        <FilterBar
+            @filterChange="handleOnFilterChange"
+            :amenidades
+        />
+    </div>
+</Transition>
 
-<div class="container mx-auto mb-2">
+<div class="container mx-auto my-2">
     <h2 class="text-xl">
         Hospedajes encontrados en {{ destino }}
     </h2>
