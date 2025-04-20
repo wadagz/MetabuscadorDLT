@@ -5,6 +5,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js';
 import { useForm, router } from '@inertiajs/vue3';
 import { toast } from 'vue3-toastify';
 import FavoriteHospedajeButton from '@/Components/FavoriteHospedajeButton.vue';
+import { NButton } from 'naive-ui';
 
 const props = defineProps({
     hospedaje: Object,
@@ -56,9 +57,13 @@ const selectHospedaje = () => {
 
             <div class="flex justify-end items-center align-middle mr-4 gap-2">
                 <FavoriteHospedajeButton v-if="isLoggedIn" :hospedaje />
-                <button @click="visitHospedaje" type="button" class="bg-primary-500 rounded-md text-white p-2 transition duration-300 hover:bg-primary-400">
+                <NButton
+                    @click="visitHospedaje"
+                    type="primary"
+                    attr-type="button"
+                >
                     Visitar
-                </button>
+                </NButton>
             </div>
         </div>
     </div>

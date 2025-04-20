@@ -103,17 +103,12 @@ const submit = () => {
                  />
             </div>
             <div class="flex flex-grow text-center items-end justify-center">
-                <button
-                    type="submit"
-                    class="rounded-sm bg-primary-500 w-1/2 py-1 text-white transition duration-300 hover:bg-primary-400">
-                    Buscar
-                </button>
-                <!-- <NButton
+                <NButton
                     type="primary"
                     attr-type="submit"
                 >
                     Buscar
-                </NButton> -->
+                </NButton>
             </div>
         </div>
     </form>

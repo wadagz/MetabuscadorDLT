@@ -6,6 +6,7 @@ import Modal from '@/Components/Modal.vue'
 import ResenaForm from './Partials/ResenaForm.vue';
 import { Icon } from '@iconify/vue/dist/iconify.js';
 import FavoriteHospedajeButton from '@/Components/FavoriteHospedajeButton.vue';
+import { NButton } from 'naive-ui';
 
 const props = defineProps({
     hospedaje: Object,
@@ -25,12 +26,13 @@ const addReview = () => {
 <div class="card container mx-auto pt-4">
     <div class="flex items-center justify-between">
         <h1 class="text-3xl mb-4">{{ hospedaje.nombre }} - {{ hospedaje.destino.nombre }}</h1>
-        <a
-            href="https://google.com" class="rounded-md px-2 py-1 bg-primary-500 text-white transition duration-300 hover:bg-primary-400"
+        <a href="https://google.com" >
+            <NButton
+                type="primary"
+                strong
             >
-            <b>
-                VISITAR SITIO WEB
-            </b>
+                Visitar Sitio Web
+            </NButton>
         </a>
     </div>
 
@@ -104,9 +106,15 @@ const addReview = () => {
                     </div>
                 </div>
 
-                <button @click="addReview" type="button" class="bg-primary-300 rounded-md text-white py-1 px-2 transition duration-300 hover:bg-primary-400">
+                <NButton
+                    secondary
+                    strong
+                    type="primary"
+                    attr-type="button"
+                    @click="addReview"
+                >
                     Agregar reseña
-                </button>
+                </NButton>
             </div>
             <div class="bg-gray-200 rounded-lg border border-gray-400 shadow-md overflow-y-scroll flex-1">
                 <ResenaCard v-for="i in [1,2,3,4,5,6,7,8,9,10]"/>

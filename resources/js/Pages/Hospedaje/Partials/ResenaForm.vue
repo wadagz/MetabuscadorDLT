@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import { Icon } from '@iconify/vue/dist/iconify.js';
 import { useForm, router } from '@inertiajs/vue3';
 import { toast } from 'vue3-toastify';
+import { NButton, NInput } from 'naive-ui';
 
 const props = defineProps({
     hospedaje: Object,
@@ -48,8 +49,12 @@ const setCalificacion = (rate) => {
                         Cuéntale a los demás tu experiencia
                     </p>
                 </label>
-                <textarea v-model="form.comentario" id="comentario" class="w-full">
-                </textarea>
+                <NInput
+                    v-model:value="form.comentario"
+                    type="textarea"
+                    placeholder="Cómo te la pasaste."
+                    id="comentario"
+                />
             </div>
 
             <div class="mt-4">
@@ -75,12 +80,21 @@ const setCalificacion = (rate) => {
         </div>
 
         <div class="flex gap-2">
-            <button type="submit" class="rounded-md mt-4 py-1 px-2 bg-primary-500 text-white transition duration-300 hover:bg-primary-400">
-                <b>Finalizar</b>
-            </button>
-            <button @click="emit('close')" type="button" class="rounded-md mt-4 py-1 px-2 bg-secondary text-white transition duration-300 hover:bg-gray-400">
-                <b>Cancelar</b>
-            </button>
+            <NButton
+                attr-type="submit"
+                strong
+                type="primary"
+            >
+                Finalizar
+            </NButton>
+            <NButton
+                attr-type="button"
+                strong
+                secondary
+                @click="emit('close')"
+            >
+                Cancelar
+            </NButton>
         </div>
     </form>
 </div>

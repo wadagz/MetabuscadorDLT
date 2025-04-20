@@ -361,13 +361,28 @@ const renderCustomTag = ({ option }) => {
             </div>
 
             <div>
-                <div class="flex flex-row text-center">
-                    <button @click="applyFilters" type="button" class="rounded-sm bg-primary-500 w-11/12 py-1 mr-2 mt-6 text-white transition duration-300 hover:bg-primary-400">
+                <div class="flex flex-row text-center gap-2">
+                    <NButton
+                        attr-type="button"
+                        type="primary"
+                        strong
+                        @click="applyFilters"
+                    >
                         Filtrar
-                    </button>
-                    <button type="button" class="rounded-sm bg-secondary w-11/12 py-1 mr-2 mt-6 text-white transition duration-300 hover:bg-stone-400">
+                    </NButton>
+                    <NButton
+                        attr-type="button"
+                        type="secondary"
+                        strong
+                    >
                         Limpiar filtros
-                    </button>
+                    </NButton>
+                    <!-- <button @click="applyFilters" type="button" class="rounded-sm bg-primary-500 w-11/12 py-1 mr-2 mt-6 text-white transition duration-300 hover:bg-primary-400">
+                        Filtrar
+                    </button> -->
+                    <!-- <button type="button" class="rounded-sm bg-secondary w-11/12 py-1 mr-2 mt-6 text-white transition duration-300 hover:bg-stone-400">
+                        Limpiar filtros
+                    </button> -->
                 </div>
             </div>
         </div>
