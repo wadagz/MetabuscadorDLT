@@ -1,10 +1,25 @@
 /*M!999999\- enable the sandbox mode */ 
+-- MariaDB dump 10.19-11.4.5-MariaDB, for Win64 (AMD64)
+--
+-- Host: localhost    Database: metabuscador
+-- ------------------------------------------------------
+-- Server version	11.4.5-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*M!100616 SET @OLD_NOTE_VERBOSITY=@@NOTE_VERBOSITY, NOTE_VERBOSITY=0 */;
+
+--
+-- Table structure for table `actividades`
+--
+
 DROP TABLE IF EXISTS `actividades`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -13,20 +28,23 @@ CREATE TABLE `actividades` (
   `nombre` varchar(100) NOT NULL,
   `descripcion` text NOT NULL,
   `precio` float NOT NULL,
-  `destino_id` bigint(20) unsigned NOT NULL,
-  `direccion_id` bigint(20) unsigned NOT NULL,
-  `tipo_actividad_id` bigint(20) unsigned NOT NULL,
+  `tipo_actividad` enum('1','Tour','2','Excursión','3','Visita Guiada','4','Aventura','5','Gastronomía','6','Cultural','7','Deportiva','8','Educativa','9','Recreativa','10','Religiosa','11','Ecoturismo','12','Festival','13','Concierto','14','Exposición','15','Taller','16','Conferencia','17','Feria','18','Mercado','19','Playa','20','Parque Temático') NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `destino_id` bigint(20) unsigned NOT NULL,
+  `direccion_id` bigint(20) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `actividades_destino_id_foreign` (`destino_id`),
   KEY `actividades_direccion_id_foreign` (`direccion_id`),
-  KEY `actividades_tipo_actividad_id_foreign` (`tipo_actividad_id`),
   CONSTRAINT `actividades_destino_id_foreign` FOREIGN KEY (`destino_id`) REFERENCES `destinos` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `actividades_direccion_id_foreign` FOREIGN KEY (`direccion_id`) REFERENCES `direcciones` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `actividades_tipo_actividad_id_foreign` FOREIGN KEY (`tipo_actividad_id`) REFERENCES `tipos_actividad` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  CONSTRAINT `actividades_direccion_id_foreign` FOREIGN KEY (`direccion_id`) REFERENCES `direcciones` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=22446 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `amenidad_hospedaje`
+--
+
 DROP TABLE IF EXISTS `amenidad_hospedaje`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -39,17 +57,28 @@ CREATE TABLE `amenidad_hospedaje` (
   CONSTRAINT `amenidad_hospedaje_hospedaje_id_foreign` FOREIGN KEY (`hospedaje_id`) REFERENCES `hospedajes` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `amenidades`
+--
+
 DROP TABLE IF EXISTS `amenidades`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `amenidades` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(100) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `descripcion` text NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `asentamientos`
+--
+
 DROP TABLE IF EXISTS `asentamientos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -61,14 +90,17 @@ CREATE TABLE `asentamientos` (
   `id_estado` tinyint(3) unsigned NOT NULL,
   `codigo_postal` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `asentamientos_id_tipo_asentamiento_foreign` (`id_tipo_asentamiento`),
   KEY `asentamientos_id_municipio_foreign` (`id_municipio`),
   KEY `asentamientos_id_estado_foreign` (`id_estado`),
   CONSTRAINT `asentamientos_id_estado_foreign` FOREIGN KEY (`id_estado`) REFERENCES `estados` (`id`),
-  CONSTRAINT `asentamientos_id_municipio_foreign` FOREIGN KEY (`id_municipio`) REFERENCES `municipios` (`id`),
-  CONSTRAINT `asentamientos_id_tipo_asentamiento_foreign` FOREIGN KEY (`id_tipo_asentamiento`) REFERENCES `tipos_asentamiento` (`id`)
+  CONSTRAINT `asentamientos_id_municipio_foreign` FOREIGN KEY (`id_municipio`) REFERENCES `municipios` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `cache`
+--
+
 DROP TABLE IF EXISTS `cache`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -79,6 +111,11 @@ CREATE TABLE `cache` (
   PRIMARY KEY (`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `cache_locks`
+--
+
 DROP TABLE IF EXISTS `cache_locks`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -89,20 +126,34 @@ CREATE TABLE `cache_locks` (
   PRIMARY KEY (`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `destinos`
+--
+
 DROP TABLE IF EXISTS `destinos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `destinos` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) NOT NULL,
-  `descripcion` text NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `municipio` varchar(255) DEFAULT NULL,
+  `estado` varchar(255) NOT NULL,
+  `descripcion` text DEFAULT NULL,
+  `precio_promedio` decimal(8,2) NOT NULL,
   `latitud` decimal(10,8) NOT NULL,
   `longitud` decimal(11,8) NOT NULL,
+  `img_path` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=226 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `direcciones`
+--
+
 DROP TABLE IF EXISTS `direcciones`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -115,13 +166,14 @@ CREATE TABLE `direcciones` (
   `id_asentamiento` bigint(20) unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `direcciones_id_tipo_vialidad_foreign` (`id_tipo_vialidad`),
-  KEY `direcciones_id_asentamiento_foreign` (`id_asentamiento`),
-  CONSTRAINT `direcciones_id_asentamiento_foreign` FOREIGN KEY (`id_asentamiento`) REFERENCES `asentamientos` (`id`),
-  CONSTRAINT `direcciones_id_tipo_vialidad_foreign` FOREIGN KEY (`id_tipo_vialidad`) REFERENCES `tipos_vialidad` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=122445 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `estados`
+--
+
 DROP TABLE IF EXISTS `estados`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -132,22 +184,11 @@ CREATE TABLE `estados` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-DROP TABLE IF EXISTS `eventos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8mb4 */;
-CREATE TABLE `eventos` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) NOT NULL,
-  `precio` float NOT NULL,
-  `descripcion` text NOT NULL,
-  `destino_id` bigint(20) unsigned NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `eventos_destino_id_foreign` (`destino_id`),
-  CONSTRAINT `eventos_destino_id_foreign` FOREIGN KEY (`destino_id`) REFERENCES `destinos` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `failed_jobs`
+--
+
 DROP TABLE IF EXISTS `failed_jobs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -163,52 +204,72 @@ CREATE TABLE `failed_jobs` (
   UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `favoritos_hospedaje_usuario`
+--
+
 DROP TABLE IF EXISTS `favoritos_hospedaje_usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `favoritos_hospedaje_usuario` (
-  `hospedaje_id` bigint(20) unsigned NOT NULL,
-  `user_id` bigint(20) unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `hospedaje_id` bigint(20) unsigned NOT NULL,
+  `user_id` bigint(20) unsigned NOT NULL,
   KEY `favoritos_hospedaje_usuario_hospedaje_id_foreign` (`hospedaje_id`),
   KEY `favoritos_hospedaje_usuario_user_id_foreign` (`user_id`),
   CONSTRAINT `favoritos_hospedaje_usuario_hospedaje_id_foreign` FOREIGN KEY (`hospedaje_id`) REFERENCES `hospedajes` (`id`) ON DELETE CASCADE,
   CONSTRAINT `favoritos_hospedaje_usuario_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `horarios_eventuales`
+--
+
 DROP TABLE IF EXISTS `horarios_eventuales`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `horarios_eventuales` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `actividad_id` bigint(20) unsigned NOT NULL,
   `fecha` date NOT NULL,
   `hora_inicio` time NOT NULL,
   `hora_fin` time NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `actividad_id` bigint(20) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `horarios_eventuales_actividad_id_foreign` (`actividad_id`),
   CONSTRAINT `horarios_eventuales_actividad_id_foreign` FOREIGN KEY (`actividad_id`) REFERENCES `actividades` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=44603 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-DROP TABLE IF EXISTS `horarios_semanales`;
+
+--
+-- Table structure for table `horarios_recurrentes`
+--
+
+DROP TABLE IF EXISTS `horarios_recurrentes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
-CREATE TABLE `horarios_semanales` (
+CREATE TABLE `horarios_recurrentes` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `actividad_id` bigint(20) unsigned NOT NULL,
-  `dia_semana` tinyint(3) unsigned NOT NULL,
-  `hora_apertura` time NOT NULL,
-  `hora_cierre` time NOT NULL,
+  `dia_semana` enum('0','1','2','3','4','5','6') NOT NULL,
+  `hora_inicio` time NOT NULL,
+  `hora_fin` time NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `actividad_id` bigint(20) unsigned NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `horarios_semanales_actividad_id_foreign` (`actividad_id`),
-  CONSTRAINT `horarios_semanales_actividad_id_foreign` FOREIGN KEY (`actividad_id`) REFERENCES `actividades` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  KEY `horarios_recurrentes_actividad_id_foreign` (`actividad_id`),
+  CONSTRAINT `horarios_recurrentes_actividad_id_foreign` FOREIGN KEY (`actividad_id`) REFERENCES `actividades` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=67328 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `hospedajes`
+--
+
 DROP TABLE IF EXISTS `hospedajes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -217,20 +278,28 @@ CREATE TABLE `hospedajes` (
   `nombre` varchar(100) NOT NULL,
   `precio` float NOT NULL,
   `url` varchar(500) NOT NULL,
-  `tipo_hospedaje_id` bigint(20) unsigned NOT NULL,
-  `propietario_id` bigint(20) unsigned NOT NULL,
-  `destino_id` bigint(20) unsigned NOT NULL,
+  `tipo_hospedaje` enum('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15') NOT NULL,
+  `descripcion` text DEFAULT NULL,
+  `img_path` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `direccion_id` bigint(20) unsigned NOT NULL,
+  `propietario_id` bigint(20) unsigned NOT NULL,
+  `destino_id` bigint(20) unsigned NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `hospedajes_tipo_hospedaje_id_foreign` (`tipo_hospedaje_id`),
+  KEY `hospedajes_direccion_id_foreign` (`direccion_id`),
   KEY `hospedajes_propietario_id_foreign` (`propietario_id`),
   KEY `hospedajes_destino_id_foreign` (`destino_id`),
   CONSTRAINT `hospedajes_destino_id_foreign` FOREIGN KEY (`destino_id`) REFERENCES `destinos` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `hospedajes_propietario_id_foreign` FOREIGN KEY (`propietario_id`) REFERENCES `propietarios` (`id`),
-  CONSTRAINT `hospedajes_tipo_hospedaje_id_foreign` FOREIGN KEY (`tipo_hospedaje_id`) REFERENCES `tipo_hospedajes` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  CONSTRAINT `hospedajes_direccion_id_foreign` FOREIGN KEY (`direccion_id`) REFERENCES `direcciones` (`id`),
+  CONSTRAINT `hospedajes_propietario_id_foreign` FOREIGN KEY (`propietario_id`) REFERENCES `propietarios` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22929 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `job_batches`
+--
+
 DROP TABLE IF EXISTS `job_batches`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -248,6 +317,11 @@ CREATE TABLE `job_batches` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `jobs`
+--
+
 DROP TABLE IF EXISTS `jobs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -263,25 +337,11 @@ CREATE TABLE `jobs` (
   KEY `jobs_queue_index` (`queue`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-DROP TABLE IF EXISTS `lugares_interes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8mb4 */;
-CREATE TABLE `lugares_interes` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) NOT NULL,
-  `precio` float NOT NULL,
-  `descripcion` text NOT NULL,
-  `destino_id` bigint(20) unsigned NOT NULL,
-  `direccion_id` bigint(20) unsigned NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `lugares_interes_destino_id_foreign` (`destino_id`),
-  KEY `lugares_interes_direccion_id_foreign` (`direccion_id`),
-  CONSTRAINT `lugares_interes_destino_id_foreign` FOREIGN KEY (`destino_id`) REFERENCES `destinos` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `lugares_interes_direccion_id_foreign` FOREIGN KEY (`direccion_id`) REFERENCES `direcciones` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `migrations`
+--
+
 DROP TABLE IF EXISTS `migrations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -290,8 +350,13 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `municipios`
+--
+
 DROP TABLE IF EXISTS `municipios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -304,6 +369,11 @@ CREATE TABLE `municipios` (
   CONSTRAINT `municipios_id_estado_foreign` FOREIGN KEY (`id_estado`) REFERENCES `estados` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `password_reset_tokens`
+--
+
 DROP TABLE IF EXISTS `password_reset_tokens`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -314,6 +384,11 @@ CREATE TABLE `password_reset_tokens` (
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `personal_access_tokens`
+--
+
 DROP TABLE IF EXISTS `personal_access_tokens`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -333,6 +408,11 @@ CREATE TABLE `personal_access_tokens` (
   KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `preferencias`
+--
+
 DROP TABLE IF EXISTS `preferencias`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -342,37 +422,52 @@ CREATE TABLE `preferencias` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `preferencias_usuarios`
+--
+
 DROP TABLE IF EXISTS `preferencias_usuarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `preferencias_usuarios` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `usuario_id` bigint(20) unsigned NOT NULL,
-  `preferencia_id` bigint(20) unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `user_id` bigint(20) unsigned NOT NULL,
+  `preferencia_id` bigint(20) unsigned NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `preferencias_usuarios_usuario_id_foreign` (`usuario_id`),
+  KEY `preferencias_usuarios_user_id_foreign` (`user_id`),
   KEY `preferencias_usuarios_preferencia_id_foreign` (`preferencia_id`),
   CONSTRAINT `preferencias_usuarios_preferencia_id_foreign` FOREIGN KEY (`preferencia_id`) REFERENCES `preferencias` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `preferencias_usuarios_usuario_id_foreign` FOREIGN KEY (`usuario_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  CONSTRAINT `preferencias_usuarios_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `propietarios`
+--
+
 DROP TABLE IF EXISTS `propietarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `propietarios` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `teléfono` varchar(17) NOT NULL,
+  `telefono` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22929 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `sessions`
+--
+
 DROP TABLE IF EXISTS `sessions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -388,6 +483,11 @@ CREATE TABLE `sessions` (
   KEY `sessions_last_activity_index` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tipo_hospedajes`
+--
+
 DROP TABLE IF EXISTS `tipo_hospedajes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -397,6 +497,11 @@ CREATE TABLE `tipo_hospedajes` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tipos_actividad`
+--
+
 DROP TABLE IF EXISTS `tipos_actividad`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -408,6 +513,11 @@ CREATE TABLE `tipos_actividad` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tipos_asentamiento`
+--
+
 DROP TABLE IF EXISTS `tipos_asentamiento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -417,6 +527,11 @@ CREATE TABLE `tipos_asentamiento` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tipos_vialidad`
+--
+
 DROP TABLE IF EXISTS `tipos_vialidad`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -427,6 +542,11 @@ CREATE TABLE `tipos_vialidad` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `users`
+--
+
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
@@ -446,39 +566,37 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `vistos_reciente`
+--
+
+DROP TABLE IF EXISTS `vistos_reciente`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `vistos_reciente` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) unsigned NOT NULL,
+  `hospedaje_id` bigint(20) unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `vistos_reciente_user_id_foreign` (`user_id`),
+  KEY `vistos_reciente_hospedaje_id_foreign` (`hospedaje_id`),
+  CONSTRAINT `vistos_reciente_hospedaje_id_foreign` FOREIGN KEY (`hospedaje_id`) REFERENCES `hospedajes` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `vistos_reciente_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
-/*M!999999\- enable the sandbox mode */ 
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (1,'0001_01_01_000000_create_users_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (2,'0001_01_01_000001_create_cache_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (3,'0001_01_01_000002_create_jobs_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (4,'2025_02_09_203640_add_two_factor_columns_to_users_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (5,'2025_02_09_203650_create_personal_access_tokens_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (6,'2025_02_11_001042_create_tipo_hospedajes_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (7,'2025_02_11_205743_create_propietarios_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (8,'2025_02_11_212307_create_amenidades_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (9,'2025_02_12_030030_create_destinos_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (10,'2025_02_12_234416_create_preferencias_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (11,'2025_02_12_234904_create_estados_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (12,'2025_02_13_032029_create_municipios_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (13,'2025_02_13_035225_create_tipo_asentamientos_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (14,'2025_02_13_045109_create_asentamientos_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (15,'2025_02_14_000417_create_tipos_vialidad_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (16,'2025_02_14_002423_create_direcciones_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (17,'2025_02_14_022221_create_hospedajes_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (18,'2025_02_14_213401_create_amenidad_hospedaje_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (19,'2025_02_14_221714_create_favoritos_hospedaje_usuario_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (20,'2025_02_14_231457_create_lugar_interes_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (21,'2025_02_14_232312_create_eventos_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (22,'2025_02_24_235001_create_tipos_actividad_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (23,'2025_02_24_235500_create_actividades_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (24,'2025_02_25_015833_create_horarios_semanales_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (25,'2025_02_25_020729_create_horarios_eventuales_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (26,'2025_03_01_163625_create_preferencias_usuarios_table',1);
+-- Dump completed on 2025-04-19 22:49:43
