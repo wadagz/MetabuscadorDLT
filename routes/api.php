@@ -24,7 +24,7 @@ Route::prefix('direcciones')->name('direcciones.')->group(function () {
     Route::patch('/{id}/coordinates', [DireccionController::class, 'updateCoordinates'])->name('update-coordinates');
 });
 
-Route::get('/hospedajes', [HospedajeController::class, 'fetchHospedajes'])->name('hospedajes');
+Route::get('/filterHospedajes', [HospedajeController::class, 'filterHospedajes'])->name('filterHospedajes');
 
 // If you want to secure these routes, wrap them in auth middleware like:
 /*

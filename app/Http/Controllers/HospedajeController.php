@@ -116,7 +116,7 @@ class HospedajeController extends Controller
      * Hace fetch de los hospedajes según los filtros indicados.
      * Método registrado en api.php
      */
-    public function fetchHospedajes(Request $request)
+    public function filterHospedajes(Request $request)
     {
         \Log::debug('Fetch Hospedajes Query', ['query' => $request->all()]);
 
