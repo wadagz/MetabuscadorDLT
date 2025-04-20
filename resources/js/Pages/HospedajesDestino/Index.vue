@@ -21,6 +21,7 @@ const props = defineProps({
     amenidades: Object,
     isLoggedIn: Boolean,
     destinoId: Number,
+    userId: Number | null,
 });
 
 const hosps = ref(null);
@@ -51,6 +52,7 @@ async function refetchHospedajes ({ filters, sort }) {
                 $eq: props.destinoId,
             },
         },
+        userId: props.userId,
     };
 
     if (sort) {

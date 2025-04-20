@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Amenidad;
 use App\Models\Destino;
 use App\Models\Hospedaje;
+use App\Models\User;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\RedirectResponse;
@@ -40,11 +41,13 @@ class HospedajeController extends Controller
         // Si el usuario está logeado obtiene los hospedajes con los usuarios que dieron favorito.
         // para de esta forma mostrar en el frontend los hospedajes favoritos del usuario.
         if ($isLoggedIn) {
+            $userId = Auth::user()->id;
             $hospedajesQuery = Hospedaje::where('destino_id', $destino->id)->with(['direccion', 'usuariosQueDieronFavorito' => function ($query) {
                 $query->where('id', Auth::id());
             }]);
         }
         else {
+            $userId = null;
             $hospedajesQuery = Hospedaje::where('destino_id', $destino->id)->with('direccion');
         }
 
@@ -61,6 +64,7 @@ class HospedajeController extends Controller
             'amenidades' => $amenidades,
             'isLoggedIn' => $isLoggedIn,
             'destinoId' => $destino->id,
+            'userId' => $userId,
         ]);
     }
 
@@ -108,18 +112,46 @@ class HospedajeController extends Controller
         ]);
     }
 
+    /**
+     * Hace fetch de los hospedajes según los filtros indicados.
+     * Método registrado en api.php
+     */
     public function fetchHospedajes(Request $request)
     {
         \Log::debug('Fetch Hospedajes Query', ['query' => $request->all()]);
 
-        return Hospedaje::sort()
-            ->filter()
-            ->with([
+        $userId = $request->only('userId');
+
+        if (isset($userId)) {
+            $userExists = User::where('id', $userId)->first();
+        }
+        else {
+            $userExists = false;
+        }
+
+        $hospedajesQuery = Hospedaje::sort()->filter();
+
+        if ($userExists) {
+            $hospedajesQuery = $hospedajesQuery->with([
                 'destino',
                 'direccion',
                 'amenidades',
-            ])
-            ->limit(100)
-            ->get();
+                'usuariosQueDieronFavorito' => function ($query) {
+                    $query->where('id', Auth::id());
+                },
+
+            ]);
+        }
+        else {
+            $hospedajesQuery = $hospedajesQuery->with([
+                'destino',
+                'direccion',
+                'amenidades',
+            ]);
+        }
+
+        $hospedajes = $hospedajesQuery->limit(100)->get();
+
+        return $hospedajes;
     }
 }
