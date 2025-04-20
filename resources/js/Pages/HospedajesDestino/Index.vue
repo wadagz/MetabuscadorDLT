@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, provide, ref } from 'vue';
+import { onBeforeMount, provide, ref } from 'vue';
 import SearchBar from '../../Components/SearchBar.vue';
 import CardHospedaje from './Partials/CardHospedaje.vue';
 import FilterBar from './Partials/FilterBar.vue';
@@ -26,7 +26,7 @@ const props = defineProps({
 
 const hosps = ref(null);
 
-onMounted(() => {
+onBeforeMount(() => {
     hosps.value = props.hospedajes;
 })
 
@@ -62,7 +62,7 @@ async function refetchHospedajes ({ filters, sort }) {
     };
 
     if (sort) {
-        params.sort = sort.field + ':' + sort.direction;
+        params.sort = [ ...sort]
     }
 
     // console.log(filters)
@@ -70,8 +70,8 @@ async function refetchHospedajes ({ filters, sort }) {
     // console.log(params);
 
     try {
-        const response = await axios.get('/api/hospedajes', { params });
-        console.log(response.data);
+        const response = await axios.get(route('filterHospedajes'), { params });
+        // console.log(response.data);
         hosps.value = response.data;
     } catch(error) {
         console.log(error)
@@ -117,11 +117,22 @@ async function refetchHospedajes ({ filters, sort }) {
 <div class="container mx-auto grid grid-cols-2 gap-4">
     <!-- Lista de hospedajes -->
     <div class="bg-gray-200 rounded-sm border border-gray-400 shadow-md overflow-y-scroll h-[44rem]">
-        <div v-for="hospedaje in hosps" :key="hospedaje.id">
-            <CardHospedaje
-                :hospedaje="hospedaje"
-                @select-hospedaje="handleSelectHospedaje"
-            />
+        <div v-if="hosps.length > 0">
+            <div v-for="hospedaje in hosps" :key="hospedaje.id">
+                <CardHospedaje
+                    :hospedaje="hospedaje"
+                    @select-hospedaje="handleSelectHospedaje"
+                />
+            </div>
+        </div>
+
+        <!-- Mostrar mensaje cuando no hay hospedajes para mostrar. -->
+        <div v-else class="m-2 bg-light rounded-sm border border-gray-400 shadow">
+            <div class="flex items-center justify-center py-6">
+                <p class="text-xl text-center">
+                    No se encontraron hospedajes con los criterios indicados.
+                </p>
+            </div>
         </div>
     </div>
     <!-- Mapa con ubicaciones de hospedajes -->
