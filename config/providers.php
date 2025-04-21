@@ -46,6 +46,7 @@ return [
         
         // Custom Service Providers...
         App\Providers\EnumServiceProvider::class,
+        App\Providers\RecommendationServiceProvider::class,
     ],
 
 ]; 
