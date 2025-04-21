@@ -25,6 +25,9 @@ const props = defineProps({
 });
 
 const hosps = ref(null);
+const recomendadosIds = props.hospedajes.map((value) => {
+    return value.id;
+});
 
 onBeforeMount(() => {
     hosps.value = props.hospedajes;
@@ -59,6 +62,7 @@ async function refetchHospedajes ({ filters, sort }) {
             },
         },
         userId: props.userId,
+        recomendadosIds: recomendadosIds,
     };
 
     if (sort) {

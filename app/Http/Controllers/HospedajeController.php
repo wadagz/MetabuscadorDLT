@@ -102,8 +102,8 @@ class HospedajeController extends Controller
             }
         }
 
-        // Take the first 10 hospedajes from the sorted collection
-        $hospedajes = $allHospedajes->take(10)->values();
+        // Take the first 50 hospedajes from the sorted collection
+        $hospedajes = $allHospedajes->take(50)->values();
 
         return Inertia::render('HospedajesDestino/Index', [
             'destino' => $request->input('destino'),
@@ -228,15 +228,16 @@ class HospedajeController extends Controller
         $hospedajesQuery = Hospedaje::sort()->filter();
 
         if ($userExists) {
-            $hospedajesQuery = $hospedajesQuery->with([
-                'destino',
-                'direccion',
-                'amenidades',
-                'usuariosQueDieronFavorito' => function ($query) {
-                    $query->where('id', Auth::id());
-                },
-
-            ]);
+            $hospedajesQuery = $hospedajesQuery->whereIn('id', $request->input('recomendadosIds', []))
+                ->with([
+                    'destino',
+                    'direccion',
+                    'amenidades',
+                    'usuariosQueDieronFavorito' => function ($query) {
+                        $query->where('id', Auth::id());
+                    },
+                ]
+            );
         }
         else {
             $hospedajesQuery = $hospedajesQuery->with([
