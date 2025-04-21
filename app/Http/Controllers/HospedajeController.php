@@ -12,6 +12,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -53,7 +54,7 @@ class HospedajeController extends Controller
         if ($isLoggedIn) {
             $userId = Auth::user()->id;
             $hospedajesQuery = Hospedaje::where('destino_id', $destino->id)->with([
-                'direccion', 
+                'direccion',
                 'amenidades',
                 'usuariosQueDieronFavorito' => function ($query) {
                     $query->where('id', Auth::id());
@@ -65,42 +66,42 @@ class HospedajeController extends Controller
 
         // Get all hospedajes for this destination
         $allHospedajes = $hospedajesQuery->get();
-        
+
         if ($isLoggedIn) {
             $user = Auth::user();
-            $hasPreferences = \DB::table('preferencias_usuarios')
+            $hasPreferences = DB::table('preferencias_usuarios')
                 ->where('user_id', $user->id)
                 ->exists();
-            
+
             // If user has preferences, calculate scores and sort hospedajes
             if ($hasPreferences) {
-                $userPreferenceIds = \DB::table('preferencias_usuarios')
+                $userPreferenceIds = DB::table('preferencias_usuarios')
                     ->where('user_id', $user->id)
                     ->join('preferencias', 'preferencias.id', '=', 'preferencias_usuarios.preferencia_id')
                     ->select('preferencias.id')
                     ->pluck('id')
                     ->toArray();
-                
+
                 // Create user preference vector
                 $userVector = $this->recommendationService->createUserVector($userPreferenceIds);
-                
+
                 // Calculate compatibility score for each hospedaje
                 foreach ($allHospedajes as $hospedaje) {
                     $hospedajeVector = $this->recommendationService->hospedajeToVector($hospedaje, $userPreferenceIds);
                     $distance = $this->recommendationService->calculateDistance($hospedajeVector, $userVector);
                     $maxDistance = sqrt(count($userVector));
-                    
+
                     // Convert distance to a score (0-100), higher is better
                     $compatibilityScores[$hospedaje->id] = round((1 - ($distance / $maxDistance)) * 100);
                 }
-                
+
                 // Sort hospedajes by compatibility score (highest first)
                 $allHospedajes = $allHospedajes->sortByDesc(function($hospedaje) use ($compatibilityScores) {
                     return $compatibilityScores[$hospedaje->id] ?? 0;
                 });
             }
         }
-        
+
         // Take the first 10 hospedajes from the sorted collection
         $hospedajes = $allHospedajes->take(10)->values();
 
@@ -158,29 +159,29 @@ class HospedajeController extends Controller
             if (!$isAlreadyRecent) {
                 $user->vistosReciente()->attach($hospedaje);
             }
-            
+
             // Check if user has preferences
-            $hasPreferences = \DB::table('preferencias_usuarios')
+            $hasPreferences = DB::table('preferencias_usuarios')
                 ->where('user_id', $user->id)
                 ->exists();
-                
+
             // Get similar hospedajes
             $similarHospedajesQuery = Hospedaje::where('destino_id', $hospedaje->destino_id)
                 ->where('id', '!=', $hospedaje->id)
                 ->with(['amenidades', 'direccion']);
-                
+
             // If user has preferences, sort by compatibility
             if ($hasPreferences) {
-                $userPreferenceIds = \DB::table('preferencias_usuarios')
+                $userPreferenceIds = DB::table('preferencias_usuarios')
                     ->where('user_id', $user->id)
                     ->join('preferencias', 'preferencias.id', '=', 'preferencias_usuarios.preferencia_id')
                     ->select('preferencias.id')
                     ->pluck('id')
                     ->toArray();
-                
+
                 $userVector = $this->recommendationService->createUserVector($userPreferenceIds);
                 $allSimilarHospedajes = $similarHospedajesQuery->get();
-                
+
                 // Calculate compatibility for each similar hospedaje
                 foreach ($allSimilarHospedajes as $similarHospedaje) {
                     $hospedajeVector = $this->recommendationService->hospedajeToVector($similarHospedaje, $userPreferenceIds);
@@ -188,7 +189,7 @@ class HospedajeController extends Controller
                     $maxDistance = sqrt(count($userVector));
                     $compatibilityScores[$similarHospedaje->id] = round((1 - ($distance / $maxDistance)) * 100);
                 }
-                
+
                 // Sort by compatibility and take top 3
                 $similarHospedajes = $allSimilarHospedajes->sortByDesc(function($h) use ($compatibilityScores) {
                     return $compatibilityScores[$h->id] ?? 0;
@@ -249,42 +250,42 @@ class HospedajeController extends Controller
 
         return $hospedajes;
     }
-    
+
     public function getRecommendedHospedajes(Request $request, int $destinoId)
     {
         if (!Auth::check()) {
             return response()->json(['message' => 'Usuario no autenticado'], 401);
         }
-        
+
         $user = Auth::user();
         $limit = $request->input('limit', 5);
-        
-        $hasPreferences = \DB::table('preferencias_usuarios')
+
+        $hasPreferences = DB::table('preferencias_usuarios')
             ->where('user_id', $user->id)
             ->exists();
-            
+
         if (!$hasPreferences) {
             return response()->json([
                 'recommendedHospedajes' => [],
                 'hasPreferences' => false,
             ]);
         }
-        
+
         // Get all hospedajes for compatibility scoring
         $allHospedajes = Hospedaje::where('destino_id', $destinoId)
             ->with(['amenidades', 'direccion'])
             ->get();
-            
-        $userPreferenceIds = \DB::table('preferencias_usuarios')
+
+        $userPreferenceIds = DB::table('preferencias_usuarios')
             ->where('user_id', $user->id)
             ->join('preferencias', 'preferencias.id', '=', 'preferencias_usuarios.preferencia_id')
             ->select('preferencias.id')
             ->pluck('id')
             ->toArray();
-        
+
         $userVector = $this->recommendationService->createUserVector($userPreferenceIds);
         $compatibilityScores = [];
-        
+
         // Calculate compatibility scores
         foreach ($allHospedajes as $hospedaje) {
             $hospedajeVector = $this->recommendationService->hospedajeToVector($hospedaje, $userPreferenceIds);
@@ -292,12 +293,12 @@ class HospedajeController extends Controller
             $maxDistance = sqrt(count($userVector));
             $compatibilityScores[$hospedaje->id] = round((1 - ($distance / $maxDistance)) * 100);
         }
-        
+
         // Sort by compatibility and take requested number
         $recommendedHospedajes = $allHospedajes->sortByDesc(function($hospedaje) use ($compatibilityScores) {
             return $compatibilityScores[$hospedaje->id] ?? 0;
         })->take($limit)->values();
-        
+
         return response()->json([
             'recommendedHospedajes' => $recommendedHospedajes,
             'hasPreferences' => true,
