@@ -97,13 +97,18 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div id="leaflet-map" ref="mapContainer" class="w-full h-full rounded-sm"></div>
+    <div
+        id="leaflet-map"
+        ref="mapContainer"
+        class="w-full h-full rounded-sm shadow-sm border border-gray-400"
+    >
+    </div>
 </template>
 
 <style scoped>
 /* Ensure the map container takes full height */
 #leaflet-map {
-min-height: 100%;
+max-height: 100%;
 }
 
 /* Custom popup styles can be added here */
