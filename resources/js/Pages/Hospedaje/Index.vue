@@ -7,10 +7,12 @@ import ResenaForm from './Partials/ResenaForm.vue';
 import { Icon } from '@iconify/vue/dist/iconify.js';
 import FavoriteHospedajeButton from '@/Components/FavoriteHospedajeButton.vue';
 import { NButton } from 'naive-ui';
+import CarouselHospedajes from '@/Components/CarouselHospedajes.vue';
 
 const props = defineProps({
     hospedaje: Object,
     isLoggedIn: Boolean,
+    similarHospedajes: Array,
 });
 
 const showModal = ref(false);
@@ -23,7 +25,7 @@ const addReview = () => {
 </script>
 
 <template>
-<div class="card container mx-auto pt-4">
+<div class="card container mx-auto pt-4 pb-10">
     <div class="flex items-center justify-between">
         <h1 class="text-3xl mb-4">{{ hospedaje.nombre }} - {{ hospedaje.destino.nombre }}</h1>
         <a href="https://google.com" >
@@ -83,19 +85,18 @@ const addReview = () => {
     </div>
 
     <!-- Mapa y reseñas -->
-    <div class="grid grid-cols-2 gap-4 mt-4">
-        <div class="max-h-96">
+    <div class="grid grid-cols-2 grid-rows-[3em_auto] gap-x-4 mt-4">
+        <!-- Títulos de mapa y reseñas -->
+        <div class="max-h-32 flex items-end">
             <div class="mb-2 flex items-center justify-between">
                 <p class="text-xl">
                     Ubicación
                 </p>
             </div>
-
-            <LeafLetMap :hospedaje />
         </div>
 
-        <div class="max-h-96 flex flex-col">
-            <div class="mb-2 flex items-center justify-between">
+        <div class="max-h-32">
+            <div class="mb-2 flex items-end justify-between">
                 <div class="text-xl flex justify-center gap-4">
                     <div>
                         Reseñas de usuarios
@@ -116,12 +117,32 @@ const addReview = () => {
                     Agregar reseña
                 </NButton>
             </div>
+        </div>
+
+        <!-- Mapa y reseñas -->
+        <div class="max-h-96">
+            <LeafLetMap :hospedaje />
+        </div>
+
+        <div class="max-h-96 flex flex-col">
             <div class="bg-gray-200 rounded-sm border border-gray-400 shadow-md overflow-y-scroll flex-1">
                 <ResenaCard v-for="i in [1,2,3,4,5,6,7,8,9,10]"/>
             </div>
         </div>
     </div>
+
+    <div class="mt-4">
+        <div class="text-xl mb-3">
+            Hospedajes similares
+        </div>
+
+        <CarouselHospedajes
+            :hospedajes="similarHospedajes"
+        />
+    </div>
+
 </div>
+
 
 <Modal v-if="showModal" @close="showModal = false">
     <template #title>
