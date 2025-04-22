@@ -49,7 +49,7 @@ const handleSelectHospedaje = (hospedajeId) => {
 };
 
 const handleOnFilterChange = ({ filters, sort }) => {
-    console.log(hosps.value)
+    // console.log(hosps.value)
     refetchHospedajes({ filters, sort });
 };
 
@@ -78,8 +78,8 @@ async function refetchHospedajes ({ filters, sort }) {
         // console.log(response.data);
         hosps.value = response.data;
     } catch(error) {
-        console.log(error)
-        console.log('Ocurrió un error.')
+        // console.log(error)
+        // console.log('Ocurrió un error.')
         toast('Ocurrión un error al aplicar los filtros.', { type: 'error' })
     }
 }

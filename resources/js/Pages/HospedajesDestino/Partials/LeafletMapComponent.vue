@@ -287,6 +287,9 @@ watch(() => props.selectedHospedajeId, async (newId) => {
   }
 });
 
+// Watcher para actualizar los markers cuando se realiza filtrado de hospedajes
+watch(() => props.hospedajes, addMarkers);
+
 onMounted(() => {
   try {
     //console.log('Component mounted, hospedajes data:', props.hospedajes);

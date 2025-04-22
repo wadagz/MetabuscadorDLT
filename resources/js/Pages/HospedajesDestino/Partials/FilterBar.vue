@@ -90,8 +90,8 @@ function applyFilters() {
         ];
     }
 
-    console.log(selectedSortOptions)
-    console.log('sort.value berofe emit', sort.value)
+    // console.log(selectedSortOptions)
+    // console.log('sort.value berofe emit', sort.value)
 
     // Emite la señal para que el componente padre haga fetch con los nuevos filtros.
     emit('filterChange', {
@@ -129,7 +129,7 @@ const updateAmenidadesToShow = debounce((search) => {
     }
 
     const matches = fuse.search(search);
-    console.log(matches)
+    // console.log(matches)
     amenidadesToShow.value = matches.map(result => result.item);
 }, 100)
 
