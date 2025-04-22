@@ -1,8 +1,11 @@
-function formatPrice(price) {
-    if (price === null || price === undefined) {
-        return '';
-    }
-    return '$' + price.toLocaleString('es-MX') + ' MXN';
+function formatPrice(value) {
+    if (value === null || value === undefined) return ''
+    const number = new Intl.NumberFormat('es-MX', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    }).format(value)
+
+    return '$' + number + ' MXN'
 };
 
 // Format number to MXN currency

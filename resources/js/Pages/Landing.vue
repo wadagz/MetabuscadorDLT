@@ -52,14 +52,6 @@ const verDestino = (destino_nombre) => {
     <CarouselDestinos
         @verDestino="verDestino"
         aria-label="Destinos Recomendados"
-        :splideOptions="{
-            perPage: 4,
-            perMove: 1,
-            pagination: false,
-            wheel: true,
-            waitForTransition: true,
-            gap: '1rem'
-        }"
         :destinos="destinosPopulares"
     />
 
@@ -67,14 +59,6 @@ const verDestino = (destino_nombre) => {
     <CarouselDestinos
         @verDestino="verDestino"
         aria-label="Destinos Recomendados"
-        :splideOptions="{
-            perPage: 4,
-            perMove: 1,
-            pagination: false,
-            wheel: true,
-            waitForTransition: true,
-            gap: '1rem'
-        }"
         :destinos="destinosRecomendados"
     />
 
