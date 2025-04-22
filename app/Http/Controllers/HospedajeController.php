@@ -43,67 +43,18 @@ class HospedajeController extends Controller
 
         $nombresDestinos = Destino::all()->pluck('nombre')->toArray();
         $destino = Destino::whereLike('nombre', $request->input('destino'))->first();
+        $amenidades = Amenidad::all();
 
         $isLoggedIn = Auth::check();
-        $hasPreferences = false;
-        $compatibilityScores = [];
-        $userId = null;
-        $amenidades = Amenidad::all();
+        $userId = $isLoggedIn ? Auth::id() : null;
 
         // Prepare the hospedajes query with appropriate relationships
         if ($isLoggedIn) {
-            $userId = Auth::user()->id;
-            $hospedajesQuery = Hospedaje::where('destino_id', $destino->id)->with([
-                'direccion',
-                'amenidades',
-                'usuariosQueDieronFavorito' => function ($query) {
-                    $query->where('id', Auth::id());
-                }
-            ]);
+            $hospedajes = $this->recommendationService
+                ->getRecommendationsForSearchingHospedaje(Auth::user(), $destino->id, 50);
         } else {
-            $hospedajesQuery = Hospedaje::where('destino_id', $destino->id)->with('direccion');
+            $hospedajes = Hospedaje::where('destino_id', $destino->id)->with('direccion')->limit(50)->get();
         }
-
-        // Get all hospedajes for this destination
-        $allHospedajes = $hospedajesQuery->get();
-
-        if ($isLoggedIn) {
-            $user = Auth::user();
-            $hasPreferences = DB::table('preferencias_usuarios')
-                ->where('user_id', $user->id)
-                ->exists();
-
-            // If user has preferences, calculate scores and sort hospedajes
-            if ($hasPreferences) {
-                $userPreferenceIds = DB::table('preferencias_usuarios')
-                    ->where('user_id', $user->id)
-                    ->join('preferencias', 'preferencias.id', '=', 'preferencias_usuarios.preferencia_id')
-                    ->select('preferencias.id')
-                    ->pluck('id')
-                    ->toArray();
-
-                // Create user preference vector
-                $userVector = $this->recommendationService->createUserVector($userPreferenceIds);
-
-                // Calculate compatibility score for each hospedaje
-                foreach ($allHospedajes as $hospedaje) {
-                    $hospedajeVector = $this->recommendationService->hospedajeToVector($hospedaje, $userPreferenceIds);
-                    $distance = $this->recommendationService->calculateDistance($hospedajeVector, $userVector);
-                    $maxDistance = sqrt(count($userVector));
-
-                    // Convert distance to a score (0-100), higher is better
-                    $compatibilityScores[$hospedaje->id] = round((1 - ($distance / $maxDistance)) * 100);
-                }
-
-                // Sort hospedajes by compatibility score (highest first)
-                $allHospedajes = $allHospedajes->sortByDesc(function($hospedaje) use ($compatibilityScores) {
-                    return $compatibilityScores[$hospedaje->id] ?? 0;
-                });
-            }
-        }
-
-        // Take the first 50 hospedajes from the sorted collection
-        $hospedajes = $allHospedajes->take(50)->values();
 
         return Inertia::render('HospedajesDestino/Index', [
             'destino' => $request->input('destino'),
@@ -115,8 +66,6 @@ class HospedajeController extends Controller
             'nombresDestinos' => $nombresDestinos,
             'amenidades' => $amenidades,
             'isLoggedIn' => $isLoggedIn,
-            'hasPreferences' => $hasPreferences,
-            'compatibilityScores' => $compatibilityScores,
             'userId' => $userId,
         ]);
     }
