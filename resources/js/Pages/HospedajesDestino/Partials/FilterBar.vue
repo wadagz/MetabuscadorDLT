@@ -231,145 +231,146 @@ const handleSelectSort = (newValues, otro) => {
 
 <template>
 <div class="max-w-xl xl:max-w-7xl mx-auto rounded-sm ">
-    <!-- <div class="grid grid-cols-5 gap-2"> -->
-    <div class="flex flex-row justify-evenly gap-2">
+    <form @submit.prevent="applyFilters">
+        <div class="flex flex-row justify-evenly gap-2">
 
-        <!-- Selección de ordenamiento -->
-        <div class="flex-grow grid grid-rows-2 items-center">
-            <label class="">Ordenar por</label>
-            <NSelect
-                v-model:value="selectedSortOptions"
-                multiple
-                clearable
-                :options="sortOptions"
-                @update:value="handleSelectSort"
-                placeholder="Orden"
-            />
-        </div>
-
-        <!-- Selección de rango de precio -->
-        <div class="flex-shrink grid grid-rows-2 items-center">
-            <label class="">Rango de precios</label>
-            <div class="flex items-center">
-                <NInputNumber
-                    v-model:value="priceRange.min"
-                    placeholder="Mínimo"
-                    :validator="(x) => priceRange.max ? x <= priceRange.max : true"
-                    :parse="parseCurrency"
-                    :format="formatCurrency"
-                    :min="0"
-                    :max="100000"
-                    :step="1000"
-                >
-                    <template #prefix>
-                        <Icon icon="material-symbols-light:attach-money-rounded" />
-                    </template>
-                </NInputNumber>
-                <NInputNumber
-                    v-model:value="priceRange.max"
-                    placeholder="Máximo"
-                    :validator="(x) => priceRange.min ? x >= priceRange.min : true"
-                    :parse="parseCurrency"
-                    :format="formatCurrency"
-                    :min="0"
-                    :max="100000"
-                    :step="1000"
-                >
-                    <template #prefix>
-                        <Icon icon="material-symbols-light:attach-money-rounded" />
-                    </template>
-                </NInputNumber>
+            <!-- Selección de ordenamiento -->
+            <div class="flex-grow grid grid-rows-2 items-center">
+                <label class="">Ordenar por</label>
+                <NSelect
+                    v-model:value="selectedSortOptions"
+                    multiple
+                    clearable
+                    :options="sortOptions"
+                    @update:value="handleSelectSort"
+                    placeholder="Orden"
+                />
             </div>
-        </div>
 
-        <!-- Selección de amenidades -->
-        <div class="flex-shrink grid grid-rows-2 items-center justify-center">
-            <label class="">Amenidades</label>
-
-            <div class="relative inline-block text-left" ref="dropdownRef">
-                <div>
-                    <NButton
-                        type="default"
-                        secondary
-                        attr-type="button"
-                        @click="showAmenidades = !showAmenidades"
+            <!-- Selección de rango de precio -->
+            <div class="flex-shrink grid grid-rows-2 items-center">
+                <label class="">Rango de precios</label>
+                <div class="flex items-center">
+                    <NInputNumber
+                        v-model:value="priceRange.min"
+                        placeholder="Mínimo"
+                        :validator="(x) => priceRange.max ? x <= priceRange.max : true"
+                        :parse="parseCurrency"
+                        :format="formatCurrency"
+                        :min="0"
+                        :max="100000"
+                        :step="1000"
                     >
-                        Seleccionar Amenidades
-                    </NButton>
+                        <template #prefix>
+                            <Icon icon="material-symbols-light:attach-money-rounded" />
+                        </template>
+                    </NInputNumber>
+                    <NInputNumber
+                        v-model:value="priceRange.max"
+                        placeholder="Máximo"
+                        :validator="(x) => priceRange.min ? x >= priceRange.min : true"
+                        :parse="parseCurrency"
+                        :format="formatCurrency"
+                        :min="0"
+                        :max="100000"
+                        :step="1000"
+                    >
+                        <template #prefix>
+                            <Icon icon="material-symbols-light:attach-money-rounded" />
+                        </template>
+                    </NInputNumber>
                 </div>
+            </div>
 
-                <!-- Dropdown menu para seleccionar amenidades -->
-                <Transition
-                    enter-active-class="transition duration-200 ease-out"
-                    enter-from-class="opacity-0 scale-95"
-                    enter-to-class="opacity-100 scale-100"
-                    leave-active-class="transition duration-200 ease-in"
-                    leave-from-class="opacity-100 scale-100"
-                    leave-to-class="opacity-0 scale-80"
-                >
-                    <div
-                        v-if="showAmenidades"
-                        class="origin-top-right mt-2 w-96 rounded-sm shadow-lg bg-white ring-1
-                            ring-black ring-opacity-5 focus:outline-none z-[9999]
-                            absolute top-10 p-2
-                        "
+            <!-- Selección de amenidades -->
+            <div class="flex-shrink grid grid-rows-2 items-center justify-center">
+                <label class="">Amenidades</label>
+
+                <div class="relative inline-block text-left" ref="dropdownRef">
+                    <div>
+                        <NButton
+                            type="default"
+                            secondary
+                            attr-type="button"
+                            @click="showAmenidades = !showAmenidades"
+                        >
+                            Seleccionar Amenidades
+                        </NButton>
+                    </div>
+
+                    <!-- Dropdown menu para seleccionar amenidades -->
+                    <Transition
+                        enter-active-class="transition duration-200 ease-out"
+                        enter-from-class="opacity-0 scale-95"
+                        enter-to-class="opacity-100 scale-100"
+                        leave-active-class="transition duration-200 ease-in"
+                        leave-from-class="opacity-100 scale-100"
+                        leave-to-class="opacity-0 scale-80"
                     >
-                        <!-- Input para buscar amenidades en concreto -->
-                        <div>
-                            <NInput
-                                v-model:value="amenidadesSearchQuery"
-                                type="text"
-                                placeholder="Amenidad"
-                                clearable
-                            />
-                        </div>
+                        <div
+                            v-if="showAmenidades"
+                            class="origin-top-right mt-2 w-96 rounded-sm shadow-lg bg-white ring-1
+                                ring-black ring-opacity-5 focus:outline-none z-[9999]
+                                absolute top-10 p-2
+                            "
+                        >
+                            <!-- Input para buscar amenidades en concreto -->
+                            <div>
+                                <NInput
+                                    v-model:value="amenidadesSearchQuery"
+                                    type="text"
+                                    placeholder="Amenidad"
+                                    clearable
+                                />
+                            </div>
 
-                        <hr>
+                            <hr>
 
-                        <!-- Lista de amenidades -->
-                        <div class="overflow-y-auto" style="max-height: 20rem">
-                            <div v-for="amenidad in amenidadesToShow" :key="amenidad.id" class="transition duration-75 hover:bg-gray-100">
-                                <div class="flex items-center pl-1 py-2 ">
-                                    <NCheckbox
-                                        :checked="amenidadesSeleccionadas.indexOf(amenidad.id) !== -1"
-                                        @click="handleAmenidadCheckBox(amenidad.id)"
-                                    >
-                                        {{ amenidad.nombre }}
-                                    </NCheckbox>
+                            <!-- Lista de amenidades -->
+                            <div class="overflow-y-auto" style="max-height: 20rem">
+                                <div v-for="amenidad in amenidadesToShow" :key="amenidad.id" class="transition duration-75 hover:bg-gray-100">
+                                    <div class="flex items-center pl-1 py-2 ">
+                                        <NCheckbox
+                                            :checked="amenidadesSeleccionadas.indexOf(amenidad.id) !== -1"
+                                            @click="handleAmenidadCheckBox(amenidad.id)"
+                                        >
+                                            {{ amenidad.nombre }}
+                                        </NCheckbox>
+                                    </div>
+                                    <hr>
                                 </div>
-                                <hr>
                             </div>
                         </div>
-                    </div>
-                </Transition>
+                    </Transition>
+                </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="flex flex-shrink text-center items-end justify-end gap-2">
+                <NButton
+                    attr-type="submit"
+                    type="primary"
+                    strong
+                    @click="applyFilters"
+                >
+                    <template #icon>
+                        <Icon icon="mdi:filter-check" />
+                    </template>
+                    Filtrar
+                </NButton>
+                <NButton
+                    secondary
+                    attr-type="button"
+                    strong
+                    @click="cleanFilters"
+                >
+                    <template #icon>
+                        <Icon icon="mdi:filter-off" />
+                    </template>
+                    Limpiar filtros
+                </NButton>
             </div>
         </div>
-
-        <!-- Botones -->
-        <div class="flex flex-shrink text-center items-end justify-end gap-2">
-            <NButton
-                attr-type="button"
-                type="primary"
-                strong
-                @click="applyFilters"
-            >
-                <template #icon>
-                    <Icon icon="mdi:filter-check" />
-                </template>
-                Filtrar
-            </NButton>
-            <NButton
-                secondary
-                attr-type="button"
-                strong
-                @click="cleanFilters"
-            >
-                <template #icon>
-                    <Icon icon="mdi:filter-off" />
-                </template>
-                Limpiar filtros
-            </NButton>
-        </div>
-    </div>
+    </form>
 </div>
 </template>
