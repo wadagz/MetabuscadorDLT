@@ -26,6 +26,9 @@ class HospedajeController extends Controller
         $this->recommendationService = $recommendationService;
     }
 
+    /**
+     * Buscar hospedajes en el destino indicado.
+     */
     public function searchHospedaje(Request $request): Response | RedirectResponse
     {
         $rules = [
@@ -85,6 +88,9 @@ class HospedajeController extends Controller
         return response()->json($hospedajes);
     }
 
+    /**
+     * Mostrar información de un hospedaje concreto.
+     */
     public function show(int $hospedaje_id): Response
     {
         $hospedaje = Hospedaje::where('id', $hospedaje_id)
@@ -100,7 +106,6 @@ class HospedajeController extends Controller
 
         $isLoggedIn = Auth::check();
         $similarHospedajes = collect([]);
-        $compatibilityScores = [];
 
         if ($isLoggedIn) {
             $user = Auth::user();
@@ -109,51 +114,14 @@ class HospedajeController extends Controller
                 $user->vistosReciente()->attach($hospedaje);
             }
 
-            // Check if user has preferences
-            $hasPreferences = DB::table('preferencias_usuarios')
-                ->where('user_id', $user->id)
-                ->exists();
-
-            // Get similar hospedajes
-            $similarHospedajesQuery = Hospedaje::where('destino_id', $hospedaje->destino_id)
-                ->where('id', '!=', $hospedaje->id)
-                ->with(['amenidades', 'direccion']);
-
-            // If user has preferences, sort by compatibility
-            if ($hasPreferences) {
-                $userPreferenceIds = DB::table('preferencias_usuarios')
-                    ->where('user_id', $user->id)
-                    ->join('preferencias', 'preferencias.id', '=', 'preferencias_usuarios.preferencia_id')
-                    ->select('preferencias.id')
-                    ->pluck('id')
-                    ->toArray();
-
-                $userVector = $this->recommendationService->createUserVector($userPreferenceIds);
-                $allSimilarHospedajes = $similarHospedajesQuery->get();
-
-                // Calculate compatibility for each similar hospedaje
-                foreach ($allSimilarHospedajes as $similarHospedaje) {
-                    $hospedajeVector = $this->recommendationService->hospedajeToVector($similarHospedaje, $userPreferenceIds);
-                    $distance = $this->recommendationService->calculateDistance($hospedajeVector, $userVector);
-                    $maxDistance = sqrt(count($userVector));
-                    $compatibilityScores[$similarHospedaje->id] = round((1 - ($distance / $maxDistance)) * 100);
-                }
-
-                // Sort by compatibility and take top 3
-                $similarHospedajes = $allSimilarHospedajes->sortByDesc(function($h) use ($compatibilityScores) {
-                    return $compatibilityScores[$h->id] ?? 0;
-                })->take(3)->values();
-            } else {
-                // If no preferences, get random similar hospedajes
-                $similarHospedajes = $similarHospedajesQuery->inRandomOrder()->limit(3)->get();
-            }
+            $similarHospedajes = $this->recommendationService
+                ->getSimilarHospedajes($user, $hospedaje, 10);
         }
 
         return Inertia::render('Hospedaje/Index', [
             'hospedaje' => $hospedaje,
             'isLoggedIn' => $isLoggedIn,
             'similarHospedajes' => $similarHospedajes,
-            'compatibilityScores' => $compatibilityScores,
         ]);
     }
 

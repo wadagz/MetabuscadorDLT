@@ -13,6 +13,8 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
+use function PHPUnit\Framework\isEmpty;
+
 class RecommendationService
 {
     /**
@@ -91,7 +93,7 @@ class RecommendationService
      * @param User $user El usuario para el cual obtener recomendaciones.
      * @param int $destinoId El ID del Destino donde se busca hospedaje.
      * @param int $limit Cantidad máxima de resultados para mostrar.
-     * @return Collection The recommended hospedajes
+     * @return Collection Los hospedajes recomendados.
      */
     public function getRecommendationsForSearchingHospedaje(User $user, int $destinoId, int $limit = 50): Collection
     {
@@ -139,6 +141,53 @@ class RecommendationService
         return $recommendedHospedajes;
     }
 
+    /**
+     * Obtener lista de hospedajes similares a un hospedaje concreto.
+     * @param User $user El usuario para el cual obtener recomendaciones.
+     * @param Hospedaje $hospedaje El hospedaje para el cual se buscan similitudes.
+     * @param int $limit Cantidad máxima de resultados para mostrar.
+     * @return Collection Los hospedajes similares.
+     */
+    public function getSimilarHospedajes(User $user, Hospedaje $hospedaje, int $limit = 10): Collection
+    {
+        $userPreferenceIds = DB::table('preferencias_usuarios')
+            ->where('user_id', $user->id)
+            ->join('preferencias', 'preferencias.id', '=', 'preferencias_usuarios.preferencia_id')
+            ->select('preferencias.id')
+            ->pluck('id')
+            ->toArray();
+
+        $similarHospedajes = collect([]);
+        $compatibilityScores = [];
+
+        // Get similar hospedajes
+        $similarHospedajesQuery = Hospedaje::where('destino_id', $hospedaje->destino_id)
+            ->where('id', '!=', $hospedaje->id)
+            ->with(['amenidades', 'direccion']);
+
+        if (empty($userPreferenceIds)) {
+            // If no preferences, get random similar hospedajes
+            return $similarHospedajesQuery->inRandomOrder()->limit($limit)->get();
+        }
+
+        $userVector = $this->createUserVector($userPreferenceIds);
+        $allSimilarHospedajes = $similarHospedajesQuery->get();
+
+        // Calculate compatibility for each similar hospedaje
+        foreach ($allSimilarHospedajes as $similarHospedaje) {
+            $hospedajeVector = $this->hospedajeToVector($similarHospedaje, $userPreferenceIds);
+            $distance = $this->calculateDistance($hospedajeVector, $userVector);
+            $maxDistance = sqrt(count($userVector));
+            $compatibilityScores[$similarHospedaje->id] = round((1 - ($distance / $maxDistance)) * 100);
+        }
+
+        // Sort by compatibility and take top 3
+        $similarHospedajes = $allSimilarHospedajes->sortByDesc(function($h) use ($compatibilityScores) {
+            return $compatibilityScores[$h->id] ?? 0;
+        })->take($limit)->values();
+
+        return $similarHospedajes;
+    }
 
     /**
      * Prepare hospedaje features for K-means clustering
