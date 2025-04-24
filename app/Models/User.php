@@ -91,4 +91,21 @@ class User extends Authenticatable
             table: 'vistos_reciente'
         )->withTimestamps();;
     }
+
+    public function resenasTransporte(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            RutaTransporte::class,
+            'resenas_transporte',
+            'user_id',
+            'ruta_transporte_id'
+        )->withPivot(
+            [
+                'calificacion',
+                'comentario',
+                'created_at',
+                'updated_at'
+            ]
+        );
+    }
 }

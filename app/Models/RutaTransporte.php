@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class RutaTransporte extends Model
 {
@@ -22,5 +23,22 @@ class RutaTransporte extends Model
     public function empresa(): BelongsTo
     {
         return $this->belongsTo(EmpresaTransporte::class, 'empresa_transporte_id');
+    }
+
+    public function resenasDeUsuarios(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            User::class,
+            'resenas_transporte',
+            'ruta_transporte_id',
+            'user_id'
+        )->withPivot(
+            [
+                'calificacion',
+                'comentario',
+                'created_at',
+                'updated_at'
+            ]
+        );
     }
 }
