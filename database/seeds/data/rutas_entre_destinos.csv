@@ -1,0 +1,1161 @@
+origen_id,target_id,empresa_id,origen,destino,tipo,empresa,distancia_km,duracion_min,precio,id
+1,4,9,Cabo San Lucas,San José del Cabo,Autobús,Omnibus de México,28.92,88,120,1
+1,17,7,Cabo San Lucas,La Paz,Autobús,Estrella Blanca,146.67,206,202,2
+1,19,8,Cabo San Lucas,Mazatlán,Autobús,Futura,359.68,419,351,3
+1,29,10,Cabo San Lucas,Culiacán,Autobús,Transportes del Norte,332.93,392,333,4
+1,36,7,Cabo San Lucas,Los Mochis,Autobús,Estrella Blanca,335.82,395,335,5
+2,4,1,Cancún,San José del Cabo,Avión,Aeroméxico,2362.18,207,14251,6
+2,4,10,Cancún,San José del Cabo,Autobús,Transportes del Norte,2362.18,2422,1753,7
+2,7,6,Cancún,Akumal,Autobús,ADO,97.29,157,168,8
+2,8,9,Cancún,Isla Mujeres,Autobús,Omnibus de México,14.58,74,110,9
+2,9,6,Cancún,Playa del Carmen,Autobús,ADO,62.97,122,144,10
+2,10,7,Cancún,Plaza Playacar,Autobús,Estrella Blanca,65.73,125,146,11
+2,16,6,Cancún,Isla Cozumel,Autobús,ADO,80.55,140,156,12
+2,17,2,Cancún,La Paz,Avión,Volaris,2428.87,212,14371,13
+2,17,10,Cancún,La Paz,Autobús,Transportes del Norte,2428.87,2488,1800,14
+2,19,2,Cancún,Mazatlán,Avión,Volaris,2027.23,182,13649,15
+2,19,8,Cancún,Mazatlán,Autobús,Futura,2027.23,2087,1519,16
+2,20,3,Cancún,Puerto Vallarta,Avión,Viva Aerobus,1908.89,173,13435,17
+2,20,8,Cancún,Puerto Vallarta,Autobús,Futura,1908.89,1968,1436,18
+2,22,2,Cancún,Aguascalientes,Avión,Volaris,1600.04,150,12880,19
+2,22,9,Cancún,Aguascalientes,Autobús,Omnibus de México,1600.04,1660,1220,20
+2,29,1,Cancún,Culiacán,Avión,Aeroméxico,2140.32,190,13852,21
+2,29,10,Cancún,Culiacán,Autobús,Transportes del Norte,2140.32,2200,1598,22
+2,33,5,Cancún,Hermosillo,Avión,Aeromar,2578.38,223,14641,23
+2,33,9,Cancún,Hermosillo,Autobús,Omnibus de México,2578.38,2638,1904,24
+2,37,5,Cancún,Mérida,Avión,Aeromar,289.33,51,10520,25
+2,37,8,Cancún,Mérida,Autobús,Futura,289.33,349,302,26
+2,53,1,Cancún,Toluca,Avión,Aeroméxico,1352.55,131,12434,27
+2,53,10,Cancún,Toluca,Autobús,Transportes del Norte,1352.55,1412,1046,28
+2,54,2,Cancún,Tuxtla Gutiérrez,Avión,Volaris,821.09,91,11477,29
+2,54,9,Cancún,Tuxtla Gutiérrez,Autobús,Omnibus de México,821.09,881,674,30
+2,56,4,Cancún,Villahermosa,Avión,Interjet,728.88,84,11311,31
+2,56,8,Cancún,Villahermosa,Autobús,Futura,728.88,788,610,32
+2,59,2,Cancún,Ciudad Juárez,Avión,Volaris,2276.68,200,14098,33
+2,59,7,Cancún,Ciudad Juárez,Autobús,Estrella Blanca,2276.68,2336,1693,34
+2,60,1,Cancún,Mexicali,Avión,Aeroméxico,3100.09,262,15580,35
+2,60,8,Cancún,Mexicali,Autobús,Futura,3100.09,3160,2270,36
+2,63,2,Cancún,Tijuana,Avión,Volaris,3235.62,272,15824,37
+2,63,8,Cancún,Tijuana,Autobús,Futura,3235.62,3295,2364,38
+2,64,5,Cancún,Ciudad de México,Avión,Aeromar,1295.66,127,12332,39
+2,64,6,Cancún,Ciudad de México,Autobús,ADO,1295.66,1355,1006,40
+2,65,4,Cancún,Guadalajara,Avión,Interjet,1713.49,158,13084,41
+2,65,10,Cancún,Guadalajara,Autobús,Transportes del Norte,1713.49,1773,1299,42
+2,66,1,Cancún,Monterrey,Avión,Aeroméxico,1462.99,139,12633,43
+2,66,7,Cancún,Monterrey,Autobús,Estrella Blanca,1462.99,1522,1124,44
+3,4,8,Loreto,San José del Cabo,Autobús,Futura,367.7,427,357,45
+3,17,9,Loreto,La Paz,Autobús,Omnibus de México,230.13,290,261,46
+3,31,6,Loreto,El Fuerte,Autobús,ADO,269.23,329,288,47
+3,33,7,Loreto,Hermosillo,Autobús,Estrella Blanca,345.04,405,341,48
+3,36,8,Loreto,Los Mochis,Autobús,Futura,236.79,296,265,49
+4,1,9,San José del Cabo,Cabo San Lucas,Autobús,Omnibus de México,28.92,88,120,50
+4,2,1,San José del Cabo,Cancún,Avión,Aeroméxico,2362.18,207,14251,51
+4,2,9,San José del Cabo,Cancún,Autobús,Omnibus de México,2362.18,2422,1753,52
+4,17,2,San José del Cabo,La Paz,Avión,Volaris,137.57,40,10247,53
+4,17,8,San José del Cabo,La Paz,Autobús,Futura,137.57,197,196,54
+4,19,3,San José del Cabo,Mazatlán,Avión,Viva Aerobus,335.94,55,10604,55
+4,19,9,San José del Cabo,Mazatlán,Autobús,Omnibus de México,335.94,395,335,56
+4,20,3,San José del Cabo,Puerto Vallarta,Avión,Viva Aerobus,535.06,70,10963,57
+4,20,7,San José del Cabo,Puerto Vallarta,Autobús,Estrella Blanca,535.06,595,474,58
+4,22,5,San José del Cabo,Aguascalientes,Avión,Aeromar,772.09,87,11389,59
+4,22,9,San José del Cabo,Aguascalientes,Autobús,Omnibus de México,772.09,832,640,60
+4,29,5,San José del Cabo,Culiacán,Avión,Aeromar,304.01,52,10547,61
+4,29,6,San José del Cabo,Culiacán,Autobús,ADO,304.01,364,312,62
+4,33,4,San José del Cabo,Hermosillo,Avión,Interjet,682.86,81,11229,63
+4,33,10,San José del Cabo,Hermosillo,Autobús,Transportes del Norte,682.86,742,578,64
+4,36,6,San José del Cabo,Los Mochis,Autobús,ADO,312.33,372,318,65
+4,37,5,San José del Cabo,Mérida,Avión,Aeromar,2081.26,186,13746,66
+4,37,10,San José del Cabo,Mérida,Autobús,Transportes del Norte,2081.26,2141,1556,67
+4,53,5,San José del Cabo,Toluca,Avión,Aeromar,1122.26,114,12020,68
+4,53,8,San José del Cabo,Toluca,Autobús,Futura,1122.26,1182,885,69
+4,54,3,San José del Cabo,Tuxtla Gutiérrez,Avión,Viva Aerobus,1868.75,170,13363,70
+4,54,7,San José del Cabo,Tuxtla Gutiérrez,Autobús,Estrella Blanca,1868.75,1928,1408,71
+4,56,1,San José del Cabo,Villahermosa,Avión,Aeroméxico,1833.25,167,13299,72
+4,56,7,San José del Cabo,Villahermosa,Autobús,Estrella Blanca,1833.25,1893,1383,73
+4,59,4,San José del Cabo,Ciudad Juárez,Avión,Interjet,1015.63,106,11828,74
+4,59,6,San José del Cabo,Ciudad Juárez,Autobús,ADO,1015.63,1075,810,75
+4,60,4,San José del Cabo,Mexicali,Avión,Interjet,1206.46,120,12171,76
+4,60,8,San José del Cabo,Mexicali,Autobús,Futura,1206.46,1266,944,77
+4,63,5,San José del Cabo,Tijuana,Avión,Aeromar,1274.75,125,12294,78
+4,63,9,San José del Cabo,Tijuana,Autobús,Omnibus de México,1274.75,1334,992,79
+4,64,1,San José del Cabo,Ciudad de México,Avión,Aeroméxico,1166.83,117,12100,80
+4,64,7,San José del Cabo,Ciudad de México,Autobús,Estrella Blanca,1166.83,1226,916,81
+4,65,4,San José del Cabo,Guadalajara,Avión,Interjet,708.28,83,11274,82
+4,65,8,San José del Cabo,Guadalajara,Autobús,Futura,708.28,768,595,83
+4,66,1,San José del Cabo,Monterrey,Avión,Aeroméxico,994.15,104,11789,84
+4,66,7,San José del Cabo,Monterrey,Autobús,Estrella Blanca,994.15,1054,795,85
+5,28,7,Ixtapa,Comitán,Autobús,Estrella Blanca,102.74,162,171,86
+5,45,10,Ixtapa,San Cristóbal,Autobús,Transportes del Norte,28.81,88,120,87
+5,54,8,Ixtapa,Tuxtla Gutiérrez,Autobús,Futura,23.9,83,116,88
+5,56,6,Ixtapa,Villahermosa,Autobús,ADO,131.37,191,191,89
+5,113,8,Ixtapa,Chiapa de Corzo,Autobús,Futura,25.21,85,117,90
+6,15,9,Zihuatanejo,Acapulco,Autobús,Omnibus de México,196.2,256,237,91
+6,38,6,Zihuatanejo,Morelia,Autobús,ADO,225.33,285,257,92
+6,50,6,Zihuatanejo,Taxco,Autobús,ADO,229.27,289,260,93
+6,55,8,Zihuatanejo,Valle de Bravo,Autobús,Futura,226.03,286,258,94
+6,80,10,Zihuatanejo,Ixtapan de la Sal,Autobús,Transportes del Norte,237.01,297,265,95
+7,2,7,Akumal,Cancún,Autobús,Estrella Blanca,97.29,157,168,96
+7,9,7,Akumal,Playa del Carmen,Autobús,Estrella Blanca,35.88,95,125,97
+7,10,9,Akumal,Plaza Playacar,Autobús,Omnibus de México,33.21,93,123,98
+7,16,10,Akumal,Isla Cozumel,Autobús,Transportes del Norte,41.5,101,129,99
+7,102,6,Akumal,Valladolid,Autobús,ADO,97.62,157,168,100
+8,2,7,Isla Mujeres,Cancún,Autobús,Estrella Blanca,14.58,74,110,101
+8,7,6,Isla Mujeres,Akumal,Autobús,ADO,111.15,171,177,102
+8,9,9,Isla Mujeres,Playa del Carmen,Autobús,Omnibus de México,76.25,136,153,103
+8,10,6,Isla Mujeres,Plaza Playacar,Autobús,ADO,79.02,139,155,104
+8,16,8,Isla Mujeres,Isla Cozumel,Autobús,Futura,91.58,151,164,105
+9,2,7,Playa del Carmen,Cancún,Autobús,Estrella Blanca,62.97,122,144,106
+9,7,6,Playa del Carmen,Akumal,Autobús,ADO,35.88,95,125,107
+9,8,8,Playa del Carmen,Isla Mujeres,Autobús,Futura,76.25,136,153,108
+9,10,8,Playa del Carmen,Plaza Playacar,Autobús,Futura,2.77,62,101,109
+9,16,10,Playa del Carmen,Isla Cozumel,Autobús,Transportes del Norte,27.51,87,119,110
+10,2,10,Plaza Playacar,Cancún,Autobús,Transportes del Norte,65.73,125,146,111
+10,7,10,Plaza Playacar,Akumal,Autobús,Transportes del Norte,33.21,93,123,112
+10,8,8,Plaza Playacar,Isla Mujeres,Autobús,Futura,79.02,139,155,113
+10,9,7,Plaza Playacar,Playa del Carmen,Autobús,Estrella Blanca,2.77,62,101,114
+10,16,8,Plaza Playacar,Isla Cozumel,Autobús,Futura,26.5,86,118,115
+11,60,10,Rosarito,Mexicali,Autobús,Transportes del Norte,151.38,211,205,116
+11,62,9,Rosarito,Tecate,Autobús,Omnibus de México,45.74,105,132,117
+11,63,8,Rosarito,Tijuana,Autobús,Futura,18.83,78,113,118
+11,75,7,Rosarito,Ensenada,Autobús,Estrella Blanca,70.01,130,149,119
+11,105,10,Rosarito,San Quintín,Autobús,Transportes del Norte,226.86,286,258,120
+12,15,9,Puerto Escondido,Acapulco,Autobús,Omnibus de México,320.83,380,324,121
+12,39,10,Puerto Escondido,Oaxaca,Autobús,Transportes del Norte,139.77,199,197,122
+12,82,6,Puerto Escondido,Izúcar de Matamoros,Autobús,ADO,326.45,386,328,123
+12,96,6,Puerto Escondido,Tehuacán,Autobús,ADO,290.77,350,303,124
+12,100,6,Puerto Escondido,Tuxtepec,Autobús,ADO,266.53,326,286,125
+13,32,9,San Felipe,Guanajuato,Autobús,Omnibus de México,59.01,119,141,126
+13,34,9,San Felipe,Irapuato,Autobús,Omnibus de México,90.4,150,163,127
+13,35,6,San Felipe,León,Autobús,ADO,62.59,122,143,128
+13,44,8,San Felipe,Salamanca,Autobús,Futura,92.18,152,164,129
+13,49,6,San Felipe,San Miguel de Allende,Autobús,ADO,80.22,140,156,130
+14,18,7,Nuevo Nayarit,Manzanillo,Autobús,Estrella Blanca,209.98,269,246,131
+14,20,6,Nuevo Nayarit,Puerto Vallarta,Autobús,ADO,9.9,69,106,132
+14,27,9,Nuevo Nayarit,Colima,Autobús,Omnibus de México,217.52,277,252,133
+14,65,7,Nuevo Nayarit,Guadalajara,Autobús,Estrella Blanca,202.89,262,242,134
+14,69,9,Nuevo Nayarit,Chapala,Autobús,Omnibus de México,220.49,280,254,135
+15,6,10,Acapulco,Zihuatanejo,Autobús,Transportes del Norte,196.2,256,237,136
+15,50,9,Acapulco,Taxco,Autobús,Omnibus de México,190.23,250,233,137
+15,72,10,Acapulco,Cuernavaca,Autobús,Transportes del Norte,239.23,299,267,138
+15,80,7,Acapulco,Ixtapan de la Sal,Autobús,Estrella Blanca,220.41,280,254,139
+15,82,6,Acapulco,Izúcar de Matamoros,Autobús,ADO,239.74,299,267,140
+16,2,9,Isla Cozumel,Cancún,Autobús,Omnibus de México,80.55,140,156,141
+16,7,10,Isla Cozumel,Akumal,Autobús,Transportes del Norte,41.5,101,129,142
+16,8,10,Isla Cozumel,Isla Mujeres,Autobús,Transportes del Norte,91.58,151,164,143
+16,9,10,Isla Cozumel,Playa del Carmen,Autobús,Transportes del Norte,27.51,87,119,144
+16,10,6,Isla Cozumel,Plaza Playacar,Autobús,ADO,26.5,86,118,145
+17,1,6,La Paz,Cabo San Lucas,Autobús,ADO,146.67,206,202,146
+17,2,5,La Paz,Cancún,Avión,Aeromar,2428.87,212,14371,147
+17,2,9,La Paz,Cancún,Autobús,Omnibus de México,2428.87,2488,1800,148
+17,3,7,La Paz,Loreto,Autobús,Estrella Blanca,230.13,290,261,149
+17,4,3,La Paz,San José del Cabo,Avión,Viva Aerobus,137.57,40,10247,150
+17,4,10,La Paz,San José del Cabo,Autobús,Transportes del Norte,137.57,197,196,151
+17,19,1,La Paz,Mazatlán,Avión,Aeroméxico,410.68,60,10739,152
+17,19,10,La Paz,Mazatlán,Autobús,Transportes del Norte,410.68,470,387,153
+17,20,2,La Paz,Puerto Vallarta,Avión,Volaris,653.88,79,11176,154
+17,20,9,La Paz,Puerto Vallarta,Autobús,Omnibus de México,653.88,713,557,155
+17,22,3,La Paz,Aguascalientes,Avión,Viva Aerobus,858.81,94,11545,156
+17,22,8,La Paz,Aguascalientes,Autobús,Futura,858.81,918,701,157
+17,29,1,La Paz,Culiacán,Avión,Aeroméxico,304.08,52,10547,158
+17,29,10,La Paz,Culiacán,Autobús,Transportes del Norte,304.08,364,312,159
+17,31,9,La Paz,El Fuerte,Autobús,Omnibus de México,284.51,344,299,160
+17,33,4,La Paz,Hermosillo,Avión,Interjet,552.33,71,10994,161
+17,33,10,La Paz,Hermosillo,Autobús,Transportes del Norte,552.33,612,486,162
+17,36,9,La Paz,Los Mochis,Autobús,Omnibus de México,225.25,285,257,163
+17,37,5,La Paz,Mérida,Avión,Aeromar,2152.11,191,13873,164
+17,37,6,La Paz,Mérida,Autobús,ADO,2152.11,2212,1606,165
+17,53,4,La Paz,Toluca,Avión,Interjet,1226.32,121,12207,166
+17,53,10,La Paz,Toluca,Autobús,Transportes del Norte,1226.32,1286,958,167
+17,54,3,La Paz,Tuxtla Gutiérrez,Avión,Viva Aerobus,1969.82,177,13545,168
+17,54,6,La Paz,Tuxtla Gutiérrez,Autobús,ADO,1969.82,2029,1478,169
+17,56,2,La Paz,Villahermosa,Avión,Volaris,1927.44,174,13469,170
+17,56,7,La Paz,Villahermosa,Autobús,Estrella Blanca,1927.44,1987,1449,171
+17,59,1,La Paz,Ciudad Juárez,Avión,Aeroméxico,922.32,99,11660,172
+17,59,8,La Paz,Ciudad Juárez,Autobús,Futura,922.32,982,745,173
+17,60,5,La Paz,Mexicali,Avión,Aeromar,1068.89,110,11924,174
+17,60,10,La Paz,Mexicali,Autobús,Transportes del Norte,1068.89,1128,848,175
+17,63,5,La Paz,Tijuana,Avión,Aeromar,1137.97,115,12048,176
+17,63,7,La Paz,Tijuana,Autobús,Estrella Blanca,1137.97,1197,896,177
+17,64,2,La Paz,Ciudad de México,Avión,Volaris,1268.01,125,12282,178
+17,64,8,La Paz,Ciudad de México,Autobús,Futura,1268.01,1328,987,179
+17,65,4,La Paz,Guadalajara,Avión,Interjet,815.28,91,11467,180
+17,65,10,La Paz,Guadalajara,Autobús,Transportes del Norte,815.28,875,670,181
+17,66,4,La Paz,Monterrey,Avión,Interjet,1022.23,106,11840,182
+17,66,10,La Paz,Monterrey,Autobús,Transportes del Norte,1022.23,1082,815,183
+18,14,8,Manzanillo,Nuevo Nayarit,Autobús,Futura,209.98,269,246,184
+18,20,8,Manzanillo,Puerto Vallarta,Autobús,Futura,200.52,260,240,185
+18,27,9,Manzanillo,Colima,Autobús,Omnibus de México,35.62,95,124,186
+18,65,10,Manzanillo,Guadalajara,Autobús,Transportes del Norte,207.26,267,245,187
+18,69,7,Manzanillo,Chapala,Autobús,Estrella Blanca,178.44,238,224,188
+19,2,2,Mazatlán,Cancún,Avión,Volaris,2027.23,182,13649,189
+19,2,9,Mazatlán,Cancún,Autobús,Omnibus de México,2027.23,2087,1519,190
+19,4,1,Mazatlán,San José del Cabo,Avión,Aeroméxico,335.94,55,10604,191
+19,4,8,Mazatlán,San José del Cabo,Autobús,Futura,335.94,395,335,192
+19,14,7,Mazatlán,Nuevo Nayarit,Autobús,Estrella Blanca,301.6,361,311,193
+19,17,1,Mazatlán,La Paz,Avión,Aeroméxico,410.68,60,10739,194
+19,17,8,Mazatlán,La Paz,Autobús,Futura,410.68,470,387,195
+19,20,4,Mazatlán,Puerto Vallarta,Avión,Interjet,310.72,53,10559,196
+19,20,6,Mazatlán,Puerto Vallarta,Autobús,ADO,310.72,370,317,197
+19,22,5,Mazatlán,Aguascalientes,Avión,Aeromar,448.34,63,10807,198
+19,22,7,Mazatlán,Aguascalientes,Autobús,Estrella Blanca,448.34,508,413,199
+19,29,1,Mazatlán,Culiacán,Avión,Aeroméxico,202.95,45,10365,200
+19,29,7,Mazatlán,Culiacán,Autobús,Estrella Blanca,202.95,262,242,201
+19,30,7,Mazatlán,Durango,Autobús,Estrella Blanca,242.56,302,269,202
+19,33,5,Mazatlán,Hermosillo,Avión,Aeromar,796.81,89,11434,203
+19,33,8,Mazatlán,Hermosillo,Autobús,Futura,796.81,856,657,204
+19,37,1,Mazatlán,Mérida,Avión,Aeroméxico,1747.45,161,13145,205
+19,37,10,Mazatlán,Mérida,Autobús,Transportes del Norte,1747.45,1807,1323,206
+19,53,2,Mazatlán,Toluca,Avión,Volaris,824.72,91,11484,207
+19,53,8,Mazatlán,Toluca,Autobús,Futura,824.72,884,677,208
+19,54,1,Mazatlán,Tuxtla Gutiérrez,Avión,Aeroméxico,1563.23,147,12813,209
+19,54,7,Mazatlán,Tuxtla Gutiérrez,Autobús,Estrella Blanca,1563.23,1623,1194,210
+19,56,5,Mazatlán,Villahermosa,Avión,Aeromar,1517.61,143,12731,211
+19,56,9,Mazatlán,Villahermosa,Autobús,Omnibus de México,1517.61,1577,1162,212
+19,59,2,Mazatlán,Ciudad Juárez,Avión,Volaris,948.92,101,11708,213
+19,59,10,Mazatlán,Ciudad Juárez,Autobús,Transportes del Norte,948.92,1008,764,214
+19,60,4,Mazatlán,Mexicali,Avión,Interjet,1374.33,133,12473,215
+19,60,7,Mazatlán,Mexicali,Autobús,Estrella Blanca,1374.33,1434,1062,216
+19,63,1,Mazatlán,Tijuana,Avión,Aeroméxico,1468.41,140,12643,217
+19,63,7,Mazatlán,Tijuana,Autobús,Estrella Blanca,1468.41,1528,1127,218
+19,64,3,Mazatlán,Ciudad de México,Avión,Viva Aerobus,863.31,94,11553,219
+19,64,7,Mazatlán,Ciudad de México,Autobús,Estrella Blanca,863.31,923,704,220
+19,65,3,Mazatlán,Guadalajara,Avión,Viva Aerobus,424.61,61,10764,221
+19,65,6,Mazatlán,Guadalajara,Autobús,ADO,424.61,484,397,222
+19,66,5,Mazatlán,Monterrey,Avión,Aeromar,676.53,80,11217,223
+19,66,7,Mazatlán,Monterrey,Autobús,Estrella Blanca,676.53,736,573,224
+19,93,6,Mazatlán,Sombrerete,Autobús,ADO,287.67,347,301,225
+20,2,5,Puerto Vallarta,Cancún,Avión,Aeromar,1908.89,173,13435,226
+20,2,10,Puerto Vallarta,Cancún,Autobús,Transportes del Norte,1908.89,1968,1436,227
+20,4,2,Puerto Vallarta,San José del Cabo,Avión,Volaris,535.06,70,10963,228
+20,4,7,Puerto Vallarta,San José del Cabo,Autobús,Estrella Blanca,535.06,595,474,229
+20,14,8,Puerto Vallarta,Nuevo Nayarit,Autobús,Futura,9.9,69,106,230
+20,17,1,Puerto Vallarta,La Paz,Avión,Aeroméxico,653.88,79,11176,231
+20,17,9,Puerto Vallarta,La Paz,Autobús,Omnibus de México,653.88,713,557,232
+20,18,9,Puerto Vallarta,Manzanillo,Autobús,Omnibus de México,200.52,260,240,233
+20,19,2,Puerto Vallarta,Mazatlán,Avión,Volaris,310.72,53,10559,234
+20,19,9,Puerto Vallarta,Mazatlán,Autobús,Omnibus de México,310.72,370,317,235
+20,22,5,Puerto Vallarta,Aguascalientes,Avión,Aeromar,332.84,54,10599,236
+20,22,7,Puerto Vallarta,Aguascalientes,Autobús,Estrella Blanca,332.84,392,332,237
+20,27,7,Puerto Vallarta,Colima,Autobús,Estrella Blanca,207.71,267,245,238
+20,29,3,Puerto Vallarta,Culiacán,Avión,Viva Aerobus,513.15,68,10923,239
+20,29,9,Puerto Vallarta,Culiacán,Autobús,Omnibus de México,513.15,573,459,240
+20,33,3,Puerto Vallarta,Hermosillo,Avión,Viva Aerobus,1104.09,112,11987,241
+20,33,9,Puerto Vallarta,Hermosillo,Autobús,Omnibus de México,1104.09,1164,872,242
+20,37,4,Puerto Vallarta,Mérida,Avión,Interjet,1620.96,151,12917,243
+20,37,10,Puerto Vallarta,Mérida,Autobús,Transportes del Norte,1620.96,1680,1234,244
+20,53,1,Puerto Vallarta,Toluca,Avión,Aeroméxico,600.41,75,11080,245
+20,53,7,Puerto Vallarta,Toluca,Autobús,Estrella Blanca,600.41,660,520,246
+20,54,5,Puerto Vallarta,Tuxtla Gutiérrez,Avión,Aeromar,1345.64,130,12422,247
+20,54,7,Puerto Vallarta,Tuxtla Gutiérrez,Autobús,Estrella Blanca,1345.64,1405,1041,248
+20,56,5,Puerto Vallarta,Villahermosa,Avión,Aeromar,1321.9,129,12379,249
+20,56,10,Puerto Vallarta,Villahermosa,Autobús,Transportes del Norte,1321.9,1381,1025,250
+20,59,1,Puerto Vallarta,Ciudad Juárez,Avión,Aeroméxico,1240.29,123,12232,251
+20,59,7,Puerto Vallarta,Ciudad Juárez,Autobús,Estrella Blanca,1240.29,1300,968,252
+20,60,3,Puerto Vallarta,Mexicali,Avión,Viva Aerobus,1676.88,155,13018,253
+20,60,6,Puerto Vallarta,Mexicali,Autobús,ADO,1676.88,1736,1273,254
+20,63,3,Puerto Vallarta,Tijuana,Avión,Viva Aerobus,1765.0,162,13176,255
+20,63,7,Puerto Vallarta,Tijuana,Autobús,Estrella Blanca,1765.0,1824,1335,256
+20,64,5,Puerto Vallarta,Ciudad de México,Avión,Aeromar,649.87,78,11169,257
+20,64,6,Puerto Vallarta,Ciudad de México,Autobús,ADO,649.87,709,554,258
+20,65,5,Puerto Vallarta,Guadalajara,Avión,Aeromar,195.84,44,10352,259
+20,65,8,Puerto Vallarta,Guadalajara,Autobús,Futura,195.84,255,237,260
+20,66,2,Puerto Vallarta,Monterrey,Avión,Volaris,751.8,86,11353,261
+20,66,7,Puerto Vallarta,Monterrey,Autobús,Estrella Blanca,751.8,811,626,262
+20,69,7,Puerto Vallarta,Chapala,Autobús,Estrella Blanca,212.18,272,248,263
+21,57,8,Veracruz,Xalapa,Autobús,Futura,95.99,155,167,264
+21,96,6,Veracruz,Tehuacán,Autobús,ADO,153.91,213,207,265
+21,100,10,Veracruz,Tuxtepec,Autobús,Transportes del Norte,115.45,175,180,266
+21,111,10,Veracruz,Coatepec,Autobús,Transportes del Norte,96.12,156,167,267
+21,112,6,Veracruz,Orizaba,Autobús,ADO,108.87,168,176,268
+22,2,5,Aguascalientes,Cancún,Avión,Aeromar,1600.04,150,12880,269
+22,2,8,Aguascalientes,Cancún,Autobús,Futura,1600.04,1660,1220,270
+22,4,1,Aguascalientes,San José del Cabo,Avión,Aeroméxico,772.09,87,11389,271
+22,4,7,Aguascalientes,San José del Cabo,Autobús,Estrella Blanca,772.09,832,640,272
+22,13,8,Aguascalientes,San Felipe,Autobús,Futura,120.29,180,184,273
+22,17,5,Aguascalientes,La Paz,Avión,Aeromar,858.81,94,11545,274
+22,17,9,Aguascalientes,La Paz,Autobús,Omnibus de México,858.81,918,701,275
+22,19,5,Aguascalientes,Mazatlán,Avión,Aeromar,448.34,63,10807,276
+22,19,9,Aguascalientes,Mazatlán,Autobús,Omnibus de México,448.34,508,413,277
+22,20,5,Aguascalientes,Puerto Vallarta,Avión,Aeromar,332.84,54,10599,278
+22,20,9,Aguascalientes,Puerto Vallarta,Autobús,Omnibus de México,332.84,392,332,279
+22,29,1,Aguascalientes,Culiacán,Avión,Aeroméxico,613.09,75,11103,280
+22,29,7,Aguascalientes,Culiacán,Autobús,Estrella Blanca,613.09,673,529,281
+22,33,5,Aguascalientes,Hermosillo,Avión,Aeromar,1182.93,118,12129,282
+22,33,9,Aguascalientes,Hermosillo,Autobús,Omnibus de México,1182.93,1242,928,283
+22,35,10,Aguascalientes,León,Autobús,Transportes del Norte,105.57,165,173,284
+22,37,2,Aguascalientes,Mérida,Avión,Volaris,1315.35,128,12367,285
+22,37,8,Aguascalientes,Mérida,Autobús,Futura,1315.35,1375,1020,286
+22,46,7,Aguascalientes,San Juan de los Lagos,Autobús,Estrella Blanca,69.65,129,148,287
+22,53,5,Aguascalientes,Toluca,Avión,Aeromar,397.87,59,10716,288
+22,53,7,Aguascalientes,Toluca,Autobús,Estrella Blanca,397.87,457,378,289
+22,54,1,Aguascalientes,Tuxtla Gutiérrez,Avión,Aeroméxico,1118.93,113,12014,290
+22,54,6,Aguascalientes,Tuxtla Gutiérrez,Autobús,ADO,1118.93,1178,883,291
+22,56,2,Aguascalientes,Villahermosa,Avión,Volaris,1069.51,110,11925,292
+22,56,9,Aguascalientes,Villahermosa,Autobús,Omnibus de México,1069.51,1129,848,293
+22,58,10,Aguascalientes,Zacatecas,Autobús,Transportes del Norte,149.72,209,204,294
+22,59,4,Aguascalientes,Ciudad Juárez,Avión,Interjet,1171.89,117,12109,295
+22,59,9,Aguascalientes,Ciudad Juárez,Autobús,Omnibus de México,1171.89,1231,920,296
+22,60,2,Aguascalientes,Mexicali,Avión,Volaris,1765.71,162,13178,297
+22,60,6,Aguascalientes,Mexicali,Autobús,ADO,1765.71,1825,1335,298
+22,63,3,Aguascalientes,Tijuana,Avión,Viva Aerobus,1873.28,170,13371,299
+22,63,9,Aguascalientes,Tijuana,Autobús,Omnibus de México,1873.28,1933,1411,300
+22,64,1,Aguascalientes,Ciudad de México,Avión,Aeroméxico,427.09,62,10768,301
+22,64,7,Aguascalientes,Ciudad de México,Autobús,Estrella Blanca,427.09,487,398,302
+22,65,3,Aguascalientes,Guadalajara,Avión,Viva Aerobus,172.35,42,10310,303
+22,65,9,Aguascalientes,Guadalajara,Autobús,Omnibus de México,172.35,232,220,304
+22,66,3,Aguascalientes,Monterrey,Avión,Viva Aerobus,468.13,65,10842,305
+22,66,9,Aguascalientes,Monterrey,Autobús,Omnibus de México,468.13,528,427,306
+22,83,10,Aguascalientes,Jerez,Autobús,Transportes del Norte,117.38,177,182,307
+23,37,7,Campeche,Mérida,Autobús,Estrella Blanca,237.12,297,265,308
+23,41,7,Campeche,Palenque,Autobús,Estrella Blanca,220.88,280,254,309
+23,70,6,Campeche,Chichen Itzá,Autobús,ADO,275.35,335,292,310
+23,81,6,Campeche,Izamal,Autobús,ADO,264.94,324,285,311
+23,101,9,Campeche,Uxmal,Autobús,Omnibus de México,169.44,229,218,312
+24,32,8,Celaya,Guanajuato,Autobús,Futura,54.66,114,138,313
+24,34,10,Celaya,Irapuato,Autobús,Transportes del Norte,56.89,116,139,314
+24,44,6,Celaya,Salamanca,Autobús,ADO,37.8,97,126,315
+24,47,9,Celaya,San Juan del Río,Autobús,Omnibus de México,86.62,146,160,316
+24,49,7,Celaya,San Miguel de Allende,Autobús,Estrella Blanca,44.56,104,131,317
+25,31,6,Chihuahua,El Fuerte,Autobús,ADO,363.8,423,354,318
+25,36,9,Chihuahua,Los Mochis,Autobús,Omnibus de México,422.04,482,395,319
+25,59,9,Chihuahua,Ciudad Juárez,Autobús,Omnibus de México,362.98,422,354,320
+25,76,7,Chihuahua,Hidalgo del Parral,Autobús,Estrella Blanca,155.7,215,208,321
+25,85,7,Chihuahua,Nuevo Casas Grandes,Autobús,Estrella Blanca,275.21,335,292,322
+26,5,10,Coatzacoalcos,Ixtapa,Autobús,Transportes del Norte,220.22,280,254,323
+26,21,6,Coatzacoalcos,Veracruz,Autobús,ADO,208.0,267,245,324
+26,54,10,Coatzacoalcos,Tuxtla Gutiérrez,Autobús,Transportes del Norte,208.17,268,245,325
+26,56,9,Coatzacoalcos,Villahermosa,Autobús,Omnibus de México,159.23,219,211,326
+26,100,8,Coatzacoalcos,Tuxtepec,Autobús,Futura,178.53,238,224,327
+27,14,9,Colima,Nuevo Nayarit,Autobús,Omnibus de México,217.52,277,252,328
+27,18,9,Colima,Manzanillo,Autobús,Omnibus de México,35.62,95,124,329
+27,20,7,Colima,Puerto Vallarta,Autobús,Estrella Blanca,207.71,267,245,330
+27,65,10,Colima,Guadalajara,Autobús,Transportes del Norte,181.12,241,226,331
+27,69,7,Colima,Chapala,Autobús,Estrella Blanca,148.25,208,203,332
+28,5,8,Comitán,Ixtapa,Autobús,Futura,102.74,162,171,333
+28,41,8,Comitán,Palenque,Autobús,Futura,138.76,198,197,334
+28,45,6,Comitán,San Cristóbal,Autobús,ADO,76.62,136,153,335
+28,54,8,Comitán,Tuxtla Gutiérrez,Autobús,Futura,118.97,178,183,336
+28,113,9,Comitán,Chiapa de Corzo,Autobús,Omnibus de México,100.15,160,170,337
+29,2,4,Culiacán,Cancún,Avión,Interjet,2140.32,190,13852,338
+29,2,6,Culiacán,Cancún,Autobús,ADO,2140.32,2200,1598,339
+29,4,1,Culiacán,San José del Cabo,Avión,Aeroméxico,304.01,52,10547,340
+29,4,10,Culiacán,San José del Cabo,Autobús,Transportes del Norte,304.01,364,312,341
+29,17,1,Culiacán,La Paz,Avión,Aeroméxico,304.08,52,10547,342
+29,17,6,Culiacán,La Paz,Autobús,ADO,304.08,364,312,343
+29,19,2,Culiacán,Mazatlán,Avión,Volaris,202.95,45,10365,344
+29,19,10,Culiacán,Mazatlán,Autobús,Transportes del Norte,202.95,262,242,345
+29,20,1,Culiacán,Puerto Vallarta,Avión,Aeroméxico,513.15,68,10923,346
+29,20,6,Culiacán,Puerto Vallarta,Autobús,ADO,513.15,573,459,347
+29,22,5,Culiacán,Aguascalientes,Avión,Aeromar,613.09,75,11103,348
+29,22,10,Culiacán,Aguascalientes,Autobús,Transportes del Norte,613.09,673,529,349
+29,30,10,Culiacán,Durango,Autobús,Transportes del Norte,258.41,318,280,350
+29,31,6,Culiacán,El Fuerte,Autobús,ADO,204.33,264,243,351
+29,33,2,Culiacán,Hermosillo,Avión,Volaris,594.82,74,11070,352
+29,33,10,Culiacán,Hermosillo,Autobús,Transportes del Norte,594.82,654,516,353
+29,36,6,Culiacán,Los Mochis,Autobús,ADO,194.96,254,236,354
+29,37,2,Culiacán,Mérida,Avión,Volaris,1867.98,170,13362,355
+29,37,10,Culiacán,Mérida,Autobús,Transportes del Norte,1867.98,1927,1407,356
+29,53,3,Culiacán,Toluca,Avión,Viva Aerobus,1004.82,105,11808,357
+29,53,7,Culiacán,Toluca,Autobús,Estrella Blanca,1004.82,1064,803,358
+29,54,5,Culiacán,Tuxtla Gutiérrez,Avión,Aeromar,1731.1,159,13115,359
+29,54,8,Culiacán,Tuxtla Gutiérrez,Autobús,Futura,1731.1,1791,1311,360
+29,56,3,Culiacán,Villahermosa,Avión,Viva Aerobus,1675.75,155,13016,361
+29,56,6,Culiacán,Villahermosa,Autobús,ADO,1675.75,1735,1273,362
+29,59,2,Culiacán,Ciudad Juárez,Avión,Volaris,776.71,88,11398,363
+29,59,10,Culiacán,Ciudad Juárez,Autobús,Transportes del Norte,776.71,836,643,364
+29,60,4,Culiacán,Mexicali,Avión,Interjet,1174.51,118,12114,365
+29,60,9,Culiacán,Mexicali,Autobús,Omnibus de México,1174.51,1234,922,366
+29,63,1,Culiacán,Tijuana,Avión,Aeroméxico,1272.24,125,12290,367
+29,63,8,Culiacán,Tijuana,Autobús,Futura,1272.24,1332,990,368
+29,64,5,Culiacán,Ciudad de México,Avión,Aeromar,1038.76,107,11869,369
+29,64,9,Culiacán,Ciudad de México,Autobús,Omnibus de México,1038.76,1098,827,370
+29,65,4,Culiacán,Guadalajara,Avión,Interjet,619.1,76,11114,371
+29,65,8,Culiacán,Guadalajara,Autobús,Futura,619.1,679,533,372
+29,66,4,Culiacán,Monterrey,Avión,Interjet,718.55,83,11293,373
+29,66,7,Culiacán,Monterrey,Autobús,Estrella Blanca,718.55,778,602,374
+30,19,8,Durango,Mazatlán,Autobús,Futura,242.56,302,269,375
+30,29,9,Durango,Culiacán,Autobús,Omnibus de México,258.41,318,280,376
+30,58,7,Durango,Zacatecas,Autobús,Estrella Blanca,273.45,333,291,377
+30,76,9,Durango,Hidalgo del Parral,Autobús,Omnibus de México,270.28,330,289,378
+30,93,7,Durango,Sombrerete,Autobús,Estrella Blanca,179.88,239,225,379
+31,3,9,El Fuerte,Loreto,Autobús,Omnibus de México,269.23,329,288,380
+31,17,10,El Fuerte,La Paz,Autobús,Transportes del Norte,284.51,344,299,381
+31,29,8,El Fuerte,Culiacán,Autobús,Futura,204.33,264,243,382
+31,36,8,El Fuerte,Los Mochis,Autobús,Futura,59.33,119,141,383
+31,76,6,El Fuerte,Hidalgo del Parral,Autobús,ADO,303.89,363,312,384
+32,13,8,Guanajuato,San Felipe,Autobús,Futura,59.01,119,141,385
+32,24,10,Guanajuato,Celaya,Autobús,Transportes del Norte,54.66,114,138,386
+32,34,8,Guanajuato,Irapuato,Autobús,Futura,50.41,110,135,387
+32,44,10,Guanajuato,Salamanca,Autobús,Transportes del Norte,41.24,101,128,388
+32,49,8,Guanajuato,San Miguel de Allende,Autobús,Futura,28.68,88,120,389
+33,2,4,Hermosillo,Cancún,Avión,Interjet,2578.38,223,14641,390
+33,2,10,Hermosillo,Cancún,Autobús,Transportes del Norte,2578.38,2638,1904,391
+33,3,10,Hermosillo,Loreto,Autobús,Transportes del Norte,345.04,405,341,392
+33,4,3,Hermosillo,San José del Cabo,Avión,Viva Aerobus,682.86,81,11229,393
+33,4,6,Hermosillo,San José del Cabo,Autobús,ADO,682.86,742,578,394
+33,17,4,Hermosillo,La Paz,Avión,Interjet,552.33,71,10994,395
+33,17,10,Hermosillo,La Paz,Autobús,Transportes del Norte,552.33,612,486,396
+33,19,1,Hermosillo,Mazatlán,Avión,Aeroméxico,796.81,89,11434,397
+33,19,7,Hermosillo,Mazatlán,Autobús,Estrella Blanca,796.81,856,657,398
+33,20,1,Hermosillo,Puerto Vallarta,Avión,Aeroméxico,1104.09,112,11987,399
+33,20,10,Hermosillo,Puerto Vallarta,Autobús,Transportes del Norte,1104.09,1164,872,400
+33,22,4,Hermosillo,Aguascalientes,Avión,Interjet,1182.93,118,12129,401
+33,22,7,Hermosillo,Aguascalientes,Autobús,Estrella Blanca,1182.93,1242,928,402
+33,25,8,Hermosillo,Chihuahua,Autobús,Futura,488.67,548,442,403
+33,29,3,Hermosillo,Culiacán,Avión,Viva Aerobus,594.82,74,11070,404
+33,29,7,Hermosillo,Culiacán,Autobús,Estrella Blanca,594.82,654,516,405
+33,31,7,Hermosillo,El Fuerte,Autobús,Estrella Blanca,390.77,450,373,406
+33,36,7,Hermosillo,Los Mochis,Autobús,Estrella Blanca,415.85,475,391,407
+33,37,2,Hermosillo,Mérida,Avión,Volaris,2327.93,204,14190,408
+33,37,8,Hermosillo,Mérida,Autobús,Futura,2327.93,2387,1729,409
+33,53,2,Hermosillo,Toluca,Avión,Volaris,1580.71,148,12845,410
+33,53,8,Hermosillo,Toluca,Autobús,Futura,1580.71,1640,1206,411
+33,54,3,Hermosillo,Tuxtla Gutiérrez,Avión,Viva Aerobus,2280.81,201,14105,412
+33,54,6,Hermosillo,Tuxtla Gutiérrez,Autobús,ADO,2280.81,2340,1696,413
+33,56,3,Hermosillo,Villahermosa,Avión,Viva Aerobus,2209.78,195,13977,414
+33,56,8,Hermosillo,Villahermosa,Autobús,Futura,2209.78,2269,1646,415
+33,59,2,Hermosillo,Ciudad Juárez,Avión,Volaris,520.66,69,10937,416
+33,59,8,Hermosillo,Ciudad Juárez,Autobús,Futura,520.66,580,464,417
+33,60,3,Hermosillo,Mexicali,Avión,Viva Aerobus,583.3,73,11049,418
+33,60,8,Hermosillo,Mexicali,Autobús,Futura,583.3,643,508,419
+33,63,5,Hermosillo,Tijuana,Avión,Aeromar,692.54,81,11246,420
+33,63,8,Hermosillo,Tijuana,Autobús,Futura,692.54,752,584,421
+33,64,5,Hermosillo,Ciudad de México,Avión,Aeromar,1608.59,150,12895,422
+33,64,7,Hermosillo,Ciudad de México,Autobús,Estrella Blanca,1608.59,1668,1226,423
+33,65,5,Hermosillo,Guadalajara,Avión,Aeromar,1211.51,120,12180,424
+33,65,9,Hermosillo,Guadalajara,Autobús,Omnibus de México,1211.51,1271,948,425
+33,66,4,Hermosillo,Monterrey,Avión,Interjet,1117.75,113,12011,426
+33,66,6,Hermosillo,Monterrey,Autobús,ADO,1117.75,1177,882,427
+33,85,7,Hermosillo,Nuevo Casas Grandes,Autobús,Estrella Blanca,355.3,415,348,428
+34,24,10,Irapuato,Celaya,Autobús,Transportes del Norte,56.89,116,139,429
+34,32,10,Irapuato,Guanajuato,Autobús,Transportes del Norte,50.41,110,135,430
+34,35,10,Irapuato,León,Autobús,Transportes del Norte,60.35,120,142,431
+34,44,6,Irapuato,Salamanca,Autobús,ADO,19.48,79,113,432
+34,49,10,Irapuato,San Miguel de Allende,Autobús,Transportes del Norte,69.3,129,148,433
+35,13,6,León,San Felipe,Autobús,ADO,62.59,122,143,434
+35,32,6,León,Guanajuato,Autobús,ADO,72.43,132,150,435
+35,34,6,León,Irapuato,Autobús,ADO,60.35,120,142,436
+35,44,8,León,Salamanca,Autobús,Futura,74.95,134,152,437
+35,46,10,León,San Juan de los Lagos,Autobús,Transportes del Norte,63.76,123,144,438
+36,3,9,Los Mochis,Loreto,Autobús,Omnibus de México,236.79,296,265,439
+36,4,8,Los Mochis,San José del Cabo,Autobús,Futura,312.33,372,318,440
+36,17,8,Los Mochis,La Paz,Autobús,Futura,225.25,285,257,441
+36,29,10,Los Mochis,Culiacán,Autobús,Transportes del Norte,194.96,254,236,442
+36,31,10,Los Mochis,El Fuerte,Autobús,Transportes del Norte,59.33,119,141,443
+37,2,5,Mérida,Cancún,Avión,Aeromar,289.33,51,10520,444
+37,2,6,Mérida,Cancún,Autobús,ADO,289.33,349,302,445
+37,4,1,Mérida,San José del Cabo,Avión,Aeroméxico,2081.26,186,13746,446
+37,4,7,Mérida,San José del Cabo,Autobús,Estrella Blanca,2081.26,2141,1556,447
+37,17,3,Mérida,La Paz,Avión,Viva Aerobus,2152.11,191,13873,448
+37,17,10,Mérida,La Paz,Autobús,Transportes del Norte,2152.11,2212,1606,449
+37,19,3,Mérida,Mazatlán,Avión,Viva Aerobus,1747.45,161,13145,450
+37,19,6,Mérida,Mazatlán,Autobús,ADO,1747.45,1807,1323,451
+37,20,3,Mérida,Puerto Vallarta,Avión,Viva Aerobus,1620.96,151,12917,452
+37,20,8,Mérida,Puerto Vallarta,Autobús,Futura,1620.96,1680,1234,453
+37,22,1,Mérida,Aguascalientes,Avión,Aeroméxico,1315.35,128,12367,454
+37,22,10,Mérida,Aguascalientes,Autobús,Transportes del Norte,1315.35,1375,1020,455
+37,23,6,Mérida,Campeche,Autobús,ADO,237.12,297,265,456
+37,29,5,Mérida,Culiacán,Avión,Aeromar,1867.98,170,13362,457
+37,29,8,Mérida,Culiacán,Autobús,Futura,1867.98,1927,1407,458
+37,33,3,Mérida,Hermosillo,Avión,Viva Aerobus,2327.93,204,14190,459
+37,33,7,Mérida,Hermosillo,Autobús,Estrella Blanca,2327.93,2387,1729,460
+37,53,4,Mérida,Toluca,Avión,Interjet,1063.7,109,11914,461
+37,53,8,Mérida,Toluca,Autobús,Futura,1063.7,1123,844,462
+37,54,3,Mérida,Tuxtla Gutiérrez,Avión,Viva Aerobus,595.34,74,11071,463
+37,54,6,Mérida,Tuxtla Gutiérrez,Autobús,ADO,595.34,655,516,464
+37,56,1,Mérida,Villahermosa,Avión,Aeroméxico,479.86,65,10863,465
+37,56,6,Mérida,Villahermosa,Autobús,ADO,479.86,539,435,466
+37,59,3,Mérida,Ciudad Juárez,Avión,Viva Aerobus,2058.76,184,13705,467
+37,59,10,Mérida,Ciudad Juárez,Autobús,Transportes del Norte,2058.76,2118,1541,468
+37,60,2,Mérida,Mexicali,Avión,Volaris,2864.27,244,15155,469
+37,60,9,Mérida,Mexicali,Autobús,Omnibus de México,2864.27,2924,2104,470
+37,63,4,Mérida,Tijuana,Avión,Interjet,2996.65,254,15393,471
+37,63,6,Mérida,Tijuana,Autobús,ADO,2996.65,3056,2197,472
+37,64,4,Mérida,Ciudad de México,Avión,Interjet,1006.75,105,11812,473
+37,64,6,Mérida,Ciudad de México,Autobús,ADO,1006.75,1066,804,474
+37,65,4,Mérida,Guadalajara,Avión,Interjet,1425.37,136,12565,475
+37,65,6,Mérida,Guadalajara,Autobús,ADO,1425.37,1485,1097,476
+37,66,5,Mérida,Monterrey,Avión,Aeromar,1210.31,120,12178,477
+37,66,8,Mérida,Monterrey,Autobús,Futura,1210.31,1270,947,478
+37,70,9,Mérida,Chichen Itzá,Autobús,Omnibus de México,114.11,174,179,479
+37,81,8,Mérida,Izamal,Autobús,Futura,62.99,122,144,480
+37,101,9,Mérida,Uxmal,Autobús,Omnibus de México,69.18,129,148,481
+37,102,10,Mérida,Valladolid,Autobús,Transportes del Norte,150.96,210,205,482
+38,24,8,Morelia,Celaya,Autobús,Futura,106.49,166,174,483
+38,34,9,Morelia,Irapuato,Autobús,Omnibus de México,113.95,173,179,484
+38,44,7,Morelia,Salamanca,Autobús,Estrella Blanca,111.26,171,177,485
+38,55,8,Morelia,Valle de Bravo,Autobús,Futura,127.69,187,189,486
+38,74,8,Morelia,El Oro,Autobús,Futura,126.18,186,188,487
+39,12,9,Oaxaca,Puerto Escondido,Autobús,Omnibus de México,139.77,199,197,488
+39,21,9,Oaxaca,Veracruz,Autobús,Omnibus de México,239.88,299,267,489
+39,96,6,Oaxaca,Tehuacán,Autobús,ADO,188.7,248,232,490
+39,100,10,Oaxaca,Tuxtepec,Autobús,Transportes del Norte,127.36,187,189,491
+39,112,10,Oaxaca,Orizaba,Autobús,Transportes del Norte,215.44,275,250,492
+40,77,8,Pachuca,Huasca de Ocampo,Autobús,Futura,22.76,82,115,493
+40,86,8,Pachuca,Pahuatlán,Autobús,Futura,65.07,125,145,494
+40,87,6,Pachuca,Mineral del Monte,Autobús,ADO,7.51,67,105,495
+40,99,10,Pachuca,Tula de Allende,Autobús,Transportes del Norte,66.39,126,146,496
+40,110,8,Pachuca,Zempoala,Autobús,Futura,23.54,83,116,497
+41,5,8,Palenque,Ixtapa,Autobús,Futura,135.95,195,195,498
+41,28,6,Palenque,Comitán,Autobús,ADO,138.76,198,197,499
+41,45,7,Palenque,San Cristóbal,Autobús,Estrella Blanca,118.69,178,183,500
+41,56,6,Palenque,Villahermosa,Autobús,ADO,133.15,193,193,501
+41,113,8,Palenque,Chiapa de Corzo,Autobús,Futura,157.6,217,210,502
+42,67,6,Puebla,Atlixco,Autobús,ADO,46.82,106,132,503
+42,82,8,Puebla,Izúcar de Matamoros,Autobús,Futura,57.5,117,140,504
+42,89,9,Puebla,San Andrés Cholula,Autobús,Omnibus de México,36.79,96,125,505
+42,90,7,Puebla,San Martín Texmelucan,Autobús,Estrella Blanca,65.64,125,145,506
+42,91,10,Puebla,San Pedro Cholula,Autobús,Transportes del Norte,43.08,103,130,507
+43,47,8,Querétaro,San Juan del Río,Autobús,Futura,48.38,108,133,508
+43,49,7,Querétaro,San Miguel de Allende,Autobús,Estrella Blanca,89.33,149,162,509
+43,51,7,Querétaro,Tequisquiapan,Autobús,Estrella Blanca,30.0,89,120,510
+43,79,9,Querétaro,Huichapan,Autobús,Omnibus de México,50.66,110,135,511
+43,109,6,Querétaro,Tecozautla,Autobús,ADO,38.08,98,126,512
+44,24,7,Salamanca,Celaya,Autobús,Estrella Blanca,37.8,97,126,513
+44,32,8,Salamanca,Guanajuato,Autobús,Futura,41.24,101,128,514
+44,34,9,Salamanca,Irapuato,Autobús,Omnibus de México,19.48,79,113,515
+44,35,9,Salamanca,León,Autobús,Omnibus de México,74.95,134,152,516
+44,49,7,Salamanca,San Miguel de Allende,Autobús,Estrella Blanca,53.45,113,137,517
+45,5,8,San Cristóbal,Ixtapa,Autobús,Futura,28.81,88,120,518
+45,28,8,San Cristóbal,Comitán,Autobús,Futura,76.62,136,153,519
+45,41,7,San Cristóbal,Palenque,Autobús,Estrella Blanca,118.69,178,183,520
+45,54,7,San Cristóbal,Tuxtla Gutiérrez,Autobús,Estrella Blanca,50.86,110,135,521
+45,113,9,San Cristóbal,Chiapa de Corzo,Autobús,Omnibus de México,40.95,100,128,522
+46,13,7,San Juan de los Lagos,San Felipe,Autobús,Estrella Blanca,113.14,173,179,523
+46,22,7,San Juan de los Lagos,Aguascalientes,Autobús,Estrella Blanca,69.65,129,148,524
+46,34,10,San Juan de los Lagos,Irapuato,Autobús,Transportes del Norte,115.96,175,181,525
+46,35,9,San Juan de los Lagos,León,Autobús,Omnibus de México,63.76,123,144,526
+46,65,8,San Juan de los Lagos,Guadalajara,Autobús,Futura,127.43,187,189,527
+47,43,7,San Juan del Río,Querétaro,Autobús,Estrella Blanca,48.38,108,133,528
+47,51,10,San Juan del Río,Tequisquiapan,Autobús,Transportes del Norte,18.5,78,112,529
+47,74,8,San Juan del Río,El Oro,Autobús,Futura,65.97,125,146,530
+47,79,9,San Juan del Río,Huichapan,Autobús,Omnibus de México,34.38,94,124,531
+47,109,8,San Juan del Río,Tecozautla,Autobús,Futura,41.11,101,128,532
+48,13,8,San Luis Potosí,San Felipe,Autobús,Futura,135.71,195,194,533
+48,22,8,San Luis Potosí,Aguascalientes,Autobús,Futura,197.89,257,238,534
+48,32,6,San Luis Potosí,Guanajuato,Autobús,ADO,176.07,236,223,535
+48,35,7,San Luis Potosí,León,Autobús,Estrella Blanca,196.27,256,237,536
+48,49,9,San Luis Potosí,San Miguel de Allende,Autobús,Omnibus de México,178.2,238,224,537
+49,13,9,San Miguel de Allende,San Felipe,Autobús,Omnibus de México,80.22,140,156,538
+49,24,9,San Miguel de Allende,Celaya,Autobús,Omnibus de México,44.56,104,131,539
+49,32,7,San Miguel de Allende,Guanajuato,Autobús,Estrella Blanca,28.68,88,120,540
+49,34,9,San Miguel de Allende,Irapuato,Autobús,Omnibus de México,69.3,129,148,541
+49,44,6,San Miguel de Allende,Salamanca,Autobús,ADO,53.45,113,137,542
+50,53,9,Taxco,Toluca,Autobús,Omnibus de México,82.02,142,157,543
+50,55,6,Taxco,Valle de Bravo,Autobús,ADO,90.45,150,163,544
+50,72,9,Taxco,Cuernavaca,Autobús,Omnibus de México,55.46,115,138,545
+50,80,7,Taxco,Ixtapan de la Sal,Autobús,Estrella Blanca,32.95,92,123,546
+50,107,6,Taxco,Metepec,Autobús,ADO,77.24,137,154,547
+51,43,8,Tequisquiapan,Querétaro,Autobús,Futura,30.0,89,120,548
+51,47,9,Tequisquiapan,San Juan del Río,Autobús,Omnibus de México,18.5,78,112,549
+51,79,8,Tequisquiapan,Huichapan,Autobús,Futura,32.41,92,122,550
+51,99,7,Tequisquiapan,Tula de Allende,Autobús,Estrella Blanca,81.26,141,156,551
+51,109,10,Tequisquiapan,Tecozautla,Autobús,Transportes del Norte,30.75,90,121,552
+52,71,7,Tlaxcala,Chignahuapan,Autobús,Estrella Blanca,45.29,105,131,553
+52,89,7,Tlaxcala,San Andrés Cholula,Autobús,Estrella Blanca,45.67,105,131,554
+52,90,8,Tlaxcala,San Martín Texmelucan,Autobús,Futura,31.85,91,122,555
+52,91,8,Tlaxcala,San Pedro Cholula,Autobús,Futura,41.62,101,129,556
+52,106,10,Tlaxcala,Tetela de Ocampo,Autobús,Transportes del Norte,59.21,119,141,557
+53,2,1,Toluca,Cancún,Avión,Aeroméxico,1352.55,131,12434,558
+53,2,9,Toluca,Cancún,Autobús,Omnibus de México,1352.55,1412,1046,559
+53,4,3,Toluca,San José del Cabo,Avión,Viva Aerobus,1122.26,114,12020,560
+53,4,6,Toluca,San José del Cabo,Autobús,ADO,1122.26,1182,885,561
+53,17,4,Toluca,La Paz,Avión,Interjet,1226.32,121,12207,562
+53,17,8,Toluca,La Paz,Autobús,Futura,1226.32,1286,958,563
+53,19,1,Toluca,Mazatlán,Avión,Aeroméxico,824.72,91,11484,564
+53,19,7,Toluca,Mazatlán,Autobús,Estrella Blanca,824.72,884,677,565
+53,20,3,Toluca,Puerto Vallarta,Avión,Viva Aerobus,600.41,75,11080,566
+53,20,6,Toluca,Puerto Vallarta,Autobús,ADO,600.41,660,520,567
+53,22,3,Toluca,Aguascalientes,Avión,Viva Aerobus,397.87,59,10716,568
+53,22,8,Toluca,Aguascalientes,Autobús,Futura,397.87,457,378,569
+53,29,5,Toluca,Culiacán,Avión,Aeromar,1004.82,105,11808,570
+53,29,9,Toluca,Culiacán,Autobús,Omnibus de México,1004.82,1064,803,571
+53,33,4,Toluca,Hermosillo,Avión,Interjet,1580.71,148,12845,572
+53,33,7,Toluca,Hermosillo,Autobús,Estrella Blanca,1580.71,1640,1206,573
+53,37,2,Toluca,Mérida,Avión,Volaris,1063.7,109,11914,574
+53,37,6,Toluca,Mérida,Autobús,ADO,1063.7,1123,844,575
+53,54,3,Toluca,Tuxtla Gutiérrez,Avión,Viva Aerobus,746.92,86,11344,576
+53,54,6,Toluca,Tuxtla Gutiérrez,Autobús,ADO,746.92,806,622,577
+53,55,7,Toluca,Valle de Bravo,Autobús,Estrella Blanca,53.26,113,137,578
+53,56,5,Toluca,Villahermosa,Avión,Aeromar,722.7,84,11300,579
+53,56,7,Toluca,Villahermosa,Autobús,Estrella Blanca,722.7,782,605,580
+53,59,2,Toluca,Ciudad Juárez,Avión,Volaris,1543.13,145,12777,581
+53,59,7,Toluca,Ciudad Juárez,Autobús,Estrella Blanca,1543.13,1603,1180,582
+53,60,5,Toluca,Mexicali,Avión,Aeromar,2163.57,192,13894,583
+53,60,10,Toluca,Mexicali,Autobús,Transportes del Norte,2163.57,2223,1614,584
+53,63,1,Toluca,Tijuana,Avión,Aeroméxico,2270.53,200,14086,585
+53,63,6,Toluca,Tijuana,Autobús,ADO,2270.53,2330,1689,586
+53,64,3,Toluca,Ciudad de México,Avión,Viva Aerobus,57.11,34,10102,587
+53,64,9,Toluca,Ciudad de México,Autobús,Omnibus de México,57.11,117,139,588
+53,65,1,Toluca,Guadalajara,Avión,Aeroméxico,414.15,61,10745,589
+53,65,10,Toluca,Guadalajara,Autobús,Transportes del Norte,414.15,474,389,590
+53,66,5,Toluca,Monterrey,Avión,Aeromar,713.48,83,11284,591
+53,66,6,Toluca,Monterrey,Autobús,ADO,713.48,773,599,592
+53,80,8,Toluca,Ixtapan de la Sal,Autobús,Futura,50.35,110,135,593
+53,107,8,Toluca,Metepec,Autobús,Futura,8.07,68,105,594
+53,108,9,Toluca,Villa del Carbón,Autobús,Omnibus de México,54.64,114,138,595
+54,2,3,Tuxtla Gutiérrez,Cancún,Avión,Viva Aerobus,821.09,91,11477,596
+54,2,9,Tuxtla Gutiérrez,Cancún,Autobús,Omnibus de México,821.09,881,674,597
+54,4,5,Tuxtla Gutiérrez,San José del Cabo,Avión,Aeromar,1868.75,170,13363,598
+54,4,6,Tuxtla Gutiérrez,San José del Cabo,Autobús,ADO,1868.75,1928,1408,599
+54,5,10,Tuxtla Gutiérrez,Ixtapa,Autobús,Transportes del Norte,23.9,83,116,600
+54,17,5,Tuxtla Gutiérrez,La Paz,Avión,Aeromar,1969.82,177,13545,601
+54,17,7,Tuxtla Gutiérrez,La Paz,Autobús,Estrella Blanca,1969.82,2029,1478,602
+54,19,4,Tuxtla Gutiérrez,Mazatlán,Avión,Interjet,1563.23,147,12813,603
+54,19,9,Tuxtla Gutiérrez,Mazatlán,Autobús,Omnibus de México,1563.23,1623,1194,604
+54,20,2,Tuxtla Gutiérrez,Puerto Vallarta,Avión,Volaris,1345.64,130,12422,605
+54,20,10,Tuxtla Gutiérrez,Puerto Vallarta,Autobús,Transportes del Norte,1345.64,1405,1041,606
+54,22,2,Tuxtla Gutiérrez,Aguascalientes,Avión,Volaris,1118.93,113,12014,607
+54,22,8,Tuxtla Gutiérrez,Aguascalientes,Autobús,Futura,1118.93,1178,883,608
+54,28,6,Tuxtla Gutiérrez,Comitán,Autobús,ADO,118.97,178,183,609
+54,29,2,Tuxtla Gutiérrez,Culiacán,Avión,Volaris,1731.1,159,13115,610
+54,29,7,Tuxtla Gutiérrez,Culiacán,Autobús,Estrella Blanca,1731.1,1791,1311,611
+54,33,3,Tuxtla Gutiérrez,Hermosillo,Avión,Viva Aerobus,2280.81,201,14105,612
+54,33,7,Tuxtla Gutiérrez,Hermosillo,Autobús,Estrella Blanca,2280.81,2340,1696,613
+54,37,4,Tuxtla Gutiérrez,Mérida,Avión,Interjet,595.34,74,11071,614
+54,37,6,Tuxtla Gutiérrez,Mérida,Autobús,ADO,595.34,655,516,615
+54,45,8,Tuxtla Gutiérrez,San Cristóbal,Autobús,Futura,50.86,110,135,616
+54,53,1,Tuxtla Gutiérrez,Toluca,Avión,Aeroméxico,746.92,86,11344,617
+54,53,6,Tuxtla Gutiérrez,Toluca,Autobús,ADO,746.92,806,622,618
+54,56,1,Tuxtla Gutiérrez,Villahermosa,Avión,Aeroméxico,138.6,40,10249,619
+54,56,10,Tuxtla Gutiérrez,Villahermosa,Autobús,Transportes del Norte,138.6,198,197,620
+54,59,2,Tuxtla Gutiérrez,Ciudad Juárez,Avión,Volaris,2143.58,190,13858,621
+54,59,7,Tuxtla Gutiérrez,Ciudad Juárez,Autobús,Estrella Blanca,2143.58,2203,1600,622
+54,60,2,Tuxtla Gutiérrez,Mexicali,Avión,Volaris,2856.13,244,15141,623
+54,60,8,Tuxtla Gutiérrez,Mexicali,Autobús,Futura,2856.13,2916,2099,624
+54,63,2,Tuxtla Gutiérrez,Tijuana,Avión,Volaris,2973.05,252,15351,625
+54,63,10,Tuxtla Gutiérrez,Tijuana,Autobús,Transportes del Norte,2973.05,3033,2181,626
+54,64,4,Tuxtla Gutiérrez,Ciudad de México,Avión,Interjet,702.2,82,11263,627
+54,64,7,Tuxtla Gutiérrez,Ciudad de México,Autobús,Estrella Blanca,702.2,762,591,628
+54,65,4,Tuxtla Gutiérrez,Guadalajara,Avión,Interjet,1161.02,117,12089,629
+54,65,8,Tuxtla Gutiérrez,Guadalajara,Autobús,Futura,1161.02,1221,912,630
+54,66,5,Tuxtla Gutiérrez,Monterrey,Avión,Aeromar,1241.12,123,12234,631
+54,66,6,Tuxtla Gutiérrez,Monterrey,Autobús,ADO,1241.12,1301,968,632
+54,113,9,Tuxtla Gutiérrez,Chiapa de Corzo,Autobús,Omnibus de México,21.18,81,114,633
+55,50,8,Valle de Bravo,Taxco,Autobús,Futura,90.45,150,163,634
+55,53,6,Valle de Bravo,Toluca,Autobús,ADO,53.26,113,137,635
+55,74,7,Valle de Bravo,El Oro,Autobús,Estrella Blanca,68.53,128,147,636
+55,80,8,Valle de Bravo,Ixtapan de la Sal,Autobús,Futura,61.52,121,143,637
+55,107,7,Valle de Bravo,Metepec,Autobús,Estrella Blanca,59.0,119,141,638
+56,2,4,Villahermosa,Cancún,Avión,Interjet,728.88,84,11311,639
+56,2,9,Villahermosa,Cancún,Autobús,Omnibus de México,728.88,788,610,640
+56,4,1,Villahermosa,San José del Cabo,Avión,Aeroméxico,1833.25,167,13299,641
+56,4,9,Villahermosa,San José del Cabo,Autobús,Omnibus de México,1833.25,1893,1383,642
+56,5,10,Villahermosa,Ixtapa,Autobús,Transportes del Norte,131.37,191,191,643
+56,17,5,Villahermosa,La Paz,Avión,Aeromar,1927.44,174,13469,644
+56,17,7,Villahermosa,La Paz,Autobús,Estrella Blanca,1927.44,1987,1449,645
+56,19,3,Villahermosa,Mazatlán,Avión,Viva Aerobus,1517.61,143,12731,646
+56,19,6,Villahermosa,Mazatlán,Autobús,ADO,1517.61,1577,1162,647
+56,20,3,Villahermosa,Puerto Vallarta,Avión,Viva Aerobus,1321.9,129,12379,648
+56,20,8,Villahermosa,Puerto Vallarta,Autobús,Futura,1321.9,1381,1025,649
+56,22,5,Villahermosa,Aguascalientes,Avión,Aeromar,1069.51,110,11925,650
+56,22,7,Villahermosa,Aguascalientes,Autobús,Estrella Blanca,1069.51,1129,848,651
+56,29,2,Villahermosa,Culiacán,Avión,Volaris,1675.75,155,13016,652
+56,29,7,Villahermosa,Culiacán,Autobús,Estrella Blanca,1675.75,1735,1273,653
+56,33,5,Villahermosa,Hermosillo,Avión,Aeromar,2209.78,195,13977,654
+56,33,8,Villahermosa,Hermosillo,Autobús,Futura,2209.78,2269,1646,655
+56,37,1,Villahermosa,Mérida,Avión,Aeroméxico,479.86,65,10863,656
+56,37,9,Villahermosa,Mérida,Autobús,Omnibus de México,479.86,539,435,657
+56,41,7,Villahermosa,Palenque,Autobús,Estrella Blanca,133.15,193,193,658
+56,45,6,Villahermosa,San Cristóbal,Autobús,ADO,142.88,202,200,659
+56,53,3,Villahermosa,Toluca,Avión,Viva Aerobus,722.7,84,11300,660
+56,53,8,Villahermosa,Toluca,Autobús,Futura,722.7,782,605,661
+56,54,3,Villahermosa,Tuxtla Gutiérrez,Avión,Viva Aerobus,138.6,40,10249,662
+56,54,9,Villahermosa,Tuxtla Gutiérrez,Autobús,Omnibus de México,138.6,198,197,663
+56,59,5,Villahermosa,Ciudad Juárez,Avión,Aeromar,2046.81,183,13684,664
+56,59,8,Villahermosa,Ciudad Juárez,Autobús,Futura,2046.81,2106,1532,665
+56,60,4,Villahermosa,Mexicali,Avión,Interjet,2779.85,238,15003,666
+56,60,10,Villahermosa,Mexicali,Autobús,Transportes del Norte,2779.85,2839,2045,667
+56,63,5,Villahermosa,Tijuana,Avión,Aeromar,2900.28,247,15220,668
+56,63,8,Villahermosa,Tijuana,Autobús,Futura,2900.28,2960,2130,669
+56,64,3,Villahermosa,Ciudad de México,Avión,Viva Aerobus,672.02,80,11209,670
+56,64,8,Villahermosa,Ciudad de México,Autobús,Futura,672.02,732,570,671
+56,65,4,Villahermosa,Guadalajara,Avión,Interjet,1131.19,114,12036,672
+56,65,7,Villahermosa,Guadalajara,Autobús,Estrella Blanca,1131.19,1191,891,673
+56,66,1,Villahermosa,Monterrey,Avión,Aeroméxico,1144.62,115,12060,674
+56,66,10,Villahermosa,Monterrey,Autobús,Transportes del Norte,1144.62,1204,901,675
+56,113,10,Villahermosa,Chiapa de Corzo,Autobús,Transportes del Norte,154.38,214,208,676
+57,73,9,Xalapa,Cuetzalan,Autobús,Omnibus de México,82.76,142,157,677
+57,97,7,Xalapa,Teziutlán,Autobús,Estrella Blanca,60.5,120,142,678
+57,98,6,Xalapa,Tlatlauquitepec,Autobús,ADO,70.19,130,149,679
+57,111,8,Xalapa,Coatepec,Autobús,Futura,10.71,70,107,680
+57,112,10,Xalapa,Orizaba,Autobús,Transportes del Norte,79.43,139,155,681
+58,13,10,Zacatecas,San Felipe,Autobús,Transportes del Norte,251.77,311,276,682
+58,22,10,Zacatecas,Aguascalientes,Autobús,Transportes del Norte,149.72,209,204,683
+58,46,7,Zacatecas,San Juan de los Lagos,Autobús,Estrella Blanca,215.05,275,250,684
+58,83,10,Zacatecas,Jerez,Autobús,Transportes del Norte,42.94,102,130,685
+58,93,7,Zacatecas,Sombrerete,Autobús,Estrella Blanca,94.2,154,165,686
+59,2,3,Ciudad Juárez,Cancún,Avión,Viva Aerobus,2276.68,200,14098,687
+59,2,6,Ciudad Juárez,Cancún,Autobús,ADO,2276.68,2336,1693,688
+59,4,5,Ciudad Juárez,San José del Cabo,Avión,Aeromar,1015.63,106,11828,689
+59,4,8,Ciudad Juárez,San José del Cabo,Autobús,Futura,1015.63,1075,810,690
+59,17,3,Ciudad Juárez,La Paz,Avión,Viva Aerobus,922.32,99,11660,691
+59,17,7,Ciudad Juárez,La Paz,Autobús,Estrella Blanca,922.32,982,745,692
+59,19,5,Ciudad Juárez,Mazatlán,Avión,Aeromar,948.92,101,11708,693
+59,19,9,Ciudad Juárez,Mazatlán,Autobús,Omnibus de México,948.92,1008,764,694
+59,20,4,Ciudad Juárez,Puerto Vallarta,Avión,Interjet,1240.29,123,12232,695
+59,20,6,Ciudad Juárez,Puerto Vallarta,Autobús,ADO,1240.29,1300,968,696
+59,22,4,Ciudad Juárez,Aguascalientes,Avión,Interjet,1171.89,117,12109,697
+59,22,9,Ciudad Juárez,Aguascalientes,Autobús,Omnibus de México,1171.89,1231,920,698
+59,25,9,Ciudad Juárez,Chihuahua,Autobús,Omnibus de México,362.98,422,354,699
+59,29,1,Ciudad Juárez,Culiacán,Avión,Aeroméxico,776.71,88,11398,700
+59,29,6,Ciudad Juárez,Culiacán,Autobús,ADO,776.71,836,643,701
+59,31,8,Ciudad Juárez,El Fuerte,Autobús,Futura,647.15,707,553,702
+59,33,4,Ciudad Juárez,Hermosillo,Avión,Interjet,520.66,69,10937,703
+59,33,6,Ciudad Juárez,Hermosillo,Autobús,ADO,520.66,580,464,704
+59,37,1,Ciudad Juárez,Mérida,Avión,Aeroméxico,2058.76,184,13705,705
+59,37,7,Ciudad Juárez,Mérida,Autobús,Estrella Blanca,2058.76,2118,1541,706
+59,53,3,Ciudad Juárez,Toluca,Avión,Viva Aerobus,1543.13,145,12777,707
+59,53,9,Ciudad Juárez,Toluca,Autobús,Omnibus de México,1543.13,1603,1180,708
+59,54,3,Ciudad Juárez,Tuxtla Gutiérrez,Avión,Viva Aerobus,2143.58,190,13858,709
+59,54,6,Ciudad Juárez,Tuxtla Gutiérrez,Autobús,ADO,2143.58,2203,1600,710
+59,56,1,Ciudad Juárez,Villahermosa,Avión,Aeroméxico,2046.81,183,13684,711
+59,56,6,Ciudad Juárez,Villahermosa,Autobús,ADO,2046.81,2106,1532,712
+59,60,5,Ciudad Juárez,Mexicali,Avión,Aeromar,851.6,93,11532,713
+59,60,9,Ciudad Juárez,Mexicali,Autobús,Omnibus de México,851.6,911,696,714
+59,63,2,Ciudad Juárez,Tijuana,Avión,Volaris,995.38,104,11791,715
+59,63,8,Ciudad Juárez,Tijuana,Autobús,Futura,995.38,1055,796,716
+59,64,4,Ciudad Juárez,Ciudad de México,Avión,Interjet,1553.09,146,12795,717
+59,64,7,Ciudad Juárez,Ciudad de México,Autobús,Estrella Blanca,1553.09,1613,1187,718
+59,65,3,Ciudad Juárez,Guadalajara,Avión,Viva Aerobus,1269.62,125,12285,719
+59,65,9,Ciudad Juárez,Guadalajara,Autobús,Omnibus de México,1269.62,1329,988,720
+59,66,1,Ciudad Juárez,Monterrey,Avión,Aeroméxico,902.79,97,11625,721
+59,66,6,Ciudad Juárez,Monterrey,Autobús,ADO,902.79,962,731,722
+59,76,10,Ciudad Juárez,Hidalgo del Parral,Autobús,Transportes del Norte,518.65,578,463,723
+59,85,8,Ciudad Juárez,Nuevo Casas Grandes,Autobús,Futura,177.05,237,223,724
+60,2,1,Mexicali,Cancún,Avión,Aeroméxico,3100.09,262,15580,725
+60,2,7,Mexicali,Cancún,Autobús,Estrella Blanca,3100.09,3160,2270,726
+60,4,3,Mexicali,San José del Cabo,Avión,Viva Aerobus,1206.46,120,12171,727
+60,4,9,Mexicali,San José del Cabo,Autobús,Omnibus de México,1206.46,1266,944,728
+60,11,9,Mexicali,Rosarito,Autobús,Omnibus de México,151.38,211,205,729
+60,17,4,Mexicali,La Paz,Avión,Interjet,1068.89,110,11924,730
+60,17,9,Mexicali,La Paz,Autobús,Omnibus de México,1068.89,1128,848,731
+60,19,4,Mexicali,Mazatlán,Avión,Interjet,1374.33,133,12473,732
+60,19,6,Mexicali,Mazatlán,Autobús,ADO,1374.33,1434,1062,733
+60,20,4,Mexicali,Puerto Vallarta,Avión,Interjet,1676.88,155,13018,734
+60,20,10,Mexicali,Puerto Vallarta,Autobús,Transportes del Norte,1676.88,1736,1273,735
+60,22,5,Mexicali,Aguascalientes,Avión,Aeromar,1765.71,162,13178,736
+60,22,9,Mexicali,Aguascalientes,Autobús,Omnibus de México,1765.71,1825,1335,737
+60,29,4,Mexicali,Culiacán,Avión,Interjet,1174.51,118,12114,738
+60,29,8,Mexicali,Culiacán,Autobús,Futura,1174.51,1234,922,739
+60,33,5,Mexicali,Hermosillo,Avión,Aeromar,583.3,73,11049,740
+60,33,6,Mexicali,Hermosillo,Autobús,ADO,583.3,643,508,741
+60,37,2,Mexicali,Mérida,Avión,Volaris,2864.27,244,15155,742
+60,37,7,Mexicali,Mérida,Autobús,Estrella Blanca,2864.27,2924,2104,743
+60,53,1,Mexicali,Toluca,Avión,Aeroméxico,2163.57,192,13894,744
+60,53,6,Mexicali,Toluca,Autobús,ADO,2163.57,2223,1614,745
+60,54,1,Mexicali,Tuxtla Gutiérrez,Avión,Aeroméxico,2856.13,244,15141,746
+60,54,6,Mexicali,Tuxtla Gutiérrez,Autobús,ADO,2856.13,2916,2099,747
+60,56,1,Mexicali,Villahermosa,Avión,Aeroméxico,2779.85,238,15003,748
+60,56,10,Mexicali,Villahermosa,Autobús,Transportes del Norte,2779.85,2839,2045,749
+60,59,2,Mexicali,Ciudad Juárez,Avión,Volaris,851.6,93,11532,750
+60,59,8,Mexicali,Ciudad Juárez,Autobús,Futura,851.6,911,696,751
+60,62,7,Mexicali,Tecate,Autobús,Estrella Blanca,108.51,168,175,752
+60,63,4,Mexicali,Tijuana,Avión,Interjet,145.22,40,10261,753
+60,63,8,Mexicali,Tijuana,Autobús,Futura,145.22,205,201,754
+60,64,1,Mexicali,Ciudad de México,Avión,Aeroméxico,2190.62,194,13943,755
+60,64,7,Mexicali,Ciudad de México,Autobús,Estrella Blanca,2190.62,2250,1633,756
+60,65,2,Mexicali,Guadalajara,Avión,Volaris,1793.14,164,13227,757
+60,65,7,Mexicali,Guadalajara,Autobús,Estrella Blanca,1793.14,1853,1355,758
+60,66,4,Mexicali,Monterrey,Avión,Interjet,1660.63,154,12989,759
+60,66,7,Mexicali,Monterrey,Autobús,Estrella Blanca,1660.63,1720,1262,760
+60,75,6,Mexicali,Ensenada,Autobús,ADO,136.65,196,195,761
+60,105,9,Mexicali,San Quintín,Autobús,Omnibus de México,235.32,295,264,762
+61,66,6,Piedras Negras,Monterrey,Autobús,ADO,336.89,396,335,763
+61,68,10,Piedras Negras,Bustamante,Autobús,Transportes del Norte,237.27,297,266,764
+61,84,7,Piedras Negras,Linares,Autobús,Estrella Blanca,442.13,502,409,765
+61,88,9,Piedras Negras,Saltillo,Autobús,Omnibus de México,367.92,427,357,766
+61,92,8,Piedras Negras,Santiago,Autobús,Futura,371.17,431,359,767
+62,11,10,Tecate,Rosarito,Autobús,Transportes del Norte,45.74,105,132,768
+62,60,7,Tecate,Mexicali,Autobús,Estrella Blanca,108.51,168,175,769
+62,63,9,Tecate,Tijuana,Autobús,Omnibus de México,36.71,96,125,770
+62,75,8,Tecate,Ensenada,Autobús,Futura,77.82,137,154,771
+62,105,8,Tecate,San Quintín,Autobús,Futura,232.27,292,262,772
+63,2,3,Tijuana,Cancún,Avión,Viva Aerobus,3235.62,272,15824,773
+63,2,10,Tijuana,Cancún,Autobús,Transportes del Norte,3235.62,3295,2364,774
+63,4,2,Tijuana,San José del Cabo,Avión,Volaris,1274.75,125,12294,775
+63,4,7,Tijuana,San José del Cabo,Autobús,Estrella Blanca,1274.75,1334,992,776
+63,11,8,Tijuana,Rosarito,Autobús,Futura,18.83,78,113,777
+63,17,4,Tijuana,La Paz,Avión,Interjet,1137.97,115,12048,778
+63,17,6,Tijuana,La Paz,Autobús,ADO,1137.97,1197,896,779
+63,19,3,Tijuana,Mazatlán,Avión,Viva Aerobus,1468.41,140,12643,780
+63,19,7,Tijuana,Mazatlán,Autobús,Estrella Blanca,1468.41,1528,1127,781
+63,20,3,Tijuana,Puerto Vallarta,Avión,Viva Aerobus,1765.0,162,13176,782
+63,20,6,Tijuana,Puerto Vallarta,Autobús,ADO,1765.0,1824,1335,783
+63,22,3,Tijuana,Aguascalientes,Avión,Viva Aerobus,1873.28,170,13371,784
+63,22,10,Tijuana,Aguascalientes,Autobús,Transportes del Norte,1873.28,1933,1411,785
+63,29,3,Tijuana,Culiacán,Avión,Viva Aerobus,1272.24,125,12290,786
+63,29,10,Tijuana,Culiacán,Autobús,Transportes del Norte,1272.24,1332,990,787
+63,33,4,Tijuana,Hermosillo,Avión,Interjet,692.54,81,11246,788
+63,33,7,Tijuana,Hermosillo,Autobús,Estrella Blanca,692.54,752,584,789
+63,37,3,Tijuana,Mérida,Avión,Viva Aerobus,2996.65,254,15393,790
+63,37,9,Tijuana,Mérida,Autobús,Omnibus de México,2996.65,3056,2197,791
+63,53,5,Tijuana,Toluca,Avión,Aeromar,2270.53,200,14086,792
+63,53,6,Tijuana,Toluca,Autobús,ADO,2270.53,2330,1689,793
+63,54,1,Tijuana,Tuxtla Gutiérrez,Avión,Aeroméxico,2973.05,252,15351,794
+63,54,6,Tijuana,Tuxtla Gutiérrez,Autobús,ADO,2973.05,3033,2181,795
+63,56,5,Tijuana,Villahermosa,Avión,Aeromar,2900.28,247,15220,796
+63,56,6,Tijuana,Villahermosa,Autobús,ADO,2900.28,2960,2130,797
+63,59,5,Tijuana,Ciudad Juárez,Avión,Aeromar,995.38,104,11791,798
+63,59,6,Tijuana,Ciudad Juárez,Autobús,ADO,995.38,1055,796,799
+63,60,4,Tijuana,Mexicali,Avión,Interjet,145.22,40,10261,800
+63,60,7,Tijuana,Mexicali,Autobús,Estrella Blanca,145.22,205,201,801
+63,62,6,Tijuana,Tecate,Autobús,ADO,36.71,96,125,802
+63,64,4,Tijuana,Ciudad de México,Avión,Interjet,2299.79,202,14139,803
+63,64,9,Tijuana,Ciudad de México,Autobús,Omnibus de México,2299.79,2359,1709,804
+63,65,4,Tijuana,Guadalajara,Avión,Interjet,1891.01,171,13403,805
+63,65,10,Tijuana,Guadalajara,Autobús,Transportes del Norte,1891.01,1951,1423,806
+63,66,2,Tijuana,Monterrey,Avión,Volaris,1789.87,164,13221,807
+63,66,8,Tijuana,Monterrey,Autobús,Futura,1789.87,1849,1352,808
+63,75,7,Tijuana,Ensenada,Autobús,Estrella Blanca,83.77,143,158,809
+63,105,8,Tijuana,San Quintín,Autobús,Futura,241.87,301,269,810
+64,2,5,Ciudad de México,Cancún,Avión,Aeromar,1295.66,127,12332,811
+64,2,7,Ciudad de México,Cancún,Autobús,Estrella Blanca,1295.66,1355,1006,812
+64,4,2,Ciudad de México,San José del Cabo,Avión,Volaris,1166.83,117,12100,813
+64,4,6,Ciudad de México,San José del Cabo,Autobús,ADO,1166.83,1226,916,814
+64,17,4,Ciudad de México,La Paz,Avión,Interjet,1268.01,125,12282,815
+64,17,10,Ciudad de México,La Paz,Autobús,Transportes del Norte,1268.01,1328,987,816
+64,19,1,Ciudad de México,Mazatlán,Avión,Aeroméxico,863.31,94,11553,817
+64,19,8,Ciudad de México,Mazatlán,Autobús,Futura,863.31,923,704,818
+64,20,5,Ciudad de México,Puerto Vallarta,Avión,Aeromar,649.87,78,11169,819
+64,20,10,Ciudad de México,Puerto Vallarta,Autobús,Transportes del Norte,649.87,709,554,820
+64,22,1,Ciudad de México,Aguascalientes,Avión,Aeroméxico,427.09,62,10768,821
+64,22,10,Ciudad de México,Aguascalientes,Autobús,Transportes del Norte,427.09,487,398,822
+64,29,3,Ciudad de México,Culiacán,Avión,Viva Aerobus,1038.76,107,11869,823
+64,29,10,Ciudad de México,Culiacán,Autobús,Transportes del Norte,1038.76,1098,827,824
+64,33,2,Ciudad de México,Hermosillo,Avión,Volaris,1608.59,150,12895,825
+64,33,6,Ciudad de México,Hermosillo,Autobús,ADO,1608.59,1668,1226,826
+64,37,1,Ciudad de México,Mérida,Avión,Aeroméxico,1006.75,105,11812,827
+64,37,9,Ciudad de México,Mérida,Autobús,Omnibus de México,1006.75,1066,804,828
+64,53,1,Ciudad de México,Toluca,Avión,Aeroméxico,57.11,34,10102,829
+64,53,10,Ciudad de México,Toluca,Autobús,Transportes del Norte,57.11,117,139,830
+64,54,3,Ciudad de México,Tuxtla Gutiérrez,Avión,Viva Aerobus,702.2,82,11263,831
+64,54,9,Ciudad de México,Tuxtla Gutiérrez,Autobús,Omnibus de México,702.2,762,591,832
+64,56,4,Ciudad de México,Villahermosa,Avión,Interjet,672.02,80,11209,833
+64,56,6,Ciudad de México,Villahermosa,Autobús,ADO,672.02,732,570,834
+64,59,3,Ciudad de México,Ciudad Juárez,Avión,Viva Aerobus,1553.09,146,12795,835
+64,59,6,Ciudad de México,Ciudad Juárez,Autobús,ADO,1553.09,1613,1187,836
+64,60,1,Ciudad de México,Mexicali,Avión,Aeroméxico,2190.62,194,13943,837
+64,60,6,Ciudad de México,Mexicali,Autobús,ADO,2190.62,2250,1633,838
+64,63,4,Ciudad de México,Tijuana,Avión,Interjet,2299.79,202,14139,839
+64,63,9,Ciudad de México,Tijuana,Autobús,Omnibus de México,2299.79,2359,1709,840
+64,65,4,Ciudad de México,Guadalajara,Avión,Interjet,460.34,64,10828,841
+64,65,10,Ciudad de México,Guadalajara,Autobús,Transportes del Norte,460.34,520,422,842
+64,66,1,Ciudad de México,Monterrey,Avión,Aeroméxico,705.21,82,11269,843
+64,66,7,Ciudad de México,Monterrey,Autobús,Estrella Blanca,705.21,765,593,844
+64,72,10,Ciudad de México,Cuernavaca,Autobús,Transportes del Norte,57.12,117,139,845
+64,99,10,Ciudad de México,Tula de Allende,Autobús,Transportes del Norte,72.98,132,151,846
+64,107,7,Ciudad de México,Metepec,Autobús,Estrella Blanca,52.37,112,136,847
+64,108,10,Ciudad de México,Villa del Carbón,Autobús,Transportes del Norte,48.15,108,133,848
+65,2,2,Guadalajara,Cancún,Avión,Volaris,1713.49,158,13084,849
+65,2,10,Guadalajara,Cancún,Autobús,Transportes del Norte,1713.49,1773,1299,850
+65,4,4,Guadalajara,San José del Cabo,Avión,Interjet,708.28,83,11274,851
+65,4,10,Guadalajara,San José del Cabo,Autobús,Transportes del Norte,708.28,768,595,852
+65,17,5,Guadalajara,La Paz,Avión,Aeromar,815.28,91,11467,853
+65,17,6,Guadalajara,La Paz,Autobús,ADO,815.28,875,670,854
+65,19,2,Guadalajara,Mazatlán,Avión,Volaris,424.61,61,10764,855
+65,19,8,Guadalajara,Mazatlán,Autobús,Futura,424.61,484,397,856
+65,20,4,Guadalajara,Puerto Vallarta,Avión,Interjet,195.84,44,10352,857
+65,20,6,Guadalajara,Puerto Vallarta,Autobús,ADO,195.84,255,237,858
+65,22,2,Guadalajara,Aguascalientes,Avión,Volaris,172.35,42,10310,859
+65,22,7,Guadalajara,Aguascalientes,Autobús,Estrella Blanca,172.35,232,220,860
+65,27,6,Guadalajara,Colima,Autobús,ADO,181.12,241,226,861
+65,29,2,Guadalajara,Culiacán,Avión,Volaris,619.1,76,11114,862
+65,29,9,Guadalajara,Culiacán,Autobús,Omnibus de México,619.1,679,533,863
+65,33,1,Guadalajara,Hermosillo,Avión,Aeroméxico,1211.51,120,12180,864
+65,33,9,Guadalajara,Hermosillo,Autobús,Omnibus de México,1211.51,1271,948,865
+65,35,6,Guadalajara,León,Autobús,ADO,179.09,239,225,866
+65,37,2,Guadalajara,Mérida,Avión,Volaris,1425.37,136,12565,867
+65,37,6,Guadalajara,Mérida,Autobús,ADO,1425.37,1485,1097,868
+65,46,10,Guadalajara,San Juan de los Lagos,Autobús,Transportes del Norte,127.43,187,189,869
+65,53,5,Guadalajara,Toluca,Avión,Aeromar,414.15,61,10745,870
+65,53,9,Guadalajara,Toluca,Autobús,Omnibus de México,414.15,474,389,871
+65,54,5,Guadalajara,Tuxtla Gutiérrez,Avión,Aeromar,1161.02,117,12089,872
+65,54,7,Guadalajara,Tuxtla Gutiérrez,Autobús,Estrella Blanca,1161.02,1221,912,873
+65,56,3,Guadalajara,Villahermosa,Avión,Viva Aerobus,1131.19,114,12036,874
+65,56,8,Guadalajara,Villahermosa,Autobús,Futura,1131.19,1191,891,875
+65,59,4,Guadalajara,Ciudad Juárez,Avión,Interjet,1269.62,125,12285,876
+65,59,7,Guadalajara,Ciudad Juárez,Autobús,Estrella Blanca,1269.62,1329,988,877
+65,60,4,Guadalajara,Mexicali,Avión,Interjet,1793.14,164,13227,878
+65,60,7,Guadalajara,Mexicali,Autobús,Estrella Blanca,1793.14,1853,1355,879
+65,63,2,Guadalajara,Tijuana,Avión,Volaris,1891.01,171,13403,880
+65,63,8,Guadalajara,Tijuana,Autobús,Futura,1891.01,1951,1423,881
+65,64,4,Guadalajara,Ciudad de México,Avión,Interjet,460.34,64,10828,882
+65,64,7,Guadalajara,Ciudad de México,Autobús,Estrella Blanca,460.34,520,422,883
+65,66,4,Guadalajara,Monterrey,Avión,Interjet,636.8,77,11146,884
+65,66,9,Guadalajara,Monterrey,Autobús,Omnibus de México,636.8,696,545,885
+65,69,6,Guadalajara,Chapala,Autobús,ADO,45.32,105,131,886
+66,2,2,Monterrey,Cancún,Avión,Volaris,1462.99,139,12633,887
+66,2,8,Monterrey,Cancún,Autobús,Futura,1462.99,1522,1124,888
+66,4,4,Monterrey,San José del Cabo,Avión,Interjet,994.15,104,11789,889
+66,4,8,Monterrey,San José del Cabo,Autobús,Futura,994.15,1054,795,890
+66,17,4,Monterrey,La Paz,Avión,Interjet,1022.23,106,11840,891
+66,17,9,Monterrey,La Paz,Autobús,Omnibus de México,1022.23,1082,815,892
+66,19,4,Monterrey,Mazatlán,Avión,Interjet,676.53,80,11217,893
+66,19,7,Monterrey,Mazatlán,Autobús,Estrella Blanca,676.53,736,573,894
+66,20,5,Monterrey,Puerto Vallarta,Avión,Aeromar,751.8,86,11353,895
+66,20,7,Monterrey,Puerto Vallarta,Autobús,Estrella Blanca,751.8,811,626,896
+66,22,5,Monterrey,Aguascalientes,Avión,Aeromar,468.13,65,10842,897
+66,22,7,Monterrey,Aguascalientes,Autobús,Estrella Blanca,468.13,528,427,898
+66,29,1,Monterrey,Culiacán,Avión,Aeroméxico,718.55,83,11293,899
+66,29,9,Monterrey,Culiacán,Autobús,Omnibus de México,718.55,778,602,900
+66,33,4,Monterrey,Hermosillo,Avión,Interjet,1117.75,113,12011,901
+66,33,6,Monterrey,Hermosillo,Autobús,ADO,1117.75,1177,882,902
+66,37,4,Monterrey,Mérida,Avión,Interjet,1210.31,120,12178,903
+66,37,7,Monterrey,Mérida,Autobús,Estrella Blanca,1210.31,1270,947,904
+66,53,5,Monterrey,Toluca,Avión,Aeromar,713.48,83,11284,905
+66,53,9,Monterrey,Toluca,Autobús,Omnibus de México,713.48,773,599,906
+66,54,5,Monterrey,Tuxtla Gutiérrez,Avión,Aeromar,1241.12,123,12234,907
+66,54,6,Monterrey,Tuxtla Gutiérrez,Autobús,ADO,1241.12,1301,968,908
+66,56,2,Monterrey,Villahermosa,Avión,Volaris,1144.62,115,12060,909
+66,56,10,Monterrey,Villahermosa,Autobús,Transportes del Norte,1144.62,1204,901,910
+66,59,3,Monterrey,Ciudad Juárez,Avión,Viva Aerobus,902.79,97,11625,911
+66,59,6,Monterrey,Ciudad Juárez,Autobús,ADO,902.79,962,731,912
+66,60,3,Monterrey,Mexicali,Avión,Viva Aerobus,1660.63,154,12989,913
+66,60,10,Monterrey,Mexicali,Autobús,Transportes del Norte,1660.63,1720,1262,914
+66,61,10,Monterrey,Piedras Negras,Autobús,Transportes del Norte,336.89,396,335,915
+66,63,5,Monterrey,Tijuana,Avión,Aeromar,1789.87,164,13221,916
+66,63,8,Monterrey,Tijuana,Autobús,Futura,1789.87,1849,1352,917
+66,64,4,Monterrey,Ciudad de México,Avión,Interjet,705.21,82,11269,918
+66,64,7,Monterrey,Ciudad de México,Autobús,Estrella Blanca,705.21,765,593,919
+66,65,5,Monterrey,Guadalajara,Avión,Aeromar,636.8,77,11146,920
+66,65,7,Monterrey,Guadalajara,Autobús,Estrella Blanca,636.8,696,545,921
+66,68,7,Monterrey,Bustamante,Autobús,Estrella Blanca,102.3,162,171,922
+66,84,10,Monterrey,Linares,Autobús,Transportes del Norte,129.38,189,190,923
+66,88,9,Monterrey,Saltillo,Autobús,Omnibus de México,73.74,133,151,924
+66,92,10,Monterrey,Santiago,Autobús,Transportes del Norte,34.44,94,124,925
+67,42,8,Atlixco,Puebla,Autobús,Futura,46.82,106,132,926
+67,82,10,Atlixco,Izúcar de Matamoros,Autobús,Transportes del Norte,44.76,104,131,927
+67,89,10,Atlixco,San Andrés Cholula,Autobús,Transportes del Norte,20.22,80,114,928
+67,90,7,Atlixco,San Martín Texmelucan,Autobús,Estrella Blanca,39.73,99,127,929
+67,91,6,Atlixco,San Pedro Cholula,Autobús,ADO,21.86,81,115,930
+68,61,10,Bustamante,Piedras Negras,Autobús,Transportes del Norte,237.27,297,266,931
+68,66,10,Bustamante,Monterrey,Autobús,Transportes del Norte,102.3,162,171,932
+68,84,6,Bustamante,Linares,Autobús,ADO,223.62,283,256,933
+68,88,9,Bustamante,Saltillo,Autobús,Omnibus de México,134.49,194,194,934
+68,92,6,Bustamante,Santiago,Autobús,ADO,136.63,196,195,935
+69,18,9,Chapala,Manzanillo,Autobús,Omnibus de México,178.44,238,224,936
+69,27,6,Chapala,Colima,Autobús,ADO,148.25,208,203,937
+69,35,10,Chapala,León,Autobús,Transportes del Norte,185.31,245,229,938
+69,46,8,Chapala,San Juan de los Lagos,Autobús,Futura,145.85,205,202,939
+69,65,6,Chapala,Guadalajara,Autobús,ADO,45.32,105,131,940
+70,7,6,Chichen Itzá,Akumal,Autobús,ADO,134.07,194,193,941
+70,37,10,Chichen Itzá,Mérida,Autobús,Transportes del Norte,114.11,174,179,942
+70,81,6,Chichen Itzá,Izamal,Autobús,ADO,54.4,114,138,943
+70,101,6,Chichen Itzá,Uxmal,Autobús,ADO,130.2,190,191,944
+70,102,9,Chichen Itzá,Valladolid,Autobús,Omnibus de México,38.19,98,126,945
+71,52,10,Chignahuapan,Tlaxcala,Autobús,Transportes del Norte,45.29,105,131,946
+71,78,8,Chignahuapan,Huauchinango,Autobús,Futura,40.32,100,128,947
+71,86,8,Chignahuapan,Pahuatlán,Autobús,Futura,51.92,111,136,948
+71,104,7,Chignahuapan,Zacatlán,Autobús,Estrella Blanca,19.41,79,113,949
+71,106,9,Chignahuapan,Tetela de Ocampo,Autobús,Omnibus de México,34.59,94,124,950
+72,50,10,Cuernavaca,Taxco,Autobús,Transportes del Norte,55.46,115,138,951
+72,53,9,Cuernavaca,Toluca,Autobús,Omnibus de México,57.76,117,140,952
+72,64,8,Cuernavaca,Ciudad de México,Autobús,Futura,57.12,117,139,953
+72,80,8,Cuernavaca,Ixtapan de la Sal,Autobús,Futura,46.69,106,132,954
+72,107,9,Cuernavaca,Metepec,Autobús,Omnibus de México,49.8,109,134,955
+73,97,7,Cuetzalan,Teziutlán,Autobús,Estrella Blanca,22.43,82,115,956
+73,98,7,Cuetzalan,Tlatlauquitepec,Autobús,Estrella Blanca,20.08,80,114,957
+73,103,10,Cuetzalan,Xicotepec,Autobús,Transportes del Norte,54.12,114,137,958
+73,104,8,Cuetzalan,Zacatlán,Autobús,Futura,51.05,111,135,959
+73,106,6,Cuetzalan,Tetela de Ocampo,Autobús,ADO,36.12,96,125,960
+74,47,7,El Oro,San Juan del Río,Autobús,Estrella Blanca,65.97,125,146,961
+74,53,7,El Oro,Toluca,Autobús,Estrella Blanca,70.53,130,149,962
+74,55,6,El Oro,Valle de Bravo,Autobús,ADO,68.53,128,147,963
+74,79,7,El Oro,Huichapan,Autobús,Estrella Blanca,77.33,137,154,964
+74,108,7,El Oro,Villa del Carbón,Autobús,Estrella Blanca,64.53,124,145,965
+75,11,7,Ensenada,Rosarito,Autobús,Estrella Blanca,70.01,130,149,966
+75,60,9,Ensenada,Mexicali,Autobús,Omnibus de México,136.65,196,195,967
+75,62,6,Ensenada,Tecate,Autobús,ADO,77.82,137,154,968
+75,63,8,Ensenada,Tijuana,Autobús,Futura,83.77,143,158,969
+75,105,9,Ensenada,San Quintín,Autobús,Omnibus de México,158.23,218,210,970
+76,25,9,Hidalgo del Parral,Chihuahua,Autobús,Omnibus de México,155.7,215,208,971
+76,29,8,Hidalgo del Parral,Culiacán,Autobús,Futura,304.84,364,313,972
+76,30,9,Hidalgo del Parral,Durango,Autobús,Omnibus de México,270.28,330,289,973
+76,31,6,Hidalgo del Parral,El Fuerte,Autobús,ADO,303.89,363,312,974
+76,36,9,Hidalgo del Parral,Los Mochis,Autobús,Omnibus de México,353.2,413,347,975
+77,40,6,Huasca de Ocampo,Pachuca,Autobús,ADO,22.76,82,115,976
+77,78,7,Huasca de Ocampo,Huauchinango,Autobús,Estrella Blanca,53.06,113,137,977
+77,86,10,Huasca de Ocampo,Pahuatlán,Autobús,Transportes del Norte,43.38,103,130,978
+77,87,10,Huasca de Ocampo,Mineral del Monte,Autobús,Transportes del Norte,15.51,75,110,979
+77,110,8,Huasca de Ocampo,Zempoala,Autobús,Futura,34.31,94,124,980
+78,71,6,Huauchinango,Chignahuapan,Autobús,ADO,40.32,100,128,981
+78,86,10,Huauchinango,Pahuatlán,Autobús,Transportes del Norte,15.76,75,111,982
+78,103,10,Huauchinango,Xicotepec,Autobús,Transportes del Norte,14.31,74,110,983
+78,104,6,Huauchinango,Zacatlán,Autobús,ADO,24.62,84,117,984
+78,106,10,Huauchinango,Tetela de Ocampo,Autobús,Transportes del Norte,49.11,109,134,985
+79,43,10,Huichapan,Querétaro,Autobús,Transportes del Norte,50.66,110,135,986
+79,47,6,Huichapan,San Juan del Río,Autobús,ADO,34.38,94,124,987
+79,51,7,Huichapan,Tequisquiapan,Autobús,Estrella Blanca,32.41,92,122,988
+79,99,6,Huichapan,Tula de Allende,Autobús,ADO,49.84,109,134,989
+79,109,8,Huichapan,Tecozautla,Autobús,Futura,16.87,76,111,990
+80,50,8,Ixtapan de la Sal,Taxco,Autobús,Futura,32.95,92,123,991
+80,53,7,Ixtapan de la Sal,Toluca,Autobús,Estrella Blanca,50.35,110,135,992
+80,55,7,Ixtapan de la Sal,Valle de Bravo,Autobús,Estrella Blanca,61.52,121,143,993
+80,72,10,Ixtapan de la Sal,Cuernavaca,Autobús,Transportes del Norte,46.69,106,132,994
+80,107,9,Ixtapan de la Sal,Metepec,Autobús,Omnibus de México,46.78,106,132,995
+81,7,7,Izamal,Akumal,Autobús,Estrella Blanca,186.68,246,230,996
+81,37,10,Izamal,Mérida,Autobús,Transportes del Norte,62.99,122,144,997
+81,70,6,Izamal,Chichen Itzá,Autobús,ADO,54.4,114,138,998
+81,101,7,Izamal,Uxmal,Autobús,Estrella Blanca,100.94,160,170,999
+81,102,7,Izamal,Valladolid,Autobús,Estrella Blanca,89.08,149,162,1000
+82,42,10,Izúcar de Matamoros,Puebla,Autobús,Transportes del Norte,57.5,117,140,1001
+82,67,9,Izúcar de Matamoros,Atlixco,Autobús,Omnibus de México,44.76,104,131,1002
+82,89,10,Izúcar de Matamoros,San Andrés Cholula,Autobús,Transportes del Norte,59.07,119,141,1003
+82,90,6,Izúcar de Matamoros,San Martín Texmelucan,Autobús,ADO,84.44,144,159,1004
+82,91,9,Izúcar de Matamoros,San Pedro Cholula,Autobús,Omnibus de México,63.8,123,144,1005
+83,22,8,Jerez,Aguascalientes,Autobús,Futura,117.38,177,182,1006
+83,35,7,Jerez,León,Autobús,Estrella Blanca,222.94,282,256,1007
+83,46,7,Jerez,San Juan de los Lagos,Autobús,Estrella Blanca,178.14,238,224,1008
+83,58,8,Jerez,Zacatecas,Autobús,Futura,42.94,102,130,1009
+83,93,6,Jerez,Sombrerete,Autobús,ADO,121.86,181,185,1010
+84,48,6,Linares,San Luis Potosí,Autobús,ADO,283.99,343,298,1011
+84,66,9,Linares,Monterrey,Autobús,Omnibus de México,129.38,189,190,1012
+84,68,10,Linares,Bustamante,Autobús,Transportes del Norte,223.62,283,256,1013
+84,88,9,Linares,Saltillo,Autobús,Omnibus de México,171.44,231,220,1014
+84,92,8,Linares,Santiago,Autobús,Futura,103.42,163,172,1015
+85,25,9,Nuevo Casas Grandes,Chihuahua,Autobús,Omnibus de México,275.21,335,292,1016
+85,31,10,Nuevo Casas Grandes,El Fuerte,Autobús,Transportes del Norte,484.65,544,439,1017
+85,33,10,Nuevo Casas Grandes,Hermosillo,Autobús,Transportes del Norte,355.3,415,348,1018
+85,59,6,Nuevo Casas Grandes,Ciudad Juárez,Autobús,ADO,177.05,237,223,1019
+85,76,7,Nuevo Casas Grandes,Hidalgo del Parral,Autobús,Estrella Blanca,420.07,480,394,1020
+86,71,10,Pahuatlán,Chignahuapan,Autobús,Transportes del Norte,51.92,111,136,1021
+86,77,8,Pahuatlán,Huasca de Ocampo,Autobús,Futura,43.38,103,130,1022
+86,78,10,Pahuatlán,Huauchinango,Autobús,Transportes del Norte,15.76,75,111,1023
+86,103,10,Pahuatlán,Xicotepec,Autobús,Transportes del Norte,19.27,79,113,1024
+86,104,8,Pahuatlán,Zacatlán,Autobús,Futura,39.17,99,127,1025
+87,40,10,Mineral del Monte,Pachuca,Autobús,Transportes del Norte,7.51,67,105,1026
+87,77,7,Mineral del Monte,Huasca de Ocampo,Autobús,Estrella Blanca,15.51,75,110,1027
+87,78,6,Mineral del Monte,Huauchinango,Autobús,ADO,65.31,125,145,1028
+87,86,9,Mineral del Monte,Pahuatlán,Autobús,Omnibus de México,57.56,117,140,1029
+87,110,7,Mineral del Monte,Zempoala,Autobús,Estrella Blanca,23.84,83,116,1030
+88,58,8,Saltillo,Zacatecas,Autobús,Futura,325.43,385,327,1031
+88,66,10,Saltillo,Monterrey,Autobús,Transportes del Norte,73.74,133,151,1032
+88,68,7,Saltillo,Bustamante,Autobús,Estrella Blanca,134.49,194,194,1033
+88,84,10,Saltillo,Linares,Autobús,Transportes del Norte,171.44,231,220,1034
+88,92,6,Saltillo,Santiago,Autobús,ADO,73.71,133,151,1035
+89,42,6,San Andrés Cholula,Puebla,Autobús,ADO,36.79,96,125,1036
+89,52,9,San Andrés Cholula,Tlaxcala,Autobús,Omnibus de México,45.67,105,131,1037
+89,67,7,San Andrés Cholula,Atlixco,Autobús,Estrella Blanca,20.22,80,114,1038
+89,90,7,San Andrés Cholula,San Martín Texmelucan,Autobús,Estrella Blanca,30.74,90,121,1039
+89,91,7,San Andrés Cholula,San Pedro Cholula,Autobús,Estrella Blanca,6.71,66,104,1040
+90,42,6,San Martín Texmelucan,Puebla,Autobús,ADO,65.64,125,145,1041
+90,52,9,San Martín Texmelucan,Tlaxcala,Autobús,Omnibus de México,31.85,91,122,1042
+90,67,10,San Martín Texmelucan,Atlixco,Autobús,Transportes del Norte,39.73,99,127,1043
+90,89,6,San Martín Texmelucan,San Andrés Cholula,Autobús,ADO,30.74,90,121,1044
+90,91,10,San Martín Texmelucan,San Pedro Cholula,Autobús,Transportes del Norte,24.07,84,116,1045
+91,42,10,San Pedro Cholula,Puebla,Autobús,Transportes del Norte,43.08,103,130,1046
+91,52,9,San Pedro Cholula,Tlaxcala,Autobús,Omnibus de México,41.62,101,129,1047
+91,67,6,San Pedro Cholula,Atlixco,Autobús,ADO,21.86,81,115,1048
+91,89,6,San Pedro Cholula,San Andrés Cholula,Autobús,ADO,6.71,66,104,1049
+91,90,10,San Pedro Cholula,San Martín Texmelucan,Autobús,Transportes del Norte,24.07,84,116,1050
+92,48,10,Santiago,San Luis Potosí,Autobús,Transportes del Norte,320.5,380,324,1051
+92,66,9,Santiago,Monterrey,Autobús,Omnibus de México,34.44,94,124,1052
+92,68,8,Santiago,Bustamante,Autobús,Futura,136.63,196,195,1053
+92,84,7,Santiago,Linares,Autobús,Estrella Blanca,103.42,163,172,1054
+92,88,8,Santiago,Saltillo,Autobús,Futura,73.71,133,151,1055
+93,19,7,Sombrerete,Mazatlán,Autobús,Estrella Blanca,287.67,347,301,1056
+93,22,6,Sombrerete,Aguascalientes,Autobús,ADO,238.91,298,267,1057
+93,30,8,Sombrerete,Durango,Autobús,Futura,179.88,239,225,1058
+93,58,6,Sombrerete,Zacatecas,Autobús,ADO,94.2,154,165,1059
+93,83,9,Sombrerete,Jerez,Autobús,Omnibus de México,121.86,181,185,1060
+94,77,9,Tampico,Huasca de Ocampo,Autobús,Omnibus de México,237.68,297,266,1061
+94,78,8,Tampico,Huauchinango,Autobús,Futura,233.15,293,263,1062
+94,86,7,Tampico,Pahuatlán,Autobús,Estrella Blanca,221.96,281,255,1063
+94,87,8,Tampico,Mineral del Monte,Autobús,Futura,250.39,310,275,1064
+94,103,7,Tampico,Xicotepec,Autobús,Estrella Blanca,221.76,281,255,1065
+95,5,10,Tapachula,Ixtapa,Autobús,Transportes del Norte,218.14,278,252,1066
+95,28,8,Tapachula,Comitán,Autobús,Futura,147.96,207,203,1067
+95,45,6,Tapachula,San Cristóbal,Autobús,ADO,204.04,264,242,1068
+95,54,8,Tapachula,Tuxtla Gutiérrez,Autobús,Futura,220.28,280,254,1069
+95,113,7,Tapachula,Chiapa de Corzo,Autobús,Estrella Blanca,199.81,259,239,1070
+96,42,7,Tehuacán,Puebla,Autobús,Estrella Blanca,75.47,135,152,1071
+96,82,8,Tehuacán,Izúcar de Matamoros,Autobús,Futura,108.21,168,175,1072
+96,89,6,Tehuacán,San Andrés Cholula,Autobús,ADO,112.24,172,178,1073
+96,91,8,Tehuacán,San Pedro Cholula,Autobús,Futura,118.42,178,182,1074
+96,112,6,Tehuacán,Orizaba,Autobús,ADO,52.61,112,136,1075
+97,57,7,Teziutlán,Xalapa,Autobús,Estrella Blanca,60.5,120,142,1076
+97,73,9,Teziutlán,Cuetzalan,Autobús,Omnibus de México,22.43,82,115,1077
+97,98,9,Teziutlán,Tlatlauquitepec,Autobús,Omnibus de México,14.57,74,110,1078
+97,106,10,Teziutlán,Tetela de Ocampo,Autobús,Transportes del Norte,44.03,104,130,1079
+97,111,7,Teziutlán,Coatepec,Autobús,Estrella Blanca,63.55,123,144,1080
+98,71,9,Tlatlauquitepec,Chignahuapan,Autobús,Omnibus de México,64.05,124,144,1081
+98,73,9,Tlatlauquitepec,Cuetzalan,Autobús,Omnibus de México,20.08,80,114,1082
+98,97,10,Tlatlauquitepec,Teziutlán,Autobús,Transportes del Norte,14.57,74,110,1083
+98,104,9,Tlatlauquitepec,Zacatlán,Autobús,Omnibus de México,54.01,114,137,1084
+98,106,6,Tlatlauquitepec,Tetela de Ocampo,Autobús,ADO,29.6,89,120,1085
+99,40,10,Tula de Allende,Pachuca,Autobús,Transportes del Norte,66.39,126,146,1086
+99,64,7,Tula de Allende,Ciudad de México,Autobús,Estrella Blanca,72.98,132,151,1087
+99,79,7,Tula de Allende,Huichapan,Autobús,Estrella Blanca,49.84,109,134,1088
+99,108,6,Tula de Allende,Villa del Carbón,Autobús,ADO,34.85,94,124,1089
+99,109,8,Tula de Allende,Tecozautla,Autobús,Futura,61.87,121,143,1090
+100,21,6,Tuxtepec,Veracruz,Autobús,ADO,115.45,175,180,1091
+100,39,6,Tuxtepec,Oaxaca,Autobús,ADO,127.36,187,189,1092
+100,96,10,Tuxtepec,Tehuacán,Autobús,Transportes del Norte,141.05,201,198,1093
+100,111,6,Tuxtepec,Coatepec,Autobús,ADO,175.68,235,222,1094
+100,112,6,Tuxtepec,Orizaba,Autobús,ADO,133.93,193,193,1095
+101,23,7,Uxmal,Campeche,Autobús,Estrella Blanca,169.44,229,218,1096
+101,37,10,Uxmal,Mérida,Autobús,Transportes del Norte,69.18,129,148,1097
+101,70,7,Uxmal,Chichen Itzá,Autobús,Estrella Blanca,130.2,190,191,1098
+101,81,8,Uxmal,Izamal,Autobús,Futura,100.94,160,170,1099
+101,102,9,Uxmal,Valladolid,Autobús,Omnibus de México,167.44,227,217,1100
+102,7,6,Valladolid,Akumal,Autobús,ADO,97.62,157,168,1101
+102,9,9,Valladolid,Playa del Carmen,Autobús,Omnibus de México,117.11,177,181,1102
+102,10,7,Valladolid,Plaza Playacar,Autobús,Estrella Blanca,115.93,175,181,1103
+102,70,10,Valladolid,Chichen Itzá,Autobús,Transportes del Norte,38.19,98,126,1104
+102,81,9,Valladolid,Izamal,Autobús,Omnibus de México,89.08,149,162,1105
+103,71,6,Xicotepec,Chignahuapan,Autobús,ADO,53.22,113,137,1106
+103,73,8,Xicotepec,Cuetzalan,Autobús,Futura,54.12,114,137,1107
+103,78,8,Xicotepec,Huauchinango,Autobús,Futura,14.31,74,110,1108
+103,86,9,Xicotepec,Pahuatlán,Autobús,Omnibus de México,19.27,79,113,1109
+103,104,6,Xicotepec,Zacatlán,Autobús,ADO,35.46,95,124,1110
+104,71,9,Zacatlán,Chignahuapan,Autobús,Omnibus de México,19.41,79,113,1111
+104,78,7,Zacatlán,Huauchinango,Autobús,Estrella Blanca,24.62,84,117,1112
+104,86,9,Zacatlán,Pahuatlán,Autobús,Omnibus de México,39.17,99,127,1113
+104,103,8,Zacatlán,Xicotepec,Autobús,Futura,35.46,95,124,1114
+104,106,7,Zacatlán,Tetela de Ocampo,Autobús,Estrella Blanca,28.23,88,119,1115
+105,11,10,San Quintín,Rosarito,Autobús,Transportes del Norte,226.86,286,258,1116
+105,60,8,San Quintín,Mexicali,Autobús,Futura,235.32,295,264,1117
+105,62,6,San Quintín,Tecate,Autobús,ADO,232.27,292,262,1118
+105,63,10,San Quintín,Tijuana,Autobús,Transportes del Norte,241.87,301,269,1119
+105,75,10,San Quintín,Ensenada,Autobús,Transportes del Norte,158.23,218,210,1120
+106,71,7,Tetela de Ocampo,Chignahuapan,Autobús,Estrella Blanca,34.59,94,124,1121
+106,73,10,Tetela de Ocampo,Cuetzalan,Autobús,Transportes del Norte,36.12,96,125,1122
+106,97,9,Tetela de Ocampo,Teziutlán,Autobús,Omnibus de México,44.03,104,130,1123
+106,98,8,Tetela de Ocampo,Tlatlauquitepec,Autobús,Futura,29.6,89,120,1124
+106,104,10,Tetela de Ocampo,Zacatlán,Autobús,Transportes del Norte,28.23,88,119,1125
+107,53,10,Metepec,Toluca,Autobús,Transportes del Norte,8.07,68,105,1126
+107,64,7,Metepec,Ciudad de México,Autobús,Estrella Blanca,52.37,112,136,1127
+107,72,10,Metepec,Cuernavaca,Autobús,Transportes del Norte,49.8,109,134,1128
+107,80,7,Metepec,Ixtapan de la Sal,Autobús,Estrella Blanca,46.78,106,132,1129
+107,108,7,Metepec,Villa del Carbón,Autobús,Estrella Blanca,56.83,116,139,1130
+108,53,8,Villa del Carbón,Toluca,Autobús,Futura,54.64,114,138,1131
+108,64,6,Villa del Carbón,Ciudad de México,Autobús,ADO,48.15,108,133,1132
+108,74,10,Villa del Carbón,El Oro,Autobús,Transportes del Norte,64.53,124,145,1133
+108,99,8,Villa del Carbón,Tula de Allende,Autobús,Futura,34.85,94,124,1134
+108,107,9,Villa del Carbón,Metepec,Autobús,Omnibus de México,56.83,116,139,1135
+109,43,8,Tecozautla,Querétaro,Autobús,Futura,38.08,98,126,1136
+109,47,8,Tecozautla,San Juan del Río,Autobús,Futura,41.11,101,128,1137
+109,51,10,Tecozautla,Tequisquiapan,Autobús,Transportes del Norte,30.75,90,121,1138
+109,79,8,Tecozautla,Huichapan,Autobús,Futura,16.87,76,111,1139
+109,99,7,Tecozautla,Tula de Allende,Autobús,Estrella Blanca,61.87,121,143,1140
+110,40,9,Zempoala,Pachuca,Autobús,Omnibus de México,23.54,83,116,1141
+110,71,6,Zempoala,Chignahuapan,Autobús,ADO,56.18,116,139,1142
+110,77,9,Zempoala,Huasca de Ocampo,Autobús,Omnibus de México,34.31,94,124,1143
+110,86,10,Zempoala,Pahuatlán,Autobús,Transportes del Norte,65.76,125,146,1144
+110,87,10,Zempoala,Mineral del Monte,Autobús,Transportes del Norte,23.84,83,116,1145
+111,57,8,Coatepec,Xalapa,Autobús,Futura,10.71,70,107,1146
+111,73,8,Coatepec,Cuetzalan,Autobús,Futura,85.97,145,160,1147
+111,97,9,Coatepec,Teziutlán,Autobús,Omnibus de México,63.55,123,144,1148
+111,98,7,Coatepec,Tlatlauquitepec,Autobús,Estrella Blanca,71.39,131,149,1149
+111,112,9,Coatepec,Orizaba,Autobús,Omnibus de México,68.96,128,148,1150
+112,21,7,Orizaba,Veracruz,Autobús,Estrella Blanca,108.87,168,176,1151
+112,42,7,Orizaba,Puebla,Autobús,Estrella Blanca,94.1,154,165,1152
+112,57,10,Orizaba,Xalapa,Autobús,Transportes del Norte,79.43,139,155,1153
+112,96,9,Orizaba,Tehuacán,Autobús,Omnibus de México,52.61,112,136,1154
+112,111,6,Orizaba,Coatepec,Autobús,ADO,68.96,128,148,1155
+113,5,9,Chiapa de Corzo,Ixtapa,Autobús,Omnibus de México,25.21,85,117,1156
+113,28,10,Chiapa de Corzo,Comitán,Autobús,Transportes del Norte,100.15,160,170,1157
+113,45,8,Chiapa de Corzo,San Cristóbal,Autobús,Futura,40.95,100,128,1158
+113,54,9,Chiapa de Corzo,Tuxtla Gutiérrez,Autobús,Omnibus de México,21.18,81,114,1159
+113,56,7,Chiapa de Corzo,Villahermosa,Autobús,Estrella Blanca,154.38,214,208,1160
