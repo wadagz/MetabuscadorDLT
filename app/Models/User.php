@@ -91,4 +91,20 @@ class User extends Authenticatable
             table: 'vistos_reciente'
         )->withTimestamps();;
     }
+
+    public function resenasHopedajes(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            Hospedaje::class,
+            table: 'resenas_hospedaje',
+        )->withPivot([
+            'comentario',
+            'calificacion',
+            'user_id',
+            'hospedaje_id',
+            'fecha',
+            'created_at',
+            'updated_at',
+        ]);
+    }
 }
