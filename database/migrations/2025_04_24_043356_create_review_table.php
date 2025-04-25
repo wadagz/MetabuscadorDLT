@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('review', function (Blueprint $table) {
+        Schema::create('resenas_hospedaje', function (Blueprint $table) {
             $table->id();
             $table->text('comentario')->nullable();
             $table->enum('calificacion', [1, 2, 3, 4 ,5]);
-            $table->foreignIdFor(Hospedaje::class)->constrained(table: 'hospedajes');
-            $table->foreignIdFor(User::class)->constrained(table: 'users');
+            $table->foreignId('user_id')->constrained(table: 'users')->onDelete('cascade');
+            $table->foreignId('hospedaje_id')->constrained(table: 'hospedajes')->onDelete('cascade');
             $table->date('fecha');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('review');
+        Schema::dropIfExists('resenas_hospedaje');
     }
 };
