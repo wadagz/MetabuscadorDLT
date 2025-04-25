@@ -86,6 +86,7 @@ async function refetchHospedajes ({ filters, sort }) {
 </script>
 
 <template>
+    {{ hosps.map(obj => obj.cal_prom) }}
 <SearchBar
     :destino="destino"
     :fechaPartida="fechaPartida"

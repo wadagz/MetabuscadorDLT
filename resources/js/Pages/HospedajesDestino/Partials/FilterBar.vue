@@ -36,6 +36,9 @@ const fuse = new Fuse(props.amenidades, {
     threshold: 0.4, // lower = stricter
 });
 
+// Ref para filtrar por calificaciones
+const calificaciones = ref([]);
+
 // Base filter and sort for cleaning the filters
 const baseFilters = {
     precio: { $between: null },
@@ -44,6 +47,7 @@ const baseFilters = {
             $in: amenidadesSeleccionadas,
         },
     },
+    cal_prom: { $in: calificaciones },
 };
 
 // Filters structure compatible with Laravel Purity
@@ -105,6 +109,7 @@ const cleanFilters = () => {
     sort.value = null;
     selectedSortOptions.value = []
     amenidadesSeleccionadas.value = [];
+    calificaciones.value = [];
     filters.value.precio.$between = null;
     priceRange.value = { min: null, max: null }
     applyFilters();
@@ -194,8 +199,46 @@ const sortOptions = [
                 value: 'precio:desc'
             }
         ]
+    },
+    {
+        type: "group",
+        label: "Calificación",
+        key: "Calificación",
+        children: [
+            {
+                label: 'Mejor Calificados',
+                value: 'cal_prom:desc'
+            },
+            {
+                label: 'Peor Calificados',
+                value: 'cal_prom:asc'
+            }
+        ]
     }
 ];
+
+const calificacionOptions = [
+    {
+        label: "5 estrellas",
+        value: 5,
+    },
+    {
+        label: "4 estrellas",
+        value: 4,
+    },
+    {
+        label: "3 estrellas",
+        value: 3,
+    },
+    {
+        label: "2 estrellas",
+        value: 2,
+    },
+    {
+        label: "1 estrella",
+        value: 1,
+    }
+]
 
 // Lógica para seleccionar máximo una opción por grupo en select Orden
 const sortValuesGroupMap = {}
@@ -235,7 +278,7 @@ const handleSelectSort = (newValues, otro) => {
         <div class="flex flex-row justify-evenly gap-2">
 
             <!-- Selección de ordenamiento -->
-            <div class="flex-grow grid grid-rows-2 items-center">
+            <div class="grow shrink-0 grid grid-rows-2 items-center">
                 <label class="">Ordenar por</label>
                 <NSelect
                     v-model:value="selectedSortOptions"
@@ -248,9 +291,9 @@ const handleSelectSort = (newValues, otro) => {
             </div>
 
             <!-- Selección de rango de precio -->
-            <div class="flex-shrink grid grid-rows-2 items-center">
+            <div class="shrink grid grid-rows-2 items-center">
                 <label class="">Rango de precios</label>
-                <div class="flex items-center">
+                <div class="flex items-center max-w-72">
                     <NInputNumber
                         v-model:value="priceRange.min"
                         placeholder="Mínimo"
@@ -279,6 +322,20 @@ const handleSelectSort = (newValues, otro) => {
                             <Icon icon="material-symbols-light:attach-money-rounded" />
                         </template>
                     </NInputNumber>
+                </div>
+            </div>
+
+            <!-- Selección de calificación mínima -->
+            <div class="flex-grow grid grid-rows-2 items-center">
+                <label >Calificaciónes</label>
+                <div>
+                    <NSelect
+                        :options="calificacionOptions"
+                        multiple
+                        clearable
+                        placeholder="Califación"
+                        v-model:value="calificaciones"
+                    />
                 </div>
             </div>
 
