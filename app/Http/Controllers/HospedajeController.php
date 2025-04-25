@@ -56,7 +56,15 @@ class HospedajeController extends Controller
             $hospedajes = $this->recommendationService
                 ->getRecommendationsForSearchingHospedaje(Auth::user(), $destino->id, 50);
         } else {
-            $hospedajes = Hospedaje::where('destino_id', $destino->id)->with('direccion')->limit(50)->get();
+            $hospedajes = Hospedaje::where('destino_id', $destino->id)
+                ->with('direccion')
+                ->withCount([
+                    'resenasDeUsuarios as cal_prom' => function ($query) {
+                        $query->select(DB::raw('avg(calificacion)'));
+                    },
+                ])
+                ->limit(50)
+                ->get();
         }
 
         return Inertia::render('HospedajesDestino/Index', [
@@ -101,6 +109,11 @@ class HospedajeController extends Controller
                 'resenasDeUsuarios',
                 'usuariosQueDieronFavorito' => function ($query) {
                     $query->where('id', Auth::id());
+                },
+            ])
+            ->withCount([
+                'resenasDeUsuarios as cal_prom' => function ($query) {
+                    $query->select(DB::raw('avg(calificacion)'));
                 },
             ])
             ->first();
