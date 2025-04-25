@@ -126,7 +126,11 @@ const addReview = () => {
 
         <div class="max-h-96 flex flex-col">
             <div class="bg-gray-200 rounded-sm border border-gray-400 shadow-md overflow-y-scroll flex-1">
-                <ResenaCard v-for="i in [1,2,3,4,5,6,7,8,9,10]"/>
+                <div v-for="usuarioConResena in hospedaje.resenas_de_usuarios">
+                    <ResenaCard
+                        :usuarioConResena
+                    />
+                </div>
             </div>
         </div>
     </div>

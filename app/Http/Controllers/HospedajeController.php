@@ -98,6 +98,7 @@ class HospedajeController extends Controller
                 'amenidades',
                 'direccion',
                 'destino',
+                'resenasDeUsuarios',
                 'usuariosQueDieronFavorito' => function ($query) {
                     $query->where('id', Auth::id());
                 },
