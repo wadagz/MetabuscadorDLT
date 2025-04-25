@@ -36,6 +36,16 @@ services:
     networks:
       - app-network
 
+  flask-api:
+    build:
+      context: .
+      dockerfile: docker/flask-api/Dockerfile
+      network: host
+    ports:
+      - "5000:5000"
+    networks:
+      - app-network
+
   web:
     image: nginx:1.27.4
     volumes:
