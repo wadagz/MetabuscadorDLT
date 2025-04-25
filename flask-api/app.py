@@ -4,10 +4,9 @@ from GrafoDestinos import GrafoDestinos
 app = Flask(__name__)
 
 # Sin docker
-grafo = GrafoDestinos('../database/seeds/data/destinos.csv')
+# grafo = GrafoDestinos('../database/seeds/data/destinos.csv')
 # Con docker
-# grafo = GrafoDestinos('destinos.csv')
-print(len(grafo.matriz_adyacencia))
+grafo = GrafoDestinos('destinos.csv')
 
 # Home route
 @app.route('/')
@@ -42,5 +41,5 @@ def kshortestPaths():
 
 # Run server
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=False)
 
