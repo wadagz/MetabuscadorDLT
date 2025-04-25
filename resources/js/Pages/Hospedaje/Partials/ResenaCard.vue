@@ -1,6 +1,7 @@
 <script setup>
 import { Icon } from '@iconify/vue/dist/iconify.js';
 import { ref, onBeforeMount } from 'vue';
+import CalificacionEstrellas from '@/Components/CalificacionEstrellas.vue';
 
 const props = defineProps({
     usuarioConResena: Object,
@@ -20,18 +21,7 @@ onBeforeMount(() => {
             <b>{{ usuarioConResena.name }}</b>
         </div>
         <div>
-            <div
-                v-for="rate in [1,2,3,4,5]"
-                :key="rate"
-                class="inline"
-                :class="[ resena.calificacion < rate ? 'text-gray-300' : 'text-star']"
-            >
-                <Icon
-                    :icon=" resena.calificacion < rate ? 'material-symbols-light:star-outline-rounded' : 'material-symbols-light:star'"
-                    :width="30"
-                    style="display: inline;"
-                />
-            </div>
+            <CalificacionEstrellas :calificacion="resena.calificacion"/>
         </div>
     </div>
 

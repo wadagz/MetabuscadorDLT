@@ -4,10 +4,10 @@ import ResenaCard from './Partials/ResenaCard.vue';
 import LeafLetMap from './Partials/LeafLetMap.vue';
 import Modal from '@/Components/Modal.vue'
 import ResenaForm from './Partials/ResenaForm.vue';
-import { Icon } from '@iconify/vue/dist/iconify.js';
 import FavoriteHospedajeButton from '@/Components/FavoriteHospedajeButton.vue';
 import { NButton } from 'naive-ui';
 import CarouselHospedajes from '@/Components/CarouselHospedajes.vue';
+import CalificacionEstrellas from '@/Components/CalificacionEstrellas.vue';
 
 const props = defineProps({
     hospedaje: Object,
@@ -103,7 +103,8 @@ const addReview = () => {
                     </div>
 
                     <div>
-                        Calificacion promedio:
+                        Calificacion:
+                        <CalificacionEstrellas :calificacion="hospedaje.cal_prom"/>
                     </div>
                 </div>
 
