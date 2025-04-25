@@ -15,15 +15,15 @@ class ResenaHospedajeSeeder extends Seeder
      */
     public function run(): void
     {
-        $users = User::all();
-        $hospedajes = Hospedaje::pluck('id');
+        $hospedajes = Hospedaje::all();
+        $users = User::pluck('id');
 
-        $users->each(function ($user) use ($hospedajes) {
-            $cantResenas = random_int(0, 10);
+        $hospedajes->each(function ($hospedaje) use ($users) {
+            $cantResenas = random_int(5, 20);
             ResenaHospedaje::factory()->count($cantResenas)->create([
-                'user_id' => $user->id,
-                'hospedaje_id' => function () use ($hospedajes) {
-                    return $hospedajes->random();
+                'hospedaje_id' => $hospedaje->id,
+                'user_id' => function () use ($users) {
+                    return $users->random();
                 },
             ]);
         });
