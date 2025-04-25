@@ -98,6 +98,7 @@ class User extends Authenticatable
             Hospedaje::class,
             table: 'resenas_hospedaje',
         )->withPivot([
+            'id',
             'comentario',
             'calificacion',
             'user_id',

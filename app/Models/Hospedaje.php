@@ -81,6 +81,7 @@ class Hospedaje extends Model
             User::class,
             table: 'resenas_hospedaje',
         )->withPivot([
+            'id',
             'comentario',
             'calificacion',
             'user_id',

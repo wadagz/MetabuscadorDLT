@@ -120,9 +120,11 @@ class HospedajeController extends Controller
 
         $isLoggedIn = Auth::check();
         $similarHospedajes = collect([]);
+        $userId = null;
 
         if ($isLoggedIn) {
             $user = Auth::user();
+            $userId = $user->id;
             $isAlreadyRecent = $user->vistosReciente->contains($hospedaje);
             if (!$isAlreadyRecent) {
                 $user->vistosReciente()->attach($hospedaje);
@@ -136,6 +138,7 @@ class HospedajeController extends Controller
             'hospedaje' => $hospedaje,
             'isLoggedIn' => $isLoggedIn,
             'similarHospedajes' => $similarHospedajes,
+            'userId' => $userId,
         ]);
     }
 
