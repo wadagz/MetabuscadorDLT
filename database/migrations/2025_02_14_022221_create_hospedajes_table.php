@@ -20,6 +20,7 @@ return new class extends Migration
             $table->enum('tipo_hospedaje', TipoHospedajeEnum::values());
             $table->text('descripcion')->nullable();
             $table->string('img_path');
+            $table->float('cal_prom', 2)->default(0);
             $table->timestamps();
         });
     }
