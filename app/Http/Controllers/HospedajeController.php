@@ -7,6 +7,7 @@ use App\Models\Destino;
 use App\Models\Hospedaje;
 use App\Models\User;
 use App\Services\RecommendationService;
+use App\Services\ResenaHospedaje\ResenaHospedajeService;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\RedirectResponse;
@@ -58,11 +59,6 @@ class HospedajeController extends Controller
         } else {
             $hospedajes = Hospedaje::where('destino_id', $destino->id)
                 ->with('direccion')
-                ->withCount([
-                    'resenasDeUsuarios as cal_prom' => function ($query) {
-                        $query->select(DB::raw('avg(calificacion)'));
-                    },
-                ])
                 ->limit(50)
                 ->get();
         }
@@ -110,13 +106,7 @@ class HospedajeController extends Controller
                 'usuariosQueDieronFavorito' => function ($query) {
                     $query->where('id', Auth::id());
                 },
-            ])
-            ->withCount([
-                'resenasDeUsuarios as cal_prom' => function ($query) {
-                    $query->select(DB::raw('avg(calificacion)'));
-                },
-            ])
-            ->first();
+            ])->first();
 
         $isLoggedIn = Auth::check();
         $similarHospedajes = collect([]);

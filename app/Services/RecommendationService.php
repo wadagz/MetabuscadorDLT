@@ -104,13 +104,7 @@ class RecommendationService
                 'usuariosQueDieronFavorito' => function ($query) use ($user) {
                     $query->where('id', $user->id);
                 }
-            ])
-            ->withCount([
-                'resenasDeUsuarios as cal_prom' => function ($query) {
-                    $query->select(DB::raw('avg(calificacion)'));
-                },
-            ])
-            ->get();
+            ])->get();
 
         $userPreferenceIds = DB::table('preferencias_usuarios')
             ->where('user_id', $user->id)
