@@ -190,7 +190,7 @@ const resenaDeleted = () => {
         </div>
     </div>
 
-    <div class="mt-4">
+    <div v-if="similarHospedajes" class="mt-4">
         <div class="text-xl mb-3">
             Hospedajes similares
         </div>

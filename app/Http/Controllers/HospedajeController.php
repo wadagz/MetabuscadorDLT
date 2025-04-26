@@ -109,7 +109,7 @@ class HospedajeController extends Controller
             ])->first();
 
         $isLoggedIn = Auth::check();
-        $similarHospedajes = collect([]);
+        $similarHospedajes = null;
         $userId = null;
 
         if ($isLoggedIn) {
