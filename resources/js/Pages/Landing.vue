@@ -6,7 +6,7 @@ import { useForm } from '@inertiajs/vue3';
 import { formatDateToISO } from '@/Utils/dateFormatter.js';
 import { toast } from 'vue3-toastify';
 
-defineProps({
+const props = defineProps({
     destinosPopulares: Array,
     destinosRecomendados: Array,
     nombresDestinos: Array,
@@ -21,10 +21,10 @@ const aWeekLater = new Date();
 aWeekLater.setDate(today.getDate() + 7);
 
 const form = useForm({
-    destino: null,
-    fechaPartida: formatDateToISO(today),
-    fechaRegreso: formatDateToISO(aWeekLater),
-    puntoPartida: null,
+    destino: props.destino,
+    fechaPartida: props.fechaPartida,
+    fechaRegreso: props.fechaRegreso,
+    puntoPartida: props.puntoPartida,
 });
 
 const verDestino = (destino_nombre) => {
@@ -40,6 +40,7 @@ const verDestino = (destino_nombre) => {
             else {
                 toast('Hubo un error', { type: 'error' });
             }
+            // console.log(errors)
         }
     });
 };

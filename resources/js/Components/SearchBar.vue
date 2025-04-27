@@ -40,8 +40,8 @@ const submit = () => {
     const fechaRegreso = new Date(dateRange.value[1]);
     form.fechaPartida = fechaPartida.toISOString();
     form.fechaRegreso = fechaRegreso.toISOString();
-    console.log(form.fechaPartida)
-    console.log(form.fechaRegreso)
+    // console.log(form.fechaPartida)
+    // console.log(form.fechaRegreso)
     // return
     form.get(route('searchHospedaje'), {
         onError: (errors) => {
