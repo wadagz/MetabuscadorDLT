@@ -17,13 +17,17 @@ const props = defineProps({
 
 const emit = defineEmits(['toggleShowFilters']);
 
-const dateRange = ref([Date.now(), Date.now()]);
+const dateRange = ref([
+    props.fechaPartida ? Number(props.fechaPartida) : Date.now(),
+    props.fechaRegreso ? Number(props.fechaRegreso) : Date.now(),
+]);
+// const dateRange = ref([Date.now(), Date.now()]);
 
 const form = useForm({
-    destino: props.destino,
-    fechaPartida: props.fechaPartida,
-    fechaRegreso: props.fechaRegreso,
-    puntoPartida: props.puntoPartida,
+    destino: props.destino ? props.destino : '',
+    fechaPartida: props.fechaPartida ? props.fechaPartida : '',
+    fechaRegreso: props.fechaRegreso ? props.fechaRegreso : '',
+    puntoPartida: props.puntoPartida ? props.puntoPartida : '',
 });
 
 const submit = () => {

@@ -12,6 +12,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
@@ -44,9 +45,19 @@ class HospedajeController extends Controller
 
         Validator::make($request->all(), $rules, $messages)->validate();
 
+
         $nombresDestinos = Destino::all()->pluck('nombre')->toArray();
         $destino = Destino::whereLike('nombre', $request->input('destino'))->first();
         $amenidades = Amenidad::all();
+
+        Cookie::queue('plan_viaje', json_encode([
+            'destinoId' => $destino->id,
+            'destinoNombre' => $destino->nombre,
+            'fechaPartida' => $request->input('fechaPartida'),
+            'fechaRegreso' => $request->input('fechaRegreso'),
+            'puntoPartida' => $request->input('puntoPartida'),
+        ]
+        ), 1440);
 
         $isLoggedIn = Auth::check();
         $userId = $isLoggedIn ? Auth::id() : null;

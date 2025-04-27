@@ -10,6 +10,10 @@ defineProps({
     destinosPopulares: Array,
     destinosRecomendados: Array,
     nombresDestinos: Array,
+    destino: String | null,
+    fechaPartida: String | null,
+    fechaRegreso: String | null,
+    puntoPartida: String | null,
 })
 
 const today = new Date();
@@ -45,6 +49,10 @@ const verDestino = (destino_nombre) => {
 <template>
 <SearchBar
     :nombresDestinos="nombresDestinos"
+    :destino="destino"
+    :fechaPartida="fechaPartida"
+    :fechaRegreso="fechaRegreso"
+    :puntoPartida="puntoPartida"
 />
 <div class="container mx-auto px-4 pt-4">
     <!-- Carousel para mastrar lista de hospedajes -->
