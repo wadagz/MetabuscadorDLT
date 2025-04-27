@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\DestinoController;
-use App\Http\Controllers\{FavoritosHospedajeUsuarioController, HospedajeController, LandingPageController, RecommendationController, ResenaHospedajeController, UserController, VistosRecienteController};
+use App\Http\Controllers\{FavoritosHospedajeUsuarioController, HospedajeController, LandingPageController, PlanViajeController, RecommendationController, ResenaHospedajeController, UserController, VistosRecienteController};
 use Illuminate\Support\Facades\Route;
 
 Route::get('/landing', [LandingPageController::class, 'index']);
@@ -36,12 +36,14 @@ Route::middleware([
     Route::get('/vistosReciente', [VistosRecienteController::class, 'recentlyViewed'])->name('recentlyViewed.index');
 
     Route::post('/resenaHospedaje/{hospedaje_id}', [ResenaHospedajeController::class, 'addReview'])->name('reviewHospedaje.add');
-    
+
     // Rutas para el sistema de recomendación
     Route::get('/destinos/{destino}/recomendaciones', [RecommendationController::class, 'getRecommendations'])
         ->name('destinos.recomendaciones');
     Route::get('/destinos/{destino}/comparar-recomendaciones', [RecommendationController::class, 'compareRecommendations'])
         ->name('destinos.comparar-recomendaciones');
+
+    Route::get('/planviaje', [PlanViajeController::class, 'create'])->name('planViaje.create');
 });
 
 // Ruta API para obtener hospedajes por destino (utilizada por el mapa)

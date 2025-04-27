@@ -4,10 +4,10 @@ import ResenaCard from './Partials/ResenaCard.vue';
 import LeafLetMap from './Partials/LeafLetMap.vue';
 import Modal from '@/Components/Modal.vue'
 import ResenaForm from './Partials/ResenaForm.vue';
-import { Icon } from '@iconify/vue/dist/iconify.js';
 import FavoriteHospedajeButton from '@/Components/FavoriteHospedajeButton.vue';
 import { NButton } from 'naive-ui';
 import CarouselHospedajes from '@/Components/CarouselHospedajes.vue';
+import { Link } from '@inertiajs/vue3';
 
 const props = defineProps({
     hospedaje: Object,
@@ -28,14 +28,15 @@ const addReview = () => {
 <div class="card container mx-auto pt-4 pb-10">
     <div class="flex items-center justify-between">
         <h1 class="text-3xl mb-4">{{ hospedaje.nombre }} - {{ hospedaje.destino.nombre }}</h1>
-        <a href="https://google.com" >
+        <Link :href="route('planViaje.create')" >
             <NButton
                 type="primary"
+                color="#1ba10e"
                 strong
             >
-                Visitar Sitio Web
+                REALIZAR PLAN DE VIAJE
             </NButton>
-        </a>
+        </Link>
     </div>
 
     <!-- Info general del hospedaje -->
