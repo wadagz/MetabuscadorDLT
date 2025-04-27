@@ -4,26 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Destino;
 use App\Services\RutaTransporte\RutaTransporteService;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 
 class PlanViajeController extends Controller
 {
-    private function rutasTransporte(
-        RutaTransporteService $rutasService,
-        int $origin_id,
-        int $target_id,
-        int $K = 3
-    )
-    {
-        $rutas = $rutasService->obtenerKCaminosMasCortos(
-            $origin_id,
-            $target_id,
-            $K
-        );
+    protected $rutaTransporteService;
 
-        dd($rutas);
+    public function __construct(RutaTransporteService $rutaTransporteService)
+    {
+        $this->rutaTransporteService = $rutaTransporteService;
     }
 
     public function create(): Response
@@ -33,26 +23,25 @@ class PlanViajeController extends Controller
         $fechaPartida = null;
         $fechaRegreso = null;
         $puntoPartida = null;
+        $caminos = null;
 
         if (isset($planViajeCookie)) {
             $planViajeParams = json_decode($planViajeCookie);
+            $destinoId = $planViajeParams->destinoId;
             $destino = Destino::where('id', $planViajeParams->destinoId)->first();
-            $fechaPartida = intval($planViajeParams->fechaPartida);
-            $fechaRegreso = intval($planViajeParams->fechaRegreso);
-            // Obtener el destino más cercano a la ubicacion dada
-            // haciendo uso de nominatim.
+            $fechaPartida = $planViajeParams->fechaPartida;
+            $fechaRegreso = $planViajeParams->fechaRegreso;
             $puntoPartida = $planViajeParams->puntoPartida;
 
-            // $destino = Destino::
+            $caminos = $this->rutaTransporteService->obtenerRutasTransporte($destinoId, $puntoPartida);
         }
-
-        // $rutas = $this->rutasTransporte()
 
         return Inertia::render('PlanViaje/Index', [
             'destino' => $destino,
             'fechaPartida' => $fechaPartida,
             'fechaRegreso' => $fechaRegreso,
             'puntoPartida'=> $puntoPartida,
+            'caminos' => $caminos,
         ]);
     }
 }
