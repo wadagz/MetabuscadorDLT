@@ -107,8 +107,6 @@ class GrafoDestinos:
     def obtener_K_paths_mas_cortos_con_nombres(self, source, target, K = 3):
         k_best_paths = self.obtener_K_paths_mas_cortos(source, target, K)
 
-        # print('Origen: ', df_destinos.iloc[source]['nombre'])
-        # print('Destino: ', df_destinos.iloc[target]['nombre'])
         paths_con_nombres = list()
         for i, path in enumerate(k_best_paths, 1):
             nombres = list()
@@ -132,3 +130,18 @@ class GrafoDestinos:
 
     def obtener_distancia_entre_destinos(self, source, target):
         return self._calcular_distancia(source['lat'], source['lon'], target['lat'], target['lon'])
+
+    def obtener_destino_mas_cercano_a_coordenadas(self, lat, lon):
+        destinos = list()
+        for idx, row in self._df_destinos.iterrows():
+            idx_distancia = {
+                'idx': idx,
+                'distancia': self._calcular_distancia(lat, lon, row['lat'], row['lon'])
+            }
+            destinos.append(idx_distancia)
+
+        destinos = sorted(destinos, key=lambda pair: pair['distancia'])
+        destino = destinos[0]
+        duracion_min = int(destino['distancia'] / 60 * 60 + 60)  # velocidad media + paradas
+        precio = int(destino['distancia'] * 0.7 + 100)
+        return (destino['idx'], destino['distancia'], duracion_min, precio)
