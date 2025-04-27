@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Services\ResenaHospedaje\ResenaHospedajeService;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -29,6 +30,10 @@ class DatabaseSeeder extends Seeder
             EmpresaTransporteSeeder::class,
             RutaTransporteSeeder::class,
             ResenaTransporteSeeder::class,
+            ResenaHospedajeSeeder::class,
         ]);
+
+        $resenaHospedajeService = new ResenaHospedajeService();
+        $resenaHospedajeService->calculateCalPromForEveryHospedaje();
     }
 }

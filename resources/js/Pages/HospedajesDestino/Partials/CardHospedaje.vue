@@ -6,6 +6,7 @@ import { useForm, router } from '@inertiajs/vue3';
 import { toast } from 'vue3-toastify';
 import FavoriteHospedajeButton from '@/Components/FavoriteHospedajeButton.vue';
 import { NButton } from 'naive-ui';
+import CalificacionEstrellas from '@/Components/CalificacionEstrellas.vue';
 
 const props = defineProps({
     hospedaje: Object,
@@ -48,11 +49,7 @@ const selectHospedaje = () => {
         <div class="flex justify-between items-center align-middle mx-4 mb-2 gap-2">
             <div class="flex items-center">
                 <span>Calificación:</span>
-                <Icon icon="material-symbols-light:star-outline-rounded" :width="30" style="display: inline;"/>
-                <Icon icon="material-symbols-light:star-outline-rounded" :width="30" style="display: inline;"/>
-                <Icon icon="material-symbols-light:star-outline-rounded" :width="30" style="display: inline;"/>
-                <Icon icon="material-symbols-light:star-outline-rounded" :width="30" style="display: inline;"/>
-                <Icon icon="material-symbols-light:star-outline-rounded" :width="30" style="display: inline;"/>
+                <CalificacionEstrellas :calificacion="hospedaje.cal_prom"/>
             </div>
 
             <div class="flex justify-end items-center align-middle mr-4 gap-2">

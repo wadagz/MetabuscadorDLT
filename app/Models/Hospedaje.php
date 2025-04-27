@@ -75,11 +75,23 @@ class Hospedaje extends Model
         );
     }
 
+    public function resenasDeUsuarios(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            User::class,
+            table: 'resenas_hospedaje',
+        )->withPivot([
+            'id',
+            'comentario',
+            'calificacion',
+            'user_id',
+            'hospedaje_id',
+            'fecha',
+            'created_at',
+            'updated_at',
+        ]);
+    }
+
     # TODO:
     # Viajes
-    # Estructurar sistema de reseñas
-    // public function resenas(): HasMany
-    // {
-    //     return $this->hasMany(resena::class);
-    // }
 }

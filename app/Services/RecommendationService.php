@@ -97,13 +97,14 @@ class RecommendationService
      */
     public function getRecommendationsForSearchingHospedaje(User $user, int $destinoId, int $limit = 50): Collection
     {
-        $allHospedajes = Hospedaje::where('destino_id', $destinoId)->with([
-            'direccion',
-            'amenidades',
-            'usuariosQueDieronFavorito' => function ($query) use ($user) {
-                $query->where('id', $user->id);
-            }
-        ])->get();
+        $allHospedajes = Hospedaje::where('destino_id', $destinoId)
+            ->with([
+                'direccion',
+                'amenidades',
+                'usuariosQueDieronFavorito' => function ($query) use ($user) {
+                    $query->where('id', $user->id);
+                }
+            ])->get();
 
         $userPreferenceIds = DB::table('preferencias_usuarios')
             ->where('user_id', $user->id)

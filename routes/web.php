@@ -36,6 +36,8 @@ Route::middleware([
     Route::get('/vistosReciente', [VistosRecienteController::class, 'recentlyViewed'])->name('recentlyViewed.index');
 
     Route::post('/resenaHospedaje/{hospedaje_id}', [ResenaHospedajeController::class, 'addReview'])->name('reviewHospedaje.add');
+    Route::patch('/resenaHospedaje/{hospedaje_id}', [ResenaHospedajeController::class, 'update'])->name('reviewHospedaje.update');
+    Route::delete('/resenaHospedaje/{resena_id}', [ResenaHospedajeController::class, 'delete'])->name('reviewHospedaje.destroy');
 
     // Rutas para el sistema de recomendación
     Route::get('/destinos/{destino}/recomendaciones', [RecommendationController::class, 'getRecommendations'])

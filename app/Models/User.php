@@ -108,4 +108,21 @@ class User extends Authenticatable
             ]
         );
     }
+
+    public function resenasHopedajes(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            Hospedaje::class,
+            table: 'resenas_hospedaje',
+        )->withPivot([
+            'id',
+            'comentario',
+            'calificacion',
+            'user_id',
+            'hospedaje_id',
+            'fecha',
+            'created_at',
+            'updated_at',
+        ]);
+    }
 }

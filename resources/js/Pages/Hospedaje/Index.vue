@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { onBeforeMount, ref, watch } from 'vue';
 import ResenaCard from './Partials/ResenaCard.vue';
 import LeafLetMap from './Partials/LeafLetMap.vue';
 import Modal from '@/Components/Modal.vue'
@@ -8,20 +8,61 @@ import FavoriteHospedajeButton from '@/Components/FavoriteHospedajeButton.vue';
 import { NButton } from 'naive-ui';
 import CarouselHospedajes from '@/Components/CarouselHospedajes.vue';
 import { Link } from '@inertiajs/vue3';
+import CalificacionEstrellas from '@/Components/CalificacionEstrellas.vue';
+import { router } from '@inertiajs/vue3';
 
 const props = defineProps({
     hospedaje: Object,
     isLoggedIn: Boolean,
     similarHospedajes: Array,
+    userId: Number | null,
 });
 
 const showModal = ref(false);
+const resenaFromUser = ref(null);
+const resenas = ref(null);
 
 const addReview = () => {
     console.log('agregar reseña');
     showModal.value = true
 };
 
+const updateReview = () => {
+    console.log('actualizar resena');
+    showModal.value = true
+}
+
+
+onBeforeMount(() => {
+    if (props.userId) {
+        resenaFromUser.value = props.hospedaje.resenas_de_usuarios.find(
+            obj => obj.id === props.userId
+        );
+        resenaFromUser.value = resenaFromUser.value ? resenaFromUser.value.pivot : null;
+    }
+    resenas.value = props.hospedaje.resenas_de_usuarios;
+})
+
+watch(() => props.hospedaje, (newVal) => {
+    console.log('cambio en hospedaje')
+    if (props.userId) {
+        resenaFromUser.value = newVal.resenas_de_usuarios.find(
+            obj => obj.id === props.userId
+        );
+        resenaFromUser.value = resenaFromUser.value ? resenaFromUser.value.pivot : null;
+    }
+    resenas.value = newVal.resenas_de_usuarios;
+    console.log(resenas.value)
+    console.log(resenaFromUser.value)
+})
+
+const reload = () => {
+    router.reload();
+}
+
+const resenaDeleted = () => {
+    router.reload();
+}
 </script>
 
 <template>
@@ -104,19 +145,33 @@ const addReview = () => {
                     </div>
 
                     <div>
-                        Calificacion promedio:
+                        Calificacion:
+                        <CalificacionEstrellas :calificacion="hospedaje.cal_prom"/>
                     </div>
                 </div>
 
-                <NButton
-                    secondary
-                    strong
-                    type="primary"
-                    attr-type="button"
-                    @click="addReview"
-                >
-                    Agregar reseña
-                </NButton>
+                <div v-if="isLoggedIn">
+                    <NButton
+                        v-if="resenaFromUser"
+                        secondary
+                        strong
+                        type="primary"
+                        attr-type="button"
+                        @click="updateReview"
+                    >
+                        Actualizar reseña
+                    </NButton>
+                    <NButton
+                        v-else
+                        secondary
+                        strong
+                        type="primary"
+                        attr-type="button"
+                        @click="addReview"
+                    >
+                        Agregar reseña
+                    </NButton>
+                </div>
             </div>
         </div>
 
@@ -127,12 +182,16 @@ const addReview = () => {
 
         <div class="max-h-96 flex flex-col">
             <div class="bg-gray-200 rounded-sm border border-gray-400 shadow-md overflow-y-scroll flex-1">
-                <ResenaCard v-for="i in [1,2,3,4,5,6,7,8,9,10]"/>
+                <div v-for="usuarioConResena in resenas" :key="usuarioConResena.id">
+                    <ResenaCard
+                        :usuarioConResena
+                    />
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="mt-4">
+    <div v-if="similarHospedajes" class="mt-4">
         <div class="text-xl mb-3">
             Hospedajes similares
         </div>
@@ -148,10 +207,17 @@ const addReview = () => {
 <Modal v-if="showModal" @close="showModal = false">
     <template #title>
         <!-- Agregar un v-if para mostrar agregar o editar si el usuario ha resenado o no el hospedaje -->
-        Agregar reseña
+        <span v-if="resenaFromUser">Actualizar reseña</span>
+        <span v-else="resenaFromUser">Agregar reseña</span>
     </template>
     <template #body>
-        <ResenaForm :hospedaje @close="showModal = false"/>
+        <ResenaForm
+            :hospedaje
+            :resena="resenaFromUser"
+            @close="showModal = false"
+            @resenaDeleted="resenaDeleted"
+            @listo="reload"
+        />
     </template>
 </Modal>
 </template>

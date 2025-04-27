@@ -7,6 +7,7 @@ use App\Models\Destino;
 use App\Models\Hospedaje;
 use App\Models\User;
 use App\Services\RecommendationService;
+use App\Services\ResenaHospedaje\ResenaHospedajeService;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\RedirectResponse;
@@ -36,15 +37,21 @@ class HospedajeController extends Controller
             'destino' => ['required', Rule::exists('destinos', 'nombre')->where(function (Builder $query) use ($request) {
                 $query->whereLike('nombre', $request->input('destino'));
             })],
+            'fechaPartida' => ['required', Rule::date()->afterToday()],
+            'fechaRegreso' => ['required', 'date', 'after:fechaPartida'],
+            'puntoPartida' => ['nullable', 'string'],
         ];
 
         $messages = [
             'destino.required' => 'Ingrese un destino.',
             'destino' => 'No se encontró el destino indicado.',
+            'fechaPartida.required' => 'En necesaria una fecha de partida.',
+            'fechaPartida' => 'La fecha de partida debe ser posterior al día de hoy.',
+            'fechaRegreso.required' => 'La fecha de regreso es necesaria.',
+            'fechaRegreso' => 'La fecha de regreso debe ser posterior a la fecha de partida.',
         ];
 
         Validator::make($request->all(), $rules, $messages)->validate();
-
 
         $nombresDestinos = Destino::all()->pluck('nombre')->toArray();
         $destino = Destino::whereLike('nombre', $request->input('destino'))->first();
@@ -67,7 +74,10 @@ class HospedajeController extends Controller
             $hospedajes = $this->recommendationService
                 ->getRecommendationsForSearchingHospedaje(Auth::user(), $destino->id, 50);
         } else {
-            $hospedajes = Hospedaje::where('destino_id', $destino->id)->with('direccion')->limit(50)->get();
+            $hospedajes = Hospedaje::where('destino_id', $destino->id)
+                ->with('direccion')
+                ->limit(50)
+                ->get();
         }
 
         return Inertia::render('HospedajesDestino/Index', [
@@ -109,17 +119,19 @@ class HospedajeController extends Controller
                 'amenidades',
                 'direccion',
                 'destino',
+                'resenasDeUsuarios',
                 'usuariosQueDieronFavorito' => function ($query) {
                     $query->where('id', Auth::id());
                 },
-            ])
-            ->first();
+            ])->first();
 
         $isLoggedIn = Auth::check();
-        $similarHospedajes = collect([]);
+        $similarHospedajes = null;
+        $userId = null;
 
         if ($isLoggedIn) {
             $user = Auth::user();
+            $userId = $user->id;
             $isAlreadyRecent = $user->vistosReciente->contains($hospedaje);
             if (!$isAlreadyRecent) {
                 $user->vistosReciente()->attach($hospedaje);
@@ -133,6 +145,7 @@ class HospedajeController extends Controller
             'hospedaje' => $hospedaje,
             'isLoggedIn' => $isLoggedIn,
             'similarHospedajes' => $similarHospedajes,
+            'userId' => $userId,
         ]);
     }
 

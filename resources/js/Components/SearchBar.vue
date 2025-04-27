@@ -17,33 +17,50 @@ const props = defineProps({
 
 const emit = defineEmits(['toggleShowFilters']);
 
+const tomorrow = new Date();
+const pasadoManana = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+pasadoManana.setDate(pasadoManana.getDate() + 2);
+
 const dateRange = ref([
-    props.fechaPartida ? Number(props.fechaPartida) : Date.now(),
-    props.fechaRegreso ? Number(props.fechaRegreso) : Date.now(),
+    props.fechaPartida ? Date.parse(props.fechaPartida) : tomorrow.getTime(),
+    props.fechaRegreso ? Date.parse(props.fechaRegreso) : pasadoManana.getTime(),
 ]);
 // const dateRange = ref([Date.now(), Date.now()]);
 
 const form = useForm({
     destino: props.destino ? props.destino : '',
-    fechaPartida: props.fechaPartida ? props.fechaPartida : '',
-    fechaRegreso: props.fechaRegreso ? props.fechaRegreso : '',
+    fechaPartida: dateRange.value[0],
+    fechaRegreso: dateRange.value[1],
     puntoPartida: props.puntoPartida ? props.puntoPartida : '',
 });
 
 const submit = () => {
-    form.fechaPartida = dateRange.value[0];
-    form.fechaRegreso = dateRange.value[1];
+    const fechaPartida = new Date(dateRange.value[0]);
+    const fechaRegreso = new Date(dateRange.value[1]);
+    form.fechaPartida = fechaPartida.toISOString();
+    form.fechaRegreso = fechaRegreso.toISOString();
+    console.log(form.fechaPartida)
+    console.log(form.fechaRegreso)
+    // return
     form.get(route('searchHospedaje'), {
         onError: (errors) => {
             if (errors.destino == 'Ingrese un destino.') {
                 toast(errors.destino, { type: 'info' });
             }
             else if (errors.destino == 'No se encontró el destino indicado.') {
-                toast(errors.destino, { type: 'error' })
+                toast(errors.destino, { type: 'info' })
+            }
+            else if (errors.fechaPartida) {
+                toast(errors.fechaPartida, { type: 'info' })
+            }
+            else if (errors.fechaRegreso) {
+                toast(errors.fechaRegreso, { type: 'info' })
             }
             else {
                 toast('Hubo un error', { type: 'error' });
             }
+            console.log(errors)
         }
     });
 };
