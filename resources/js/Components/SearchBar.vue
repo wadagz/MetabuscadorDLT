@@ -57,6 +57,9 @@ const submit = () => {
             else if (errors.fechaRegreso) {
                 toast(errors.fechaRegreso, { type: 'info' })
             }
+            else if (errors.puntoPartida) {
+                toast(errors.puntoPartida, { type: 'info' })
+            }
             else {
                 toast('Hubo un error', { type: 'error' });
             }

@@ -39,7 +39,7 @@ class HospedajeController extends Controller
             })],
             'fechaPartida' => ['required', Rule::date()->afterToday()],
             'fechaRegreso' => ['required', 'date', 'after:fechaPartida'],
-            'puntoPartida' => ['nullable', 'string'],
+            'puntoPartida' => ['required', 'string'],
         ];
 
         $messages = [
@@ -49,6 +49,7 @@ class HospedajeController extends Controller
             'fechaPartida' => 'La fecha de partida debe ser posterior al día de hoy.',
             'fechaRegreso.required' => 'La fecha de regreso es necesaria.',
             'fechaRegreso' => 'La fecha de regreso debe ser posterior a la fecha de partida.',
+            'puntoPartida' => 'Por favor, indique el punto de partida de su viaje.',
         ];
 
         Validator::make($request->all(), $rules, $messages)->validate();
