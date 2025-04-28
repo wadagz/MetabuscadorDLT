@@ -81,6 +81,7 @@ class RutaTransporteService
                 'distancia' => $infoPuntoPartida['distancia'],
                 'duracionMin' => $infoPuntoPartida['duracionMin'],
                 'precio' => $infoPuntoPartida['precio'],
+                'tipo' => 'Autobús',
             ];
         }
 
@@ -99,6 +100,7 @@ class RutaTransporteService
                     'distancia' => $rutaModelo->distancia_km,
                     'duracionMin' => $rutaModelo->duracion_min,
                     'precio' => $rutaModelo->precio,
+                    'tipo' => $rutaModelo->tipo,
                 ];
                 $rutas->push($ruta);
             }

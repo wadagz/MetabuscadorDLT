@@ -69,7 +69,7 @@ const resenaDeleted = () => {
 <div class="card container mx-auto pt-4 pb-10">
     <div class="flex items-center justify-between">
         <h1 class="text-3xl mb-4">{{ hospedaje.nombre }} - {{ hospedaje.destino.nombre }}</h1>
-        <Link :href="route('planViaje.create')" >
+        <Link :href="route('planViaje.showRoutes')" >
             <NButton
                 type="primary"
                 color="#1ba10e"

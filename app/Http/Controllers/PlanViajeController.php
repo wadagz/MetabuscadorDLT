@@ -16,7 +16,7 @@ class PlanViajeController extends Controller
         $this->rutaTransporteService = $rutaTransporteService;
     }
 
-    public function create(): Response
+    public function showRoutes(): Response
     {
         $planViajeCookie = request()->cookie('plan_viaje');
         $destino = null;
