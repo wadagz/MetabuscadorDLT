@@ -77,12 +77,74 @@ class PlanViajeController extends Controller
         ]);
     }
 
+    public function show(int $planViajeId): Response
+    {
+        $planViaje = PlanViaje::where('id', $planViajeId)
+            ->with(['itinerarios.rutaTransporte'])    
+            ->first();
+
+        return Inertia::render('PlanViaje/Show', [
+            'planViaje' => $planViaje,
+        ]);
+    }
+
     public function store(Request $request)
     {
-        dd($request);
+        // dd($request);
+        $user = Auth::user();
+        $validated = $request->validate(
+            [
+                'destinoId' => 'required|integer|exists:destinos,id',
+                'hospedajeId' => 'required|integer|exists:hospedajes,id',
+                'fechaPartida' => 'required|date|after:today',
+                'fechaRegreso' => 'required|date|after:fechaPartida',
+                'puntoPartida' => 'required|string',
+                'viajeRedondo' => 'required|boolean',
+                'caminoSeleccionado' => 'required',
+                'precioTotal' => 'required|numeric',
+                'tiempoTotal' => 'required|numeric',
+
+            ]
+        );
         //crear plan de viaje
+        $planViaje = PlanViaje::create([
+            'user_id' => $user->id,
+            'hospedaje_id' => $validated['hospedajeId'],
+            'punto_partida' => $validated['puntoPartida'],
+            'destino' => Destino::where('id', $validated['destinoId'])->pluck('nombre')->first(),
+            'fecha_comienzo' => $validated['fechaPartida'],
+            'fecha_fin' => $validated['fechaRegreso'],
+            'precio' => $validated['precioTotal'],
+            'viaje_redondo' => $validated['viajeRedondo'],
+        ]);
         //crear itenerario para cada ruta
+        $orden = 0;
+        foreach ($validated['caminoSeleccionado'] as $ruta) {
+            Itinerario::create([
+                'plan_viaje_id' => $planViaje->id,
+                'ruta_transporte_id' => $ruta->id,
+                'orden' => $orden,
+                'tipo' => 'ida',
+            ]);
+            $orden++;
+        }
+
+        if ($validated['viajeRedondo']) {
+            $reversedCamino = array_reverse($validated['caminoSeleccionado']);
+            foreach ($reversedCamino as $rutaRegreso) {
+                Itinerario::create([
+                    'plan_viaje_id' => $planViaje->id,
+                    'ruta_transporte_id' => $rutaRegreso->id,
+                    'orden' => $orden,
+                    'tipo' => 'regreso',
+                ])
+                $orden++;
+            }
+        }
         //redirigir a vista donde se muestre la confirmación del viaje.
         //en esta pagina mostrar actividades sugeridas.
+        return redirect()->route('planViaje.show', [
+            'planViajeId' => $planViaje->id,
+        ]);
     }
 }

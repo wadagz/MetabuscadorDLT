@@ -48,6 +48,7 @@ Route::middleware([
     Route::get('/planviaje/{hospedajeId}', [PlanViajeController::class, 'create'])->name('planViaje.create');
     Route::post('/planviaje/updateParams', [PlanViajeController::class, 'updateParameters'])->name('planViaje.updateParameters');
     Route::post('/planviaje', [PlanViajeController::class, 'store'])->name('planViaje.store');
+    Route::post('/planviaje/{planViajeId}', [PlanViajeController::class, 'show'])->name('planViaje.show');
 });
 
 // Ruta API para obtener hospedajes por destino (utilizada por el mapa)
