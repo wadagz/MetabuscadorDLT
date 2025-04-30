@@ -28,12 +28,12 @@ const toggleViajeRedondo = () => {
 };
 
 const form = useForm({
-    destino: props.destino,
+    destinoId: props.destino.id,
     fechaPartida: props.fechaPartida,
     fechaRegreso: props.fechaRegreso,
     puntoPartida: props.puntoPartida,
     viajeRedondo: props.viajeRedondo,
-    hospedaje: props.hospedaje,
+    hospedajeId: props.hospedaje.id,
     caminoSeleccionado: null,
     precioTotal: null,
     tiempoTotal: null,
@@ -41,7 +41,7 @@ const form = useForm({
 
 const selectPath = (path, precio, tiempo) => {
     form.caminoSeleccionado = path;
-    form.precioTotal = precio;
+    form.precioTotal = precio + hospedaje.precio;
     form.tiempoTotal = tiempo;
 };
 
