@@ -44,4 +44,25 @@ class PlanViajeController extends Controller
             'caminos' => $caminos,
         ]);
     }
+
+    public function updateParameters(Request $request)
+    {
+        $planViajeCookie = request()->cookie('plan_viaje');
+        $planViajeParams = json_decode($planViajeCookie);
+
+        Cookie::queue('plan_viaje', json_encode([
+            'destinoId' => $planViajeParams->destinoId,
+            'destinoNombre' => $planViajeParams->destinoNombre,
+            'fechaPartida' => $request->input('fechaPartida'),
+            'fechaRegreso' => $request->input('fechaRegreso'),
+            'puntoPartida' => $request->input('puntoPartida'),
+            'viajeRedondo' => $request->input('viajeRedondo'),
+        ]
+        ), 1440);
+
+        return redirect()->route('planViaje.create', [
+            'hospedajeId' => $request->input('hospedajeId'),
+        ]);
+    }
+
 }

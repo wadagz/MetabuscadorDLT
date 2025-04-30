@@ -46,6 +46,7 @@ Route::middleware([
         ->name('destinos.comparar-recomendaciones');
 
     Route::get('/planviaje/rutas', [PlanViajeController::class, 'showRoutes'])->name('planViaje.showRoutes');
+    Route::post('/planviaje/updateParams', [PlanViajeController::class, 'updateParameters'])->name('planViaje.updateParameters');
 });
 
 // Ruta API para obtener hospedajes por destino (utilizada por el mapa)
