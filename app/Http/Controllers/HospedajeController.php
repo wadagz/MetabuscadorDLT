@@ -64,6 +64,7 @@ class HospedajeController extends Controller
             'fechaPartida' => $request->input('fechaPartida'),
             'fechaRegreso' => $request->input('fechaRegreso'),
             'puntoPartida' => $request->input('puntoPartida'),
+            'viajeRedondo' => false,
         ]
         ), 1440);
 
