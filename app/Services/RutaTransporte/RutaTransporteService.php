@@ -61,14 +61,14 @@ class RutaTransporteService
      * Obtiene las rutas que conforman los caminos más cortos de un destino a otro.
      * @return Array Arreglo con la información de las rutas que conforman los caminos.
      */
-    public function obtenerRutasTransporte(int $destinoId, string $puntoPartida)
+    public function obtenerRutasTransporte(string $puntoPartida, int $destinoId, int $K = 3)
     {
         [$puntoPartidaId, $infoPuntoPartida] = $this->obtenerPuntoPartidaId($puntoPartida);
 
         $caminosIds = $this->obtenerKCaminosMasCortos(
             $puntoPartidaId,
             $destinoId,
-            5
+            $K
         )['k_paths'];
 
         $destinosIds = collect($caminosIds)->flatten()->unique();
