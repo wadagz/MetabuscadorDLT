@@ -20,10 +20,16 @@ const today = new Date();
 const aWeekLater = new Date();
 aWeekLater.setDate(today.getDate() + 7);
 
+// Corregir valores por defecto de este formulario cuando todavia no hay cookie.
+const tomorrow = new Date();
+const pasadoManana = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+pasadoManana.setDate(pasadoManana.getDate() + 2);
+
 const form = useForm({
     destino: props.destino,
-    fechaPartida: props.fechaPartida,
-    fechaRegreso: props.fechaRegreso,
+    fechaPartida: props.fechaPartida ? Date.parse(props.fechaPartida) : tomorrow.getTime(),
+    fechaRegreso: props.fechaRegreso ? Date.parse(props.fechaRegreso) : pasadoManana.getTime(),
     puntoPartida: props.puntoPartida,
 });
 
@@ -41,6 +47,30 @@ const verDestino = (destino_nombre) => {
                 toast('Hubo un error', { type: 'error' });
             }
             // console.log(errors)
+        }
+    });
+
+    form.get(route('searchHospedaje'), {
+        onError: (errors) => {
+            if (errors.destino == 'Ingrese un destino.') {
+                toast(errors.destino, { type: 'info' });
+            }
+            else if (errors.destino == 'No se encontró el destino indicado.') {
+                toast(errors.destino, { type: 'info' })
+            }
+            else if (errors.fechaPartida) {
+                toast(errors.fechaPartida, { type: 'info' })
+            }
+            else if (errors.fechaRegreso) {
+                toast(errors.fechaRegreso, { type: 'info' })
+            }
+            else if (errors.puntoPartida) {
+                toast(errors.puntoPartida, { type: 'info' })
+            }
+            else {
+                toast('Hubo un error', { type: 'error' });
+            }
+            console.log(errors)
         }
     });
 };
