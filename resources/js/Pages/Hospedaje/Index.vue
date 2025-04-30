@@ -1,7 +1,7 @@
 <script setup>
 import { onBeforeMount, ref, watch } from 'vue';
 import ResenaCard from './Partials/ResenaCard.vue';
-import LeafLetMap from './Partials/LeafLetMap.vue';
+import LeafLetMap from '@/Components/LeafLetMap.vue';
 import Modal from '@/Components/Modal.vue'
 import ResenaForm from './Partials/ResenaForm.vue';
 import FavoriteHospedajeButton from '@/Components/FavoriteHospedajeButton.vue';
@@ -69,7 +69,7 @@ const resenaDeleted = () => {
 <div class="card container mx-auto pt-4 pb-10">
     <div class="flex items-center justify-between">
         <h1 class="text-3xl mb-4">{{ hospedaje.nombre }} - {{ hospedaje.destino.nombre }}</h1>
-        <Link :href="route('planViaje.showRoutes')" >
+        <Link :href="route('planViaje.create', { hospedajeId: props.hospedaje.id })" >
             <NButton
                 type="primary"
                 color="#1ba10e"
