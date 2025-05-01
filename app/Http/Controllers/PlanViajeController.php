@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Destino;
 use App\Models\Hospedaje;
+use App\Models\Itinerario;
+use App\Models\PlanViaje;
 use App\Services\RutaTransporte\RutaTransporteService;
+use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -18,6 +22,11 @@ class PlanViajeController extends Controller
     public function __construct(RutaTransporteService $rutaTransporteService)
     {
         $this->rutaTransporteService = $rutaTransporteService;
+    }
+
+    public function index(): Response
+    {
+        return Inertia::render('PlanViaje/Index');
     }
 
     public function create(int $hospedajeId): Response | RedirectResponse
@@ -46,7 +55,7 @@ class PlanViajeController extends Controller
 
         $hospedaje = Hospedaje::where('id', $hospedajeId)->with(['direccion'])->first();
 
-        return Inertia::render('PlanViaje/Index', [
+        return Inertia::render('PlanViaje/Create', [
             'destino' => $destino,
             'fechaPartida' => $fechaPartida,
             'fechaRegreso' => $fechaRegreso,
@@ -80,7 +89,7 @@ class PlanViajeController extends Controller
     public function show(int $planViajeId): Response
     {
         $planViaje = PlanViaje::where('id', $planViajeId)
-            ->with(['itinerarios.rutaTransporte'])    
+            ->with(['itinerarios.rutaTransporte'])
             ->first();
 
         return Inertia::render('PlanViaje/Show', [
@@ -90,7 +99,6 @@ class PlanViajeController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request);
         $user = Auth::user();
         $validated = $request->validate(
             [
@@ -103,17 +111,22 @@ class PlanViajeController extends Controller
                 'caminoSeleccionado' => 'required',
                 'precioTotal' => 'required|numeric',
                 'tiempoTotal' => 'required|numeric',
-
             ]
         );
+        // dd($validated);
+
         //crear plan de viaje
+        $fechaComienzo = new DateTime($validated['fechaPartida']);
+        $fechaFin = new DateTime($validated['fechaRegreso']);
+        // dd($validated['puntoPartida']);
+
         $planViaje = PlanViaje::create([
             'user_id' => $user->id,
             'hospedaje_id' => $validated['hospedajeId'],
             'punto_partida' => $validated['puntoPartida'],
             'destino' => Destino::where('id', $validated['destinoId'])->pluck('nombre')->first(),
-            'fecha_comienzo' => $validated['fechaPartida'],
-            'fecha_fin' => $validated['fechaRegreso'],
+            'fecha_comienzo' => $fechaComienzo->format('Y-m-d'),
+            'fecha_fin' => $fechaFin->format('Y-m-d'),
             'precio' => $validated['precioTotal'],
             'viaje_redondo' => $validated['viajeRedondo'],
         ]);
@@ -122,7 +135,7 @@ class PlanViajeController extends Controller
         foreach ($validated['caminoSeleccionado'] as $ruta) {
             Itinerario::create([
                 'plan_viaje_id' => $planViaje->id,
-                'ruta_transporte_id' => $ruta->id,
+                'ruta_transporte_id' => $ruta['id'],
                 'orden' => $orden,
                 'tipo' => 'ida',
             ]);
@@ -134,10 +147,10 @@ class PlanViajeController extends Controller
             foreach ($reversedCamino as $rutaRegreso) {
                 Itinerario::create([
                     'plan_viaje_id' => $planViaje->id,
-                    'ruta_transporte_id' => $rutaRegreso->id,
+                    'ruta_transporte_id' => $rutaRegreso['id'],
                     'orden' => $orden,
                     'tipo' => 'regreso',
-                ])
+                ]);
                 $orden++;
             }
         }
