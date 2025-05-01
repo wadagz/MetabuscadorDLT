@@ -14,13 +14,13 @@ const emits = defineEmits(['pathSelected']);
 
 const selectPath = (camino, precio, tiempo, idx) => {
     idxCaminoSeleccionado.value = idx;
-    console.log(idx)
+    // console.log(idx)
     arregloReferenciaCaminoSeleccionado.value.forEach((element, arrIdx, arr) => {
-        console.log(arrIdx)
-        console.log(arrIdx === idx)
+        // console.log(arrIdx)
+        // console.log(arrIdx === idx)
         arr[arrIdx] = arrIdx === idx;
     })
-    console.log(arregloReferenciaCaminoSeleccionado.value)
+    // console.log(arregloReferenciaCaminoSeleccionado.value)
     emits('pathSelected', camino, precio, tiempo)
 }
 

@@ -10,17 +10,17 @@ const props = defineProps({
 <template>
 <div class="bg-light mx-2 border border-gray-400 rounded-sm p-2">
     <div class="flex items-center justify-center gap-2 text-lg">
-        <b>{{ ruta.nombreOrigen }}</b>
+        <b>{{ ruta.destino_origen_nombre }}</b>
         <Icon icon="charm:arrow-right" />
-        <b>{{ ruta.nombreTarget }}</b>
+        <b>{{ ruta.destino_target_nombre }}</b>
     </div>
     <hr class="mt-2">
     <div class="flex justify-between items-center gap-4">
         <span>
-            Distancia: {{ ruta.distancia }} km
+            Distancia: {{ ruta.distancia_km }} km
         </span>
         <span>
-            Duración viaje: {{ ruta.duracionMin }} min.
+            Duración viaje: {{ ruta.duracion_min }} min.
         </span>
     </div>
     <div class="flex justify-between items-center">

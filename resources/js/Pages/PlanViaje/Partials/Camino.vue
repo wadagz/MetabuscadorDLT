@@ -33,14 +33,14 @@ const getPrecioTotal = () => {
 const getTiempoTotal = () => {
     let total = 0
     props.camino.forEach(ruta => {
-        total += ruta.duracionMin;
+        total += ruta.duracion_min;
     });
 
     return total;
 }
 
 const selectPath = () => {
-    console.log(props.camino);
+    // console.log(props.camino);
     // props.estaSeleccionado = true;
     emits('pathSelected', props.camino, precioTotal.value, tiempoTotal.value, props.indexCamino);
 }
@@ -78,9 +78,10 @@ onMounted(() => {
             <NButton
                 type="primary"
                 strong
+                :color="props.estaSeleccionado ? '#849eb8' : '#5b7da0'"
                 @click="selectPath"
             >
-                Seleccionar
+                {{ props.estaSeleccionado ? 'Seleccionado' : 'Seleccionar' }}
             </NButton>
         </div>
     </div>

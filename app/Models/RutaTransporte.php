@@ -18,6 +18,8 @@ class RutaTransporte extends Model
             'distancia_km',
             'duracion_min',
             'precio',
+            'destino_origen_nombre',
+            'destino_target_nombre',
     ];
 
     public function empresa(): BelongsTo

@@ -6,5 +6,5 @@ const props = defineProps({
 </script>
 
 <template>
-    <Ruta :ruta="props.itinerario.rutaTransporte" />
+    <Ruta :ruta="props.itinerario.ruta_transporte" />
 </template>
