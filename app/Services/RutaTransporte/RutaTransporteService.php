@@ -75,14 +75,20 @@ class RutaTransporteService
         $destinos = Destino::whereIn('id', $destinosIds)->get();
 
         if ($infoPuntoPartida) {
-            $rutaPuntoPartidaAPrimerDestino = [
-                'nombreOrigen' => $infoPuntoPartida['nombre'],
-                'nombreTarget' => $destinos->find($infoPuntoPartida['id'])->nombre,
-                'distancia' => $infoPuntoPartida['distancia'],
-                'duracionMin' => $infoPuntoPartida['duracionMin'],
-                'precio' => $infoPuntoPartida['precio'],
-                'tipo' => 'Autobús',
-            ];
+            $rutaPuntoPartidaAPrimerDestino = RutaTransporte::firstOrCreate(
+                [
+                    'destino_origen_nombre' => $infoPuntoPartida['nombre'],
+                    'destino_target_nombre' => $destinos->find($destinoId)->nombre,
+                ],
+                [
+                    'empresa_transporte_id' => 6,
+                    'destino_target_id' => $destinoId,
+                    'tipo' => 'Autobús',
+                    'distancia_km' => $infoPuntoPartida['distancia'],
+                    'duracion_min' => $infoPuntoPartida['duracionMin'],
+                    'precio' => $infoPuntoPartida['precio'],
+                ]
+            );
         }
 
         $caminosInfo = collect([]);
@@ -92,16 +98,17 @@ class RutaTransporteService
             for ($i = 0; $i < count($camino) - 1; $i++) {
                 $origenId = $camino[$i];
                 $targetId = $camino[$i + 1];
-                $rutaModelo = RutaTransporte::where('destino_origen_id', $origenId)
+                $ruta = RutaTransporte::where('destino_origen_id', $origenId)
                     ->where('destino_target_id', $targetId)->first();
-                $ruta = [
-                    'nombreOrigen' => $destinos->find($origenId)->nombre,
-                    'nombreTarget' => $destinos->find($targetId)->nombre,
-                    'distancia' => $rutaModelo->distancia_km,
-                    'duracionMin' => $rutaModelo->duracion_min,
-                    'precio' => $rutaModelo->precio,
-                    'tipo' => $rutaModelo->tipo,
-                ];
+                // $ruta = [
+                //     'id' => $rutaModelo->id,
+                //     'nombreOrigen' => $destinos->find($origenId)->nombre,
+                //     'nombreTarget' => $destinos->find($targetId)->nombre,
+                //     'distancia' => $rutaModelo->distancia_km,
+                //     'duracionMin' => $rutaModelo->duracion_min,
+                //     'precio' => $rutaModelo->precio,
+                //     'tipo' => $rutaModelo->tipo,
+                // ];
                 $rutas->push($ruta);
             }
 
