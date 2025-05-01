@@ -8,20 +8,21 @@ const props = defineProps({
 
 <template>
 <div class="container mx-auto pt-4 pb-10">
+    {{ planViaje }}
     <h1 class="text-2xl">
         Tu plan de viaje
     </h1>
     <h2 class="text-xl">
-        {{ planViaje.puntoPartida }} - {{ planViaje.destino }}
+        {{ planViaje.punto_partida }} - {{ planViaje.destino }}
     </h2>
 
     <div>
         <span>
-            Fecha de partida {{ planViaje.fechaComienzo }}
+            Fecha de partida {{ planViaje.fecha_comienzo }}
         </span>
 
         <span>
-            Fecha de regreso {{ planViaje.fechaRegreso }}
+            Fecha de regreso {{ planViaje.fecha_fin }}
         </span>
 
         <span>
@@ -30,7 +31,7 @@ const props = defineProps({
     </div>
 
     <div>
-        <h3 class=text-lg">
+        <h3 class="text-lg">
             Tu itinerario de viaje.
         </h3>
         <div class="flex">

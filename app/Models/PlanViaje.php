@@ -13,8 +13,12 @@ class PlanViaje extends Model
     protected $fillable = [
         'user_id',
         'hospedaje_id',
+        'punto_partida',
+        'destino',
         'fecha_comienzo',
-        'fecha_fin'
+        'fecha_fin',
+        'precio',
+        'viaje_redondo',
     ];
 
     public function usuario(): BelongsTo
