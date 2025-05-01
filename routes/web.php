@@ -45,10 +45,11 @@ Route::middleware([
     Route::get('/destinos/{destino}/comparar-recomendaciones', [RecommendationController::class, 'compareRecommendations'])
         ->name('destinos.comparar-recomendaciones');
 
-    Route::get('/planviaje/{hospedajeId}', [PlanViajeController::class, 'create'])->name('planViaje.create');
-    Route::post('/planviaje/updateParams', [PlanViajeController::class, 'updateParameters'])->name('planViaje.updateParameters');
+    Route::get('planViaje', [PlanViajeController::class, 'index'])->name('planViaje.index');
+    Route::get('/planviaje/{planViajeId}', [PlanViajeController::class, 'show'])->name('planViaje.show');
+    Route::get('/planviaje/crear/{hospedajeId}', [PlanViajeController::class, 'create'])->name('planViaje.create');
     Route::post('/planviaje', [PlanViajeController::class, 'store'])->name('planViaje.store');
-    Route::post('/planviaje/{planViajeId}', [PlanViajeController::class, 'show'])->name('planViaje.show');
+    Route::post('/planviaje/updateParams', [PlanViajeController::class, 'updateParameters'])->name('planViaje.updateParameters');
 });
 
 // Ruta API para obtener hospedajes por destino (utilizada por el mapa)
