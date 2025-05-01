@@ -16,7 +16,7 @@ class RutaTransporteSeeder extends Seeder
         $csvFile = base_path('database/seeds/data/rutas_entre_destinos.csv');  // Adjust the path as needed
         $handle = fopen($csvFile, 'r');
 
-        $batchSize = 10000; // Process 10,000 records at a time to avoid memory issues
+        $batchSize = 1000; // Process 10,000 records at a time to avoid memory issues
         $data = [];
         $rowCount = 0;
 
@@ -33,6 +33,8 @@ class RutaTransporteSeeder extends Seeder
                 'destino_origen_id' => $row[0],
                 'destino_target_id' => $row[1],
                 'empresa_transporte_id' => $row[2],
+                'destino_origen_nombre' => $row[3],
+                'destino_target_nombre' => $row[4],
                 'tipo' => $row[5],
                 'distancia_km' => $row[7],
                 'duracion_min' => $row[8],
