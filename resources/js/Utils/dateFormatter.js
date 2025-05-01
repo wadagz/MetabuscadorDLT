@@ -2,4 +2,9 @@ function formatDateToISO (date) {
     return date.toISOString().split('T')[0];
 }
 
-export { formatDateToISO };
+function formatDateTimeString (dateTimeString) {
+    const date = new Date(dateTimeString);
+    return date.toISOString().split('T')[0];
+}
+
+export { formatDateToISO, formatDateTimeString };
