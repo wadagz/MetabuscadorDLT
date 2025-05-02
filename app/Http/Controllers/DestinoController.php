@@ -10,8 +10,7 @@ class DestinoController extends Controller
 {
     public function index(): Response
     {
-        $destinosPopulares = Destino::inRandomOrder()->limit(10)->get();
-        $destinosRecomendados = Destino::inRandomOrder()->limit(10)->get();
+        $destinos = Destino::whereHas('hospedajes')->inRandomOrder(42)->limit(20)->get();
         $nombresDestinos = Destino::all()->pluck('nombre')->toArray();
 
         $planViajeCookie = request()->cookie('plan_viaje');
@@ -29,8 +28,7 @@ class DestinoController extends Controller
         }
 
         return Inertia::render('Landing', [
-            'destinosPopulares' => $destinosPopulares,
-            'destinosRecomendados' => $destinosRecomendados,
+            'destinos' => $destinos,
             'nombresDestinos' => $nombresDestinos,
             'destino' => $destino,
             'fechaPartida' => $fechaPartida,
