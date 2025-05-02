@@ -22,7 +22,7 @@ const viewPlanViaje = (planViajeId) => {
         <div
             v-for="planViaje in planesViaje"
             :key="planViaje.id"
-            class="grid grid-cols-2 gap-2"
+            class="grid grid-cols-2 gap-2 mb-4"
         >
             <div class="bg-light border border-gray-400 p-4 rounded-sm flex flex-col justify-between">
                 <div>

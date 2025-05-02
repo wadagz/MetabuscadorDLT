@@ -6,7 +6,6 @@ import { formatPrice } from '@/Utils/priceFormatter.js';
 import { NButton } from 'naive-ui';
 import Modal from '@/Components/Modal.vue';
 import { router } from '@inertiajs/vue3';
-import { formatPrice } '@/Utils/priceFormatter.js';
 
 const props = defineProps({
     planViaje: Object,
