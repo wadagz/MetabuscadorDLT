@@ -89,7 +89,7 @@ class PlanViajeController extends Controller
     public function show(int $planViajeId): Response
     {
         $planViaje = PlanViaje::where('id', $planViajeId)
-            ->with(['itinerarios.rutaTransporte'])
+            ->with(['itinerarios.rutaTransporte', 'hospedaje.direccion'])
             ->first();
 
         return Inertia::render('PlanViaje/Show', [
@@ -159,5 +159,12 @@ class PlanViajeController extends Controller
         return redirect()->route('planViaje.show', [
             'planViajeId' => $planViaje->id,
         ]);
+    }
+
+    public function destroy(int $planViajeId)
+    {
+        $planViaje = PlanViaje::where('id', $planViajeId);
+        $planViaje->delete();
+        return redirect()->route('planViaje.index');
     }
 }
