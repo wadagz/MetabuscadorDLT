@@ -20,6 +20,9 @@
                     <div class="mr-4">
                         <a href="{{ route('user-favorites.index') }}" class="text-black rounded-sm bg-light p-2 hover:bg-neutral-200">Favoritos</a>
                     </div>
+                    <div class="mr-4">
+                        <a href="{{ route('planViaje.index') }}" class="text-black rounded-sm bg-light p-2 hover:bg-neutral-200">Planes de Viaje</a>
+                    </div>
                     <!-- Menú desplegable -->
                     <div class="relative">
                         <x-dropdown align="right" width="48">

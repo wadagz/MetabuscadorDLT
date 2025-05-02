@@ -26,7 +26,13 @@ class PlanViajeController extends Controller
 
     public function index(): Response
     {
-        return Inertia::render('PlanViaje/Index');
+        $user = Auth::user();
+        $planesViaje = PlanViaje::where('user_id', $user->id)
+            ->with(['hospedaje'])
+            ->get();
+        return Inertia::render('PlanViaje/Index', [
+            'planesViaje' => $planesViaje,
+        ]);
     }
 
     public function create(int $hospedajeId): Response | RedirectResponse
