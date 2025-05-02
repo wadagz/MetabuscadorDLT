@@ -14,12 +14,6 @@ const props = defineProps({
     <div v-if="favoritos" v-for="(hospedajes, key) in favoritos" :key="key" class="my-4">
         <h2 class="text-2xl">{{ destinos[key] }}</h2>
         <div class="my-4">
-            <a
-                :href="route('user-favorites-in-destination', { 'destino_id': key })"
-                class="bg-info rounded-sm text-black p-2 transition duration-300 hover:bg-blue-300"
-            >
-                Ver lista de hospedajes
-            </a>
         </div>
 
         <CarouselHospedajes
