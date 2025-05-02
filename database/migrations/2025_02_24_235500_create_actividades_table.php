@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('nombre', length: 100);
             $table->text('descripcion');
             $table->float('precio', precision: 2);
-            $table->enum('tipo_actividad', TipoActividadEnum::toArray());
+            $table->enum('categoria', TipoActividadEnum::toArray());
+            $table->enum('tipo', ['recurrente', 'eventual']);
             $table->timestamps();
         });
     }
