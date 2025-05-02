@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Actividad;
 use App\Models\Destino;
 use App\Models\Hospedaje;
 use App\Models\Itinerario;
@@ -98,8 +99,20 @@ class PlanViajeController extends Controller
             ->with(['itinerarios.rutaTransporte', 'hospedaje.direccion'])
             ->first();
 
+        $actividadesEventuales = Actividad::where('destino_id', $planViaje->hospedaje->destino_id)
+            ->where('tipo', 'eventual')
+            ->with(['horariosEventuales'])
+            ->get();
+
+        $actividadesRecurrentes = Actividad::where('destino_id', $planViaje->hospedaje->destino_id)
+            ->where('tipo', 'recurrente')
+            ->with(['horariosRecurrentes'])
+            ->get();
+
         return Inertia::render('PlanViaje/Show', [
             'planViaje' => $planViaje,
+            'actividadesEventuales' => $actividadesEventuales,
+            'actividadesRecurrentes' => $actividadesRecurrentes,
         ]);
     }
 

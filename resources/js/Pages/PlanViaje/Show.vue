@@ -6,9 +6,12 @@ import { formatPrice } from '@/Utils/priceFormatter.js';
 import { NButton } from 'naive-ui';
 import Modal from '@/Components/Modal.vue';
 import { router } from '@inertiajs/vue3';
+import { formatPrice } '@/Utils/priceFormatter.js';
 
 const props = defineProps({
     planViaje: Object,
+    actividadesEventuales: Array,
+    actividadesRecurrentes: Array,
 });
 
 const showDeleteModal = ref(false);
@@ -74,6 +77,49 @@ const deletePlanDeViaje = () => {
                 :key="itinerario.id"
                 :itinerario="itinerario"
             />
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-xl">
+            Actividades en el destino turístico
+        </h2>
+
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Listado de actividades en el destino -->
+            <div class="bg-gray-200 rounded-sm border border-gray-400 p-4">
+                <div
+                    v-for="actividad in actividadesRecurrentes"
+                    :key="actividad.id"
+                    class="bg-light rounded-sm border border-gray-400 p-4"
+                >
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg">
+                            <b>
+                                {{ actividad.nombre }}
+                            </b>
+                        </span>
+                        <span class="text-lg">
+                            {{ actividad.tipo_actividad }}
+                        </span>
+                    </div>
+
+                    <hr>
+
+                    <div class="overflow-auto max-h-36">
+                        {{ actividad.descripcion }}
+                    </div>
+
+                    <div>
+                        {{ formatPrice(actividad.precio) }}
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Mapa con actividades -->
+            <div>
+            </div>
         </div>
     </div>
 
