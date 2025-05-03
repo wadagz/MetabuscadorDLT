@@ -97,15 +97,6 @@ class RecommendationService
      */
     public function getRecommendationsForSearchingHospedaje(User $user, int $destinoId, int $limit = 50): Collection
     {
-        $allHospedajes = Hospedaje::where('destino_id', $destinoId)
-            ->with([
-                'direccion',
-                'amenidades',
-                'usuariosQueDieronFavorito' => function ($query) use ($user) {
-                    $query->where('id', $user->id);
-                }
-            ])->get();
-
         $userPreferenceIds = DB::table('preferencias_usuarios')
             ->where('user_id', $user->id)
             ->join('preferencias', 'preferencias.id', '=', 'preferencias_usuarios.preferencia_id')
@@ -115,8 +106,23 @@ class RecommendationService
 
         if (empty($userPreferenceIds)) {
             // If user has no preferences, return random hospedajes
-            return $allHospedajes->random(min($limit, $allHospedajes->count()));
+            $allHospedajes = Hospedaje::where('destino_id', $destinoId)
+                ->with([
+                    'amenidades',
+                    'direccion',
+                    'usuariosQueDieronFavorito' => function ($query) use ($user) {
+                        $query->where('id', $user->id);
+                    },
+                ])
+                ->inRandomOrder()
+                ->limit($limit)
+                ->get();
+            return $allHospedajes;
         }
+
+        $allHospedajes = Hospedaje::where('destino_id', $destinoId)
+            ->with(['amenidades'])
+            ->get();
 
         // Create user preference vector
         $userVector = $this->createUserVector($userPreferenceIds);
@@ -138,6 +144,17 @@ class RecommendationService
 
         // Obtiene los primeros $limit hospedajes de la colección ordenada
         $recommendedHospedajes = $allHospedajes->take($limit)->values();
+
+        // Obtiene los hospedajes recomendados con su información adicional
+        $recommendedHospedajesIds = $recommendedHospedajes->pluck('id')->all();
+        $recommendedHospedajes = Hospedaje::whereIn('id', $recommendedHospedajesIds)
+            ->with([
+                'direccion',
+                'amenidades',
+                'usuariosQueDieronFavorito' => function ($query) use ($user) {
+                    $query->where('id', $user->id);
+                }
+            ])->get();
 
         return $recommendedHospedajes;
     }
@@ -164,7 +181,7 @@ class RecommendationService
         // Get similar hospedajes
         $similarHospedajesQuery = Hospedaje::where('destino_id', $hospedaje->destino_id)
             ->where('id', '!=', $hospedaje->id)
-            ->with(['amenidades', 'direccion']);
+            ->with(['amenidades']);
 
         if (empty($userPreferenceIds)) {
             // If no preferences, get random similar hospedajes
