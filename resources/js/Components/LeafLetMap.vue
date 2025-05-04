@@ -33,7 +33,6 @@ async function initMap() {
     const marker = L.marker([lat, lng], {
         title: props.hospedaje.nombre
     }).addTo(map.value);
-    console.log(marker.value)
   } catch (error) {
     console.error('Error initializing map:', error);
   }

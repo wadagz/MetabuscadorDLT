@@ -23,12 +23,10 @@ const resenaFromUser = ref(null);
 const resenas = ref(null);
 
 const addReview = () => {
-    console.log('agregar reseña');
     showModal.value = true
 };
 
 const updateReview = () => {
-    console.log('actualizar resena');
     showModal.value = true
 }
 
@@ -44,7 +42,6 @@ onBeforeMount(() => {
 })
 
 watch(() => props.hospedaje, (newVal) => {
-    console.log('cambio en hospedaje')
     if (props.userId) {
         resenaFromUser.value = newVal.resenas_de_usuarios.find(
             obj => obj.id === props.userId
