@@ -17,7 +17,7 @@ class ActividadSeeder extends Seeder
         $csvFile = base_path('database/seeds/data/actividades.csv');  // Adjust the path as needed
         $handle = fopen($csvFile, 'r');
 
-        $batchSize = 10000; // Process 10,000 records at a time to avoid memory issues
+        $batchSize = 100; // Process 10,000 records at a time to avoid memory issues
         $data = [];
         $rowCount = 0;
 
@@ -35,7 +35,8 @@ class ActividadSeeder extends Seeder
                 'nombre' => $row[2],
                 'descripcion' => $row[3],
                 'precio' => $row[4],
-                'tipo_actividad' => $row[5],
+                'categoria' => $row[5],
+                'tipo' => $row[7],
             ];
 
             // Insert in batches
