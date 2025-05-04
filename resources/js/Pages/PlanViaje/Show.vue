@@ -3,17 +3,23 @@ import { ref } from 'vue';
 import Itinerario from './Partials/Itinerario.vue';
 import LeafLetMap from '@/Components/LeafLetMap.vue';
 import { formatPrice } from '@/Utils/priceFormatter.js';
-import { NButton } from 'naive-ui';
+import { NButton, NTooltip } from 'naive-ui';
 import Modal from '@/Components/Modal.vue';
 import { router } from '@inertiajs/vue3';
+import MapaActividades from './Partials/MapaActividades.vue';
+import { Icon } from '@iconify/vue/dist/iconify.js';
+import ActividadCard from './Partials/ActividadCard.vue';
 
 const props = defineProps({
     planViaje: Object,
     actividadesEventuales: Array,
     actividadesRecurrentes: Array,
+    actividades: Array,
 });
 
 const showDeleteModal = ref(false);
+const selectedActividadRecurrenteId = ref(null);
+const selectedActividadEventualId = ref(null);
 
 const openDeleteModal = () => {
     showDeleteModal.value = true;
@@ -79,45 +85,73 @@ const deletePlanDeViaje = () => {
         </div>
     </div>
 
-    <div>
-        <h2 class="text-xl">
-            Actividades en el destino turístico
+    <div class="mt-4">
+        <h1 class="text-2xl">Actividades que te podrían interesar en {{ planViaje.destino }}</h1>
+        <h2 class="text-xl mt-4 mb-2 flex items-center gap-2">
+            Actividades recurrentes en el destino turístico
+
+            <NTooltip trigger="hover">
+                <template #trigger>
+                    <Icon icon="octicon:question-24" />
+                </template>
+                    Actividades que se llevan a cabo casi todos lo días.
+            </NTooltip>
         </h2>
 
+        <!-- Actividades recurrentes -->
         <div class="grid grid-cols-2 gap-4">
             <!-- Listado de actividades en el destino -->
-            <div class="bg-gray-200 rounded-sm border border-gray-400 p-4">
+            <div class="bg-gray-200 rounded-sm overflow-auto max-h-[500px] border border-gray-400 p-2">
                 <div
                     v-for="actividad in actividadesRecurrentes"
                     :key="actividad.id"
-                    class="bg-light rounded-sm border border-gray-400 p-4"
+                    class="bg-light rounded-sm border border-gray-400 p-2 mb-2 cursor-pointer"
+                    @click="selectedActividadRecurrenteId = actividad.id"
                 >
-                    <div class="flex justify-between items-center">
-                        <span class="text-lg">
-                            <b>
-                                {{ actividad.nombre }}
-                            </b>
-                        </span>
-                        <span class="text-lg">
-                            {{ actividad.tipo_actividad }}
-                        </span>
-                    </div>
-
-                    <hr>
-
-                    <div class="overflow-auto max-h-36">
-                        {{ actividad.descripcion }}
-                    </div>
-
-                    <div>
-                        {{ formatPrice(actividad.precio) }}
-                    </div>
-
+                    <ActividadCard :actividad="actividad" />
                 </div>
             </div>
 
-            <!-- Mapa con actividades -->
-            <div>
+            <!-- Mapa actividades recurrentes -->
+            <div class="max-h-[500px]">
+                <MapaActividades
+                    :actividades="props.actividadesRecurrentes"
+                    :selectedActividadId="selectedActividadRecurrenteId"
+                />
+            </div>
+        </div>
+
+        <h2 class="text-xl mt-4 mb-2 flex items-center gap-2">
+            Actividades eventuales en el destino
+
+            <NTooltip trigger="hover">
+                <template #trigger>
+                    <Icon icon="octicon:question-24" />
+                </template>
+                    Actividades que solo estarán disponibles por tiempo limitado.
+            </NTooltip>
+        </h2>
+
+        <!-- Actividades recurrentes -->
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Listado de actividades en el destino -->
+            <div class="bg-gray-200 rounded-sm overflow-auto max-h-[500px] border border-gray-400 p-2">
+                <div
+                    v-for="actividad in actividadesEventuales"
+                    :key="actividad.id"
+                    class="bg-light rounded-sm border border-gray-400 p-2 mb-2 cursor-pointer"
+                    @click="selectedActividadEventualId = actividad.id"
+                >
+                    <ActividadCard :actividad="actividad" />
+                </div>
+            </div>
+
+            <!-- Mapa actividades recurrentes -->
+            <div class="max-h-[500px]">
+                <MapaActividades
+                    :actividades="props.actividadesEventuales"
+                    :selectedActividadId="selectedActividadEventualId"
+                />
             </div>
         </div>
     </div>
