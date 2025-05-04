@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\DestinoController;
+use App\Http\Controllers\{DestinoController, ActividadController};
 use App\Http\Controllers\{FavoritosHospedajeUsuarioController, HospedajeController, LandingPageController, PlanViajeController, RecommendationController, ResenaHospedajeController, UserController, VistosRecienteController};
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +51,8 @@ Route::middleware([
     Route::post('/planviaje', [PlanViajeController::class, 'store'])->name('planViaje.store');
     Route::post('/planviaje/updateParams', [PlanViajeController::class, 'updateParameters'])->name('planViaje.updateParameters');
     Route::delete('planViaje/{planViajeId}', [PlanViajeController::class, 'destroy'])->name('planViaje.destroy');
+
+    Route::get('/actividad/{actividadId}', [ActividadController::class, 'show'])->name('actividad.show');
 });
 
 // Ruta API para obtener hospedajes por destino (utilizada por el mapa)
