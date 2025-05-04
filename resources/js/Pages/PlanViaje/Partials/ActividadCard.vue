@@ -1,9 +1,15 @@
 <script setup>
 import { NButton } from 'naive-ui';
 import { formatPrice } from '@/Utils/priceFormatter';
+import { router } from '@inertiajs/vue3';
+
 const props = defineProps({
     actividad: Object,
 });
+
+const viewActividad = () => {
+    router.get(route('actividad.show', { 'actividadId': props.actividad.id }));
+}
 </script>
 
 <template>
@@ -30,6 +36,7 @@ const props = defineProps({
     </div>
     <div>
         <NButton
+            @click="viewActividad"
         >
             Ver más información
         </NButton>
