@@ -101,12 +101,12 @@ class PlanViajeController extends Controller
 
         $actividadesEventuales = Actividad::where('destino_id', $planViaje->hospedaje->destino_id)
             ->where('tipo', 'eventual')
-            ->with(['horariosEventuales'])
+            ->with(['direccion'])
             ->get();
 
         $actividadesRecurrentes = Actividad::where('destino_id', $planViaje->hospedaje->destino_id)
             ->where('tipo', 'recurrente')
-            ->with(['horariosRecurrentes'])
+            ->with(['direccion'])
             ->get();
 
         return Inertia::render('PlanViaje/Show', [
