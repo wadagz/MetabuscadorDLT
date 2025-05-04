@@ -75,6 +75,21 @@ const submit = () => {
     <form @submit.prevent="submit">
         <div class="flex flex-row justify-evenly gap-2">
 
+            <!-- Punto de Partida -->
+            <div class="grid grid-rows-2 items-end">
+                <label class="">Punto de partida</label>
+                    <NInput
+                        v-model:value="form.puntoPartida"
+                        type="text"
+                        placeholder="E.j. Guadalajara"
+                        clearable
+                    >
+                        <template #prefix>
+                            <Icon icon="mdi:location" />
+                        </template>
+                    </NInput>
+            </div>
+
             <!-- Destino o lugar turístico -->
             <div class="flex-grow grid grid-rows-2 items-end">
                 <label for="destino" class="">Destino o lugar turístico</label>
@@ -109,17 +124,6 @@ const submit = () => {
                     id="fechas"
                     name="fechas"
                 />
-            </div>
-
-            <!-- Punto de Partida -->
-            <div class="grid grid-rows-2 items-end">
-                <label class="">Punto de partida</label>
-                    <NInput
-                    v-model:value="form.puntoPartida"
-                    type="text"
-                    placeholder="E.j. Guadalajara"
-                    clearable
-                    />
             </div>
 
             <!-- Botones -->
