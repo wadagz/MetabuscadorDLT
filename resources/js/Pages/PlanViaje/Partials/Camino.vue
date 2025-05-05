@@ -59,7 +59,7 @@ onMounted(() => {
 
 <template>
 <div class="flex justify-between items-center gap-4" :class="{ 'bg-primary-300': estaSeleccionado, 'bg-opacity-10': estaSeleccionado }">
-    <div class="flex">
+    <div class="flex flex-wrap gap-2">
         <Ruta
             v-for="ruta in camino"
             :ruta="ruta"
