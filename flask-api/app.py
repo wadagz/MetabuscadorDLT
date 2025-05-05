@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request, make_response
 from GrafoDestinos import GrafoDestinos
 
 app = Flask(__name__)
+application = app
 
 # Sin docker
 grafo = GrafoDestinos('../database/seeds/data/destinos.csv', 20, 0.8, 0.8)
