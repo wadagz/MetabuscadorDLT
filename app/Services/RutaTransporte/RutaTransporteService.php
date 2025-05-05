@@ -95,21 +95,28 @@ class RutaTransporteService
 
         foreach ($caminosIds as $camino) {
             $rutas = collect([]);
+            $primeraRutaEsAvion = false;
+            $saltarCamino = false;
+
             for ($i = 0; $i < count($camino) - 1; $i++) {
                 $origenId = $camino[$i];
                 $targetId = $camino[$i + 1];
                 $ruta = RutaTransporte::where('destino_origen_id', $origenId)
                     ->where('destino_target_id', $targetId)->first();
-                // $ruta = [
-                //     'id' => $rutaModelo->id,
-                //     'nombreOrigen' => $destinos->find($origenId)->nombre,
-                //     'nombreTarget' => $destinos->find($targetId)->nombre,
-                //     'distancia' => $rutaModelo->distancia_km,
-                //     'duracionMin' => $rutaModelo->duracion_min,
-                //     'precio' => $rutaModelo->precio,
-                //     'tipo' => $rutaModelo->tipo,
-                // ];
+
+                if ($i === 0 and $ruta->tipo === 'Avión') {
+                    $primeraRutaEsAvion = true;
+                }
+                else if ($ruta->tipo === 'Avión' and $primeraRutaEsAvion) {
+                    $saltarCamino = true;
+                    break;
+                }
+
                 $rutas->push($ruta);
+            }
+
+            if ($saltarCamino) {
+                continue;
             }
 
             if ($infoPuntoPartida) {
