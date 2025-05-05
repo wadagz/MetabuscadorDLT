@@ -20,7 +20,7 @@ return new class extends Migration
             $table->decimal('precio_promedio', 8, 2);
             $table->decimal('latitud', 10, 8);
             $table->decimal('longitud', 11, 8);
-            $table->string('img_path')->nullable();
+            $table->text('img_path')->nullable();
 
             $table->timestamps();
         });
