@@ -58,7 +58,7 @@ class PlanViajeController extends Controller
         $puntoPartida = $planViajeParams->puntoPartida;
         $viajeRedondo = $planViajeParams->viajeRedondo;
 
-        $caminos = $this->rutaTransporteService->obtenerRutasTransporte($puntoPartida, $destinoId);
+        $caminos = $this->rutaTransporteService->obtenerRutasTransporte($puntoPartida, $destinoId, 10);
 
         $hospedaje = Hospedaje::where('id', $hospedajeId)->with(['direccion'])->first();
 

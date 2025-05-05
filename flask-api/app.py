@@ -5,7 +5,7 @@ app = Flask(__name__)
 application = app
 
 # Sin docker
-grafo = GrafoDestinos('../database/seeds/data/destinos.csv')
+grafo = GrafoDestinos('../database/seeds/data/destinos.csv', 20, 0.8, 0.8)
 # Con docker
 # grafo = GrafoDestinos('destinos.csv')
 # print(len(grafo.matriz_adyacencia))
