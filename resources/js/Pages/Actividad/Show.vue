@@ -48,13 +48,13 @@ const props = defineProps({
                     {{ formatPrice(actividad.precio) }}
                 </div>
 
-                <div class="mt-4">
+                <!-- <div class="mt-4">
                     <NButton
                         type="secondary"
                     >
                         Agendar actividad
                     </NButton>
-                </div>
+                </div> -->
             </div>
 
             <div class="bg-light rounded-sm border border-gray-400 p-2 mt-4">
