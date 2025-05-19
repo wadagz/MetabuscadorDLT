@@ -1,0 +1,41 @@
+,nombre,descripcion,id
+0,Wifi gratuito,Conexion a internet de alta velocidad disponible sin costo adicional en las habitaciones y/o areas comunes del hospedaje.,1
+1,Aire acondicionado,"Sistema que permite controlar la temperatura del ambiente dentro de las habitaciones, garantizando un espacio comodo durante el verano o climas calidos.",2
+2,Calefacción,"Sistema que proporciona calor en las habitaciones o areas comunes, ideal para climas frios.",3
+3,Piscina,"Area de agua para nadar, disponible en el hospedaje. Puede ser cubierta (interior) o al aire libre (exterior), ideal para relajarse o ejercitarse.",4
+4,Gimnasio,Espacio equipado con maquinas y equipo de ejercicio para mantener la actividad fisica durante la estancia.,5
+5,Estacionamiento,"Espacios disponibles para aparcar vehiculos dentro o cerca del hospedaje. Puede ser gratuito o tener un costo adicional, dependiendo de la politica del lugar.",6
+6,Desayuno incluido,"Servicio que ofrece una comida matutina dentro del hospedaje sin costo adicional para los huespedes, que suele incluir opciones como cafe, pan, frutas, entre otros.",7
+7,Restaurante / Bar,"Un lugar dentro del hospedaje donde los huespedes pueden disfrutar de comidas, bebidas o cocteles sin tener que salir.",8
+8,Servicio de habitaciones,"Posibilidad de solicitar comida, bebidas o productos a la habitacion sin tener que ir al restaurante o areas comunes.",9
+9,Televisión por cable / satélite,"Television en la habitacion con acceso a canales adicionales mediante cable o satelite, para ofrecer mas opciones de entretenimiento.",10
+10,Cafetera en la habitación,"Aparato que permite preparar cafe, te u otras bebidas calientes directamente en la habitacion para mayor comodidad de los huespedes.",11
+11,Caja fuerte,"Un pequeño espacio seguro dentro de la habitacion donde los huespedes pueden guardar objetos de valor como dinero, joyas o documentos importantes.",12
+12,Secador de cabello,Dispositivo disponible en las habitaciones o bajo solicitud para secar el cabello rapidamente despues de la ducha.,13
+13,Amenidades de baño,"Productos de higiene personal (como jabon, champu, acondicionador, crema corporal) disponibles en el bano para uso de los huespedes.",14
+14,Limpieza diaria de habitación,"Servicio que asegura que la habitacion se mantenga limpia durante la estancia del huesped, con cambio de sabanas, toallas y reposicion de articulos.",15
+15,Toallas y sábanas de alta calidad,"Ropa de cama y bano de materiales suaves y confortables, que ofrecen una experiencia de descanso mas placentera.",16
+16,Servicio de lavandería,"Opcion para que los huespedes puedan lavar su ropa durante su estancia, generalmente con un costo adicional.",17
+17,Centro de negocios / Espacios de trabajo,"Zona equipada con computadoras, impresoras y otras herramientas para los huespedes que necesiten trabajar mientras estan fuera de la oficina.",18
+18,Spa o servicio de masajes,"Area o servicio que ofrece tratamientos de relajacion, como masajes, saunas o banos de vapor, para descansar y rejuvenecer.",19
+19,Salón de eventos o salas de reuniones,"Espacios reservados para reuniones de trabajo, conferencias o eventos sociales, con equipos como proyectores, microfonos y pantallas.",20
+20,Traslado al aeropuerto (Shuttle),"Servicio de transporte proporcionado por el hospedaje para llevar a los huespedes desde y hacia el aeropuerto, a menudo por una tarifa adicional.",21
+21,Jacuzzi,"Banera de hidromasaje donde los huespedes pueden relajarse con agua caliente y burbujas, disponible en areas comunes o dentro de algunas habitaciones.",22
+22,Bicicletas disponibles,Servicio que ofrece bicicletas para que los huespedes puedan recorrer los alrededores del hospedaje de forma ecologica y recreativa.,23
+23,Barbacoa o zona de parrillas,"Area al aire libre donde los huespedes pueden cocinar alimentos a la parrilla, ideal para reuniones sociales o eventos informales.",24
+24,Acceso para personas con movilidad reducida,"Instalaciones adaptadas con rampas, ascensores y habitaciones especiales para garantizar la comodidad y seguridad de los huespedes con discapacidades.",25
+25,Admisión de mascotas,"Politica que permite que los huespedes traigan a sus animales de compania durante su estancia, a menudo con un costo adicional o requisitos especificos.",26
+26,Chimenea en la habitación,"Elemento decorativo o funcional en algunas habitaciones que permite a los huespedes disfrutar de un ambiente calido y acogedor, especialmente en climas frios.",27
+27,Terraza o balcón privado,"Espacio exterior privado en la habitacion, que ofrece vistas al entorno y un area para relajarse al aire libre.",28
+28,Sistema de sonido,Dispositivo que permite a los huespedes reproducir su musica desde sus telefonos u otros dispositivos electronicos a traves de conexion inalambrica.,29
+29,Minibar,"Pequena nevera dentro de la habitacion con una seleccion de bebidas y snacks, generalmente disponible por un costo adicional.",30
+30,Alquiler de coches o transporte,"Servicio que permite a los huespedes alquilar vehiculos, motos u otros medios de transporte durante su estancia.",31
+31,Acceso a actividades recreativas,"Ofrecimiento de actividades al aire libre o deportes para los huespedes, como caminatas, kayak, surf, entre otros.",32
+32,Tienda o boutique,"Espacio de compras donde los huespedes pueden adquirir productos como recuerdos, ropa, cosmeticos o alimentos sin salir del hospedaje.",33
+33,Cuna o cama extra disponible bajo solicitud,Opcion para que los huespedes pidan una cuna o cama adicional para ninos o personas adicionales en la habitacion.,34
+34,Estación de carga para dispositivos electrónicos,"Area o puertos especificos para cargar telefonos moviles, laptops y otros dispositivos electronicos dentro de las habitaciones o areas comunes.",35
+35,Servicios de conserjería,"Asistencia personalizada para reservas de restaurantes, actividades turísticas, transporte, entre otros, para facilitar la estancia de los huespedes.",36
+36,Cine o zona de entretenimiento,Espacio dentro del hospedaje donde se proyectan peliculas o se realizan actividades recreativas como juegos o espectaculos en vivo.,37
+37,Acceso a deportes,"Instalaciones dentro del hospedaje que permiten a los huespedes practicar deportes como tenis, golf, baloncesto, entre otros.",38
+38,Wifi en áreas comunes,"Conexion a internet gratuita en las areas comunes del hospedaje, como el lobby, restaurante o terraza, para que los huespedes puedan acceder facilmente a internet.",39
+39,Cafetería,"Espacio donde los huespedes pueden comprar bebidas, bocadillos o comidas ligeras en cualquier momento del dia o la noche.",40

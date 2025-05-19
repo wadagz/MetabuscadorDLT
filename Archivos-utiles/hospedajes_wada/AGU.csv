@@ -1,0 +1,435 @@
+review,Folio Solicitud,Tipo PST,Nombre Comercial,Calle,Colonia,Estado,Municipio
+,4010013872,Agencia de viajes,MOOD TRAVELER,Benjamin de la Mora,Guadalupe,Aguascalientes,Aguascalientes
+,2010010161,Alimentos y bebidas,Burger King Aguascalientes ,Avenida Aguascalientes,Jardines de La Asunción,Aguascalientes,Aguascalientes
+,4010013983,Agencia de viajes,TURITIME,De la Infantería,Mujeres Ilustres,Aguascalientes,Aguascalientes
+,2010010151,Alimentos y bebidas,Domino´s Pizza Aguascalientes Inegi ,Boulevard Aguascalientes Sur,Jardines de La Asunción,Aguascalientes,Aguascalientes
+,4010014004,Agencia de viajes,Travel the world,Av. Convención de,Jesús Terán,Aguascalientes,Aguascalientes
+,2010010135,Alimentos y bebidas,Starbucks Coffee Aguascalientes Asunción ,José María Chávez ,Agricultura,Aguascalientes,Aguascalientes
+,2010010209,Alimentos y bebidas,Cenaduría Farolito,Moctezuma,Centro,Aguascalientes,Aguascalientes
+,2010010147,Alimentos y bebidas,Burger King Colosio,Av. Independencia .,Jardines de la Concepción,Aguascalientes,Aguascalientes
+,4010013895,Agencia de viajes,NAGESA TOURS,5 de Febrero no,La Estación,Aguascalientes,Aguascalientes
+,4010013969,Agencia de viajes,AGENCIA DE VIAJES BRILLO DEL MAR,Av. San Francisco de los Viveros,Balcones de Oriente,Aguascalientes,Aguascalientes
+,4010013970,Agencia de viajes,HODO ¡Tu Próximo Viaje!,Río Tíber .,Fracc. Colinas del Río ,Aguascalientes,Aguascalientes
+,4010013975,Agencia de viajes,ZERTRAVEL,Prolongación Zaragoza,Valle de las Trojes,Aguascalientes,Aguascalientes
+,4010013827,Agencia de viajes,BRÚJULA NEGRA AGENCIA DE VIAJES,Ignacio T  Chavez,Las Flores,Aguascalientes,Aguascalientes
+,4010013896,Agencia de viajes,MAY VACATIONS AGUASCALIENTES,Acanto no,Lomas del Chapulín,Aguascalientes,Aguascalientes
+,4010013900,Agencia de viajes,LEBISU GANI VIAJES,Hacienda de Cortes no,Real de Haciendas,Aguascalientes,Aguascalientes
+,33010110001,Parque temático,RANCHO ENTRE OLIVOS,Carretera 45 Zac-Ags . 20.5,La Providencia,Aguascalientes,San Francisco de los Romo
+,11010010010,Arrendadora de autos,Thrifty,Carretera Panamericana . 22,El Cedazo (Cedazo de San Antonio),Aguascalientes,Aguascalientes
+,2010060005,Alimentos y bebidas,E´LAN RESTAURANT,Carr. Valladolid-Emilia Zapata,Ejido El Garabato,Aguascalientes,Pabellón de Arteaga
+,4010110664,Agencia de viajes,SOFT TRAVEL,Juárez,Centro,Aguascalientes,San Francisco de los Romo
+,2010010204,Alimentos y bebidas,PIZZA LUCCA,Galeana,Centro,Aguascalientes,Aguascalientes
+,1010010186,Hospedaje,GRAN ARJE,Naranjo,Circunvalación Poniente,Aguascalientes,Aguascalientes
+,4010014006,Agencia de viajes,Wanderlust Tours Ags,Av. La Querencia,La Querencia,Aguascalientes,Aguascalientes
+,4010013878,Agencia de viajes,Agencia de Viajes 'Huakai',Avenida Heroe Inmortal no,Morelos I,Aguascalientes,Aguascalientes
+,4010053819,Agencia de viajes,Vive la Vida Travel,Avenida gales,Bosques del Paraiso,Aguascalientes,Jesús María
+,4010013656,Agencia de viajes,IMAGINE TOURS,Jardin de Guadalupe,Lindavista,Aguascalientes,Aguascalientes
+,2010010219,Alimentos y bebidas,Starbucks Coffee,Convención Pte.,Olivares Santana,Aguascalientes,Aguascalientes
+,33010060004,Parque temático,VINÍCOLA EL AGUAJE,Carretera Garabato a Emilia Zapata,Ejido Garabato,Aguascalientes,Pabellón de Arteaga
+,4010053821,Agencia de viajes,PASSAPORTO,Calzada Navarra,Residencial Alcázar,Aguascalientes,Jesús María
+,11010010002,Arrendadora de autos,THRIFTY CAR RENTAL,"Carretera Panamericana, 22",El Cedazo (Cedazo de San Antonio),Aguascalientes,Aguascalientes
+,1010010134,Hospedaje,City Express by Marriott Aguascalientes Sur,José María Chávez ,San Pedro,Aguascalientes,Aguascalientes
+,2010010210,Alimentos y bebidas,Crokas,Moctezuma,Centro,Aguascalientes,Aguascalientes
+,2010010141,Alimentos y bebidas,Domino´s Pizza Aguascalientes Bosques,Av. Aguascalientes rte .,Bosques del Prado Norte,Aguascalientes,Aguascalientes
+,33010040001,Parque temático,Vinícola El Secreto,"Cami Rancho San José, Carr Cosío Ags",Ejido La Punta,Aguascalientes,Cosío
+,1010040001,Hospedaje,Vinícola El Secreto,"Cami Rancho San José, Carr Cosío Ags",Ejido La Punta,Aguascalientes,Cosío
+,2010040001,Alimentos y bebidas,Vinícola El Secreto,"Cami Rancho San José, Carr Cosío Ags",Ejido La Punta,Aguascalientes,Cosío
+,33010040002,Parque temático,Vinícola El Secreto,"Cami Rancho San José, Carr Cosío Ags",Ejido La Punta,Aguascalientes,Cosío
+,1010040002,Hospedaje,Vinícola El Secreto,"Cami Rancho San José, Carr Cosío Ags",Ejido La Punta,Aguascalientes,Cosío
+,4010013864,Agencia de viajes,SHEKINAH TOURS,Loma Azul,Lomas del Mirador,Aguascalientes,Aguascalientes
+,2010060003,Alimentos y bebidas,EXPERIENCIAS UBUNTU,Carretera 10 Garabato-Santiago . 2,Ejido Santiago,Aguascalientes,Pabellón de Arteaga
+,4010013976,Agencia de viajes,TRAVELAND AGS,Cordillera de los Alpes,Jardines de la Concepción,Aguascalientes,Aguascalientes
+,4010013977,Agencia de viajes,TRAVELAND AGS,Cordillera de los Alpes,Jardines de la Concepción,Aguascalientes,Aguascalientes
+,4010013660,Agencia de viajes,VIAJES 3B,José Ma. Velasco no,Santa Anita,Aguascalientes,Aguascalientes
+,2010010220,Alimentos y bebidas,SONORA´S MEAT AGUASCALIENTES,Av. Aguascalientes Sur,Jardines de las Fuentes,Aguascalientes,Aguascalientes
+,4010013999,Agencia de viajes,DREAMERS TOURS,Av. Heroe Inmortal,Jardines de Casa Nueva,Aguascalientes,Aguascalientes
+,4010014000,Agencia de viajes,GODIN ERRANTE,González Saracho,Centro,Aguascalientes,Aguascalientes
+,4010014001,Agencia de viajes,GABY´S TOURS,Felipe Ángeles,Jesús Terán,Aguascalientes,Aguascalientes
+,2010010222,Alimentos y bebidas,NEKUATIK Dulces Mexicanos,Venustia Carranza,Centro,Aguascalientes,Aguascalientes
+,4010014010,Agencia de viajes,VIAJES JOLLY ROGER,Juan G. Alvarado,Villas de Ntra. Sra. de la Asunción,Aguascalientes,Aguascalientes
+,4010013978,Agencia de viajes,ZAMAR TRAVEL,Av. Ojocaliente,Ojocaliente II,Aguascalientes,Aguascalientes
+,4010053820,Agencia de viajes,DREAMS TRAVEL,Circuito Campida,Condominio Belmondo,Aguascalientes,Jesús María
+,4010014005,Agencia de viajes,Diversity Travel,Ezequiel A. Chávez,Barrio de la Purisima,Aguascalientes,Aguascalientes
+,4010014007,Agencia de viajes,VIAJES TURISTICOS MAC,Francisco Melchor,La Salud,Aguascalientes,Aguascalientes
+,4010090002,Agencia de viajes,VIAJES MARMOLEJO,Victoria,Centro,Aguascalientes,Tepezalá
+,33010010001,Parque temático,CLUB HIPICO ECUESTRE REAL CAÑADA HONDA,Circuito Londres,Real Cañada Honda,Aguascalientes,Aguascalientes
+,2010010162,Alimentos y bebidas,Burger King Colosio ,Av. Independencia .,Jardines de la Concepción,Aguascalientes,Aguascalientes
+,4010014015,Agencia de viajes,Pasos Viajeros By Fraveo ,República De Panamá,Las Americas ,Aguascalientes,Aguascalientes
+,2010030011,Alimentos y bebidas,RESTAURANT LAS TRANCAS,Blvd Rodolfo Landeros Gallegos,La Panadera,Aguascalientes,Calvillo
+,2010010195,Alimentos y bebidas,Starbucks Coffee,Av. Independencia,Nueva Rinconada,Aguascalientes,Aguascalientes
+,4010013985,Agencia de viajes,POSTAL VIAJES,Eduardo J. Correa,Barrio de San Marcos,Aguascalientes,Aguascalientes
+,4010013993,Agencia de viajes,Travel Tin,Virgen de Lourdes .,La Estrella,Aguascalientes,Aguascalientes
+,4010010639,Agencia de viajes,EL SABUESO ERRANTE,Avenida Convencion de,Jesús Terán Peredo,Aguascalientes,Aguascalientes
+,4010013971,Agencia de viajes,SYA VIAJES,Carlos Sagredo,San Cayetano,Aguascalientes,Aguascalientes
+,2010010144,Alimentos y bebidas,Domino´s Pizza Aguascalientes La Fuente,Av. Convención de,Residencial del Valle I,Aguascalientes,Aguascalientes
+,4010013986,Agencia de viajes,Viajes Ohana,Calle José Reyes Martinez,Gremial,Aguascalientes,Aguascalientes
+,33010050001,Parque temático,VIÑEDOS CASA LEAL,Antiguo Cami a Zacatecas,Viñedos Casa Leal,Aguascalientes,Jesús María
+,27010010005,Agencia integradora de servicios,GLOBAL PLANNER,Prol. Ignacio Zaragoza,Valle de las Trojes,Aguascalientes,Aguascalientes
+,4010014013,Agencia de viajes,Viandante Adventure ,Revolucion,Loma Bonita ,Aguascalientes,Aguascalientes
+,4010013964,Agencia de viajes,TOURISTA,Éba,El Plateado,Aguascalientes,Aguascalientes
+,2010010214,Alimentos y bebidas,NEVERIA EL ANTIGUO AS,Alameda,Barrio de la Purisima,Aguascalientes,Aguascalientes
+,2010010215,Alimentos y bebidas,NEVERIA EL ANTIGUO AS,Alameda,Barrio de la Purisima,Aguascalientes,Aguascalientes
+,1010010185,Hospedaje,CASA CARRANZA CIENTOVEINTE,Venustia Carranza,Centro,Aguascalientes,Aguascalientes
+,2010060004,Alimentos y bebidas,HACIENDA DE SAN LUIS DE LETRAS,Teodoro Olivares s/n,San Luis de Letras,Aguascalientes,Pabellón de Arteaga
+,1010060002,Hospedaje,HACIENDA DE SAN LUIS DE LETRAS,Teodoro Olivares s/n,San Luis de Letras,Aguascalientes,Pabellón de Arteaga
+,4010013965,Agencia de viajes,VAGANCY,San Ignacio,Centro,Aguascalientes,Aguascalientes
+,4010013904,Agencia de viajes,XIIMBAL TOURS,Maria Luisa Mier Madrazo no,Rodolfo Landeros Gallegos,Aguascalientes,Aguascalientes
+,2010010216,Alimentos y bebidas,SERRANIS PIZZA VILLASUNCIÓN,C. C. Villasunción local,Prados de Villasunción,Aguascalientes,Aguascalientes
+,11010010001,Arrendadora de autos,AVIS AGU ,"Carretera Panaméricana, 22, Local 8, s/n",Peñuelas (El Cienegal),Aguascalientes,Aguascalientes
+,33010080001,Parque temático,Parque Temático La Alameda,Circuito Armando Rodríguez,Pdte. Elias Calles,Aguascalientes,San José de Gracia
+,4010014002,Agencia de viajes,MILLENIAL TRAVELS,Av. Independencia,Circunvalación Norte,Aguascalientes,Aguascalientes
+,4010053818,Agencia de viajes,FORASTEROS,Regidores,Ayuntamiento,Aguascalientes,Jesús María
+,1010010184,Hospedaje,HOTEL REAL PLAZA AGUASCALENTES,Av. Adolfo López Mateos,Centro,Aguascalientes,Aguascalientes
+,1010010183,Hospedaje,HOTEL REAL PLAZA AGUASCALIENTES,Av. Adolfo López Mateos,Centro,Aguascalientes,Aguascalientes
+,2010010211,Alimentos y bebidas,HOTEL REAL PLAZA AGUASCALIENTES,Av. Adolfo López Mateos,Centro,Aguascalientes,Aguascalientes
+,4010013979,Agencia de viajes,EMOJIS TRAVEL AGENCY,Av. rias Centenarias,Villa de las Norias,Aguascalientes,Aguascalientes
+,33010060001,Parque temático,VIÑA LAS CRUCES,Plan Grande s/n,Ejido Emiliano Zapata,Aguascalientes,Pabellón de Arteaga
+,2010050013,Alimentos y bebidas,RESTAURANTE PUENTE VIEJO PICACHO,Carretera 70 Poniente . 12,Villas de Monteclaro,Aguascalientes,Jesús María
+,1010010179,Hospedaje,HOTEL QUINTA REAL AGUASCALIENTES,Avenida Aguascalientes ,Jardines de La Asunción,Aguascalientes,Aguascalientes
+,4010013890,Agencia de viajes,"VIAJERO CHECK IN ""AGENCIA DE VIAJES""",Prolongación Gral. Ignacio Zaragoza NO,Trojes de Alonso,Aguascalientes,Aguascalientes
+,11010010008,Arrendadora de autos,THRIFTY CAR RENTAL,Avenida Independencia,Sartenejo,Aguascalientes,Aguascalientes
+,2010010217,Alimentos y bebidas,COYOACÁN CAFEBRERÍA,Venustia Carranza,Centro,Aguascalientes,Aguascalientes
+,2010010150,Alimentos y bebidas,Domino´s Pizza AGS Altaria.,Boulevard a Zacatecas .,Trojes de Alonso,Aguascalientes,Aguascalientes
+,2010010163,Alimentos y bebidas,Burger King Altaria,Blvd. a Zacatecas .,Trojes de Alonso,Aguascalientes,Aguascalientes
+,2010010138,Alimentos y bebidas,Starbucks Coffee City Express Aguascalientes,José María Chávez,San Pedro,Aguascalientes,Aguascalientes
+,4010013972,Agencia de viajes,BRIO ADVENTURE,Vivero del Alamo,Casa Blanca,Aguascalientes,Aguascalientes
+,4010013994,Agencia de viajes,MONCHO´S TOURS,Av. José Joaquín Herrera,Solidaridad 3a. Sección,Aguascalientes,Aguascalientes
+,2010010201,Alimentos y bebidas,Domino´s Pizza,Siglo XXI rte .,Porta Real,Aguascalientes,Jesús María
+,2010010202,Alimentos y bebidas,Domino´s Pizza,Siglo XXI . .,Villa de Nuestra Señora de La Asunción Sector Encino,Aguascalientes,Aguascalientes
+,4010014011,Agencia de viajes,Corazón Nómada Tours,,Paseos del Sol,Aguascalientes,Aguascalientes
+,5010010783,Transportadora turística,HIDROSKY,Prolongación Libertad,Las Arboledas,Aguascalientes,Aguascalientes
+,4010013960,Agencia de viajes,TURIDESTINOS AGENCIA DE VIAJES,Circuito Coral,Barlovento,Aguascalientes,Aguascalientes
+,2010010205,Alimentos y bebidas,DECO21 BISTRO,Montes Himalaya,Jardines de la Concepción,Aguascalientes,Aguascalientes
+,4010013987,Agencia de viajes,MYA´S TRAVEL,Carlos Sagredo,San Cayetano,Aguascalientes,Aguascalientes
+,1010010154,Hospedaje,IBIS AGUASCALIENTES NORTE,Boulevard Aguascalientes Zacatecas no,Arroyo El Molino,Aguascalientes,Aguascalientes
+,4010014008,Agencia de viajes,Bokobá by Gani Viajes,Sierra Nevada,Los Bosques,Aguascalientes,Aguascalientes
+,4010013737,Agencia de viajes,CAXI Estación de Viajes,Avenida Convencion Sur,Santa Elena,Aguascalientes,Aguascalientes
+,4010013959,Agencia de viajes,Revel Travel,Avenida Monte Blanco,Trojes de Oriente 2da. Sección,Aguascalientes,Aguascalientes
+,2010010212,Alimentos y bebidas,LA RESACA BARBACOA,Av. Universidad,Bosques del Prado Sur,Aguascalientes,Aguascalientes
+,4010014009,Agencia de viajes,Vaiven Travel Store,Pozo de la Plata no,Pozo Bravo Norte,Aguascalientes,Aguascalientes
+,4010013724,Agencia de viajes, TIME2 TRAVEL,Avenida Aguascalientes Norte,Bosques del Prado Norte,Aguascalientes,Aguascalientes
+,2010070002,Alimentos y bebidas,HACIENDA EL SAUCILLO,Cami Real,El Saucillo,Aguascalientes,Rincón de Romos
+,4010053814,Agencia de viajes,TU TRAYECTO,Avenida Villa Plata no,Alcázar Residencial,Aguascalientes,Jesús María
+,4010013988,Agencia de viajes,Radar Travel,Hda. de Chapingo .,Real de Haciendas,Aguascalientes,Aguascalientes
+,4010013735,Agencia de viajes,VIAJES CIELITO LINDO,Miguel Meneses,La Purísima,Aguascalientes,Aguascalientes
+,4010080001,Agencia de viajes,Agencia de Viajes De Extremo a Extremo,Edmundo Gamez Orozco,Las Cañadas,Aguascalientes,San José de Gracia
+,2010010133,Alimentos y bebidas,Starbucks Coffee Colosio,Prolongación Ignacio Zaragoza .,Valle de las Trojes,Aguascalientes,Aguascalientes
+,2010010134,Alimentos y bebidas,Starbucks Coffee Altaria,Blvd. A Zacatecas,Trojes de Alonso,Aguascalientes,Aguascalientes
+,4010010460,Agencia de viajes,Viajes El Corte Inglés ,Boulevard Zacatecas Norte,Trojes de Alonso,Aguascalientes,Aguascalientes
+,4010013981,Agencia de viajes,MATTRAVELING,Av. Siglo XXI,Morelos I,Aguascalientes,Aguascalientes
+,4010013980,Agencia de viajes,OHANA TRAVEL´S,Jesús Gomez Luna,Villas de Ntra. Sra. de la Asunción Sector Guadalupe,Aguascalientes,Aguascalientes
+,4010013989,Agencia de viajes,Let´s go! Agencia de Viajes,Granada,España,Aguascalientes,Aguascalientes
+,2010010206,Alimentos y bebidas,FRUTTIPIOCAS,Galeana,Centro,Aguascalientes,Aguascalientes
+,4010013966,Agencia de viajes,ContacTour Mx,Avenida Rodolfo Landeros Gallegos,Rodolfo Landeros Gallegos ,Aguascalientes,Aguascalientes
+,2010010207,Alimentos y bebidas,MEXIKANER,General Ignacio Zaragoza,Centro,Aguascalientes,Aguascalientes
+,4010013995,Agencia de viajes,Agencia de Viajes Santander,Av. Montealbán,Rinconada del Parque,Aguascalientes,Aguascalientes
+,4010013996,Agencia de viajes,Hala Ken Agencia de Viajes,Gral. Ignacio Zaragoza,Las Arboledas,Aguascalientes,Aguascalientes
+,4010013997,Agencia de viajes,Hala Ken Agencia de Viajes,Gral. Ignacio Zaragoza,Las Arboledas,Aguascalientes,Aguascalientes
+,4010014003,Agencia de viajes,VOYAGE AGENCIA DE VIAJES,San Julián,Los Bosques,Aguascalientes,Aguascalientes
+,4010013967,Agencia de viajes,Gpi Travel,Andador Faisán,Potreros del Oeste,Aguascalientes,Aguascalientes
+,4010013968,Agencia de viajes,Happy Trip,Blvd. a Zacatecas,No especificada,Aguascalientes,Aguascalientes
+,4010013973,Agencia de viajes,ADDICTIVE TOURS,Vázquez del Mercado,Centro,Aguascalientes,Aguascalientes
+,4010013990,Agencia de viajes,RADAR TRAVEL,Hacienda de Chapingo,Real de Haciendas,Aguascalientes,Aguascalientes
+,4010013998,Agencia de viajes,ELYZA TOURS,Plutarco Elias Calles,Jesús Terán,Aguascalientes,Aguascalientes
+,2010010221,Alimentos y bebidas,RESTAURANTE PUENTE VIEJO SAN MARCOS,Nieto,Barrio de San Marcos,Aguascalientes,Aguascalientes
+,2010010208,Alimentos y bebidas,SIETE Sentidos Restaurant,Blvd. Luis Donaldo Colosio,Valle de las Trojes,Aguascalientes,Aguascalientes
+,4010013991,Agencia de viajes,OLYMPUS TRAVEL,Av. Canal Interceptor,San Cayetano,Aguascalientes,Aguascalientes
+,2010030044,Alimentos y bebidas,POZOLERÍA Y ANTOJITOS CACAHUAZINTLE,Blvd. Rodolfo Landeros,Centro,Aguascalientes,Calvillo
+,2010010218,Alimentos y bebidas,POZOLERÍA Y ANTOJITOS CACAHUAZINTLE,Av. Aguascalientes Sur,España,Aguascalientes,Aguascalientes
+,4010013774,Agencia de viajes,ADEUS BUSINESS TRAVEL,Talamantes,San Marcos,Aguascalientes,Aguascalientes
+,2010010146,Alimentos y bebidas,Burger King Aguascalientes,Av. Aguascalientes .,Jardines de La Asunción,Aguascalientes,Aguascalientes
+,33010060002,Parque temático,VINICOLA SANTA ELENA S. A. DE C. V.,Carr. Valladolid-Emilia Zapata,Sin Colonia,Aguascalientes,Pabellón de Arteaga
+,4010013992,Agencia de viajes,OKAAN VIAJES,Av. Adolfo López Mateos,Héroes,Aguascalientes,Aguascalientes
+,4010030013,Agencia de viajes,Tu travesía,Profesora Trinidad Serna,Magisterial,Aguascalientes,Calvillo
+,2010010192,Alimentos y bebidas,DOMINO´S PIZZA,Av. Aguascalientes rte ,Bosques del Prado Norte,Aguascalientes,Aguascalientes
+,4010010453,Agencia de viajes,AGENCIA DE VIAJES REVENTOUR,General Miguel Barragan,Zona Centro,Aguascalientes,Aguascalientes
+,2010010203,Alimentos y bebidas,Mesón del Taco,Avenida Aguascalientes Pte.,Colinas del Río,Aguascalientes,Aguascalientes
+,4010013961,Agencia de viajes,Viajes Lora,Fernan González de Eslava,VNSA Sector Guadalupe,Aguascalientes,Aguascalientes
+,4010060013,Agencia de viajes,AGENCIA DE VIAJES VELBEL,Av.,Centro,Aguascalientes,Pabellón de Arteaga
+,27010060001,Agencia integradora de servicios,HACIENDA DE SAN LUIS DE LETRAS,Teodoro Olivares s/n,San Luis de Letras,Aguascalientes,Pabellón de Arteaga
+,4010013679,Agencia de viajes,AGENCIA DE VIAJES BELLATOURS SUC,Avenida Siglo XXI no,Municipio Libre,Aguascalientes,Aguascalientes
+,4010013718,Agencia de viajes,PARTY TIGER,Aurora Boreal,Vista del Sol 1a Sección,Aguascalientes,Aguascalientes
+,4010014012,Agencia de viajes,República Viajera,Jardines Eter s .,La Concordia,Aguascalientes,Aguascalientes
+,2010010193,Alimentos y bebidas,Dominos Pizza La Fuente,Av. Convención de,Residencial del Valle I,Aguascalientes,Aguascalientes
+,4010014014,Agencia de viajes,Excursiones Estrella,Prolongación Paseo de la Asunción .,Pilar Blanco,Aguascalientes,Aguascalientes
+,4010013962,Agencia de viajes,Excuviatur,Avenida Héroe de Nacozari,La Purísima,Aguascalientes,Aguascalientes
+,4010013963,Agencia de viajes,ZIGZAG VIAJES,Jorge Negrete,Villas del Oeste,Aguascalientes,Aguascalientes
+,4010013974,Agencia de viajes,TURITZAE,Felipe de Ureña,Villas de Nuestra Sra. de la Asunción Sector Guadalupe,Aguascalientes,Aguascalientes
+,2010010213,Alimentos y bebidas,MR. SUSHI,C. C. Plaza Universidad Local,Bosques del Prado Sur,Aguascalientes,Aguascalientes
+,4010013984,Agencia de viajes,VIVE VIAJANDO,Potreros,Villas de San Nicolás,Aguascalientes,Aguascalientes
+,33010060003,Parque temático,HACIENDA DE LETRAS,Teodoro Olivares s/n,San Luis de Letras,Aguascalientes,Pabellón de Arteaga
+,2010010153,Alimentos y bebidas,Domino´s Pizza Siglo XXI,Blvd. Siglo XXI ,Haciendas de Aguascalientes,Aguascalientes,Aguascalientes
+,4010013753,Agencia de viajes,MEXICANDO TOURS,Aquiles Elorduy no,Valle del Rio San Pedro,Aguascalientes,Aguascalientes
+,4010013884,Agencia de viajes,VIAJES NUEVA RUTA,Gral Emiliano Zapata,Gómez,Aguascalientes,Aguascalientes
+,33010030001,Parque temático,TRIUNVIRATO,Sierra Madre,Valle de Santiago,Aguascalientes,Calvillo
+,3201001c9c85b,Operadora de aventura/naturaleza,KUIXE EXPERIENCE S.A. DE C.V.,AVENIDA EMILIANO ZAPATA no,Zona Centro,Aguascalientes,Aguascalientes
+,040100192231b,Agencia de viajes,"Viajes ""ZEM"" pasión por viajar",Vivero del Lago,Casa Blanca,Aguascalientes,Aguascalientes
+,040100134097f,Agencia de viajes,AGENCIA-LA ONDA TRAVEL,28 de Agosto,La Estación,Aguascalientes,Aguascalientes
+,0401005ae12ad,Agencia de viajes,MARTIAN MAP TRAVEL,Av Eugenio Garza Sada,Ruscello,Aguascalientes,Jesús María
+,040100170cb31,Agencia de viajes,SOMIA TRAVELS,Sierra de las Palomas,Bosques del Prado Sur,Aguascalientes,Aguascalientes
+,02010010c9692,Alimentos y bebidas,LAS TORTAS DE ALBAÑIL,Avenida Las Huertas,La Herradura,Aguascalientes,Aguascalientes
+,04010013b8a17,Agencia de viajes,Gabo Tours,Avenida de los maestros,El Dorado 2a Sección,Aguascalientes,Aguascalientes
+,040100105becc,Agencia de viajes,AGENCIA DE VIAJES BELLATOURS SUC,Av. Siglo XXI,Municipio Libre,Aguascalientes,Aguascalientes
+,0401001e8dd9e,Agencia de viajes,PICO DE GALLO TRAVELS,Plateros,La Fe,Aguascalientes,Aguascalientes
+,0401001d633f5,Agencia de viajes,TOURISTIC CLUB,San Francisco de los Romo,Ojocaliente,Aguascalientes,Aguascalientes
+,040100155943b,Agencia de viajes,KOVY TRAVEL,Aquiles Elourdy,San Marcos,Aguascalientes,Aguascalientes
+,0401001bfea2f,Agencia de viajes,VIAJES Y SUEÑOS,Piedra,Agropecuario,Aguascalientes,Aguascalientes
+,0401001a0f3e5,Agencia de viajes,Feelings Travels,CHICHIMECATL,Santa Regina,Aguascalientes,Aguascalientes
+,040100181888b,Agencia de viajes,VIAFLY,Roble,Circunvalación Norte,Aguascalientes,Aguascalientes
+,0401003a29efa,Agencia de viajes,LUCY TOURS,Galeana,Calvillo Centro,Aguascalientes,Calvillo
+,0501001f1bf47,Transportadora turística,OMNIBUS DE MÉXICO,REPÚBLICA DE PERÚ,Las Américas,Aguascalientes,Aguascalientes
+,05010012f1dee,Transportadora turística,Omnibus de México,República de Perú,Las Américas,Aguascalientes,Aguascalientes
+,020100109dc50,Alimentos y bebidas,CHILERA BREWING,28 de Agosto SN,Zona Centro,Aguascalientes,Aguascalientes
+,020100344fcad,Alimentos y bebidas,"RESTAURANTE ALEBRIJE ""DELICIAS MEXICANAS""",Juárez,Calvillo Centro,Aguascalientes,Calvillo
+,04010010490e4,Agencia de viajes,NOVA TRAVEL,Gral. Emiliano Zapata,San Marcos,Aguascalientes,Aguascalientes
+,04010018264e7,Agencia de viajes,Viajes Bumeran Aguascalientes,Rio Santiago,Colinas del Poniente,Aguascalientes,Aguascalientes
+,0201001c6d670,Alimentos y bebidas,APAPACHO,Dr. Jesús Diaz de León,El Encino,Aguascalientes,Aguascalientes
+,04010076d50af,Agencia de viajes,"Agencia de Viajes ""CEYA""",Baja California Norte,Miguel Hidalgo,Aguascalientes,Rincón de Romos
+,0401001f1e118,Agencia de viajes,EL SABUESO ERRANTE,Avenida Convención de 1914,Jesús Terán Peredo,Aguascalientes,Aguascalientes
+,0401001861c4f,Agencia de viajes,PARTY TIGER,Aurora Boreal,Vista del Sol 1a Sección,Aguascalientes,Aguascalientes
+,0401001b79f2d,Agencia de viajes,CAXI Estación de Viajes,Avenida Convención de 1914 Sur,Santa Elena,Aguascalientes,Aguascalientes
+,04010013762b9,Agencia de viajes,MOOD TRAVELER,Benjamín de la Mora,Guadalupe,Aguascalientes,Aguascalientes
+,040100161768d,Agencia de viajes,VIAJES NUEVA RUTA,Emiliano Zapata,San Marcos,Aguascalientes,Aguascalientes
+,04010015b04be,Agencia de viajes,TIME2 TRAVEL,Avenida Aguascalientes Norte,Bosques del Prado Norte,Aguascalientes,Aguascalientes
+,04010018a236e,Agencia de viajes,ACTITUD VIAJERA MX,Avenida Francisco I. Madero,La Purísima,Aguascalientes,Aguascalientes
+,0401001804798,Agencia de viajes,BRÚJULA NEGRA AGENCIA DE VIAJES,Ignacio T. Chávez,Las Flores,Aguascalientes,Aguascalientes
+,0401001262a1e,Agencia de viajes,AGENCIA DE VIAJES REVENTOUR,General Barragán,Zona Centro,Aguascalientes,Aguascalientes
+,010100191f127,Hospedaje,HOTEL QUINTA REAL AGUASCALIENTES,Avenida Aguascalientes ,Jardines de La Asunción,Aguascalientes,Aguascalientes
+,02010030e1d21,Alimentos y bebidas,RESTAURANT LAS TRANCAS,Boulevard Rodolfo Landeros Gallegos,La Panadera,Aguascalientes,Calvillo
+,040100178cc73,Agencia de viajes,SHEKINAH TOURS,Loma Azul,Lomas del Mirador,Aguascalientes,Aguascalientes
+,0401001427b42,Agencia de viajes,SOMIA TRAVELS,Sierra de las Palomas,Bosques del Prado Sur,Aguascalientes,Aguascalientes
+,02010010fc765,Alimentos y bebidas,LAS TORTAS DE ALBAÑIL,Avenida Las Huertas,La Herradura,Aguascalientes,Aguascalientes
+,0401001c110a9,Agencia de viajes,AGENCIA DE VIAJES BELLATOURS SUC,Avenida Siglo XXI,Municipio Libre,Aguascalientes,Aguascalientes
+,040100175e8b9,Agencia de viajes,VIAJES CIELITO LINDO,Miguel Meneses,La Purísima,Aguascalientes,Aguascalientes
+,01010018f03d0,Hospedaje,IBIS AGUASCALIENTES NORTE,Boulevard Aguascalientes Zacatecas ,Arroyo El Molino,Aguascalientes,Aguascalientes
+,040100571c720,Agencia de viajes,CHICAHUAL SIN RUMBO,Beltrán,Jesús María Centro,Aguascalientes,Jesús María
+,04010019905e5,Agencia de viajes,VIAJA TUS SUEÑOS,Circuito Prieto Azabache,Cavalia,Aguascalientes,Aguascalientes
+,0401001926837,Agencia de viajes,"VIAJERO CHECK IN ""AGENCIA DE VIAJES""", General Ignacio Zaragoza,Trojes de Alonso,Aguascalientes,Aguascalientes
+,04010019cf7e5,Agencia de viajes,VIAFLY,Roble,Circunvalación Norte,Aguascalientes,Aguascalientes
+,0401001bc3c0b,Agencia de viajes,MAY VACATIONS AGUASCALIENTES,Acanto,Lomas del Chapulín,Aguascalientes,Aguascalientes
+,0401001a8f61b,Agencia de viajes,NAGESA TOURS,5 de Febrero,La Estación,Aguascalientes,Aguascalientes
+,04010011f3854,Agencia de viajes,LEBISU GANI VIAJES,Hacienda de Cortes,Real de Haciendas,Aguascalientes,Aguascalientes
+,04010016b1b55,Agencia de viajes,VIAJES BARAK,Ing. Tomás Medina Ugarte,Gremial,Aguascalientes,Aguascalientes
+,0401001328f58,Agencia de viajes,XIIMBAL TOURS,Maria Luisa Mier Madrazo,Rodolfo Landeros Gallegos,Aguascalientes,Aguascalientes
+,0401001cd1676,Agencia de viajes,VENEZIA TRAVELS,Alfredo Lewis ,Circunvalación Norte,Aguascalientes,Aguascalientes
+,04010015b0abe,Agencia de viajes,VIAJES VISAY,Avenida Constitución,Soberana Convención Revolucionaria,Aguascalientes,Aguascalientes
+,04010015fe81d,Agencia de viajes,XPEDITIONS VIAJES,Abasolo,El Encino,Aguascalientes,Aguascalientes
+,3401001bc69b0,Spa, TESORO DE AGUA,Camino El Cono ,Villa Licenciado Jesús Terán (Calvillito),Aguascalientes,Aguascalientes
+,040100161f4c6,Agencia de viajes,OPERADORA BASSMAN,Prolongación Zaragoza,Villa de las Trojes,Aguascalientes,Aguascalientes
+,010100107488e,Hospedaje,ANTIGUA CASA ALAMEDA HOTEL BOUTIQUE,Alameda,Héroes,Aguascalientes,Aguascalientes
+,040100102d65d,Agencia de viajes,MEXICO BIN TRAVEL EXPERIENCES,Universidad,Lomas del Campestre 1a Sección,Aguascalientes,Aguascalientes
+,0401001877495,Agencia de viajes,De Patita De Perro,Nebulosa,Real del Sol,Aguascalientes,Aguascalientes
+,0201001431820,Alimentos y bebidas,RESTAURANTE LOS ANCESTROS,Camino El Cono,Villa Licenciado Jesús Terán (Calvillito),Aguascalientes,Aguascalientes
+,0401001b31622,Agencia de viajes,VIAJES NADEL,Benito Juárez,Los Pocitos,Aguascalientes,Aguascalientes
+,02010010f434e,Alimentos y bebidas,ADRIA CAVA URBANA,Av. Independencia,Residencial Pulgas Pandas Sur,Aguascalientes,Aguascalientes
+,0401001948add,Agencia de viajes,Vaiven Travel Store,Pozo de la Plata,Pozo Bravo Sur,Aguascalientes,Aguascalientes
+,0401001e0964f,Agencia de viajes,MEXICANDO TOURS,Aquiles Elorduy,Valle del Rio San Pedro,Aguascalientes,Aguascalientes
+,0201001411d76,Alimentos y bebidas,ADRIA CAVA URBANA,Av. Independencia,Residencial Pulgas Pandas Sur,Aguascalientes,Aguascalientes
+,020100156802b,Alimentos y bebidas,ADRIA CAVA URBANA,Av. Independencia,Residencial Pulgas Pandas Sur,Aguascalientes,Aguascalientes
+,040100126b040,Agencia de viajes,Panoramic Travel Co,Bosque Sereno,Bosque Sereno,Aguascalientes,Aguascalientes
+,050100195feb0,Transportadora turística,RZ TOURS S.  A. DE C.V.,Churubusco,Ojocaliente,Aguascalientes,Aguascalientes
+,040100168f768,Agencia de viajes,SOMIA TRAVELS,Sierra de las Palomas,Bosques del Prado Sur,Aguascalientes,Aguascalientes
+,0401001dd7bcb,Agencia de viajes,AGENCIA DE VIAJES GRAND TURISMO,Persea,Santa Imelda,Aguascalientes,Aguascalientes
+,0201002ace3cc,Alimentos y bebidas,RESTAURANT PUENTE NACIONAL,Galeana,Asientos Centro,Aguascalientes,Asientos
+,0401001cf17f8,Agencia de viajes,KLASS TRAVEL,Avenida Ojocaliente,Municipio Libre,Aguascalientes,Aguascalientes
+,0401001c76678,Agencia de viajes,TRAVELERS MX,Jardín de los Cipreses,Jardines de Aguascalientes,Aguascalientes,Aguascalientes
+,040100130535e,Agencia de viajes,SAVO TOURS,Calle Curitiva,Australis,Aguascalientes,Aguascalientes
+,040100162e4f5,Agencia de viajes,VIAJES 3B,José Ma. Velasco,Santa Anita,Aguascalientes,Aguascalientes
+,0501001b59060,Transportadora turística,Entre Nubes Ags,Costa Rica,Las Américas,Aguascalientes,Aguascalientes
+,0201001552490,Alimentos y bebidas,APAPACHO,Dr. Jesús Diaz de León,El Encino,Aguascalientes,Aguascalientes
+,0401007eba74e,Agencia de viajes,"Agencia de Viajes ""CEYA""",Baja California Norte,Miguel Hidalgo,Aguascalientes,Rincón de Romos
+,04010010b3f7c,Agencia de viajes,VIAJES TADEGO,Calle 10 de Octubre,Jardines de Montebello,Aguascalientes,Aguascalientes
+,0401001343299,Agencia de viajes,AGENCIA DE VIAJES GRAND TURISMO,Persea,Santa Imelda,Aguascalientes,Aguascalientes
+,0401001228430,Agencia de viajes,VIAJES CORNEJO,Calle H,Macias Arellano,Aguascalientes,Aguascalientes
+,0401001b59f49,Agencia de viajes,PATY TOURS ,Wolfgang A. Mozart,Santa Anita,Aguascalientes,Aguascalientes
+,0401001f57cee,Agencia de viajes,"Agencia de Viajes ""Huakai"" ",Av. Héroe Inmortal,Morelos I,Aguascalientes,Aguascalientes
+,0401001e93f42,Agencia de viajes,DiMar Travel,Avenida Vistas de Oriente,Vistas de Oriente,Aguascalientes,Aguascalientes
+,040100110c89d,Agencia de viajes,TURISMO MAXIN,Calle Vallarta,Vistas de Oriente,Aguascalientes,Aguascalientes
+,0401001a6149f,Agencia de viajes,"Viajes ""ZEM"" pasión por viajar",Vivero del Lago ,Jardines del Sol,Aguascalientes,Aguascalientes
+,04010017bb934,Agencia de viajes,VTM Viajes a tu medida Ags,Manuel Rangel,IV Centenario,Aguascalientes,Aguascalientes
+,040100167fabd,Agencia de viajes,LEDESMA TOURS,Pozo Alto,Pozo Bravo Norte,Aguascalientes,Aguascalientes
+,0401001b98909,Agencia de viajes,LA OPERADORA.COM AGUASCALIENTES,Blvd. José Ma. Chávez,Agricultura,Aguascalientes,Aguascalientes
+,04010016efade,Agencia de viajes,ALEXSAN TRAVELS,Peñuelas,Héroes,Aguascalientes,Aguascalientes
+,040100120c05f,Agencia de viajes,Agencia EXISSTE,Cristobal Colón,Zona Centro,Aguascalientes,Aguascalientes
+,04010018a9b0b,Agencia de viajes,AGENCIA-LA ONDA TRAVEL ,28 de Agosto ,La Estación,Aguascalientes,Aguascalientes
+,35010016dd6d6,Tour operador,BCORTES,Avenida Adolfo López Mateos,San Luis,Aguascalientes,Aguascalientes
+,02010083f03bc,Alimentos y bebidas,DE MI TIERRA,Juan Esteban,San José de Gracia,Aguascalientes,San José de Gracia
+,0401001a22869,Agencia de viajes,AGENCIA DE VIAJES MODO AVION ,Av. Gral. Mariano Escobedo,Lomas del Ajedrez,Aguascalientes,Aguascalientes
+,0101006862c06,Hospedaje,CABAÑA MANUEL DE LUNA,Emiliano Zapata,Plutarco Elías Calles,Aguascalientes,Pabellón de Arteaga
+,04010013472cc,Agencia de viajes,GALL TRAVEL,María Luisa Mier,Rodolfo Landeros Gallegos,Aguascalientes,Aguascalientes
+,0501001f655f6,Transportadora turística,RZ TOURS S. A. DE C. V. ,Churubusco,Ojocaliente,Aguascalientes,Aguascalientes
+,0401001256c3b,Agencia de viajes,Agencia de Viajes Modo Avión,Av. Gral. Mariano Escobedo,Lomas del Ajedrez,Aguascalientes,Aguascalientes
+,0401001284b75,Agencia de viajes,ACTITUD VIAJERA MX,Av. Francisco I. Madero,La Purísima,Aguascalientes,Aguascalientes
+,01010019f6242,Hospedaje,HOTEL CASA LEGADO SPA & RESORT,Camino El Cono,Villa Licenciado Jesús Terán (Calvillito),Aguascalientes,Aguascalientes
+,0201001d76fd9,Alimentos y bebidas,ANÓNIMO VINOS AUTÉNTICOS,28 de Agosto,Zona Centro,Aguascalientes,Aguascalientes
+,0401001ccd2f1,Agencia de viajes,AGENCIA DE VIAJES REVENTOUR,General Barragán,Zona Centro,Aguascalientes,Aguascalientes
+,01010011523ad,Hospedaje,QUALITY INN AGUASCALIENTES,José Ma. Chávez,Zona Centro,Aguascalientes,Aguascalientes
+,020100118a76a,Alimentos y bebidas,Starbucks Coffee,Convención Pte.,Olivares Santana,Aguascalientes,Aguascalientes
+,0401001707164,Agencia de viajes,MUCHO MUNDO TRAVEL SHOP,Av. La Querencia,La Querencia,Aguascalientes,Aguascalientes
+,0401011d716b1,Agencia de viajes,TRAVELING,Avenida Viñedos Guadalupe,Ex-Viñedos Guadalupe,Aguascalientes,San Francisco de los Romo
+,040100534e181,Agencia de viajes,TURISMOS DEL CENTRO,Centenario,Jesús María Centro,Aguascalientes,Jesús María
+,3201001c0db6b,Operadora de aventura/naturaleza,KUIXE EXPERIENCE S.A. DE C.V.,Emiliano Zapata,Zona Centro,Aguascalientes,Aguascalientes
+,04010111afe6a,Agencia de viajes,TRAVELING AROUND THE WORLD,Avenida Viñedos Guadalupe,Ex-Viñedos Guadalupe,Aguascalientes,San Francisco de los Romo
+,02010019abe67,Alimentos y bebidas,RESTAURANT LA RUEDA,José Ma. Chávez,Zona Centro,Aguascalientes,Aguascalientes
+,0201001d903e3,Alimentos y bebidas,RESTAURANT LA RUEDA,José Ma. Chávez,Zona Centro,Aguascalientes,Aguascalientes
+,040100185045b,Agencia de viajes,EL SABUESO ERRANTE,Avenida Convención de 1914,Jesús Terán Peredo,Aguascalientes,Aguascalientes
+,0401001d8f0cd,Agencia de viajes,CAXI Estación de Viajes,Avenida de la Convención de 1914 Sur,Santa Elena,Aguascalientes,Aguascalientes
+,040100169f103,Agencia de viajes,BRÚJULA NEGRA AGENCIA DE VIAJES,Avenida Ignacio T. Chávez,Las Flores,Aguascalientes,Aguascalientes
+,0401001e9e234,Agencia de viajes,TURISMO UNIDO EJECUTIVO DE AGUASCALIENTES,Mtro. Julio Nungaray,Vista de las Cumbres,Aguascalientes,Aguascalientes
+,0401001ae8975,Agencia de viajes,VIAJES NUEVA RUTA,Emiliano Zapata,Gómez,Aguascalientes,Aguascalientes
+,35010058217bf,Tour operador,aa,Av Eugenio Garza Sada,Ruscello,Aguascalientes,Jesús María
+,0401001f55a51,Agencia de viajes,FEX TURISMO AGUASCALIENTES,Prol. Gral. Ignacio Zaragoza,Fátima,Aguascalientes,Aguascalientes
+,0101001abdef5,Hospedaje,MARRIOTT AGUASCALIENTES,Boulevard a Zacatecas Norte,Trojes de Alonso,Aguascalientes,Aguascalientes
+,020100171e312,Alimentos y bebidas,MARRIOTT AGUASCALIENTES,Boulevard a Zacatecas Norte,Trojes de Alonso,Aguascalientes,Aguascalientes
+,01010011a2887,Hospedaje,HOTEL HAMPTON BY HILTON AGUASCALIENTES DOWNTOWN,Avenida José María Chávez,Jardines de La Asunción,Aguascalientes,Aguascalientes
+,3501005b02808,Tour operador,ROYAL SAILORS,Calzada Navarra,Alcázar Residencial,Aguascalientes,Jesús María
+,040100124cc46,Agencia de viajes,"INHALA, EXHALA Y VIAJA",Avenida Palmas de Guinea,Paseos de Santa Mónica,Aguascalientes,Aguascalientes
+,0201001330e08,Alimentos y bebidas,MICROCERVECERÍA LA LEGENDARIA,Boulevard Luis Donaldo Colosio,Trojes de Alonso,Aguascalientes,Aguascalientes
+,04010015de31b,Agencia de viajes,TURISMO VANIA,Juan de Montoro,Zona Centro,Aguascalientes,Aguascalientes
+,040100108efc8,Agencia de viajes,SUNSET TRAVEL,26 de Marzo,San Marcos,Aguascalientes,Aguascalientes
+,040100188bf83,Agencia de viajes,KAX TRAVEL,Av. de la Convención de 1914 Ote.,Jardines de La Cruz,Aguascalientes,Aguascalientes
+,0401005b37267,Agencia de viajes,AGENCIA DE VIAJES ENIGMA,Avenida Champaña,Arboledas de Paso Blanco,Aguascalientes,Jesús María
+,04010079c363d,Agencia de viajes,OPHIR TRAVEL-AGENTE DE VIAJES,Francisco Villa,Santa Anita,Aguascalientes,Rincón de Romos
+,04010014481b8,Agencia de viajes,NEW TRIPS,Avenida Diamantes,Norias de Ojocaliente,Aguascalientes,Aguascalientes
+,010100131a8e7,Hospedaje,LA CASA DE MARÍA JOYITA,Eduardo J. Correa,San Marcos,Aguascalientes,Aguascalientes
+,04010013efd14,Agencia de viajes,EK-BAALAM VIAJES,Rio Papaloapan,Altavista,Aguascalientes,Aguascalientes
+,04010019305b2,Agencia de viajes,CONSULTORÍA TURÍSTICA MICKEY TOUR,Avenida Convención de 1914 Ote.,Del Trabajo,Aguascalientes,Aguascalientes
+,3401001859447,Spa,BLOOM DERM SPA,Graneros,Valle del Campestre,Aguascalientes,Aguascalientes
+,0401001d9302e,Agencia de viajes,VIAJES MONDO BY FRAVEO,Boulevard José María Escriva de Balaguer,Villas de Bonaterra,Aguascalientes,Aguascalientes
+,0401001833b08,Agencia de viajes,VIAJES MONDO BY FRAVEO,Boulevard José María Escriva de Balaguer,Villas de Bonaterra,Aguascalientes,Aguascalientes
+,04010012fec31,Agencia de viajes,NOVA TRAVEL,Gral. Emiliano Zapata,San Marcos,Aguascalientes,Aguascalientes
+,0401001eff28c,Agencia de viajes,XPEDITIONS VIAJES,Abasolo,El Encino,Aguascalientes,Aguascalientes
+,010100114700d,Hospedaje,MARRIOTT AGUASCALIENTES,Boulevard a Zacatecas Norte,Trojes de Alonso,Aguascalientes,Aguascalientes
+,02010016e8cbf,Alimentos y bebidas,MARRIOTT AGUASCALIENTES,Boulevard a Zacatecas Norte,Trojes de Alonso,Aguascalientes,Aguascalientes
+,020100195e7f3,Alimentos y bebidas,APAPACHO,Dr. Jesús Diaz de León,El Encino,Aguascalientes,Aguascalientes
+,04010073231ef,Agencia de viajes,"Agencia de Viajes ""CEYA""",Baja California Norte,Miguel Hidalgo,Aguascalientes,Rincón de Romos
+,0401001dd4527,Agencia de viajes,AGENCIA DE VIAJES GRAND TURISMO,Persea,Santa Imelda,Aguascalientes,Aguascalientes
+,0201001bd0cee,Alimentos y bebidas,SUSHITAI,Boulevard a Zacatecas ,Trojes de Alonso,Aguascalientes,Aguascalientes
+,0401001da0715,Agencia de viajes,PIXAN,Cerro de Aconcagua,Casasolida,Aguascalientes,Aguascalientes
+,0401009649ef8,Agencia de viajes,AVENTURA T,Benito Juárez,El Chayote,Aguascalientes,Tepezalá
+,040100143875c,Agencia de viajes,BONVOYAGE,Retorno Valle del Yaqui,Cerrada del Valle,Aguascalientes,Aguascalientes
+,02010014f08d6,Alimentos y bebidas,TIKAL GRILL HOUSE,Boulevard Luis Donaldo Colosio,Jardines de la Concepción,Aguascalientes,Aguascalientes
+,0401001bdd3dd,Agencia de viajes,PRAGA TRAVEL AGENCIA,Virrey de Mendoza,La Estación,Aguascalientes,Aguascalientes
+,0201005e5e020,Alimentos y bebidas,BON VIVANT CATA PRIVADA,Dominico,Santo Domingo,Aguascalientes,Jesús María
+,0201005b81533,Alimentos y bebidas,BON VIVANT CATA PRIVADA,Dominico,Santo Domingo,Aguascalientes,Jesús María
+,04010015a3bf4,Agencia de viajes,LA VIAJERÍA MÉXICO,Palma del Rio,Villa de Nuestra Señora de La Asunción Sector Encino,Aguascalientes,Aguascalientes
+,350100176b42b,Tour operador,SYSTEM OPERADORA DE VIAJES,Rubén Darío,Lomas de Santa Anita,Aguascalientes,Aguascalientes
+,0401001d0e95a,Agencia de viajes,TU TRAVEL PLANNER,Antiguo Camino a San Ignacio,La Fundición,Aguascalientes,Aguascalientes
+,340100310dd7c,Spa,YOLIHUANI RELAX RESORT,"Carretera La Panadera, Palo Alto",Piedras Chinas,Aguascalientes,Calvillo
+,010100365951e,Hospedaje,YOLIHUANI RELAX RESORT,"Carretera La Panadera, Palo Alto",Piedras Chinas,Aguascalientes,Calvillo
+,02010030299b7,Alimentos y bebidas,RESTAURANTE YOHUALLI,"Carretera La Panadera, Palo Alto",Piedras Chinas,Aguascalientes,Calvillo
+,040100107af00,Agencia de viajes,HOLY DAYS,Circuito Azores,Barlovento,Aguascalientes,Aguascalientes
+,04010038a7dac,Agencia de viajes,VIAJES CALVILLO S. A.,5 de Mayo,Calvillo Centro,Aguascalientes,Calvillo
+,04010017d4308,Agencia de viajes,VIAJES CHAVOYA,Avenida Las Américas No.,Valle Dorado,Aguascalientes,Aguascalientes
+,0401001254cf3,Agencia de viajes,HIDROCÁLIDOS TOURS,Lic. Jesús Reyes Heroles,Versalles 2a Sección,Aguascalientes,Aguascalientes
+,020100521a791,Alimentos y bebidas,SOMOS VINO,Nogal No.,Vistas del Sáuz,Aguascalientes,Jesús María
+,0401001291528,Agencia de viajes,VAIVEN TRAVEL STORE,Pozo de la Plata,Pozo Bravo Norte,Aguascalientes,Aguascalientes
+,020100359a0bd,Alimentos y bebidas,TOUR CON LOS GARCIA,"Carretera Calvillo, Jalpa",Calvillo Centro,Aguascalientes,Calvillo
+,0401001965feb,Agencia de viajes,TURISTAGS AGENCIA DE VIAJES,Benedictinos,Villa Teresa,Aguascalientes,Aguascalientes
+,0401001f7797a,Agencia de viajes,TURISMO COLLINS AGENCIA DE VIAJES,Circuito Coral,Barlovento,Aguascalientes,Aguascalientes
+,0401001d7d5b9,Agencia de viajes,NEWS TRAVEL,Av. Mahatma Gandhi,Prados de Villasunción,Aguascalientes,Aguascalientes
+,04010062f7854,Agencia de viajes,MOMENTOS BY GANI VIAJES,Emiliano Zapata,Palo Alto,Aguascalientes,Pabellón de Arteaga
+,02010016d92a1,Alimentos y bebidas,POR UN BESO,Avenida Vistas de Oriente,Ojocaliente,Aguascalientes,Aguascalientes
+,040100164af91,Agencia de viajes,MAKTUB AGS,Mariano Matamoros No.,Zona Centro,Aguascalientes,Aguascalientes
+,0401001e81218,Agencia de viajes,D-RELAX TRIP,Avenida La Paz No.,Providencia,Aguascalientes,Aguascalientes
+,04010015beef0,Agencia de viajes,TURISMO UNIDO EJECUTIVO DE AGUASCALIENTES,Maestro Julio Nungaray,Vista de las Cumbres,Aguascalientes,Aguascalientes
+,04010012bf1e4,Agencia de viajes,PROFENTUR,Avenida Las Américas,Las Américas,Aguascalientes,Aguascalientes
+,040100965cc4e,Agencia de viajes,AVENTURA T,Benito Juárez,El Chayote,Aguascalientes,Tepezalá
+,020100526c642,Alimentos y bebidas,QUESOS ARTESSANO,Azaleas,Corral de Barrancos,Aguascalientes,Jesús María
+,0101001b46cbc,Hospedaje,HOTEL LAS TROJES,Blvd. Luis Donaldo Colosio Murrieta,Trojes de Alonso,Aguascalientes,Aguascalientes
+,02010017af709,Alimentos y bebidas,RESTAURANTE SILIA,Blvd. Luis Donaldo Colosio Murrieta,Trojes de Alonso,Aguascalientes,Aguascalientes
+,0201001079026,Alimentos y bebidas,BAR CUATRO BARRIOS,Blvd. Luis Donaldo Colosio Murrieta,Trojes de Alonso,Aguascalientes,Aguascalientes
+,040100138490c,Agencia de viajes,VEROSTOURS,Alicia Diaz de León No.,Rodolfo Landeros Gallegos,Aguascalientes,Aguascalientes
+,0401001a849d3,Agencia de viajes,AGENCIA DE VIAJES BON TOUR ,San Francisco de los Viveros No.,Ojocaliente,Aguascalientes,Aguascalientes
+,020100165e538,Alimentos y bebidas,DOMINO´S PIZZA,SIGLO XXI,Rancho Santa Mónica,Aguascalientes,Aguascalientes
+,0401001a23bf1,Agencia de viajes,OSEAAN TRIPS,Avenida Constitución,Constitución,Aguascalientes,Aguascalientes
+,04010011f3787,Agencia de viajes,MEXICANDO TOURS,Aquiles Elorduy,Valle del Rio San Pedro,Aguascalientes,Aguascalientes
+,04010074ca549,Agencia de viajes,INFINITY TRAVEL,Madroño de la Cruz,De Chora,Aguascalientes,Rincón de Romos
+,040100140d93d,Agencia de viajes,AJOLOTOURS ADVENTURE,Andador del Cardenal,Pilar Blanco INFONAVIT,Aguascalientes,Aguascalientes
+,0201005948e9d,Alimentos y bebidas,"RESTAURANTE Y BAR ""LA CABAÑA""",Carretera a Calvillo,La Tomatina,Aguascalientes,Jesús María
+,040100548b560,Agencia de viajes,MARTIAN MAP TRAVEL,Avenida Arroyo El Molino,Real del Molino,Aguascalientes,Jesús María
+,040100160d304,Agencia de viajes,RUN TOURS,Avenida Moscatel,Bosques del Prado Oriente,Aguascalientes,Aguascalientes
+,02010017833fa,Alimentos y bebidas,MARISCOS EL MELÓN,Avenida Alameda,La Purísima,Aguascalientes,Aguascalientes
+,0401001b8ba77,Agencia de viajes,DVIAJE VACATIONS,Avenida Eugenio Garza Sada,Los Pocitos,Aguascalientes,Aguascalientes
+,0401001f87d1a,Agencia de viajes,RUTA FELIZ,Av. Constitución,Constitución,Aguascalientes,Aguascalientes
+,0401001090315,Agencia de viajes,AGENCIA DE VIAJES BELLA TOURS ,Boulevard Siglo XXI CENTRO COMERCIAL SORIANA,Villa de Nuestra Señora de La Asunción Sector Encino,Aguascalientes,Aguascalientes
+,0401001edf683,Agencia de viajes,LUXAN TRAVEL,Clarisas,Villa Teresa,Aguascalientes,Aguascalientes
+,0201001398727,Alimentos y bebidas,MOLOKO SOCIAL CLUB,Nieto,Zona Centro,Aguascalientes,Aguascalientes
+,04010016fdeeb,Agencia de viajes,HÁBITAT VIAJES,González Saracho NO.,Zona Centro,Aguascalientes,Aguascalientes
+,020100124b06b,Alimentos y bebidas,MANRIQUE RESTAURANTE,Guadalupe Victoria no.,Zona Centro,Aguascalientes,Aguascalientes
+,0401001a0771d,Agencia de viajes,GOLDEN TRIP,Eucalipto no.,Jardines de La Cruz,Aguascalientes,Aguascalientes
+,0401005de0a95,Agencia de viajes,VIAJES BUMERAN RAMSE,ORIENTE,Bosques de los Ciprés,Aguascalientes,Jesús María
+,0401001dfc342,Agencia de viajes,AGENCIA TURISTICA PRICE GOLDEN GP,Av. Aguascalientes Sur no.,Jardines de las Fuentes,Aguascalientes,Aguascalientes
+,040100169ce7f,Agencia de viajes,MEDPAL TOURS,Cultura Mixteca no.,Mirador de las Culturas,Aguascalientes,Aguascalientes
+,32010064d88c9,Operadora de aventura/naturaleza,CAMPAMENTO YUCA,Camino Rural Mesa del Pino No.,El Garabato,Aguascalientes,Pabellón de Arteaga
+,04010036e8d13,Agencia de viajes,AGENCIA DE VIAJES AMERICAN TRAVEL S. A. DE C. V.,Zaragoza no.,Calvillo Centro,Aguascalientes,Calvillo
+,040100144caf6,Agencia de viajes,Villetta Viajes,Av. Heroe de Nacozari Sur no.,IV Centenario,Aguascalientes,Aguascalientes
+,0401007737ccd,Agencia de viajes,LUNA VELVET TRAVEL,Emiliano Zapata,Independencia,Aguascalientes,Rincón de Romos
+,0401001cb70f5,Agencia de viajes,MUNDIAL TOURS MÉXICO,Montoro,Ojocaliente,Aguascalientes,Aguascalientes
+,040100537f5cd,Agencia de viajes,DESTINATIONS TRAVEL AGENT,Lantana,Yalta Campestre,Aguascalientes,Jesús María
+,0401001168e71,Agencia de viajes,AMAZING TRAVEL,Montoro,Ojocaliente,Aguascalientes,Aguascalientes
+,0401001fc3c15,Agencia de viajes,VOY Y VUELVO,Pedro Parga,Zona Centro,Aguascalientes,Aguascalientes
+,040100109ecf1,Agencia de viajes,TURISMO MEDINA BOSQUES,Boulevard Aguascalientes,Residencial Pulgas Pandas Sur,Aguascalientes,Aguascalientes
+,0201003b24890,Alimentos y bebidas,RESTAURANTE YOHUALLI,"Carretera La Panadera, Palo Alto",Piedras Chinas,Aguascalientes,Calvillo
+,0101003b1cccf,Hospedaje,YOLIHUANI RELAX RESORT,"Carretera La Panadera, Palo Alto",Piedras Chinas,Aguascalientes,Calvillo
+,34010030732eb,Spa,YOLIHUANI RELAX RESORT,"Carretera La Panadera,Palo Alto",Piedras Chinas,Aguascalientes,Calvillo
+,0401001599401,Agencia de viajes,HOLY DAYS,Circuito Azores,Barlovento,Aguascalientes,Aguascalientes
+,0401003b39dd0,Agencia de viajes,VIAJES CALVILLO S. A.,5 de Mayo,Calvillo Centro,Aguascalientes,Calvillo
+,0401001524223,Agencia de viajes,VIAJES CHAVOYA,Avenida Las Américas,Valle Dorado,Aguascalientes,Aguascalientes
+,0201003a532a6,Alimentos y bebidas,TOUR CON LOS GARCÍA,"Carretera Calvillo, Jalpa",Calvillo Centro,Aguascalientes,Calvillo
+,040100163e0a9,Agencia de viajes,TURISTAGS AGENCIA DE VIAJES,Benedictinos,Villa Teresa,Aguascalientes,Aguascalientes
+,040100146ceeb,Agencia de viajes,VEROSTOURS,Alicia Diaz de León,Rodolfo Landeros Gallegos,Aguascalientes,Aguascalientes
+,040100193b436,Agencia de viajes,DVIAJE VACATIONS,Avenida Eugenio Garza Sada no.,Los Pocitos,Aguascalientes,Aguascalientes
+,0401006c99aa4,Agencia de viajes,SMART PLAN TRAVEL,Camino de Terracería a Emiliano Zapata ,Emiliano Zapata,Aguascalientes,Pabellón de Arteaga
+,040100163af07,Agencia de viajes,MAPLE TRAVEL,PRIMERA CONSTITUCION no.,Morelos I,Aguascalientes,Aguascalientes
+,11010012c37a9,Arrendadora de autos,Dollar,INTERIOR DEL AEROPUERTO INTERNACIONAL LOCAL 25,Buenavista de Peñuelas,Aguascalientes,Aguascalientes
+,1101001d4f175,Arrendadora de autos,Hertz,AEROPUERTO INTERNACIONAL DE AGUASCALIENTES LOCAL 25,Buenavista de Peñuelas,Aguascalientes,Aguascalientes
+,0201001b5a1ae,Alimentos y bebidas,GORDITAS VICTORIA,General Guadalupe Victoria,Zona Centro,Aguascalientes,Aguascalientes
+,0201001687228,Alimentos y bebidas,GORDITAS VICTORIA,Avenida Independencia,Villas de San Francisco,Aguascalientes,Aguascalientes
+,0401001662d25,Agencia de viajes,VIAJES VENECIA,Parque de los Fresnos,Trojes del Sur,Aguascalientes,Aguascalientes
+,0401001ccef00,Agencia de viajes,LOVE & TRAVEL SARAÍ,Ing. Pastor Roualx,Bulevares 2a. Sección,Aguascalientes,Aguascalientes
+,04010012eeb6f,Agencia de viajes,EL ANDARIEGO TOURS,Av. Arqueros,Jesús Gómez Portugal,Aguascalientes,Aguascalientes
+,0401001acbd41,Agencia de viajes,THE PROVIDENCE TRAVEL´S,Prol. Libertad,Las Arboledas,Aguascalientes,Aguascalientes
+,11010019b06af,Arrendadora de autos,Thrifty,CARRETERA PANAMERICANA KM.22,Buenavista de Peñuelas,Aguascalientes,Aguascalientes
+,0401001fc7dd8,Agencia de viajes,MAKAR AGENCIA DE VIAJES,Nieto,San Marcos,Aguascalientes,Aguascalientes
+,33010017651c1,Parque temático,CASA DE QUESADA,"Carretera Federal 25 Aguascalientes, San Marcos",Santa María de Gallardo,Aguascalientes,Aguascalientes
+,02010018146c6,Alimentos y bebidas,CASA DE QUESADA,"Carretera Federal 25 Aguascalientes, San Marcos",Santa María de Gallardo,Aguascalientes,Aguascalientes
+,0401001522536,Agencia de viajes,POSTAL VIAJES,Avenida Canal Interceptor,La Fundición,Aguascalientes,Aguascalientes
+,0401001cba2f2,Agencia de viajes,LIV TRAVELS,Madero,Zona Centro,Aguascalientes,Aguascalientes
+,040100123c507,Agencia de viajes,DJ TRAVEL,Talamantes,San Marcos,Aguascalientes,Aguascalientes
+,04010016d424d,Agencia de viajes,VIAJES ROGA,Avenida Arqueros,Vista del Sol 1a Sección,Aguascalientes,Aguascalientes
+,0101001634ec8,Hospedaje,HOTEL ALCAZAR,28 de Agosto,La Estación,Aguascalientes,Aguascalientes
+,0201001098297,Alimentos y bebidas,MERENDERO KIKO´S,Andador Arturo J. Pani,San Marcos,Aguascalientes,Aguascalientes
+,0401001ab300a,Agencia de viajes,PRIVATO,Sierra Nevada,Los Bosques,Aguascalientes,Aguascalientes
+,0401001b34036,Agencia de viajes,VIAJES KETZAL,Monte Everest,Bosques del Prado Norte,Aguascalientes,Aguascalientes
+,04010011c5843,Agencia de viajes,VIAJES KETZAL,Ignacio Zaragoza,Zona Centro,Aguascalientes,Aguascalientes
+,01010013b7883,Hospedaje,HOTEL RAMADA ENCORE AGUASCALIENTES,Boulevard José María Chávez,San Pedro,Aguascalientes,Aguascalientes
+,0201001992315,Alimentos y bebidas,RESTAURANT LA ESTACIÓN,28 de Agosto,La Estación,Aguascalientes,Aguascalientes
+,04010013c1b93,Agencia de viajes,RUTAS INOLVIDABLES,Av. Prolongación Mariano Hidalgo,Villa las Palmas,Aguascalientes,Aguascalientes
+,0201001d62d46,Alimentos y bebidas,"RESTAURANTE Y BAR ""THE HUB""",Boulevard José María Chávez,San Pedro,Aguascalientes,Aguascalientes
+,0401001c19bae,Agencia de viajes,AGENCIA DE VIAJES SHEKINAH,Prolongación Gral. Ignacio Zaragoza,Circunvalación Norte,Aguascalientes,Aguascalientes
+,0401001a6920a,Agencia de viajes,CHACO TRAVELS,Avenida Miguel A. Barberena,Municipio Libre,Aguascalientes,Aguascalientes
+,04010017f7b0f,Agencia de viajes,PASSENGER TRAVEL STORE,Boulevard José María Chávez,Prados de Villasunción,Aguascalientes,Aguascalientes
+,3401002957ae2,Spa,HUITZIL TEMAZCAL-SPA,Minerva,Asientos Centro,Aguascalientes,Asientos
+,0401001647ff8,Agencia de viajes,TURISMO TALAMANTES,Jardín de la Estación,Jardines de Aguascalientes,Aguascalientes,Aguascalientes
+,0401001d425c7,Agencia de viajes,AGENCIA DE VIAJES NARAMI,La Unión,Las Cumbres,Aguascalientes,Aguascalientes
+,0401001d6bdb8,Agencia de viajes,VIAJES ALAS DE AVENTURA,Av. Siglo XXI,Villas San Antonio,Aguascalientes,Aguascalientes
+,01010010b9ba0,Hospedaje,FAIRFIELD INN & SUITES AGUASCALIENTES,Avenida Paseo San Gerardo,San Gerardo,Aguascalientes,Aguascalientes
+,0401001c30b0c,Agencia de viajes,CORLUÉ ,Avenida Poliducto ,Lomas del Ajedrez,Aguascalientes,Aguascalientes
+,04010017ca19b,Agencia de viajes,Agencia de Viajes Plan Aventura By Fraveo,Alfredo Lewis,Circunvalación Norte,Aguascalientes,Aguascalientes
+,0401001ed0f4a,Agencia de viajes,GAROLI TRAVEL,Sierra de Tepoztlán,Bosques del Prado Sur,Aguascalientes,Aguascalientes
+,04010012b2497,Agencia de viajes,TURISMO MZ,Azafrán,Lomas del Chapulín,Aguascalientes,Aguascalientes
+,0101001927eec,Hospedaje,HOTEL GYA EXPRESS,Boulevard José María Chávez,Prados del Sur,Aguascalientes,Aguascalientes
+,0401001bb83f2,Agencia de viajes,MARANATHA VIAJES,Mar Mediterraneo,Panorama,Aguascalientes,Aguascalientes
+,040100180dd0f,Agencia de viajes,VIATGES AGUASCALIENTES ,Paseos del argel ,Paseos de Santa Mónica,Aguascalientes,Aguascalientes
+,0401001b32b44,Agencia de viajes,LA MOCHA TRAVELS,Santiago 202,Vistas de Oriente,Aguascalientes,Aguascalientes
+,0401005af4763,Agencia de viajes,RS VIAJES V&P GLOBAL, Paseo de las Maravillas ,Corral de Barrancos,Aguascalientes,Jesús María
+,02010016b2739,Alimentos y bebidas,LAS COSTILLAS DE SANCHO,Avenida José María Chávez,Prados de Villasunción,Aguascalientes,Aguascalientes
+,040100181fad3,Agencia de viajes,IACE TRAVEL MÉXICO,Sierra del Humo,Bosques del Prado Sur,Aguascalientes,Aguascalientes
+,0401001d730df,Agencia de viajes,SIMA VIAJES,Avenida Universidad,Bosques del Prado Sur,Aguascalientes,Aguascalientes
+,040100129e142,Agencia de viajes,GPI TRAVEL,Sierra Morena,Bosques del Prado Norte,Aguascalientes,Aguascalientes
+,0401005048b92,Agencia de viajes,"CIAO AND GO, TRAVEL BOUTIQUE",Avenida Paseo de las Maravillas,Corral de Barrancos,Aguascalientes,Jesús María
+,040100104b706,Agencia de viajes,TOUR LIFE BY BIG DREAMS,Circuito Antillas,Barlovento,Aguascalientes,Aguascalientes
+,0401005a50bab,Agencia de viajes,PATA DE PERRO TOURS BUSINESS & VAGRANCY,Avenida Paseos de Aguascalientes,Paseos de Aguascalientes,Aguascalientes,Jesús María
+,04010018d4050,Agencia de viajes,VIAJA YA!,Ricardo García Mendoza,Lic. José López Portillo,Aguascalientes,Aguascalientes
+,0401001734c6a,Agencia de viajes,VIAJES ARES,Redactores,Periodistas,Aguascalientes,Aguascalientes

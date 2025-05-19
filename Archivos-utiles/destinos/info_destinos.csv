@@ -1,0 +1,122 @@
+nombre,categoria,tipo,ciudad,municipio,estado,codigopostal,lat,lon,min_lat,max_lat,min_lon,max_lon
+Aeropuerto Internacional de Bahías de Huatulco,aeroway,aerodrome,unkwown,Santa María Huatulco,Oaxaca,unkwown,15.7759827,-96.25869871122916,15.7671644,15.7847498,-96.2794277,-96.2390896
+Cabo San Lucas,place,city,Cabo San Lucas,Municipio de Los Cabos,Baja California Sur,23470,22.8938884,-109.92006,22.7338884,23.0538884,-110.0800600,-109.7600600
+Cancún,boundary,administrative,Cancún,Benito Juárez,Quintana Roo,unkwown,21.1527467,-86.8425761,20.9705855,21.2123751,-86.9956171,-86.7405259
+Loreto,place,town,unkwown,Municipio de Loreto,Baja California Sur,23880,26.0097913,-111.3452523,25.9697913,26.0497913,-111.3852523,-111.3052523
+None,None,None,None,None,None,None,None,None,L,u,g,a
+San José del Cabo,place,city,San José del Cabo,Municipio de Los Cabos,Baja California Sur,23400,23.0598364,-109.7025148,22.8998364,23.2198364,-109.8625148,-109.5425148
+None,None,None,None,None,None,None,None,None,L,u,g,a
+Ixtapa,boundary,administrative,unkwown,Ixtapa,Chiapas,unkwown,16.807622700000003,-92.898650478142,16.6846331,16.9307064,-93.0206204,-92.8110725
+None,None,None,None,None,None,None,None,None,L,u,g,a
+Zihuatanejo,place,town,unkwown,Zihuatanejo de Azueta,Guerrero,40880,17.6467874,-101.551974,17.6067874,17.6867874,-101.5919740,-101.5119740
+Akumal,place,village,unkwown,unkwown,Quintana Roo,77737,20.398797,-87.3173404,20.3787970,20.4187970,-87.3373404,-87.2973404
+Isla Mujeres,boundary,administrative,unkwown,Isla Mujeres,Quintana Roo,77402,21.2371906,-86.7350001,21.2015410,21.2654810,-86.7527683,-86.7106502
+None,None,None,None,None,None,None,None,None,L,u,g,a
+None,None,None,None,None,None,None,None,None,L,u,g,a
+Playa del Carmen,boundary,administrative,Playa del Carmen,unkwown,Quintana Roo,unkwown,20.6308643,-87.0779503,20.5999428,20.7098999,-87.1251816,-87.0214215
+Plaza Playacar,landuse,commercial,Playa del Carmen,unkwown,Quintana Roo,unkwown,20.6091203,-87.09095745104474,20.6088216,20.6097428,-87.0913890,-87.0900074
+Rosarito,place,city,Rosarito,Municipio de Playas de Rosarito,Baja California,22703,32.365166,-117.0557923,32.2051660,32.5251660,-117.2157923,-116.8957923
+Puerto Escondido,place,city,Puerto Escondido,San Pedro Mixtepec,Oaxaca,71800,15.8693331,-97.0726428,15.7093331,16.0293331,-97.2326428,-96.9126428
+San Felipe,place,town,unkwown,San Felipe,Guanajuato,37600,21.4788273,-101.215752,21.4388273,21.5188273,-101.2557520,-101.1757520
+CARRETERA TONALÁ-PUERTO ARISTA,highway,secondary,unkwown,Tonalá,Chiapas,unkwown,16.002691518057354,-93.76564756075722,15.9455114,16.0557280,-93.7942361,-93.7349519
+Nuevo Nayarit,place,village,unkwown,Bahía de Banderas,Nayarit,63735,20.7027575,-105.2885106,20.6827575,20.7227575,-105.3085106,-105.2685106
+Acapulco,place,city,Acapulco,Acapulco de Juárez,Guerrero,39300,16.8680495,-99.8940182,16.7080495,17.0280495,-100.0540182,-99.7340182
+Isla Cozumel,place,island,unkwown,Cozumel,Quintana Roo,unkwown,20.4320599,-86.92069058377268,20.2720013,20.5919986,-87.0251995,-86.7232847
+La Paz,place,city,La Paz,Municipio de La Paz,Baja California Sur,23020,24.1619948,-110.3158532,24.0019948,24.3219948,-110.4758532,-110.1558532
+Manzanillo,place,city,Manzanillo,Manzanillo,Colima,28200,19.0506256,-104.3159957,18.8906256,19.2106256,-104.4759957,-104.1559957
+Mazatlán,place,city,Mazatlán,Mazatlán,Sinaloa,82000,23.2035785,-106.4208391,23.0435785,23.3635785,-106.5808391,-106.2608391
+Puerto Vallarta,place,city,Puerto Vallarta,Puerto Vallarta,Jalisco,48300,20.6407176,-105.220306,20.4807176,20.8007176,-105.3803060,-105.0603060
+Veracruz,highway,residential,unkwown,Boca del Río,Veracruz,94293,19.125644700000002,-96.1125485,19.1252050,19.1260844,-96.1125975,-96.1124995
+Aguascalientes,place,city,Aguascalientes,Municipio de Aguascalientes,Aguascalientes,20000,21.880487,-102.2967195,21.7204870,22.0404870,-102.4567195,-102.1367195
+Campeche,boundary,administrative,unkwown,unkwown,Campeche,unkwown,19.0,-90.5,17.8124246,20.8483273,-92.4690272,-89.1212292
+Celaya,boundary,administrative,unkwown,Celaya,Guanajuato,unkwown,20.522285099999998,-100.83077392892065,20.3560513,20.6886364,-100.9115204,-100.6348829
+Chihuahua,boundary,administrative,unkwown,unkwown,Chihuahua,unkwown,28.5000001,-106.0000001,25.5586570,31.7839157,-109.0749842,-103.3066900
+Coatzacoalcos,place,city,Coatzacoalcos,Coatzacoalcos,Veracruz,96576,18.1405019,-94.4344003,17.9805019,18.3005019,-94.5944003,-94.2744003
+Colima,boundary,administrative,unkwown,unkwown,Colima,unkwown,19.166667,-104.0,18.3389881,19.5125187,-114.7600696,-103.4863465
+Comitán,place,city,Comitán,Comitán de Domínguez,Chiapas,30020,16.2441097,-92.1348514,16.0841097,16.4041097,-92.2948514,-91.9748514
+Culiacán,place,city,Culiacán,Culiacán,Sinaloa,80220,24.7978965,-107.393395,24.6378965,24.9578965,-107.5533950,-107.2333950
+Durango,boundary,administrative,unkwown,unkwown,Durango,unkwown,24.833333,-104.833333,22.3450837,26.8447877,-107.2101322,-102.4726969
+El Fuerte,boundary,administrative,unkwown,El Fuerte,Sinaloa,unkwown,26.236459,-108.66037832945469,25.8166486,26.6580028,-109.0425737,-108.2605145
+Guanajuato,boundary,administrative,unkwown,unkwown,Guanajuato,unkwown,20.9876996,-101.0,19.9127502,21.8394167,-102.0972846,-99.6713026
+Hermosillo,place,city,Hermosillo,Hermosillo,Sonora,83140,29.0948207,-110.9692202,28.9348207,29.2548207,-111.1292202,-110.8092202
+Irapuato,place,city,Irapuato,Irapuato,Guanajuato,36500,20.6758761,-101.3521052,20.5158761,20.8358761,-101.5121052,-101.1921052
+León,place,city,León,León,Guanajuato,37370,21.121965,-101.6829766,20.9619650,21.2819650,-101.8429766,-101.5229766
+Los Mochis,boundary,administrative,Los Mochis,Ahome,Sinaloa,unkwown,25.7928058,-108.990188,25.7289293,25.8395287,-109.0463376,-108.9382048
+Mérida,boundary,administrative,Mérida,Mérida,Yucatán,unkwown,20.9670759,-89.6237402,20.8879521,21.0920453,-89.7396666,-89.5080983
+Morelia,boundary,administrative,unkwown,Morelia,Michoacán,unkwown,19.6546004,-101.26237972291207,19.4471606,19.8622702,-101.5089304,-101.0425838
+Oaxaca,boundary,administrative,unkwown,unkwown,Oaxaca,unkwown,17.0,-96.5,15.6568776,18.6696881,-98.5526959,-93.8674267
+Pachuca,place,city,Pachuca,Pachuca de Soto,Hidalgo,42060,20.1165413,-98.7413535,19.9565413,20.2765413,-98.9013535,-98.5813535
+Palenque,boundary,administrative,unkwown,Palenque,Chiapas,29960,17.45316095,-91.81212411848196,17.0670103,17.8394725,-92.3501948,-91.2604097
+Puebla,boundary,administrative,unkwown,unkwown,Puebla,unkwown,18.833333,-98.0,17.8609120,20.8396271,-99.0704940,-96.7246199
+Querétaro,boundary,administrative,unkwown,unkwown,Querétaro,unkwown,20.8052225,-99.8837376,20.0150182,21.6700054,-100.5965357,-99.0430799
+Salamanca,boundary,administrative,unkwown,Salamanca,Guanajuato,unkwown,20.6511359,-101.16676697826568,20.4368646,20.8668882,-101.3134206,-101.0330697
+San Cristóbal,place,city,San Cristóbal,San Cristóbal de las Casas,Chiapas,29200,16.735377,-92.63873,16.5753770,16.8953770,-92.7987300,-92.4787300
+San Juan de los Lagos,boundary,administrative,unkwown,San Juan de los Lagos,Jalisco,unkwown,21.254312650000003,-102.28137105849761,21.0959862,21.4127262,-102.4945898,-102.1230364
+San Juan del Río,boundary,administrative,unkwown,San Juan del Río,Querétaro,unkwown,20.387046249999997,-100.01196274827622,20.2067147,20.5473880,-100.1960260,-99.8354424
+San Luis Potosí,boundary,administrative,unkwown,unkwown,San Luis Potosí,unkwown,22.5000001,-100.4949145,21.1596935,24.4915166,-102.2960384,-98.3259670
+San Miguel de Allende,boundary,administrative,unkwown,San Miguel de Allende,Guanajuato,unkwown,20.9130501,-100.73566002666199,20.7160881,21.1091100,-101.0866808,-100.4699582
+Taxco,place,town,unkwown,Taxco de Alarcón,Guerrero,40200,18.5565446,-99.6052838,18.5165446,18.5965446,-99.6452838,-99.5652838
+Tequisquiapan,boundary,administrative,unkwown,Tequisquiapan,Querétaro,unkwown,20.542215849999998,-99.94789872743917,20.4315847,20.6529292,-100.0849622,-99.8281242
+Tlaxcala,boundary,administrative,unkwown,unkwown,Tlaxcala,unkwown,19.416667,-98.166667,19.1050720,19.7289170,-98.7083986,-97.6254390
+Toluca,place,city,Toluca,Toluca,Estado de México,50000,19.292545,-99.6569007,19.1325450,19.4525450,-99.8169007,-99.4969007
+Tuxtla Gutiérrez,place,city,Tuxtla Gutiérrez,Tuxtla Gutiérrez,Chiapas,29019,16.753801,-93.115959,16.5938010,16.9138010,-93.2759590,-92.9559590
+Valle de Bravo,boundary,administrative,unkwown,Valle de Bravo,Estado de México,unkwown,19.1849101,-100.15126325880992,19.0787080,19.2911052,-100.2643176,-99.9592946
+Villahermosa,place,city,Villahermosa,Centro,Tabasco,unkwown,17.9884657,-92.9366326,17.9571789,18.0463178,-92.9875088,-92.8850270
+Xalapa,place,city,Xalapa,Xalapa,Veracruz,91170,19.5408338,-96.9146374,19.3808338,19.7008338,-97.0746374,-96.7546374
+Zacatecas,boundary,administrative,unkwown,unkwown,Zacatecas,unkwown,23.0916177,-102.9333954,21.0418694,25.1252355,-104.3535330,-100.7423242
+Ciudad Juárez,place,city,Ciudad Juárez,Juárez,Chihuahua,32001,31.7372575,-106.485655,31.5772575,31.8972575,-106.6456550,-106.3256550
+Mexicali,place,city,Mexicali,Municipio de Mexicali,Baja California,21000,32.6405247,-115.474899,32.4805247,32.8005247,-115.6348990,-115.3148990
+Piedras Negras,boundary,administrative,Piedras Negras,Piedras Negras,Coahuila,unkwown,28.704596,-100.5167137,28.6397011,28.7424114,-100.5900415,-100.5004128
+Tecate,boundary,administrative,Tecate,Municipio de Tecate,Baja California,unkwown,32.5653831,-116.6298787,32.5472999,32.5792081,-116.6617402,-116.5916173
+Tijuana,place,city,Tijuana,Municipio de Tijuana,Baja California,22000,32.5317397,-117.019529,32.3717397,32.6917397,-117.1795290,-116.8595290
+Ciudad de México,boundary,administrative,Ciudad de México,unkwown,Ciudad de México,unkwown,19.4326296,-99.1331785,19.2419543,19.5796926,-99.3049450,-98.9750504
+Guadalajara,place,city,Guadalajara,Guadalajara,Jalisco,44450,20.6720375,-103.338396,20.5120375,20.8320375,-103.4983960,-103.1783960
+Monterrey,place,city,Monterrey,Monterrey,Nuevo León,64010,25.6802019,-100.315258,25.5202019,25.8402019,-100.4752580,-100.1552580
+Atlixco,place,town,unkwown,Atlixco,Puebla,74260,18.908889,-98.437778,18.8688890,18.9488890,-98.4777780,-98.3977780
+Bustamante,boundary,administrative,unkwown,Bustamante,Nuevo León,unkwown,26.57133255,-100.57005090960021,26.4318710,26.7108734,-100.6960929,-100.4384752
+Chapala,boundary,administrative,unkwown,Chapala,Jalisco,unkwown,20.279764450000002,-103.22035855623801,20.1526048,20.4065625,-103.4220109,-103.0229883
+Chichen Itzá,boundary,protected_area,unkwown,Tinum,Yucatán,unkwown,20.68285195,-88.5687196355205,20.6773364,20.6884657,-88.5724372,-88.5654012
+Chignahuapan,boundary,administrative,unkwown,Chignahuapan,Puebla,73300,19.8213915,-98.11775714603566,19.6674760,19.9753069,-98.3150043,-97.9607969
+Aeropuerto Internacional de Manzanillo – Costalegre,aeroway,aerodrome,unkwown,Manzanillo,Colima,28834,19.1447539,-104.55803073181045,19.1387371,19.1507869,-104.5737659,-104.5390668
+Cuernavaca,boundary,administrative,unkwown,Cuernavaca,Morelos,unkwown,18.93313205,-99.25995794657074,18.8419111,19.0246500,-99.3420117,-99.1805441
+Cuetzalan,place,town,unkwown,Cuetzalan del Progreso,Puebla,unkwown,20.018611,-97.521111,19.9786110,20.0586110,-97.5611110,-97.4811110
+El Oro,boundary,administrative,unkwown,El Oro,Estado de México,unkwown,19.7959711,-100.06630200055355,19.7313373,19.8604270,-100.1493285,-99.9817313
+Ensenada,boundary,administrative,Ensenada,Municipio de Ensenada,Baja California,unkwown,31.8658887,-116.602983,31.6518752,31.9462343,-116.7568468,-116.4972675
+Hidalgo del Parral,boundary,administrative,unkwown,Hidalgo del Parral,Chihuahua,unkwown,27.11538475,-105.76428799772901,26.8623592,27.3681834,-105.9782353,-105.3973646
+Huasca de Ocampo,boundary,administrative,unkwown,Huasca de Ocampo,Hidalgo,unkwown,20.223154899999997,-98.5552467331717,20.0993059,20.3470346,-98.6374117,-98.4614516
+Huauchinango,boundary,administrative,unkwown,Huauchinango,Puebla,unkwown,20.1782494,-98.04907281070565,20.0549627,20.3014199,-98.1400164,-97.9546609
+Huichapan,boundary,administrative,unkwown,Huichapan,Hidalgo,unkwown,20.3905629,-99.68216421440637,20.2684705,20.5124063,-99.8591064,-99.4957666
+Ixtapan de la Sal,boundary,administrative,unkwown,Ixtapan de la Sal,Estado de México,unkwown,18.8409773,-99.69292428364544,18.7688389,18.9130522,-99.7627286,-99.6093527
+Izamal,boundary,administrative,unkwown,Izamal,Yucatán,unkwown,20.9333726,-89.018267,20.9184565,20.9507087,-89.0442016,-88.9976325
+Izúcar de Matamoros,boundary,administrative,unkwown,Izúcar de Matamoros,Puebla,unkwown,18.50658165,-98.423077788842,18.3294306,18.6835422,-98.5653799,-98.2877490
+Jerez,boundary,administrative,unkwown,Jerez,Zacatecas,unkwown,22.7105933,-103.00147264243049,22.4961701,22.9244058,-103.2496270,-102.7578718
+Linares,boundary,administrative,unkwown,Linares,Nuevo León,unkwown,24.85300565,-99.41034185361012,24.5539743,25.1520694,-99.9618919,-99.1564680
+Nuevo Casas Grandes,boundary,administrative,unkwown,Nuevo Casas Grandes,Chihuahua,unkwown,30.50629595,-107.66542559561371,30.1536894,30.8592567,-107.9985388,-107.4060475
+Pahuatlán,boundary,administrative,unkwown,Pahuatlán,Puebla,unkwown,20.28763145,-98.14508639496822,20.2201741,20.3545116,-98.1986101,-98.0698800
+Mineral del Monte,place,town,unkwown,Mineral del Monte,Hidalgo,42130,20.1384604,-98.6733356,20.0984604,20.1784604,-98.7133356,-98.6333356
+Saltillo,place,city,Saltillo,Saltillo,Coahuila,25000,25.4230425,-100.9927509,25.2630425,25.5830425,-101.1527509,-100.8327509
+San Andrés Cholula,boundary,administrative,unkwown,San Andrés Cholula,Puebla,unkwown,19.022046449999998,-98.28726612234529,18.9756539,19.0684977,-98.3581922,-98.2238595
+San Martín Texmelucan,boundary,administrative,unkwown,San Martín Texmelucan,Puebla,unkwown,19.2659835,-98.42487795456853,19.2042335,19.3276908,-98.4927319,-98.3645460
+San Pedro Cholula,boundary,administrative,unkwown,San Pedro Cholula,Puebla,unkwown,19.0724114,-98.32236707919591,19.0260178,19.1186870,-98.4043503,-98.2610432
+Santiago,boundary,administrative,unkwown,Santiago,Nuevo León,unkwown,25.37437795,-100.26094393967212,25.2237785,25.5263119,-100.5308828,-100.0313142
+Sombrerete,place,town,unkwown,Sombrerete,Zacatecas,99100,23.6354312,-103.6410119,23.5954312,23.6754312,-103.6810119,-103.6010119
+Tampico,boundary,administrative,unkwown,Tampico,Tamaulipas,unkwown,22.27010965,-97.89486735598555,22.2069658,22.3330507,-98.0003240,-97.8363806
+Tapachula,boundary,administrative,unkwown,Tapachula,Chiapas,unkwown,14.9258055,-92.32219567868036,14.6181280,15.2355141,-92.4656229,-92.1627529
+Tehuacán,boundary,administrative,unkwown,Tehuacán,Puebla,unkwown,18.465801149999997,-97.39783479972402,18.3238829,18.6076771,-97.6379845,-97.2077563
+Teziutlán,boundary,administrative,unkwown,Teziutlán,Puebla,unkwown,19.873992649999998,-97.37156286710564,19.7682529,19.9795457,-97.4069324,-97.3153007
+Tlatlauquitepec,boundary,administrative,unkwown,Tlatlauquitepec,Puebla,unkwown,19.83864055,-97.50573725701618,19.6365370,20.0408776,-97.6004933,-97.3911169
+Tula de Allende,boundary,administrative,unkwown,Tula de Allende,Hidalgo,unkwown,20.048948699999997,-99.37295616011426,19.9300802,20.1702481,-99.5187767,-99.2547712
+Tuxtepec,place,city,Tuxtepec,San Juan Bautista Tuxtepec,Oaxaca,68320,18.0874632,-96.1227767,17.9274632,18.2474632,-96.2827767,-95.9627767
+Uxmal,place,village,unkwown,Santa Elena,Yucatán,97890,20.3602902,-89.7705605,20.3402902,20.3802902,-89.7905605,-89.7505605
+Valladolid,boundary,administrative,Valladolid,Valladolid,Yucatán,unkwown,20.6902505,-88.2016999,20.6706464,20.7140974,-88.2322171,-88.1736523
+Xicotepec,boundary,administrative,unkwown,unkwown,Puebla,73080,20.2767053,-97.9606968,20.2291903,20.4340760,-98.0446866,-97.7500388
+Zacatlán,boundary,administrative,unkwown,Zacatlán,Puebla,unkwown,19.96059515,-98.00572136341704,19.8290079,20.0921482,-98.1749966,-97.8561454
+San Quintín,place,town,unkwown,Municipio de San Quintín,Baja California,22932,30.5613719,-115.938162,30.5213719,30.6013719,-115.9781620,-115.8981620
+Tetela de Ocampo,boundary,administrative,unkwown,Tetela de Ocampo,Puebla,73640,19.811461700000002,-97.7872630675154,19.6952640,19.9276437,-97.9125187,-97.6431844
+Metepec,boundary,administrative,unkwown,Metepec,Estado de México,unkwown,19.25113375,-99.5937281303492,19.2156544,19.2871671,-99.6470460,-99.5127926
+Villa del Carbón,boundary,administrative,unkwown,Villa del Carbón,Estado de México,54325,19.74446355,-99.4520652760428,19.6138614,19.8749970,-99.6498895,-99.3732499
+Tecozautla,boundary,administrative,unkwown,Tecozautla,Hidalgo,unkwown,20.5396985,-99.6526085293211,20.4202342,20.6591315,-99.8350798,-99.4492329
+Zempoala,boundary,administrative,unkwown,Zempoala,Hidalgo,unkwown,19.92594405,-98.64334991998203,19.8131844,20.0386767,-98.8309831,-98.5280638
+Coatepec,boundary,administrative,unkwown,unkwown,Veracruz,unkwown,19.4543134,-96.9596375,19.3572737,19.5323907,-97.1062296,-96.7970344
+Orizaba,place,city,Orizaba,Orizaba,Veracruz,94300,18.8497366,-97.1060062,18.6897366,19.0097366,-97.2660062,-96.9460062
+Chiapa de Corzo,boundary,administrative,unkwown,Chiapa de Corzo,Chiapas,29160,16.601322449999998,-92.99681558748827,16.2922001,16.9103297,-93.1053972,-92.8022833
